@@ -3,8 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мария Золотухина: сайты для beauty, wellness и grooming</title>
-  <meta name="description" content="Делаю сайты и воронки для beauty, wellness и grooming-проектов. Не просто страница, а путь клиента до записи." />
+  <title>Мария Золотухина: сайты для beauty и wellness</title>
+  <meta name="description" content="Делаю сайты и воронки для beauty и wellness-проектов. Не просто страница, а путь клиента до записи." />
+  <link rel="canonical" href="https://mazoloty.ru/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mazoloty.ru/" />
+  <meta property="og:title" content="Мария Золотухина: сайты для beauty и wellness" />
+  <meta property="og:description" content="Делаю сайты и воронки для beauty и wellness-проектов. Не просто страница, а путь клиента до записи." />
+  <meta property="og:locale" content="ru_RU" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Мария Золотухина",
+    "url": "https://mazoloty.ru",
+    "jobTitle": "Веб-разработчик",
+    "description": "Делаю сайты и воронки для beauty и wellness-проектов. Путь клиента до записи.",
+    "knowsAbout": ["веб-разработка", "сайты для beauty", "сайты-воронки", "Яндекс.Метрика", "Telegram-интеграции"]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +46,7 @@
     <div class="container">
       <p class="hero-label">Мария Золотухина · сайты для студий услуг</p>
       <h1 class="hero-title">Сайт, с которого<br>идут записи</h1>
-      <p class="hero-sub">Для beauty, wellness, барбершопов и частных мастеров. Я не просто делаю сайт. Я собираю путь клиента до записи.</p>
+      <p class="hero-sub">Для beauty, wellness, студий, салонов и частных мастеров. Я не просто делаю сайт. Я собираю путь клиента до записи.</p>
       <div class="hero-proof">
         <span>Квиз / форма → Telegram</span>
         <span>Dikidi / YClients</span>
@@ -223,13 +245,6 @@
       <div class="faq-list">
 
         <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">Сколько стоит минимум?</button>
-          <div class="faq-body">
-            <p>Мини-сайт стоит 40 000 ₽. Если бюджет меньше, скажу об этом на консультации честно и объясню, что реально сделать в этом диапазоне.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">Сайт точно будет приносить клиентов?</button>
           <div class="faq-body">
             <p>Конкретное количество заявок не обещаю: это зависит от трафика, цен, репутации, рекламы и самой услуги. Что я делаю: собираю сайт так, чтобы входящий человек не терялся и быстрее доходил до записи. Плюс подключаю аналитику, чтобы видеть клики, формы и поведение.</p>
@@ -247,13 +262,6 @@
           <button class="faq-toggle" aria-expanded="false">SEO и реклама входят?</button>
           <div class="faq-body">
             <p>Базовое SEO входит: title, description, структура заголовков, alt-тексты, robots/sitemap при необходимости. Реклама не входит, но сайт можно подготовить под неё: CTA, форма, цели в Метрике, страница благодарности.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">А если у нас мужская аудитория?</button>
-          <div class="faq-body">
-            <p>Подходит. Барбершопы, массаж, лазер для мужчин, контур бороды, уходы и wellness-услуги тоже строятся вокруг понятного выбора, доверия и записи. Просто визуал и текст будут другими: меньше “бьюти-шаблона”, больше ясности, сервиса и результата.</p>
           </div>
         </div>
 
@@ -295,7 +303,7 @@
         </div>
         <div class="form-field">
           <label for="business">Тип бизнеса</label>
-          <input type="text" id="business" name="business" placeholder="Студия эпиляции, барбершоп, частный мастер, салон красоты..." required />
+          <input type="text" id="business" name="business" placeholder="Студия эпиляции, частный мастер, салон красоты..." required />
         </div>
         <div class="form-field">
           <label for="link">Ссылка на соцсеть, Telegram, VK или сайт</label>
@@ -320,7 +328,7 @@
         </div>
         <div class="form-consent">
           <input type="checkbox" id="consent" name="consent" required />
-          <label for="consent">Я согласна на <a href="privacy.html" target="_blank">обработку персональных данных</a></label>
+          <label for="consent">Я согласен(на) на <a href="privacy.html" target="_blank">обработку персональных данных</a></label>
         </div>
         <button type="submit" class="btn" id="submitBtn">Отправить заявку</button>
         <p class="form-note" id="formNote"></p>
