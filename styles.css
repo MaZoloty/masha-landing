@@ -101,8 +101,26 @@ a { color: inherit; }
   font-size: 18px;
   color: var(--gray-600);
   max-width: 520px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   line-height: 1.6;
+}
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.hero-proof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 13px;
+  font-weight: 500;
 }
 
 /* ── Problem ── */
@@ -301,6 +319,23 @@ a { color: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
 }
+.case-image {
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.case-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
+}
+.case-image:hover img {
+  transform: scale(1.025);
+}
 .case-body {
   padding: 32px;
   display: flex;
@@ -325,6 +360,21 @@ a { color: inherit; }
   font-size: 15px;
   font-style: italic;
   color: var(--black);
+}
+.case-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+.case-tags li {
+  padding: 5px 9px;
+  border-radius: 100px;
+  background: var(--gray-50);
+  color: var(--gray-600);
+  font-size: 12px;
+  line-height: 1.3;
 }
 .case-link {
   font-size: 14px;
@@ -418,7 +468,9 @@ a { color: inherit; }
   font-weight: 500;
   color: var(--gray-600);
 }
-.form-field input {
+.form-field input,
+.form-field select,
+.form-field textarea {
   font-family: var(--font);
   font-size: 15px;
   color: var(--black);
@@ -429,8 +481,15 @@ a { color: inherit; }
   outline: none;
   transition: border-color 0.15s;
 }
-.form-field input:focus { border-color: var(--black); }
-.form-field input::placeholder { color: var(--gray-400); }
+.form-field textarea {
+  resize: vertical;
+  min-height: 104px;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color: var(--black); }
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--gray-400); }
 
 .form-consent {
   display: flex;
@@ -503,6 +562,8 @@ a { color: inherit; }
   .hero { padding: 70px 0 60px; }
   .hero-title { font-size: 36px; }
   .hero-sub { font-size: 16px; }
+  .hero-proof { gap: 8px; }
+  .hero-proof span { font-size: 12px; }
   .package { padding: 24px; }
   .case-body { padding: 24px; }
   .section-title { margin-bottom: 28px; }

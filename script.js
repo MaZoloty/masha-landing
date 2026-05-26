@@ -36,7 +36,17 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const name = form.name.value.trim();
+    const business = form.business.value.trim();
+    const contact = form.contact.value.trim();
     const consent = form.querySelector('#consent');
+
+    if (!name || !business || !contact) {
+      formNote.textContent = 'Пожалуйста, заполните все обязательные поля.';
+      formNote.className = 'form-note form-note--error';
+      return;
+    }
+
     if (!consent.checked) {
       formNote.textContent = 'Пожалуйста, дайте согласие на обработку данных.';
       formNote.className = 'form-note form-note--error';
@@ -47,6 +57,8 @@ if (form) {
       name: form.name.value.trim(),
       business: form.business.value.trim(),
       link: form.link.value.trim(),
+      package: form.package.value.trim(),
+      problem: form.problem.value.trim(),
       contact: form.contact.value.trim(),
     };
 
