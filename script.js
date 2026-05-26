@@ -1,3 +1,18 @@
+// ── Метрика: вспомогательная функция ──
+function ymGoal(goal) {
+  if (typeof ym !== 'undefined') ym(109430856, 'reachGoal', goal);
+}
+
+// ── Метрика: клик на hero CTA ──
+document.querySelectorAll('a[href="#form"].btn').forEach(btn => {
+  btn.addEventListener('click', () => ymGoal('hero_click'));
+});
+
+// ── Метрика: клик на «Оставить заявку» в пакетах ──
+document.querySelectorAll('.package a[href="#form"]').forEach(btn => {
+  btn.addEventListener('click', () => ymGoal('package_click'));
+});
+
 // ── Аккордеоны пакетов ──
 document.querySelectorAll('.accordion-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -75,6 +90,7 @@ if (form) {
       });
 
       if (res.ok) {
+        ymGoal('form_submit');
         form.reset();
         formNote.textContent = 'Заявка отправлена. Отвечу в Telegram в течение 24 часов.';
         formNote.className = 'form-note form-note--success';
