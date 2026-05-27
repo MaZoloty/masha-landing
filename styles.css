@@ -94,6 +94,13 @@ p, h1, h2, h3, blockquote, li {
 }
 .btn--outline:hover { background: var(--accent); border-color: var(--accent); color: var(--white); }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 /* ── Hero ── */
 .hero {
   padding: 100px 0 90px;
@@ -584,6 +591,11 @@ p, h1, h2, h3, blockquote, li {
   color: var(--gray-400);
   margin-top: 12px;
 }
+.form-after a {
+  color: var(--black);
+  border-bottom: 1px solid var(--accent-border);
+}
+.form-after a:hover { border-color: var(--black); }
 
 /* ── Footer ── */
 .footer {
