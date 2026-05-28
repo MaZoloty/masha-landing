@@ -181,6 +181,60 @@ p, h1, h2, h3, blockquote, li {
 }
 .method p:last-child { margin-bottom: 0; }
 
+/* ── Diagnostic ── */
+.diagnostic {
+  background: var(--white);
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.diagnostic-item {
+  min-width: 0;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--gray-50);
+}
+
+.diagnostic-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.diagnostic-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.diagnostic-item p,
+.diagnostic-note {
+  color: var(--gray-600);
+}
+
+.diagnostic-note {
+  max-width: 720px;
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
 /* ── Packages ── */
 .packages { background: var(--white); }
 
@@ -616,6 +670,7 @@ p, h1, h2, h3, blockquote, li {
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
+  .diagnostic-grid,
   .packages-grid {
     grid-template-columns: 1fr;
     max-width: 520px;
@@ -634,6 +689,7 @@ p, h1, h2, h3, blockquote, li {
   .hero-label { font-size: 11px; }
   .hero-proof { gap: 8px; }
   .hero-proof span { font-size: 12px; }
+  .diagnostic-item { padding: 24px; }
   .package { padding: 24px; }
   .case-body { padding: 24px; }
   .section-title { margin-bottom: 28px; }

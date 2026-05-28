@@ -4,11 +4,11 @@ function ymGoal(goal) {
 }
 
 // ── Метрика: клик на hero CTA ──
-document.querySelectorAll('a[href="#form"].btn').forEach(btn => {
+document.querySelectorAll('.hero a[href="#form"].btn').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('hero_click'));
 });
 
-// ── Метрика: клик на «Оставить заявку» в пакетах ──
+// ── Метрика: клик на CTA в пакетах ──
 document.querySelectorAll('.package a[href="#form"]').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('package_click'));
 });
@@ -53,10 +53,12 @@ if (form) {
 
     const name = form.name.value.trim();
     const business = form.business.value.trim();
+    const link = form.link.value.trim();
+    const timeline = form.timeline.value.trim();
     const contact = form.contact.value.trim();
     const consent = form.querySelector('#consent');
 
-    if (!name || !business || !contact) {
+    if (!name || !business || !link || !timeline || !contact) {
       formNote.textContent = 'Пожалуйста, заполните все обязательные поля.';
       formNote.className = 'form-note form-note--error';
       return;
@@ -72,7 +74,8 @@ if (form) {
       name: form.name.value.trim(),
       business: form.business.value.trim(),
       link: form.link.value.trim(),
-      package: form.package.value.trim(),
+      goal: form.goal.value.trim(),
+      timeline: form.timeline.value.trim(),
       problem: form.problem.value.trim(),
       contact: form.contact.value.trim(),
     };
@@ -83,16 +86,17 @@ if (form) {
     formNote.className = 'form-note';
 
     try {
-      const res = await fetch('/api/send-telegram', {
+      const res = await fetch('/api/send-telegram.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
-      if (res.ok) {
+      const responseData = await res.json().catch(() => null);
+      if (res.ok && responseData?.ok) {
         ymGoal('form_submit');
         form.reset();
-        formNote.textContent = 'Заявка отправлена. Отвечу в Telegram в течение 24 часов.';
+        formNote.textContent = 'Заявка на диагностику отправлена. Отвечу в Telegram в течение 24 часов.';
         formNote.className = 'form-note form-note--success';
         submitBtn.textContent = 'Отправлено';
       } else {
@@ -102,7 +106,7 @@ if (form) {
       formNote.textContent = 'Что-то пошло не так. Напишите мне напрямую в Telegram.';
       formNote.className = 'form-note form-note--error';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Отправить заявку';
+      submitBtn.textContent = 'Записаться на диагностику';
     }
   });
 }

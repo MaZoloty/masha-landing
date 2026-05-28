@@ -8,10 +8,9 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400 });
   }
 
-  const { name, business, link, contact, problem } = body;
-  const selectedPackage = body.package;
+  const { name, business, link, contact, problem, goal, timeline } = body;
 
-  if (!name || !contact) {
+  if (!name || !business || !link || !timeline || !contact) {
     return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
   }
 
@@ -19,11 +18,12 @@ export async function onRequestPost(context) {
   const chatId = env.TG_CHAT_ID;
 
   const text =
-    `📩 <b>Новая заявка с лендинга</b>\n\n` +
+    `📩 <b>Новая заявка на диагностику с лендинга</b>\n\n` +
     `👤 Имя: ${name}\n` +
     `💼 Бизнес: ${business || '—'}\n` +
     `🔗 Ссылка: ${link || '—'}\n` +
-    `📦 Пакет: ${selectedPackage || 'пока не знаю'}\n` +
+    `🎯 Что хочет понять: ${goal || 'пока не знаю'}\n` +
+    `🗓️ Срок: ${timeline || '—'}\n` +
     `🧩 Что не работает: ${problem || '—'}\n` +
     `📬 Связь: ${contact}`;
 
