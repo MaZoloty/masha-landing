@@ -1,0 +1,69 @@
+name: Deploy to Beget
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: beget-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      BEGET_HOST: ${{ secrets.BEGET_HOST }}
+      BEGET_PORT: ${{ secrets.BEGET_PORT }}
+      BEGET_USER: ${{ secrets.BEGET_USER }}
+      BEGET_PASSWORD: ${{ secrets.BEGET_PASSWORD }}
+      BEGET_PATH: ${{ secrets.BEGET_PATH }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Beget secrets
+        id: config
+        shell: bash
+        run: |
+          if [ -z "$BEGET_HOST" ] || [ -z "$BEGET_USER" ] || [ -z "$BEGET_PASSWORD" ] || [ -z "$BEGET_PATH" ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "Beget secrets are not configured yet. Skipping deploy."
+            exit 0
+          fi
+
+          if [ -z "$BEGET_PORT" ]; then
+            echo "port=22" >> "$GITHUB_OUTPUT"
+          else
+            echo "port=$BEGET_PORT" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install deploy tools
+        if: steps.config.outputs.ready == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync sshpass
+
+      - name: Upload files to Beget
+        if: steps.config.outputs.ready == 'true'
+        shell: bash
+        run: |
+          sshpass -p "$BEGET_PASSWORD" rsync -avz \
+            -e "ssh -p ${{ steps.config.outputs.port }} -o StrictHostKeyChecking=no" \
+            --exclude ".git/" \
+            --exclude ".github/" \
+            --exclude ".gitignore" \
+            --exclude ".wrangler/" \
+            --exclude "node_modules/" \
+            --exclude "functions/" \
+            --exclude "wrangler.toml" \
+            --exclude "*.zip" \
+            ./ "$BEGET_USER@$BEGET_HOST:$BEGET_PATH/"
