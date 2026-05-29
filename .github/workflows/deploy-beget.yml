@@ -65,5 +65,6 @@ jobs:
             --exclude "node_modules/" \
             --exclude "functions/" \
             --exclude "wrangler.toml" \
+            --exclude "automation/" \
             --exclude "*.zip" \
             ./ "$BEGET_USER@$BEGET_HOST:$BEGET_PATH/"

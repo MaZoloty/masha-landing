@@ -20,11 +20,11 @@ export async function onRequestPost(context) {
   const text =
     `📩 <b>Новая заявка на диагностику с лендинга</b>\n\n` +
     `👤 Имя: ${name}\n` +
-    `💼 Бизнес: ${business || '—'}\n` +
-    `🔗 Ссылка: ${link || '—'}\n` +
+    `💼 Бизнес: ${business || '–'}\n` +
+    `🔗 Ссылка: ${link || '–'}\n` +
     `🎯 Что хочет понять: ${goal || 'пока не знаю'}\n` +
-    `🗓️ Срок: ${timeline || '—'}\n` +
-    `🧩 Что не работает: ${problem || '—'}\n` +
+    `🗓️ Срок: ${timeline || '–'}\n` +
+    `🧩 Что не работает: ${problem || '–'}\n` +
     `📬 Связь: ${contact}`;
 
   const tgRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
