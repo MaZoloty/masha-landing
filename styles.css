@@ -916,3 +916,26 @@ p, h1, h2, h3, blockquote, li {
   .article-body { font-size: 16px; }
   .cta-box { padding: 28px 22px; }
 }
+
+@media (max-width: 600px) {
+  /* Шапка: бренд сверху, меню снизу, чтобы «Диагностика» не уезжала за край */
+  .site-bar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 0;
+  }
+  .site-bar__nav {
+    gap: 18px;
+    font-size: 14px;
+  }
+  /* Статья: компактнее заголовки и отступы на телефоне */
+  .article { padding: 28px 0 16px; }
+  .article h1 { margin-bottom: 18px; line-height: 1.22; }
+  .article-meta { gap: 10px; margin-bottom: 12px; }
+  .article-body { line-height: 1.7; }
+  .article-body > p { margin-bottom: 18px; }
+  .article-body h2 { font-size: 21px; margin: 32px 0 14px; }
+  .article-body blockquote { padding: 14px 18px; font-size: 16px; }
+  .cta-box { margin: 40px 0 64px; padding: 26px 20px; }
+}
