@@ -14,6 +14,12 @@
   </url>
   <!-- SITEMAP_POSTS_START -->
   <url>
+    <loc>https://mazoloty.ru/blog/klient-zapisalsya-i-ne-prishel/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mazoloty.ru/blog/administrator-ne-uspevaet-otvetit/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
