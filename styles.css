@@ -100,6 +100,11 @@ p, h1, h2, h3, blockquote, li {
   gap: 12px;
   align-items: center;
 }
+.hero-note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gray-400);
+}
 
 /* ── Hero ── */
 .hero {

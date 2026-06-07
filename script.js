@@ -106,7 +106,7 @@ if (form) {
       formNote.textContent = 'Что-то пошло не так. Напишите мне напрямую в Telegram.';
       formNote.className = 'form-note form-note--error';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Записаться на диагностику';
+      submitBtn.textContent = 'Понять, что исправить первым';
     }
   });
 }
