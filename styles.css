@@ -834,7 +834,10 @@ p, h1, h2, h3, blockquote, li {
 
 /* Article */
 .article {
-  padding: 40px 0 24px;
+  /* только вертикальные отступы, боковые берём из .container--narrow (24px),
+     иначе shorthand обнулял бы боковые поля и текст упирался в края */
+  padding-top: 40px;
+  padding-bottom: 24px;
 }
 .article-meta {
   font-size: 13px;
@@ -929,8 +932,8 @@ p, h1, h2, h3, blockquote, li {
     gap: 18px;
     font-size: 14px;
   }
-  /* Статья: компактнее заголовки и отступы на телефоне */
-  .article { padding: 28px 0 16px; }
+  /* Статья: компактнее заголовки и отступы на телефоне (боковые из контейнера) */
+  .article { padding-top: 28px; padding-bottom: 16px; }
   .article h1 { margin-bottom: 18px; line-height: 1.22; }
   .article-meta { gap: 10px; margin-bottom: 12px; }
   .article-body { line-height: 1.7; }
