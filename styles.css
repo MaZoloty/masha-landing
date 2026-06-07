@@ -237,57 +237,13 @@ p, h1, h2, h3, blockquote, li {
 
 /* ── Packages ── */
 /* ── Стартовый разбор ── */
-.starter {
-  background: var(--white);
-  padding-bottom: 0;
-}
-.starter-box {
-  background: var(--accent-soft);
-  border: 1.5px solid var(--accent-border);
-  border-radius: var(--radius);
-  padding: 40px;
-}
-.starter-title {
-  font-size: clamp(22px, 2.6vw, 28px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-}
-.starter-lead {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--accent-hover);
-  margin-bottom: 16px;
-}
-.starter-text {
-  font-size: 15px;
-  color: var(--gray-600);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-.starter-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--accent-border);
-}
-.starter-price {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
 .packages { background: var(--white); }
 
 .packages-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .package {
@@ -429,6 +385,11 @@ p, h1, h2, h3, blockquote, li {
   opacity: 0.45;
   line-height: 1.55;
   margin-top: 8px;
+}
+
+/* CTA прижимается к низу карточки, чтобы кнопки в ряду были на одном уровне */
+.package > .btn:last-child {
+  margin-top: auto;
 }
 
 /* ── Cases ── */
@@ -736,7 +697,6 @@ p, h1, h2, h3, blockquote, li {
   .hero-proof span { font-size: 12px; }
   .diagnostic-item { padding: 24px; }
   .package { padding: 24px; }
-  .starter-box { padding: 28px; }
   .case-body { padding: 24px; }
   .section-title { margin-bottom: 28px; }
   .section-lead {
