@@ -888,6 +888,93 @@ p, h1, h2, h3, blockquote, li {
 }
 .article-body strong { font-weight: 600; }
 
+.package a,
+.package-quote a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(147, 120, 85, 0.35);
+  text-underline-offset: 3px;
+}
+.package a:hover,
+.package-quote a:hover {
+  text-decoration-color: currentColor;
+}
+
+.blog-links {
+  background: var(--gray-50);
+}
+.blog-links-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+.blog-link-card {
+  min-height: 154px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  transition: border-color 0.18s, transform 0.18s;
+}
+.blog-link-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+.blog-link-card span {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.blog-link-card small {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+.blog-links-all {
+  display: inline-flex;
+  margin-top: 22px;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+.blog-links-all:hover { text-decoration: underline; }
+
+.related-posts {
+  margin: 36px 0 8px;
+  padding: 24px;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+}
+.related-posts h2 {
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+.related-posts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.related-posts li {
+  margin: 0;
+  border-top: 1px solid var(--gray-100);
+}
+.related-posts li:first-child { border-top: 0; }
+.related-posts a {
+  display: block;
+  padding: 12px 0;
+  color: var(--black);
+  text-decoration: none;
+}
+.related-posts a:hover { color: var(--accent); }
+
 /* CTA box (низ статьи) */
 .cta-box {
   margin: 48px 0 80px;
@@ -916,6 +1003,7 @@ p, h1, h2, h3, blockquote, li {
 
 @media (max-width: 700px) {
   .blog-grid { grid-template-columns: 1fr; }
+  .blog-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .article-body { font-size: 16px; }
   .cta-box { padding: 28px 22px; }
 }
@@ -940,5 +1028,8 @@ p, h1, h2, h3, blockquote, li {
   .article-body > p { margin-bottom: 18px; }
   .article-body h2 { font-size: 21px; margin: 32px 0 14px; }
   .article-body blockquote { padding: 14px 18px; font-size: 16px; }
+  .blog-links-grid { grid-template-columns: 1fr; }
+  .blog-link-card { min-height: 0; }
+  .related-posts { padding: 20px; }
   .cta-box { margin: 40px 0 64px; padding: 26px 20px; }
 }
