@@ -375,6 +375,12 @@ p, h1, h2, h3, blockquote, li {
   padding-top: 4px;
 }
 .accordion-body.is-open { display: block; }
+/* В кейсах раскрытие = колонка с воздухом между блоками (цитата, абзацы, пруф) */
+.case .accordion-body.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 .include-list {
   list-style: none;
