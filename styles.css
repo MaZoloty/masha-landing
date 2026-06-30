@@ -471,6 +471,21 @@ p, h1, h2, h3, blockquote, li {
   font-style: italic;
   color: var(--black);
 }
+.case-proof {
+  margin: 4px 0 2px;
+}
+.case-proof img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+}
+.case-proof figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--gray-400);
+}
 .case-results {
   list-style: none;
   display: grid;
