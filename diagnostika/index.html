@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Карта утечек записи: бесплатная диагностика для салонов</title>
+  <meta name="description" content="Бесплатная диагностика для beauty и wellness: посчитайте баллы по 12 точкам записи, примерный порядок потерь и заберите карту решений за 1 490 ₽." />
+  <link rel="canonical" href="https://mazoloty.ru/diagnostika/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mazoloty.ru/diagnostika/" />
+  <meta property="og:title" content="Карта утечек записи: бесплатная диагностика для салонов" />
+  <meta property="og:description" content="12 точек, где салон может терять записи, повторные визиты и деньги. Посчитайте риск и поймите, какие решения нужны дальше." />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Карта утечек записи",
+    "url": "https://mazoloty.ru/diagnostika/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any"
+  }
+  </script>
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
+    ym(109430856,'init',{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+  </script>
+</head>
+<body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109430856" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+
+  <header class="topbar">
+    <a class="brand" href="/">Мария Золотухина</a>
+    <nav class="topnav" aria-label="Навигация">
+      <a href="#diagnostic">Диагностика</a>
+      <a href="#result">Результат</a>
+      <a href="#solution-card">Карта решений</a>
+      <a href="#lead">Разбор</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Карта утечек записи</p>
+        <h1>Посчитайте, где салон теряет клиентов и деньги</h1>
+        <p class="lead">Бесплатная диагностика показывает 12 мест, где могут теряться заявки, пустые окна, повторные визиты и база. После результата можно сразу забрать карту решений и понять, чем закрывать свои топ-3 утечки.</p>
+        <div class="hero__actions">
+          <a class="button" href="#diagnostic">Начать диагностику</a>
+          <a class="button button--ghost" href="#solution-card">Что будет после результата</a>
+        </div>
+      </div>
+      <aside class="hero__panel" aria-label="Что будет в результате">
+        <div class="panel-line">
+          <span>12</span>
+          <p>точек записи, возврата и аналитики</p>
+        </div>
+        <div class="panel-line">
+          <span id="heroScore">0</span>
+          <p>баллов риска сейчас</p>
+        </div>
+        <div class="panel-line">
+          <span id="heroMoney">0 ₽</span>
+          <p>примерная потеря в месяц</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="intro">
+      <p>Это не точный финансовый прогноз и не обещание роста. Это рабочий способ быстро увидеть, где клиент может теряться: до записи, после отмены, после визита, в базе, в мессенджерах или в аналитике.</p>
+      <p>Логика простая: сначала увидеть свои 3 главные утечки, потом забрать карту решений за 1 490 ₽ и понять, что можно закрыть штатно, где нужны связки, а где уже нужна отдельная система.</p>
+    </section>
+
+    <section class="money" id="money">
+      <div class="section-head">
+        <p class="eyebrow">Шаг 1</p>
+        <h2>Введите базовые цифры</h2>
+        <p>Можно поставить примерные значения. Диагностика считает порядок потерь, а не бухгалтерский отчёт.</p>
+      </div>
+
+      <div class="input-grid">
+        <label class="field">
+          <span>Средний чек, ₽</span>
+          <input id="avgCheck" type="number" min="0" inputmode="numeric" value="3500" />
+        </label>
+        <label class="field">
+          <span>Записей в месяц</span>
+          <input id="monthlyBookings" type="number" min="0" inputmode="numeric" value="220" />
+        </label>
+        <label class="field">
+          <span>Новых обращений в месяц</span>
+          <input id="monthlyLeads" type="number" min="0" inputmode="numeric" value="160" />
+        </label>
+        <label class="field">
+          <span>Неотвеченных или потерянных заявок</span>
+          <input id="lostRequests" type="number" min="0" inputmode="numeric" value="12" />
+        </label>
+        <label class="field">
+          <span>Отмен и неявок в месяц</span>
+          <input id="cancellations" type="number" min="0" inputmode="numeric" value="18" />
+        </label>
+        <label class="field">
+          <span>Клиентов в базе, которые давно не были</span>
+          <input id="sleepingClients" type="number" min="0" inputmode="numeric" value="300" />
+        </label>
+      </div>
+    </section>
+
+    <section class="diagnostic" id="diagnostic">
+      <div class="section-head">
+        <p class="eyebrow">Шаг 2</p>
+        <h2>Оцените 12 точек утечки</h2>
+        <p>0 - у вас с этим всё спокойно. 3 - проблема заметная и регулярно влияет на запись.</p>
+      </div>
+
+      <div class="score-scale" aria-hidden="true">
+        <span>0 - спокойно</span>
+        <span>1 - иногда</span>
+        <span>2 - часто</span>
+        <span>3 - болит</span>
+      </div>
+
+      <div class="question-list" id="questionList"></div>
+    </section>
+
+    <section class="result" id="result">
+      <div class="result__main">
+        <p class="eyebrow">Шаг 3</p>
+        <h2>Ваш предварительный результат</h2>
+        <div class="result-number">
+          <strong id="totalMoney">0 ₽</strong>
+          <span>примерный порядок денег, которые могут теряться в месяц</span>
+        </div>
+        <div class="meter" aria-label="Уровень риска">
+          <div class="meter__bar" id="riskBar"></div>
+        </div>
+        <p class="result-status" id="riskText">Заполните диагностику, чтобы увидеть риск.</p>
+      </div>
+
+      <aside class="result__side">
+        <div class="mini-stat">
+          <span id="totalScore">0 / 36</span>
+          <p>баллов риска</p>
+        </div>
+        <div class="mini-stat">
+          <span id="topCount">0</span>
+          <p>сильных утечек</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="top-leaks">
+      <div class="section-head">
+        <p class="eyebrow">Топ-3</p>
+        <h2>С чего начать</h2>
+        <p>Ниже - три зоны, где сочетание баллов и денег выглядит самым заметным.</p>
+      </div>
+      <div class="leak-grid" id="topLeaks"></div>
+    </section>
+
+    <section class="solution-offer" id="solution-card">
+      <div class="offer-copy">
+        <p class="eyebrow">Следующий шаг после диагностики</p>
+        <h2>Заберите карту решений за 1 490 ₽</h2>
+        <p>Диагностика отвечает на вопрос “где течёт?”. Карта решений отвечает на следующий вопрос - что с этим делать.</p>
+        <p>Внутри разобраны все 12 утечек записи: что можно настроить в YClients или Dikidi, где помогут простые внешние инструменты, а где уже нужна своя система уведомлений, возврата и аналитики.</p>
+        <div class="offer-actions">
+          <a class="button button--light" href="https://t.me/masha_zoloty" target="_blank" rel="noopener" data-goal="solution_card_click">Забрать карту за 1 490 ₽</a>
+          <a class="button button--ghost-light" href="#lead" data-goal="diagnostic_lead_click">Сначала хочу на разбор</a>
+        </div>
+      </div>
+
+      <aside class="offer-card" aria-label="Что входит в карту решений">
+        <div class="price-line">
+          <span>1 490 ₽</span>
+          <p>часто меньше, чем одно пустое окно в расписании</p>
+        </div>
+        <ul class="offer-list">
+          <li>12 утечек записи с понятными вариантами решений</li>
+          <li>3 уровня: базовый, оптимальный, продвинутый</li>
+          <li>7 сценариев, которые чаще всего возвращают деньги</li>
+          <li>маршрут: с чего начать, если всё болит сразу</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="route">
+      <div class="route__copy">
+        <p class="eyebrow">Лестница дальше</p>
+        <h2>Разбор нужен не вместо карты, а после неё</h2>
+        <p>Карта помогает увидеть варианты решений. Разбор нужен, если после карты понятно, что точек много и хочется выбрать порядок действий под ваш салон, базу, администраторов и каналы записи.</p>
+      </div>
+      <div class="route__steps">
+        <span>Диагностика</span>
+        <span>Карта решений за 1 490 ₽</span>
+        <span>Разбор 3 утечек за 5 000 ₽</span>
+        <span>Внедрение</span>
+      </div>
+    </section>
+
+    <section class="lead-form" id="lead">
+      <div class="section-head">
+        <p class="eyebrow">Следующий уровень</p>
+        <h2>Разбор 3 утечек за 5 000 ₽</h2>
+        <p>Если после карты решений понятно, что точек много и не хочется внедрять наугад, можно отправить результат. На разборе берём ваши 3 главные утечки и выбираем, что чинить первым.</p>
+      </div>
+
+      <form class="form" id="diagnosticForm" novalidate>
+        <label class="field">
+          <span>Имя</span>
+          <input type="text" name="name" autocomplete="name" required />
+        </label>
+        <label class="field">
+          <span>Бизнес</span>
+          <input type="text" name="business" placeholder="Салон, студия массажа, эпиляция, wellness..." required />
+        </label>
+        <label class="field">
+          <span>Ссылка на сайт, соцсеть или запись</span>
+          <input type="text" name="link" placeholder="mazoloty.ru, vk.com, t.me..." required />
+        </label>
+        <label class="field">
+          <span>Как с вами связаться</span>
+          <input type="text" name="contact" placeholder="Telegram @username или телефон" required />
+        </label>
+        <label class="field field--wide">
+          <span>Комментарий</span>
+          <textarea name="comment" rows="4" placeholder="Можно добавить, что сейчас особенно беспокоит"></textarea>
+        </label>
+        <label class="consent">
+          <input type="checkbox" id="consent" required />
+          <span>Я согласен(на) на <a href="/privacy.html" target="_blank">обработку персональных данных</a></span>
+        </label>
+        <button class="button" id="submitBtn" type="submit">Отправить результат</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Мария Золотухина · <a href="/">Главная</a> · <a href="/privacy.html">Политика конфиденциальности</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
