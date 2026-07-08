@@ -326,8 +326,8 @@ function updateTotals() {
 
   if (byId("heroScore")) byId("heroScore").textContent = String(totalScore);
   if (byId("heroMoney")) byId("heroMoney").textContent = totalScore ? formatMoney(totalMoney) : "—";
-  if (byId("totalScore")) byId("totalScore").textContent = `${totalScore} / 36`;
-  if (byId("topCount")) byId("topCount").textContent = String(strongLeaks);
+  if (byId("totalScore")) byId("totalScore").textContent = totalScore ? `${totalScore} / 36` : "— / 36";
+  if (byId("topCount")) byId("topCount").textContent = totalScore ? String(strongLeaks) : "—";
   if (byId("totalMoney")) byId("totalMoney").textContent = totalScore ? formatMoney(totalMoney) : "—";
   if (byId("riskBar")) byId("riskBar").style.width = `${percent}%`;
   if (byId("riskText")) byId("riskText").textContent = riskText(totalScore);

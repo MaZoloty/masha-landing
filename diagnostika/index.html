@@ -38,45 +38,163 @@
   <main>
     <section class="hero" id="top">
       <div class="hero__copy">
-        <p class="eyebrow">Интерактивный мини-аудит для beauty и wellness</p>
+        <p class="eyebrow">Бесплатная диагностика для beauty и wellness</p>
         <h1>Карта утечек записи</h1>
-        <p class="lead">Проверьте 12 мест, где салон может терять заявки, повторные визиты, пустые окна и деньги. В конце вы получите короткий отчёт: 3 главные зоны риска и первый разумный шаг.</p>
+        <p class="lead">За 7 минут вы увидите, где клиент теряется: до заявки, после заявки и перед повторным визитом. Без “волшебной автоматизации” — только управленческий срез, деньги и первый разумный шаг.</p>
         <div class="hero__actions">
           <a class="button" href="#money" onclick="if(window.ym){ym(109430856,'reachGoal','diagnostic_start')}">Начать с базовых цифр</a>
+          <span class="hero__note">для салонов на YClients, Dikidi и смешанных каналах записи</span>
         </div>
       </div>
 
-      <aside class="audit-preview" aria-label="Что будет в результате">
-        <div class="audit-preview__top">
-          <span>Предварительный отчёт</span>
-          <b>после диагностики</b>
+      <aside class="report-mockup" aria-label="Mockup отчёта Карта утечек записи">
+        <div class="report-mockup__bar">
+          <span>Карта утечек записи</span>
+          <b>preview</b>
         </div>
-        <div class="audit-preview__grid">
-          <div>
-            <small>Будет рассчитано</small>
-            <strong>топ-3 утечки</strong>
-          </div>
-          <div>
-            <small>Ориентир</small>
-            <strong>порядок потерь</strong>
-          </div>
+        <div class="report-mockup__hero">
+          <small>Предварительный отчёт</small>
+          <strong>Где салон теряет записи</strong>
+          <p>После диагностики здесь появятся риск, деньги и приоритеты. До прохождения — только структура отчёта, без фальшивых нулей.</p>
         </div>
-        <div class="audit-map" aria-hidden="true">
+        <div class="report-mockup__metrics" aria-hidden="true">
+          <div><span>будет рассчитано</span><b>уровень риска</b></div>
+          <div><span>будет видно</span><b>3 утечки</b></div>
+          <div><span>ориентир</span><b>потери / месяц</b></div>
+        </div>
+        <div class="report-mockup__path" aria-hidden="true">
           <span>До записи</span>
-          <span>Расписание</span>
-          <span>База</span>
-          <span>Мессенджеры</span>
-          <span>Повторы</span>
-          <span>Аналитика</span>
+          <span>Заявка</span>
+          <span>Визит</span>
+          <span>Возврат</span>
         </div>
-        <p>Без обещаний роста и “волшебной автоматизации”. Цель — понять, где клиент чаще всего выпадает и какой уровень решения нужен.</p>
       </aside>
     </section>
 
-    <section class="flow-strip" aria-label="Этапы диагностики">
-      <a href="#money"><span>01</span> Цифры для расчёта</a>
-      <a href="#diagnostic"><span>02</span> 12 точек утечки</a>
-      <a href="#result"><span>03</span> Отчёт и приоритеты</a>
+    <section class="proof-ribbon" aria-label="Что проверяется">
+      <span>до записи</span>
+      <span>скорость ответа</span>
+      <span>отмены</span>
+      <span>повторный визит</span>
+      <span>спящая база</span>
+      <span>мессенджеры</span>
+      <span>аналитика</span>
+    </section>
+
+    <section class="bento-checks" aria-labelledby="checksTitle">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Что проверяю</p>
+          <h2 id="checksTitle">Не “сайт красивый или нет”, а где теряется запись</h2>
+        </div>
+        <p>Диагностика смотрит на путь клиента как на систему: от первого касания до повторной записи. Поэтому блоки выглядят по-разному, а не как одинаковые карточки.</p>
+      </div>
+      <div class="bento-grid">
+        <article class="bento-card bento-card--wide">
+          <span class="chip">01 · вход</span>
+          <h3>Понимает ли клиент, куда нажать и какую услугу выбрать</h3>
+          <p>Смотрю сайт, соцсети, карты, онлайн-запись и первые сообщения. Часто клиент не уходит из-за цены — он просто не понял путь.</p>
+        </article>
+        <article class="bento-card bento-card--dark">
+          <span class="chip chip--light">02 · заявки</span>
+          <h3>Где обращение зависает между админом и каналами</h3>
+          <p>Telegram, VK, WhatsApp, Direct, карты и CRM должны быть управляемой системой, а не набором окон.</p>
+        </article>
+        <article class="bento-card">
+          <span class="chip">03 · визит</span>
+          <h3>Почему появляются пустые окна</h3>
+          <p>Отмены, неявки, напоминания, подтверждения и сценарий переноса.</p>
+        </article>
+        <article class="bento-card bento-card--accent">
+          <span class="chip">04 · возврат</span>
+          <h3>Что происходит после услуги</h3>
+          <p>Есть ли касание, рекомендация, повод вернуться и работа со спящей базой.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="journey-map" aria-labelledby="journeyTitle">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Путь клиента</p>
+          <h2 id="journeyTitle">Запись теряется не в одном месте</h2>
+        </div>
+        <p>Я раскладываю путь на точки, где салон обычно теряет деньги: до заявки, в момент ответа, после отмены и перед повторным визитом.</p>
+      </div>
+      <div class="journey-line">
+        <article>
+          <span>01</span>
+          <h3>Увидел</h3>
+          <p>карты, сайт, соцсети, рекомендация</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Понял</h3>
+          <p>услуги, цены, мастера, свободное время</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Написал</h3>
+          <p>мессенджер, форма, звонок, онлайн-запись</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Дошёл</h3>
+          <p>напоминание, подтверждение, перенос</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Вернулся</h3>
+          <p>повторная запись, база, рекомендации</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="fit-panel" aria-labelledby="fitTitle">
+      <div>
+        <p class="eyebrow">Ко мне стоит прийти, если</p>
+        <h2 id="fitTitle">Кажется, что заявки есть, но система всё равно течёт</h2>
+      </div>
+      <div class="fit-tags">
+        <span>админы отвечают вручную</span>
+        <span>онлайн-запись есть, но ей не доверяют</span>
+        <span>клиенты отменяют и пропадают</span>
+        <span>база большая, но спит</span>
+        <span>каналов много, контроля мало</span>
+        <span>непонятно, что чинить первым</span>
+      </div>
+    </section>
+
+    <section class="deliverables" aria-labelledby="deliverablesTitle">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Что получите после диагностики</p>
+          <h2 id="deliverablesTitle">Не список ошибок, а рабочий фокус</h2>
+        </div>
+        <p>Результат нужен не для страха, а для порядка действий: где потери заметнее, что проверить первым и каким уровнем решения это закрывать.</p>
+      </div>
+      <div class="deliverables-grid">
+        <article><span>01</span><h3>Общий уровень риска</h3><p>Понимание, насколько система записи сейчас зависит от ручного контроля.</p></article>
+        <article><span>02</span><h3>Топ-3 утечки</h3><p>Приоритеты, с которых разумнее начать, а не список “чинить всё”.</p></article>
+        <article><span>03</span><h3>Ориентир по деньгам</h3><p>Примерный порядок потерь в месяц без обещаний роста и точных прогнозов.</p></article>
+        <article><span>04</span><h3>Первый шаг</h3><p>Что проверить сразу: CRM, мессенджеры, базу, отмены или повторную запись.</p></article>
+      </div>
+    </section>
+
+    <section class="problem-examples" aria-labelledby="problemsTitle">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Примеры проблем</p>
+          <h2 id="problemsTitle">Типовые утечки выглядят буднично</h2>
+        </div>
+        <p>Именно поэтому они долго незаметны: каждый случай кажется мелочью, но за месяц превращается в деньги и пустые окна.</p>
+      </div>
+      <div class="examples-grid">
+        <article><b>“Мы ответили, но клиент не записался”</b><p>Нет статуса заявки и понятного следующего шага.</p></article>
+        <article><b>“Записался, потом отменил”</b><p>Нет сценария переноса и задачи вернуть клиента.</p></article>
+        <article><b>“База большая, но молчит”</b><p>Нет сегментов по давности визита и истории услуг.</p></article>
+        <article><b>“Рассылки есть, результата не видно”</b><p>Нет контроля доставки, каскада каналов и аналитики.</p></article>
+      </div>
     </section>
 
     <section class="step-section money" id="money">
@@ -158,7 +276,7 @@
         </article>
         <article class="dashboard-card">
           <span>Уровень риска</span>
-          <strong id="totalScore">0 / 36</strong>
+          <strong id="totalScore">— / 36</strong>
           <div class="meter" aria-label="Уровень риска">
             <div class="meter__bar" id="riskBar"></div>
           </div>
@@ -166,7 +284,7 @@
         </article>
         <article class="dashboard-card">
           <span>Сильных утечек</span>
-          <strong id="topCount">0</strong>
+          <strong id="topCount">—</strong>
           <p>Так считаются зоны с оценкой 2 или 3. Их стоит проверять первыми.</p>
         </article>
       </div>
