@@ -328,6 +328,15 @@ main {
   gap: 12px;
 }
 
+.step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
 .field {
   display: grid;
   gap: 8px;
@@ -777,6 +786,11 @@ input[type="range"] {
   .hero__actions,
   .button {
     width: 100%;
+  }
+
+  .step-actions {
+    margin-top: 22px;
+    padding-top: 20px;
   }
 
   .input-grid,

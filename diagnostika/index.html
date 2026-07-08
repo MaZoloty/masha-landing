@@ -37,7 +37,7 @@
   <header class="topbar">
     <a class="brand" href="/">Мария Золотухина</a>
     <nav class="topnav" aria-label="Навигация">
-      <a href="#diagnostic">Диагностика</a>
+      <a href="#money">Диагностика</a>
       <a href="#result">Результат</a>
       <a href="#solution-card">Карта решений</a>
       <a href="#lead">Разбор</a>
@@ -51,8 +51,7 @@
         <h1>Посчитайте, где салон теряет клиентов и деньги</h1>
         <p class="lead">Бесплатная диагностика показывает 12 мест, где могут теряться заявки, пустые окна, повторные визиты и база. После результата можно сразу забрать карту решений и понять, чем закрывать свои топ-3 утечки.</p>
         <div class="hero__actions">
-          <a class="button" href="#diagnostic">Начать диагностику</a>
-          <a class="button button--ghost" href="#solution-card">Что будет после результата</a>
+          <a class="button" href="#money" data-goal="diagnostic_start">Начать диагностику</a>
         </div>
       </div>
       <aside class="hero__panel" aria-label="Что будет в результате">
@@ -69,11 +68,6 @@
           <p>примерная потеря в месяц</p>
         </div>
       </aside>
-    </section>
-
-    <section class="intro">
-      <p>Это не точный финансовый прогноз и не обещание роста. Это рабочий способ быстро увидеть, где клиент может теряться: до записи, после отмены, после визита, в базе, в мессенджерах или в аналитике.</p>
-      <p>Логика простая: сначала увидеть свои 3 главные утечки, потом забрать карту решений за 1 490 ₽ и понять, что можно закрыть штатно, где нужны связки, а где уже нужна отдельная система.</p>
     </section>
 
     <section class="money" id="money">
@@ -109,6 +103,9 @@
           <input id="sleepingClients" type="number" min="0" inputmode="numeric" value="300" />
         </label>
       </div>
+      <div class="step-actions">
+        <a class="button" href="#diagnostic">Дальше: оценить 12 точек</a>
+      </div>
     </section>
 
     <section class="diagnostic" id="diagnostic">
@@ -126,6 +123,14 @@
       </div>
 
       <div class="question-list" id="questionList"></div>
+      <div class="step-actions">
+        <a class="button" href="#result">Посмотреть результат</a>
+      </div>
+    </section>
+
+    <section class="intro">
+      <p>Это не точный финансовый прогноз и не обещание роста. Это рабочий способ быстро увидеть, где клиент может теряться: до записи, после отмены, после визита, в базе, в мессенджерах или в аналитике.</p>
+      <p>Логика простая: сначала увидеть свои 3 главные утечки, потом забрать карту решений за 1 490 ₽ и понять, что можно закрыть штатно, где нужны связки, а где уже нужна отдельная система.</p>
     </section>
 
     <section class="result" id="result">
