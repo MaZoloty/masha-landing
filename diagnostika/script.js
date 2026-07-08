@@ -5,6 +5,7 @@ const leaks = [
     area: 'До записи',
     question: 'Клиенту сложно быстро понять услуги, цены, мастеров и куда нажать, чтобы записаться.',
     formula: ({ score, avgCheck, monthlyLeads }) => score / 3 * monthlyLeads * 0.06 * avgCheck,
+    checks: ['Сколько кликов от первого касания до записи', 'Понятны ли цены, длительность и результат услуги', 'Есть ли один очевидный способ записаться'],
     preview: 'Сначала смотрим путь клиента: сайт, соцсети, карты, YClients или Dikidi. Задача - убрать лишние шаги до записи.'
   },
   {
@@ -13,6 +14,7 @@ const leaks = [
     area: 'Расписание',
     question: 'Есть пустые окна из-за поздних отмен, неявок или слабых напоминаний.',
     formula: ({ score, avgCheck, cancellations }) => score / 3 * cancellations * avgCheck,
+    checks: ['Когда клиент получает напоминание', 'Есть ли подтверждение записи', 'Кто видит риск пустого окна заранее'],
     preview: 'Проверяем напоминания, запасные каналы, подтверждение записи и сценарий возврата после отмены.'
   },
   {
@@ -21,6 +23,7 @@ const leaks = [
     area: 'База',
     question: 'В базе есть люди, которые давно не были, но с ними нет регулярной работы.',
     formula: ({ score, avgCheck, sleepingClients }) => score / 3 * sleepingClients * 0.12 * avgCheck,
+    checks: ['Есть ли сегменты 30/60/90 дней', 'Понятно ли, кто давно не был', 'Есть ли мягкий сценарий возврата'],
     preview: 'Базу нужно делить по давности визита: 30, 60, 90 дней. Одно сообщение всем подряд обычно работает слабо.'
   },
   {
@@ -29,6 +32,7 @@ const leaks = [
     area: 'Возврат',
     question: 'Клиенты с разной историей получают одинаковые сообщения и предложения.',
     formula: ({ score, avgCheck, monthlyBookings }) => score / 3 * monthlyBookings * 0.03 * avgCheck,
+    checks: ['Разделены ли новые и постоянные клиенты', 'Учитывается ли последняя услуга', 'Есть ли разные поводы для возврата'],
     preview: 'Сегменты по услуге, давности визита и поведению помогают писать не всем одинаково, а по ситуации клиента.'
   },
   {
@@ -37,6 +41,7 @@ const leaks = [
     area: 'Доверие',
     question: 'Отзывы зависят от ручной просьбы администратора, а негатив не видно вовремя.',
     formula: ({ score, avgCheck, monthlyLeads }) => score / 3 * monthlyLeads * 0.02 * avgCheck,
+    checks: ['Кому и когда уходит просьба об отзыве', 'Как обрабатывается негатив', 'Есть ли контроль, что отзыв реально попросили'],
     preview: 'Нужен сценарий после визита: довольных мягко вести к отзыву, недовольных - сначала в личный контакт.'
   },
   {
@@ -45,6 +50,7 @@ const leaks = [
     area: 'Входящие',
     question: 'Обращения приходят из разных каналов, и часть из них не доходит до записи.',
     formula: ({ score, avgCheck, lostRequests }) => score / 3 * lostRequests * 0.65 * avgCheck,
+    checks: ['Где собираются заявки из всех каналов', 'Какая средняя скорость ответа', 'Есть ли статус: ответили, записали, потеряли'],
     preview: 'Проверяем единое окно, скорость ответа, шаблоны, статусы и контроль: был ли ответ, дошёл ли человек до записи.'
   },
   {
@@ -53,6 +59,7 @@ const leaks = [
     area: 'Повторная запись',
     question: 'После услуги клиенту не приходит понятное касание, рекомендация или повод записаться снова.',
     formula: ({ score, avgCheck, monthlyBookings }) => score / 3 * monthlyBookings * 0.05 * avgCheck,
+    checks: ['Есть ли касание после визита', 'Получает ли клиент рекомендацию по сроку', 'Ведёт ли сообщение к повторной записи'],
     preview: 'После визита нужна не рассылка ради рассылки, а цепочка: забота, рекомендация, повторная запись, отзыв.'
   },
   {
@@ -61,6 +68,7 @@ const leaks = [
     area: 'Лояльность',
     question: 'Личные даты клиентов не собираются или не используются для мягкого возврата.',
     formula: ({ score, avgCheck, monthlyBookings }) => score / 3 * monthlyBookings * 0.015 * avgCheck,
+    checks: ['Собирается ли дата рождения', 'Есть ли персональный повод вернуться', 'Не выглядит ли сообщение как массовая акция'],
     preview: 'День рождения - нормальный повод вернуться, если предложение персональное и не выглядит как массовый спам.'
   },
   {
@@ -69,6 +77,7 @@ const leaks = [
     area: 'Возврат',
     question: 'После отмены клиент не получает ссылку на новое время, а администратор не видит задачу вернуть его.',
     formula: ({ score, avgCheck, cancellations }) => score / 3 * cancellations * 0.45 * avgCheck,
+    checks: ['Получает ли клиент ссылку на новое время', 'Ставится ли задача администратору', 'Есть ли отдельный сценарий для отменивших'],
     preview: 'Отмена не всегда потеря. Нужен короткий сценарий: новое время, задача администратору, сегмент сорвавшейся записи.'
   },
   {
@@ -77,6 +86,7 @@ const leaks = [
     area: 'Средний чек',
     question: 'Смежные услуги и рекомендации не предлагаются по истории клиента.',
     formula: ({ score, avgCheck, monthlyBookings }) => score / 3 * monthlyBookings * 0.04 * avgCheck,
+    checks: ['Есть ли рекомендации по истории клиента', 'Понимает ли мастер следующий логичный шаг', 'Фиксируются ли допродажи в процессе'],
     preview: 'Допродажа лучше работает не как давление, а как уместная рекомендация по услуге, истории и следующему шагу.'
   },
   {
@@ -85,6 +95,7 @@ const leaks = [
     area: 'Уведомления',
     question: 'SMS, push или мессенджеры работают дорого, нестабильно или без понятной проверки доставки.',
     formula: ({ score, monthlyBookings }) => score / 3 * monthlyBookings * 28,
+    checks: ['Видно ли, доставлено сообщение или нет', 'Есть ли запасной канал', 'Понимаете ли стоимость касаний в месяц'],
     preview: 'Смотрим каскад: если один канал не сработал, сообщение уходит в другой, а сбой становится виден.'
   },
   {
@@ -93,10 +104,12 @@ const leaks = [
     area: 'Управление',
     question: 'Непонятно, где реально теряются деньги: в заявках, отменах, базе, повторных визитах или администраторах.',
     formula: ({ score, avgCheck, monthlyBookings }) => score / 3 * monthlyBookings * 0.025 * avgCheck,
+    checks: ['Видны ли заявки, записи и отмены в одной логике', 'Считаете ли повторные визиты', 'Понятно ли, какой канал реально даёт запись'],
     preview: 'Без цифр бизнес чинит по ощущениям. Минимум - видеть заявки, записи, отмены, повторные визиты и спящих клиентов.'
   }
 ];
 
+const scoreLabels = ['0 - спокойно', '1 - иногда', '2 - часто', '3 - болит'];
 const moneyInputs = ['avgCheck', 'monthlyBookings', 'monthlyLeads', 'lostRequests', 'cancellations', 'sleepingClients'];
 const questionList = document.getElementById('questionList');
 const topLeaks = document.getElementById('topLeaks');
@@ -139,20 +152,31 @@ function riskLabel(totalScore) {
 function renderQuestions() {
   questionList.innerHTML = leaks.map((item, index) => `
     <article class="question">
-      <div>
+      <div class="question__main">
         <div class="question__meta">
-          <span class="tag">${String(index + 1).padStart(2, '0')}</span>
+          <span class="question__num">${String(index + 1).padStart(2, '0')}</span>
           <span class="tag">${item.area}</span>
         </div>
         <h3>${item.title}</h3>
-        <p>${item.question}</p>
+        <p class="question__problem">${item.question}</p>
+        <div class="check-block">
+          <span>Что проверить</span>
+          <ul>
+            ${item.checks.map(check => `<li>${check}</li>`).join('')}
+          </ul>
+        </div>
       </div>
       <div class="slider-wrap">
         <div class="slider-top">
           <span>Оценка</span>
           <span class="score-value" id="value-${item.id}">0</span>
         </div>
-        <input id="score-${item.id}" type="range" min="0" max="3" step="1" value="0" aria-label="${item.title}" />
+        <input id="score-${item.id}" type="hidden" value="0" />
+        <div class="score-options" role="radiogroup" aria-label="${item.title}">
+          ${scoreLabels.map((label, score) => `
+            <button class="score-option" type="button" data-item="${item.id}" data-score="${score}" aria-pressed="${score === 0 ? 'true' : 'false'}">${label}</button>
+          `).join('')}
+        </div>
         <div class="money-hint" id="loss-${item.id}">0 ₽ в месяц</div>
       </div>
     </article>
@@ -169,10 +193,17 @@ function renderTop(items) {
 
   topLeaks.innerHTML = list.map((item, index) => `
     <article class="leak-card">
-      <span class="leak-card__num">${index + 1}</span>
+      <div class="leak-card__head">
+        <span class="leak-card__num">${index + 1}</span>
+        <span class="tag">${item.area}</span>
+      </div>
       <h3>${item.title}</h3>
-      <p><strong>${formatMoney(item.monthlyLoss)}</strong> - примерный порядок потерь в месяц.</p>
-      <p>${item.preview}</p>
+      <div class="leak-card__metrics">
+        <span>${item.score}/3</span>
+        <strong>${formatMoney(item.monthlyLoss)}</strong>
+      </div>
+      <p class="leak-card__caption">примерный порядок потерь в месяц</p>
+      <p class="leak-card__hint"><span>С чего начать</span>${item.preview}</p>
     </article>
   `).join('');
 }
@@ -193,6 +224,11 @@ function update() {
   state.items.forEach(item => {
     document.getElementById(`value-${item.id}`).textContent = item.score;
     document.getElementById(`loss-${item.id}`).textContent = `${formatMoney(item.monthlyLoss)} в месяц`;
+    document.querySelectorAll(`[data-item="${item.id}"]`).forEach(button => {
+      const isActive = Number(button.dataset.score) === item.score;
+      button.classList.toggle('score-option--active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
   });
 
   renderTop(state.items);
@@ -272,6 +308,12 @@ async function submitForm(event) {
 
 renderQuestions();
 document.querySelectorAll('input').forEach(input => input.addEventListener('input', update));
+document.querySelectorAll('.score-option').forEach(button => {
+  button.addEventListener('click', () => {
+    document.getElementById(`score-${button.dataset.item}`).value = button.dataset.score;
+    update();
+  });
+});
 document.querySelectorAll('a[href="#diagnostic"]').forEach(link => {
   link.addEventListener('click', () => ymGoal('diagnostic_start'));
 });

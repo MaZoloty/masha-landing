@@ -348,25 +348,44 @@ main {
 
 .question-list {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
 .question {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 292px;
-  gap: 28px;
-  align-items: center;
-  padding: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+  gap: clamp(20px, 3vw, 34px);
+  align-items: stretch;
+  padding: clamp(20px, 3vw, 28px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fffdf8;
+  box-shadow: 0 14px 36px rgba(21, 23, 20, 0.04);
+}
+
+.question__main {
+  display: grid;
+  align-content: start;
 }
 
 .question__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 11px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.question__num {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  color: var(--green);
+  font-weight: 900;
+  letter-spacing: 0.02em;
 }
 
 .tag {
@@ -386,10 +405,59 @@ main {
   color: var(--muted);
 }
 
+.question__problem {
+  max-width: 760px;
+  font-size: 17px;
+}
+
+.check-block {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--gold);
+  background: #f7f3ea;
+}
+
+.check-block > span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.check-block ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-block li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+
+.check-block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
 .slider-wrap {
   display: grid;
-  gap: 10px;
-  padding: 14px;
+  gap: 14px;
+  align-content: center;
+  padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface-2);
@@ -412,9 +480,40 @@ input[type="range"] {
   accent-color: var(--green);
 }
 
+.score-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.score-option {
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: #fffdf8;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: left;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.score-option:hover {
+  transform: translateY(-1px);
+  border-color: var(--green-2);
+}
+
+.score-option--active {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--white);
+}
+
 .money-hint {
-  min-height: 30px;
-  padding: 7px 10px;
+  min-height: 38px;
+  padding: 9px 11px;
   border: 1px solid rgba(167, 123, 55, 0.22);
   border-radius: var(--radius);
   background: #fbf6eb;
@@ -499,14 +598,20 @@ input[type="range"] {
 }
 
 .leak-card {
-  min-height: 312px;
+  min-height: 340px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 13px;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fffdf8;
+}
+
+.leak-card__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .leak-card__num {
@@ -520,13 +625,60 @@ input[type="range"] {
   font-weight: 900;
 }
 
+.leak-card__metrics {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+  align-items: end;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.leak-card__metrics span {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f4f1e9;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.leak-card__metrics strong {
+  color: #74531f;
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1;
+}
+
 .leak-card p {
   margin: 0;
   color: var(--muted);
 }
 
-.leak-card strong {
-  color: #74531f;
+.leak-card__caption {
+  font-size: 13px;
+}
+
+.leak-card__hint {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f7f3ea;
+  font-size: 14px;
+}
+
+.leak-card__hint span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .solution-offer {
