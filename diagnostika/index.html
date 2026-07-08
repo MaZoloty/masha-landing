@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Карта утечек записи: бесплатная диагностика для салонов</title>
-  <meta name="description" content="Бесплатная диагностика для beauty и wellness: посчитайте баллы по 12 точкам записи, примерный порядок потерь и поймите, какой уровень решения нужен вашему салону." />
+  <title>Карта утечек записи: диагностика для салонов</title>
+  <meta name="description" content="Интерактивная диагностика для beauty и wellness: найдите 3 главные утечки записи, оцените примерный порядок потерь и поймите, с чего начать." />
   <link rel="canonical" href="https://mazoloty.ru/diagnostika/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mazoloty.ru/diagnostika/" />
-  <meta property="og:title" content="Карта утечек записи: бесплатная диагностика для салонов" />
-  <meta property="og:description" content="12 точек, где салон может терять записи, повторные визиты и деньги. Посчитайте риск и поймите, какие решения нужны дальше." />
+  <meta property="og:title" content="Карта утечек записи: диагностика для салонов" />
+  <meta property="og:description" content="Пройдите диагностику, получите топ-3 утечки записи и поймите, где салон может терять заявки, повторы и деньги." />
   <meta property="og:locale" content="ru_RU" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
@@ -23,7 +23,8 @@
     "name": "Карта утечек записи",
     "url": "https://mazoloty.ru/diagnostika/",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Any"
+    "operatingSystem": "Any",
+    "description": "Интерактивная диагностика для beauty и wellness: 12 точек, где салон теряет записи, повторы и деньги."
   }
   </script>
   <script type="text/javascript">
@@ -35,36 +36,56 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/109430856" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="hero__copy">
-        <p class="eyebrow">Карта утечек записи</p>
-        <h1>Посчитайте, где салон теряет клиентов и деньги</h1>
-        <p class="lead">Бесплатная диагностика показывает 12 мест, где могут теряться заявки, пустые окна, повторные визиты и база. После результата вы увидите топ-3 утечки и поймёте, какой уровень решения нужен: настройка внутри текущей системы, простая связка или отдельная автоматизация.</p>
+        <p class="eyebrow">Интерактивный мини-аудит для beauty и wellness</p>
+        <h1>Карта утечек записи</h1>
+        <p class="lead">Проверьте 12 мест, где салон может терять заявки, повторные визиты, пустые окна и деньги. В конце вы получите короткий отчёт: 3 главные зоны риска и первый разумный шаг.</p>
         <div class="hero__actions">
-          <a class="button" href="#money" data-goal="diagnostic_start">Начать диагностику</a>
+          <a class="button" href="#money" onclick="if(window.ym){ym(109430856,'reachGoal','diagnostic_start')}">Начать с базовых цифр</a>
         </div>
       </div>
-      <aside class="hero__panel" aria-label="Что будет в результате">
-        <div class="panel-line">
-          <span>12</span>
-          <p>точек записи, возврата и аналитики</p>
+
+      <aside class="audit-preview" aria-label="Что будет в результате">
+        <div class="audit-preview__top">
+          <span>Предварительный отчёт</span>
+          <b>после диагностики</b>
         </div>
-        <div class="panel-line">
-          <span id="heroScore">0</span>
-          <p>баллов риска сейчас</p>
+        <div class="audit-preview__grid">
+          <div>
+            <small>Будет рассчитано</small>
+            <strong>топ-3 утечки</strong>
+          </div>
+          <div>
+            <small>Ориентир</small>
+            <strong>порядок потерь</strong>
+          </div>
         </div>
-        <div class="panel-line">
-          <span id="heroMoney">0 ₽</span>
-          <p>примерная потеря в месяц</p>
+        <div class="audit-map" aria-hidden="true">
+          <span>До записи</span>
+          <span>Расписание</span>
+          <span>База</span>
+          <span>Мессенджеры</span>
+          <span>Повторы</span>
+          <span>Аналитика</span>
         </div>
+        <p>Без обещаний роста и “волшебной автоматизации”. Цель — понять, где клиент чаще всего выпадает и какой уровень решения нужен.</p>
       </aside>
     </section>
 
-    <section class="money" id="money">
-      <div class="section-head">
-        <p class="eyebrow">Шаг 1</p>
-        <h2>Введите базовые цифры</h2>
-        <p>Можно поставить примерные значения. Диагностика считает порядок потерь, а не бухгалтерский отчёт.</p>
+    <section class="flow-strip" aria-label="Этапы диагностики">
+      <a href="#money"><span>01</span> Цифры для расчёта</a>
+      <a href="#diagnostic"><span>02</span> 12 точек утечки</a>
+      <a href="#result"><span>03</span> Отчёт и приоритеты</a>
+    </section>
+
+    <section class="step-section money" id="money">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Шаг 1</p>
+          <h2>Введите примерные цифры</h2>
+        </div>
+        <p>Нужны не идеальные данные, а порядок величин. Диагностика не заменяет финансовый отчёт, она помогает увидеть масштаб возможных потерь.</p>
       </div>
 
       <div class="input-grid">
@@ -93,102 +114,118 @@
           <input id="sleepingClients" type="number" min="0" inputmode="numeric" value="300" />
         </label>
       </div>
+
       <div class="step-actions">
-        <a class="button" href="#diagnostic">Дальше: оценить 12 точек</a>
+        <a class="button button--ghost" href="#diagnostic">Дальше: оценить 12 точек</a>
       </div>
     </section>
 
-    <section class="diagnostic" id="diagnostic">
-      <div class="section-head">
-        <p class="eyebrow">Шаг 2</p>
-        <h2>Оцените 12 точек утечки</h2>
-        <p>0 - у вас с этим всё спокойно. 3 - проблема заметная и регулярно влияет на запись.</p>
-      </div>
-
-      <div class="score-scale" aria-hidden="true">
-        <span>0 - спокойно</span>
-        <span>1 - иногда</span>
-        <span>2 - часто</span>
-        <span>3 - болит</span>
+    <section class="step-section diagnostic" id="diagnostic">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Шаг 2</p>
+          <h2>Оцените 12 точек утечки</h2>
+        </div>
+        <p>Оценивайте не “насколько всё плохо”, а насколько пункт похож на вашу реальную ситуацию. 0 — спокойно, 3 — регулярно влияет на запись, возвраты или деньги.</p>
       </div>
 
       <div class="question-list" id="questionList"></div>
+
       <div class="step-actions">
-        <a class="button" href="#result">Посмотреть результат</a>
+        <a class="button button--ghost" href="#result">Посмотреть отчёт</a>
       </div>
     </section>
 
-    <section class="intro">
-      <p>Это не точный финансовый прогноз и не обещание роста. Это рабочий способ быстро увидеть, где клиент может теряться: до записи, после отмены, после визита, в базе, в мессенджерах или в аналитике.</p>
-      <p>Логика простая: сначала увидеть свои 3 главные утечки, потом не чинить наугад, а понять уровень решения: что можно закрыть штатно, где нужны связки, а где уже нужна отдельная система.</p>
+    <section class="audit-note">
+      <span>Как читать результат</span>
+      <p>Расчёт не обещает выручку. Он показывает порядок потерь и помогает выбрать, что проверять первым: не всю систему сразу, а 1–2 самые заметные утечки.</p>
     </section>
 
     <section class="result" id="result">
-      <div class="result__main">
-        <p class="eyebrow">Шаг 3</p>
-        <h2>Ваш предварительный результат</h2>
-        <div class="result-number">
-          <strong id="totalMoney">0 ₽</strong>
-          <span>примерный порядок денег, которые могут теряться в месяц</span>
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Шаг 3</p>
+          <h2>Предварительный отчёт</h2>
         </div>
-        <div class="meter" aria-label="Уровень риска">
-          <div class="meter__bar" id="riskBar"></div>
-        </div>
-        <p class="result-status" id="riskText">Заполните диагностику, чтобы увидеть риск.</p>
+        <p>Это короткий управленческий срез: общий уровень риска, примерный порядок потерь и зоны, с которых разумнее начинать.</p>
       </div>
 
-      <aside class="result__side">
-        <div class="mini-stat">
-          <span id="totalScore">0 / 36</span>
-          <p>баллов риска</p>
-        </div>
-        <div class="mini-stat">
-          <span id="topCount">0</span>
-          <p>сильных утечек</p>
-        </div>
-      </aside>
+      <div class="dashboard-grid">
+        <article class="dashboard-card dashboard-card--primary">
+          <span>Примерный порядок потерь</span>
+          <strong id="totalMoney">—</strong>
+          <p>Ориентир по тем точкам, где вы поставили оценки. Не прогноз и не обещание роста.</p>
+        </article>
+        <article class="dashboard-card">
+          <span>Уровень риска</span>
+          <strong id="totalScore">0 / 36</strong>
+          <div class="meter" aria-label="Уровень риска">
+            <div class="meter__bar" id="riskBar"></div>
+          </div>
+          <p id="riskText">Оцените 12 точек, чтобы увидеть картину.</p>
+        </article>
+        <article class="dashboard-card">
+          <span>Сильных утечек</span>
+          <strong id="topCount">0</strong>
+          <p>Так считаются зоны с оценкой 2 или 3. Их стоит проверять первыми.</p>
+        </article>
+      </div>
     </section>
 
     <section class="top-leaks">
-      <div class="section-head">
-        <p class="eyebrow">Топ-3</p>
-        <h2>С чего начать</h2>
-        <p>Ниже - три зоны, где сочетание баллов и денег выглядит самым заметным.</p>
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Приоритеты</p>
+          <h2>Ваши 3 главные зоны риска</h2>
+        </div>
+        <p>Здесь появляются не “страшилки”, а рабочий фокус: куда смотреть первым и какой шаг даст больше ясности.</p>
       </div>
-      <div class="leak-grid" id="topLeaks"></div>
+      <div class="priority-list" id="topLeaks"></div>
     </section>
 
-    <section class="solution-offer" id="solution-card">
-      <div class="offer-copy">
-        <p class="eyebrow">Следующий шаг после диагностики</p>
-        <h2>Не чините наугад. Сначала поймите уровень решения</h2>
-        <p>Диагностика отвечает на вопрос “где течёт?”. Карта решений помогает разложить утечки по уровням решения: что закрывается штатной настройкой, где нужна простая связка, а где уже требуется отдельная логика.</p>
-        <p>Так вы не чините всё подряд и не покупаете лишние инструменты. Сначала видно, какой уровень решения нужен для ваших топ-3 утечек и что можно внедрить без большой перестройки.</p>
-        <div class="offer-actions">
-          <a class="button button--light" href="https://t.me/masha_zoloty" target="_blank" rel="noopener" data-goal="solution_card_click">Понять уровень решения за 1 490 ₽</a>
-          <a class="button button--ghost-light" href="#lead" data-goal="diagnostic_lead_click">Сначала хочу на разбор</a>
-        </div>
+    <section class="guide-panel" id="guide">
+      <div class="guide-panel__copy">
+        <p class="eyebrow">После диагностики</p>
+        <h2>Понять, чем закрывать свои утечки</h2>
+        <p>Диагностика показывает, где клиент может теряться. Карта решений показывает, что с этим делать дальше: где хватит штатных настроек, где нужен регламент, где поможет простая связка, а где ручной процесс уже будет снова терять клиентов.</p>
       </div>
 
-      <aside class="offer-card" aria-label="Что входит в карту решений">
-        <div class="price-line">
-          <span>1 490 ₽</span>
-          <p>за карту решений, чтобы не тратить время и деньги на хаотичные правки</p>
+      <div class="solution-levels" aria-label="Уровни решений">
+        <article>
+          <span>01</span>
+          <h3>Штатно</h3>
+          <p>Что можно поправить в CRM, названиях услуг, напоминаниях, статусах и точках входа.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Связки</h3>
+          <p>Где помогают формы, таблицы, боты, единое окно сообщений и простые автоматизации.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Система</h3>
+          <p>Где нужна отдельная логика: сегменты, сценарии, контроль доставки, задачи и аналитика.</p>
+        </article>
+      </div>
+
+      <div class="guide-cta">
+        <div>
+          <strong>Карта решений — 1 490 ₽</strong>
+          <p>Обычно это меньше, чем одно пустое окно в расписании. Задача карты — не “дать почитать”, а помочь не чинить наугад.</p>
         </div>
-        <ul class="offer-list">
-          <li>12 утечек записи с понятными вариантами решений</li>
-          <li>3 уровня: базовый, оптимальный, продвинутый</li>
-          <li>7 сценариев, которые чаще всего возвращают деньги</li>
-          <li>маршрут: с чего начать, если всё болит сразу</li>
-        </ul>
-      </aside>
+        <a class="button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener" onclick="if(window.ym){ym(109430856,'reachGoal','guide_click');ym(109430856,'reachGoal','solution_card_click')}">Открыть карту решений</a>
+      </div>
     </section>
 
     <section class="lead-form" id="lead">
-      <div class="section-head">
-        <p class="eyebrow">Когда нужна помощь</p>
-        <h2>Если после диагностики хочется выбрать порядок действий</h2>
-        <p>Если по результату видно несколько сильных утечек и не хочется внедрять наугад, можно отправить результат на разбор. На встрече за 5 000 ₽ берём ваши 3 главные зоны риска и выбираем, что чинить первым под ваш салон, базу и каналы записи.</p>
+      <div class="lead-form__intro">
+        <p class="eyebrow">Когда лучше разобрать вместе</p>
+        <h2>Если точек много и нужен порядок действий</h2>
+        <p>После диагностики и карты решений может быть видно, что слабых мест несколько. Тогда можно отправить результат: я посмотрю ваши главные зоны риска и помогу выбрать, что чинить первым под ваш салон, базу, администраторов и каналы записи.</p>
+        <div class="consult-note">
+          <span>Точечный разбор — 5 000 ₽</span>
+          <p>Если дальше идём во внедрение, сумма засчитывается в работу.</p>
+        </div>
       </div>
 
       <form class="form" id="diagnosticForm" novalidate>
@@ -216,7 +253,7 @@
           <input type="checkbox" id="consent" required />
           <span>Я согласен(на) на <a href="/privacy.html" target="_blank">обработку персональных данных</a></span>
         </label>
-        <button class="button" id="submitBtn" type="submit">Отправить результат</button>
+        <button class="button" id="submitBtn" type="submit" onclick="if(window.ym){ym(109430856,'reachGoal','lead_submit_click')}">Отправить результат</button>
         <p class="form-note" id="formNote"></p>
       </form>
     </section>
