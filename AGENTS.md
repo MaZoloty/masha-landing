@@ -7,7 +7,11 @@ This project is Maria Zolotukhina's personal site and funnel system. Treat every
 Before changing or creating any UI, read:
 
 - `docs/product-brief.md`
+- `docs/brandbook-framework.md`
+- `docs/visual-direction.md`
+- `docs/visual-brandbook.md`
 - `docs/design-system.md`
+- `docs/component-architecture.md`
 - `docs/ui-principles.md`
 - `docs/visual-qa-checklist.md`
 
@@ -18,6 +22,19 @@ If the change touches only backend logic, still preserve the visual contracts in
 ## Product Standard
 
 Build polished production interfaces from the first pass. Do not create temporary MVP screens with the intention to "make it beautiful later".
+
+## Quality Loop
+
+For substantial work, use a self-review loop instead of a single-pass answer:
+
+1. Define the task-specific success criteria before implementation.
+2. Build or write against those criteria without adding unrelated scope.
+3. Review the result against the criteria item by item.
+4. List concrete gaps, bugs, weak decisions, or missing states.
+5. Fix the highest-impact issues and review again.
+6. Stop only when the review passes cleanly or further iterations no longer improve the result meaningfully.
+
+For new features or ambiguous requests, first turn the request into a clear working spec: objective, exact requirements, constraints, edge cases, and definition of done. Keep implementation tied to that spec. When reporting completion, mention which requirements were covered and any remaining risk or verification gap.
 
 Every new page or major section must start from:
 
@@ -38,6 +55,54 @@ Every new page or major section must start from:
 - Do not add a header/navigation to standalone funnel pages unless explicitly requested.
 - On funnel pages, the first screen should communicate value and next action without showing zero-value calculator placeholders.
 - Components should feel like consulting tools, dashboards, and decision support, not quizzes or decorative landing pages.
+
+## UI Rules For This Project
+
+This project must follow the visual direction described in:
+
+- `docs/visual-direction.md`
+- `docs/design-system.md`
+- `docs/component-architecture.md`
+
+Before changing any page, you must:
+
+1. Identify which existing components can be reused.
+2. Extend the design system if needed.
+3. Avoid one-off styling decisions.
+4. Preserve the premium consulting + light dashboard aesthetic.
+5. Keep the approved homepage hero reference as the visual anchor.
+
+Never do this:
+
+- Do not create generic SaaS sections.
+- Do not create random card styles.
+- Do not use default-looking MVP UI.
+- Do not introduce new colors outside the palette.
+- Do not create cramped layouts.
+- Do not use decorative icons unless they are essential.
+- Do not style sections independently from the system.
+- Do not build a full page before a reference section passes visual QA.
+
+Every section must be reviewed for:
+
+- visual hierarchy;
+- whitespace;
+- typography quality;
+- premium feel;
+- consistency with the homepage hero;
+- mobile responsiveness;
+- editorial clarity.
+
+Required self-review before finishing:
+
+- Does this look like a premium consulting brand?
+- Does this section match the hero visually?
+- Is the layout calm and expensive-looking?
+- Are the cards curated rather than generic?
+- Is every new section assembled from documented component patterns?
+- Is there any MVP-looking UI left?
+
+If the first five answers are not clearly "yes", refine before finishing. If there is any MVP-looking UI left, refine before finishing.
 
 ## Implementation Order
 

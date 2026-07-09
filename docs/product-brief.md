@@ -13,15 +13,15 @@ Owners and managers of beauty, wellness, local service, and expert businesses. T
 The site should turn attention into a concrete next step:
 
 - free diagnostic or useful tool;
-- paid low-ticket product such as a solution map;
-- paid review or consultation;
-- implementation or larger project.
+- paid audit, review, consultation, or solution map;
+- after the paid diagnostic step, any full product that fits the client's request: site-funnel, AI administrator, bot, mini-application, client cabinet, analytics setup, automation, or custom system.
 
 ## Product Feeling
 
 The interface should feel like:
 
-- a polished consulting dashboard;
+- a mix of personal expert brand and smart business tool;
+- premium consulting + light dashboard;
 - a decision-support tool for a business owner;
 - a calm expert system;
 - a commercial page that sells through usefulness, not pressure.

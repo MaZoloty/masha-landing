@@ -404,6 +404,10 @@ p, h1, h2, h3, blockquote, li {
   opacity: 0.4;
 }
 
+.include-list-intro {
+  margin: 0 0 12px;
+}
+
 .package-limits {
   font-size: 12px;
   opacity: 0.45;

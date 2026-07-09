@@ -2,13 +2,13 @@
 
 ## Status
 
-This document is the source of truth for the diagnostics funnel visual system.
+This document defines the diagnostics funnel product logic. For the updated visual mood, `docs/visual-direction.md`, `docs/design-system.md`, and `docs/component-architecture.md` are the source of truth.
 
-Do not continue polishing `/diagnostika/` by changing isolated colors, cards, buttons, or sections "by eye". First follow this document, then implement. If this document and the page disagree, update or approve the design system before editing HTML/CSS.
+Do not continue polishing `/diagnostika/` by changing isolated colors, cards, buttons, or sections "by eye". First follow the approved visual system, then implement. If this document and the page disagree, update or approve the design system before editing HTML/CSS.
 
 ## Concept
 
-**Expensive consulting + light dashboard.**
+**Premium consulting + light dashboard.**
 
 The page should feel like a short management audit for a salon owner, not a quiz, not an info-product landing page, and not a raw MVP.
 
@@ -71,40 +71,45 @@ The price can appear inside the block, but not as the main headline.
 
 ## Color Tokens
 
-Use a small, controlled palette. Do not create extra beige/green/gold variants unless this document is updated.
+Use the global palette from `docs/design-system.md`. Do not create extra beige, green, gold, lilac, butter, or risk variants unless the global design system is updated.
 
 ```css
 :root {
-  --color-bg: #f6f2ea;
+  --color-bg: #f7f1e7;
+  --color-bg-soft: #fbf7ef;
   --color-surface: #fffdf8;
-  --color-surface-muted: #eee8dc;
+  --color-surface-muted: #efe8dc;
 
-  --color-text: #171916;
-  --color-text-muted: #5f655f;
+  --color-ink: #151511;
+  --color-muted: #67635b;
+  --color-muted-light: #969086;
 
-  --color-green: #173f32;
-  --color-green-soft: #e7efe9;
+  --color-cta: #151b17;
+  --color-cta-hover: #22241e;
 
-  --color-gold: #a9782f;
-  --color-gold-soft: #f3eadb;
+  --color-lilac: #e8dff2;
+  --color-lilac-ink: #4d405d;
+  --color-butter: #f4e7b8;
+  --color-butter-ink: #5f4d1d;
 
-  --color-border: #d9d1c3;
+  --color-line: #ded7ca;
+  --color-grid: rgba(81, 73, 91, .12);
+  --color-line-strong: #cfc4b4;
 
-  --color-risk-low: #6f8f79;
-  --color-risk-mid: #a9782f;
-  --color-risk-high: #8b3f2f;
+  --color-risk: #8b4b3d;
 }
 ```
 
 ### Color Rules
 
 - Background: warm paper, not pure white.
-- Primary action and strongest system emphasis: deep green.
-- Business/consulting accent: muted gold.
+- Primary action: dark premium pill CTA.
+- Business/consulting accent: pale butter when it has an informational role.
+- Analytical/report accent: soft lilac and lavender linework.
 - Risk colors: restrained, never bright red/yellow.
 - Text muted color must stay readable.
-- Avoid purple, bright blue, saturated red, neon yellow.
-- Avoid using many shades of beige or green that are not tokens.
+- Avoid saturated purple, bright blue, saturated red, neon yellow.
+- Avoid using many shades of beige, green, gold, lilac, or butter that are not tokens.
 
 ## Typography
 
@@ -243,7 +248,7 @@ Values:
 Rules:
 
 - tappable on mobile;
-- active state deep green;
+- active state uses dark CTA or quiet lilac/butter emphasis from the global palette;
 - no aggressive warning colors;
 - labels must not wrap awkwardly.
 

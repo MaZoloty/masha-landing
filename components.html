@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Components · Maria Zolotukhina</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/ui-system.css" />
+</head>
+<body>
+  <div class="ui-shell">
+    <header class="ui-header">
+      <a class="ui-header__brand" href="/" aria-label="На главную">
+        <span class="ui-header__logo">MARIA</span>
+        <span class="ui-header__tagline">сайты-воронки и AI для услуг</span>
+      </a>
+      <nav class="ui-header__nav" aria-label="Навигация">
+        <a href="#buttons">Кнопки</a>
+        <a href="#cards">Карточки</a>
+        <a href="#forms">Формы</a>
+      </nav>
+      <div class="ui-header__action">
+        <a class="ui-button" href="#lead">Записаться на диагностику</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="ui-section ui-container">
+        <div class="ui-section-head">
+          <span class="ui-section-label">UI system</span>
+          <h1 class="ui-type-display ui-section-head__title">Premium consulting + light dashboard</h1>
+          <p class="ui-section-head__text">Компоненты для страниц Маши: теплый ivory-фон, крупная editorial-типографика, темные CTA, lilac/butter карточки и легкая аналитика без SaaS-шаблонности.</p>
+        </div>
+      </section>
+
+      <section class="ui-section ui-container" id="buttons">
+        <div class="ui-section-head">
+          <span class="ui-section-label">Buttons</span>
+          <h2 class="ui-type-title ui-section-head__title">Кнопки и действия</h2>
+          <p class="ui-section-head__text">Основное действие всегда темная pill-кнопка. Вторичные действия спокойные и не спорят с главным CTA.</p>
+        </div>
+        <div class="ui-grid ui-grid--3">
+          <a class="ui-button" href="#">Найти, где теряются записи</a>
+          <a class="ui-button ui-button--secondary" href="#">Посмотреть кейсы</a>
+          <a class="ui-button ui-button--text" href="#">Написать в Telegram</a>
+        </div>
+      </section>
+
+      <section class="ui-section ui-container" id="cards">
+        <div class="ui-section-head">
+          <span class="ui-section-label">Cards</span>
+          <h2 class="ui-type-title ui-section-head__title">Карточки как consulting-блоки</h2>
+          <p class="ui-section-head__text">Карточка существует только если помогает понять путь клиента, приоритет, доказательство или следующий шаг.</p>
+        </div>
+
+        <div class="ui-grid ui-grid--3">
+          <article class="ui-card ui-hero-insight-card ui-card--lilac">
+            <p class="ui-card__kicker">Карта утечек записи</p>
+            <h3 class="ui-card__title">Где клиенты уходят, не записавшись</h3>
+            <p class="ui-card__text">Сайт, мессенджеры, администратор и повторный визит смотрятся как один путь, а не отдельные куски.</p>
+          </article>
+
+          <article class="ui-card ui-hero-insight-card">
+            <p class="ui-card__kicker">Путь клиента</p>
+            <h3 class="ui-card__title">Как проходит путь от интереса до визита</h3>
+            <p class="ui-card__text">Легкая route-визуализация показывает, где человек перестает понимать следующий шаг.</p>
+            <div class="ui-route-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+          </article>
+
+          <article class="ui-card ui-card--butter">
+            <p class="ui-card__kicker">Приоритеты роста</p>
+            <h3 class="ui-card__title">На чем сфокусироваться в первую очередь</h3>
+            <ul class="ui-priority-list">
+              <li class="ui-priority-item">
+                <span class="ui-priority-item__number">1</span>
+                <div>
+                  <p class="ui-priority-item__title">Услуги и цены</p>
+                  <p class="ui-priority-item__text">Клиент должен быстро понять, что выбрать и сколько это стоит.</p>
+                </div>
+              </li>
+              <li class="ui-priority-item">
+                <span class="ui-priority-item__number">2</span>
+                <div>
+                  <p class="ui-priority-item__title">Путь до записи</p>
+                  <p class="ui-priority-item__text">Кнопка, сервис записи и мессенджеры не должны спорить друг с другом.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="ui-section ui-container">
+        <div class="ui-grid ui-grid--2">
+          <article class="ui-card ui-metric-card">
+            <span class="ui-metric-card__value">39%</span>
+            <span class="ui-metric-card__label">доходят до онлайн-записи</span>
+            <p class="ui-metric-card__text">Метрика показывается только с контекстом: что число означает для владельца и какое решение следует.</p>
+          </article>
+
+          <article class="ui-card ui-diagnostic-card">
+            <span class="ui-diagnostic-card__number">03</span>
+            <div class="ui-diagnostic-card__body">
+              <span class="ui-diagnostic-card__category">Запись</span>
+              <h3 class="ui-diagnostic-card__title">Клиент понимает, куда нажать после выбора услуги?</h3>
+              <p class="ui-card__text">Если путь до записи размыт, человек уходит в мессенджеры, откладывает решение или не возвращается.</p>
+              <p class="ui-diagnostic-card__check">Что проверить: видна ли кнопка записи, понятна ли цена, сколько шагов до действия.</p>
+              <div class="ui-score-control" aria-label="Оценка">
+                <button type="button" aria-pressed="true">0 спокойно</button>
+                <button type="button" aria-pressed="false">1 иногда</button>
+                <button type="button" aria-pressed="false">2 часто</button>
+                <button type="button" aria-pressed="false">3 болит</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="ui-section ui-container" id="forms">
+        <div class="ui-cta-block" id="lead">
+          <div>
+            <span class="ui-section-label">Next step</span>
+            <h2 class="ui-cta-block__title">Начать с диагностики пути клиента</h2>
+            <p class="ui-cta-block__text">Форма должна ощущаться продолжением консультации: спокойно, понятно, без внезапной агрессивной продажи.</p>
+          </div>
+          <a class="ui-button" href="#lead-form">Записаться</a>
+        </div>
+      </section>
+
+      <section class="ui-section ui-container" id="lead-form">
+        <form class="ui-lead-form" action="#" method="post">
+          <div class="ui-lead-form__grid">
+            <label class="ui-field">
+              <span class="ui-field__label">Имя</span>
+              <input class="ui-input" type="text" name="name" placeholder="Мария" />
+            </label>
+            <label class="ui-field">
+              <span class="ui-field__label">Telegram или телефон</span>
+              <input class="ui-input" type="text" name="contact" placeholder="@username" />
+            </label>
+            <label class="ui-field ui-lead-form__wide">
+              <span class="ui-field__label">Что сейчас не устраивает в записи</span>
+              <textarea class="ui-textarea" name="message" placeholder="Клиенты пишут, но не доходят до записи; непонятно, что исправлять первым"></textarea>
+              <span class="ui-field__hint">Достаточно 2-3 предложений. Это не техническое задание.</span>
+            </label>
+          </div>
+          <button class="ui-button" type="submit">Отправить заявку</button>
+          <p class="ui-consent">Нажимая кнопку, вы соглашаетесь на обработку данных для ответа по заявке.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="ui-footer ui-container">
+      <div class="ui-footer__brand">
+        <span class="ui-footer__logo">MARIA</span>
+        <span>Сайты-воронки, аналитика и AI для beauty/wellness.</span>
+      </div>
+      <nav class="ui-footer__links" aria-label="Подвал">
+        <a href="/">Главная</a>
+        <a href="/privacy.html">Политика</a>
+        <a href="https://t.me/masha_zoloty">Telegram</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

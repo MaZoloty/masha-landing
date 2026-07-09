@@ -33,10 +33,12 @@
   }
   </script>
 
-  <link rel="stylesheet" href="styles.css?v=20260608-2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260608-2" />
+  <link rel="stylesheet" href="assets/ui-system.css?v=20260709-1" />
+  <link rel="stylesheet" href="assets/page-rebuild.css?v=20260709-1" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -48,7 +50,67 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="home-hero-shell ui-shell hero">
+    <header class="ui-header home-header" aria-label="Основная навигация">
+      <a class="ui-header__brand" href="/">
+        <span class="ui-header__logo">MARIA ZOLOTY</span>
+        <span class="ui-header__tagline">консалтинг для beauty-бизнеса</span>
+      </a>
+      <nav class="ui-header__nav" aria-label="Разделы страницы">
+        <a href="#diagnostic">Диагностика</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#packages">Форматы</a>
+        <a href="/blog/">Блог</a>
+      </nav>
+      <div class="ui-header__action">
+        <a href="#form" class="ui-button btn">Записаться на диагностику</a>
+      </div>
+    </header>
+
+    <div class="home-hero">
+      <div class="home-hero__copy">
+        <p class="ui-section-label">Мария Золотухина · сайты-воронки и AI для услуг</p>
+        <h1 class="home-hero__title ui-type-display">Онлайн-запись есть,<br>а записей всё равно мало?</h1>
+        <p class="home-hero__lead">Покажу, где клиенты теряются на сайте, в мессенджерах, после заявки и перед повторным визитом.</p>
+        <div class="home-hero__actions">
+          <a href="#form" class="ui-button btn">Получить диагностику</a>
+          <a href="/diagnostika/" class="ui-button ui-button--secondary">Открыть мини-аудит</a>
+        </div>
+      </div>
+
+      <div class="home-hero__visual" aria-label="Карта утечек записи">
+        <article class="home-insight home-insight--map ui-hero-insight-card">
+          <span>Карта утечек записи</span>
+          <p>Где клиенты уходят, не записавшись</p>
+          <div class="signal-chart" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </article>
+        <article class="home-insight home-insight--path ui-hero-insight-card">
+          <span>Путь клиента</span>
+          <p>Как проходит путь от интереса до визита</p>
+          <div class="route-line" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </div>
+        </article>
+        <article class="home-insight home-insight--priority ui-hero-insight-card">
+          <span>Приоритеты роста</span>
+          <p>На чём сфокусироваться в первую очередь</p>
+          <div class="priority-bars" aria-hidden="true">
+            <b></b><b></b><b></b>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="home-proof-row" aria-label="Что входит в диагностику">
+      <div><b>15–20 минут</b><span>занимает диагностика</span></div>
+      <div><b>2–3 главные точки потерь</b><span>с конкретикой и примерами</span></div>
+      <div><b>beauty / wellness</b><span>для салонов, студий и клиник</span></div>
+    </div>
+  </section>
+
+  <section class="hero legacy-hero" aria-hidden="true" hidden>
     <div class="container">
       <p class="hero-label">Мария Золотухина · сайты для студий услуг</p>
       <h1 class="hero-title">Онлайн-запись есть,<br>а записей мало?</h1>
@@ -353,7 +415,7 @@
           <p class="package-for">Подходит, если: сложная структура услуг, несколько специалистов или площадок, нужно выглядеть системнее.</p>
           <button class="accordion-toggle" aria-expanded="false">Что входит <span class="accordion-arrow">↓</span></button>
           <div class="accordion-body">
-            <p style="margin:0 0 12px">Всё из воронки, плюс:</p>
+            <p class="include-list-intro">Всё из воронки, плюс:</p>
             <ul class="include-list">
               <li>глубокий разбор бизнеса, конкурентов, пути клиента</li>
               <li>структура сайта, где несколько страниц или сложный выбор услуг остаются понятными</li>
