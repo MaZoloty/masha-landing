@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Мария Золотухина: сайты для beauty и wellness</title>
-  <meta name="description" content="Делаю сайты и воронки для beauty и wellness-проектов. Не просто страница, а путь клиента до записи." />
+  <title>Мария Золотухина: системы записи для бьюти и велнес</title>
+  <meta name="description" content="Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты, аналитика. Чтобы клиент записывался и возвращался сам, а не терялся по дороге." />
   <link rel="canonical" href="https://mazoloty.ru/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,8 +16,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mazoloty.ru/" />
-  <meta property="og:title" content="Мария Золотухина: сайты для beauty и wellness" />
-  <meta property="og:description" content="Делаю сайты и воронки для beauty и wellness-проектов. Не просто страница, а путь клиента до записи." />
+  <meta property="og:title" content="Мария Золотухина: системы записи для бьюти и велнес" />
+  <meta property="og:description" content="Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты, аналитика. Чтобы клиент записывался и возвращался сам, а не терялся по дороге." />
   <meta property="og:locale" content="ru_RU" />
 
   <!-- Schema.org -->
@@ -27,18 +27,19 @@
     "@type": "Person",
     "name": "Мария Золотухина",
     "url": "https://mazoloty.ru",
-    "jobTitle": "Веб-разработчик",
-    "description": "Делаю сайты и воронки для beauty и wellness-проектов. Путь клиента до записи.",
-    "knowsAbout": ["веб-разработка", "сайты для beauty", "сайты-воронки", "Яндекс.Метрика", "Telegram-интеграции"]
+    "jobTitle": "Специалист по системам записи",
+    "description": "Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты клиентов, аналитика.",
+    "knowsAbout": ["системы записи", "сайты для beauty", "напоминания о записи", "возвраты клиентов", "аналитика", "Telegram-боты"]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260608-2" />
-  <link rel="stylesheet" href="assets/ui-system.css?v=20260709-1" />
-  <link rel="stylesheet" href="assets/page-rebuild.css?v=20260709-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260711-1" />
+  <link rel="stylesheet" href="assets/ui-system.css?v=20260711-1" />
+  <link rel="stylesheet" href="assets/page-rebuild.css?v=20260711-1" />
+  <link rel="stylesheet" href="assets/home-v3.css?v=20260711-1" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -54,31 +55,31 @@
     <header class="ui-header home-header" aria-label="Основная навигация">
       <a class="ui-header__brand" href="/">
         <span class="ui-header__logo">Мария Золотухина</span>
-        <span class="ui-header__tagline">консалтинг для beauty-бизнеса</span>
+        <span class="ui-header__tagline">системы записи для услуг</span>
       </a>
       <nav class="ui-header__nav" aria-label="Разделы страницы">
-        <a href="#diagnostic">Диагностика</a>
+        <a href="/audit/">Диагностика</a>
         <a href="#cases">Кейсы</a>
-        <a href="#packages">Форматы</a>
+        <a href="#ladder">Как работать</a>
         <a href="/blog/">Блог</a>
       </nav>
       <div class="ui-header__action">
-        <a href="#form" class="ui-button btn">Записаться на диагностику</a>
+        <a href="/audit/" class="ui-button btn">Пройти диагностику</a>
       </div>
     </header>
 
     <div class="home-hero">
       <div class="home-hero__copy">
-        <p class="ui-section-label">Мария Золотухина · сайты-воронки и AI для услуг</p>
-        <h1 class="home-hero__title ui-type-display">Онлайн-запись есть,<br>а записей всё равно мало?</h1>
-        <p class="home-hero__lead">Покажу, где клиенты теряются на сайте, в мессенджерах, после заявки и перед повторным визитом.</p>
+        <p class="ui-section-label">Системы записи для бьюти и велнес</p>
+        <h1 class="home-hero__title ui-type-display">Онлайн-запись есть, а&nbsp;записей всё равно мало? <em>Дело не в кнопке, а&nbsp;в&nbsp;системе вокруг неё.</em></h1>
+        <p class="home-hero__lead">Собираю систему, в которой клиент сам записывается, не теряется по дороге и возвращается снова. Сайт – только вход. Дальше работают напоминания, возвраты и аналитика: то, что обычно и подтекает.</p>
         <div class="home-hero__actions">
-          <a href="#form" class="ui-button btn">Получить диагностику</a>
-          <a href="/diagnostika/" class="ui-button ui-button--secondary">Открыть мини-аудит</a>
+          <a href="/audit/" class="ui-button btn">Пройти диагностику записи</a>
+          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ui-button ui-button--secondary">Прийти на разбор</a>
         </div>
       </div>
 
-      <div class="home-hero__visual" aria-label="Карта утечек записи">
+      <div class="home-hero__visual" aria-label="Система записи: карта утечек, путь клиента, приоритеты">
         <article class="home-insight home-insight--map ui-hero-insight-card">
           <span>Карта утечек записи</span>
           <p>Где клиенты уходят, не записавшись</p>
@@ -88,14 +89,14 @@
         </article>
         <article class="home-insight home-insight--path ui-hero-insight-card">
           <span>Путь клиента</span>
-          <p>Как проходит путь от интереса до визита</p>
+          <p>Вход, напоминание, визит, возврат</p>
           <div class="route-line" aria-hidden="true">
             <i></i><i></i><i></i>
           </div>
         </article>
         <article class="home-insight home-insight--priority ui-hero-insight-card">
-          <span>Приоритеты роста</span>
-          <p>На чём сфокусироваться в первую очередь</p>
+          <span>Приоритеты</span>
+          <p>Что чинить первым, по цифрам</p>
           <div class="priority-bars" aria-hidden="true">
             <b></b><b></b><b></b>
           </div>
@@ -103,82 +104,114 @@
       </div>
     </div>
 
-    <div class="home-proof-row" aria-label="Что входит в диагностику">
-      <div><b>15–20 минут</b><span>занимает диагностика</span></div>
-      <div><b>2–3 главные точки потерь</b><span>с конкретикой и примерами</span></div>
-      <div><b>beauty / wellness</b><span>для салонов, студий и клиник</span></div>
+    <div class="home-proof-row" aria-label="Коротко о подходе">
+      <div><b>12 точек утечки</b><span>проверьте себя за пару минут</span></div>
+      <div><b>Сайт, напоминания, возвраты</b><span>единый процесс, а не набор сервисов</span></div>
+      <div><b>Бьюти и велнес</b><span>салоны, студии, клиники</span></div>
     </div>
   </section>
 
-  <section class="hero legacy-hero" aria-hidden="true" hidden>
-    <div class="container">
-      <p class="hero-label">Мария Золотухина · сайты для студий услуг</p>
-      <h1 class="hero-title">Онлайн-запись есть,<br>а записей мало?</h1>
-      <p class="hero-sub">Собираю beauty и wellness-студиям сайт и путь клиента так, чтобы человек быстро понял услуги, цены, доверие и дошёл до записи.</p>
-      <div class="hero-proof">
-        <span>Квиз / форма → Telegram</span>
-        <span>Dikidi / YClients</span>
-        <span>Метрика и цели</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#form" class="btn">Понять, что исправить первым</a>
-        <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="btn btn--outline">Написать в Telegram</a>
-      </div>
-      <p class="hero-note">Бесплатная диагностика · 15–20 минут</p>
-    </div>
-  </section>
-
-  <!-- ПРОБЛЕМА -->
+  <!-- ПОЧЕМУ ЗАПИСЕЙ МАЛО -->
   <section class="section problem">
     <div class="container container--narrow">
-      <p>У многих студий сайт уже есть. У других его заменяют соцсети, VK, Telegram или Taplink. Но проблема часто одна: клиенту сложно быстро понять услуги, цены, мастеров и записаться.</p>
-      <p>Обычно думают, что дело в дизайне. Заказывают редизайн, меняют шрифты. Запись не появляется.</p>
-      <p class="problem-accent">Дело не в дизайне. Путь от «зашёл на сайт» до «нажал записаться» где-то сломан.</p>
+      <p>Обычно думают, что мало клиентов – это про рекламу, трафик или дизайн сайта. Меняют шрифты, заказывают редизайн, а записей не прибавляется.</p>
+      <p>Потому что деньги чаще утекают там, где их не видно: клиент записался и не дошёл, пришёл один раз и про него забыли, написал в мессенджер и не дождался ответа, ушёл к тем, кто вовремя напомнил. Между «нашёл вас» и «записался снова» есть десяток дыр.</p>
+      <p class="problem-accent">Дело не в дизайне. Ломается система вокруг записи. Её я и собираю.</p>
     </div>
   </section>
 
-  <!-- МЕТОД -->
-  <section class="section method">
-    <div class="container container--narrow">
-      <h2 class="section-title">Что я делаю</h2>
-      <p>Разбираю, где клиент теряется: в услугах, ценах, мастерах, записи или доверии. Потом собираю страницу так, чтобы каждый блок вёл к следующему шагу.</p>
-      <p>Структура услуг, понятные цены, блоки доверия, квиз при необходимости, интеграция с Dikidi или YClients, форма в Telegram и цели в Метрике. Не по шаблону, а по тому, как принимает решение именно ваш клиент.</p>
-    </div>
-  </section>
-
-  <!-- ДИАГНОСТИКА -->
-  <section class="section diagnostic" id="diagnostic">
+  <!-- МОСТИК НА ДИАГНОСТИКУ -->
+  <section class="section bridge" id="diagnostic">
     <div class="container">
-      <h2 class="section-title">Что вы поймёте на диагностике</h2>
-      <p class="section-lead">Это бесплатный созвон на 15–20 минут для студий эпиляции, массажных и wellness-проектов, салонов и частных мастеров. Цель – не разобрать всё, а быстро понять, есть ли проблема и какой шаг сделать дальше.</p>
-
-      <div class="diagnostic-grid">
-        <div class="diagnostic-item">
-          <span class="diagnostic-step">1</span>
-          <h3>Точку входа</h3>
-          <p>Сайт, соцсеть, Taplink, VK, Telegram, Dikidi или YClients. Быстро смотрю, куда сейчас попадает клиент и что он понимает в первые секунды.</p>
+      <div class="bridge-panel">
+        <div class="bridge-copy">
+          <h2 class="bridge-title ui-type-title">Проверьте, где утекает у&nbsp;вас</h2>
+          <p>Прежде чем что-то чинить, надо понять, где именно течёт. Я собрала диагностику из 12 точек, где салоны и велнес-центры чаще всего теряют клиентов: от первой записи до повторного визита.</p>
+          <p>Пройдите по ним и посчитайте свой балл: где у вас всё в порядке, а где деньги уходят прямо сейчас. Это бесплатно и займёт пару минут.</p>
+          <a href="/audit/" class="btn bridge-cta">Пройти диагностику записи</a>
         </div>
-        <div class="diagnostic-item">
-          <span class="diagnostic-step">2</span>
-          <h3>Главные наблюдения</h3>
-          <p>2–3 места, где клиент скорее всего теряется: в услугах, ценах, доверии или на пути к записи.</p>
-        </div>
-        <div class="diagnostic-item">
-          <span class="diagnostic-step">3</span>
-          <h3>Следующий шаг</h3>
-          <p>Объясняю, что имеет смысл дальше: разобраться подробнее в аудите, доработать текущий сайт или собрать новый.</p>
+        <div class="bridge-visual" aria-hidden="true">
+          <div class="bridge-dots">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p class="bridge-visual__caption">12 точек: от первой записи до повторного визита</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="diagnostic-note">Это не аудит и не техническое задание – подробный список из 10–15 правок я собираю отдельно, в платном аудите пути клиента за 7 000 ₽. Задача созвона короче: понять, есть ли проблема и куда двигаться дальше.</p>
+  <!-- ЧТО Я СОБИРАЮ -->
+  <section class="section system" id="system">
+    <div class="container">
+      <div class="system-layout">
+        <div class="system-head">
+          <h2 class="section-title">Что я собираю</h2>
+          <p class="section-lead">Систему записи как единый процесс, а не набор разрозненных сервисов. Что из этого нужно именно вам – зависит от бизнеса, разбираемся на разборе.</p>
+        </div>
+        <ol class="system-list">
+          <li class="system-row">
+            <span class="system-row__num" aria-hidden="true">1</span>
+            <div class="system-row__body">
+              <h3>Точка входа</h3>
+              <p>Сайт, страница или связка под соцсети и карты, где клиент за секунды понимает услугу, цену и как записаться. Не «каталог всего», а маршрут под запрос.</p>
+            </div>
+          </li>
+          <li class="system-row">
+            <span class="system-row__num" aria-hidden="true">2</span>
+            <div class="system-row__body">
+              <h3>Напоминания, которые доходят</h3>
+              <p>Каскад по каналам (Telegram, MAX), устойчивый к блокировкам, с подтверждением визита в один тап: статус сразу встаёт в CRM.</p>
+            </div>
+          </li>
+          <li class="system-row">
+            <span class="system-row__num" aria-hidden="true">3</span>
+            <div class="system-row__body">
+              <h3>Возвраты на автопилоте</h3>
+              <p>Цепочки после визита, реактивация спящих, дни рождения. Не когда администратор вспомнит, а системно.</p>
+            </div>
+          </li>
+          <li class="system-row">
+            <span class="system-row__num" aria-hidden="true">4</span>
+            <div class="system-row__body">
+              <h3>Заявки в одном окне</h3>
+              <p>Telegram, VK, WhatsApp, Direct не теряются между приложениями и в нерабочее время.</p>
+            </div>
+          </li>
+          <li class="system-row">
+            <span class="system-row__num" aria-hidden="true">5</span>
+            <div class="system-row__body">
+              <h3>Аналитика возвратов</h3>
+              <p>Видно, какие каналы реально приводят клиентов, и решения принимаются по цифрам, а не на ощущениях.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- КТО Я -->
+  <section class="section who" id="who">
+    <div class="container">
+      <div class="who-panel">
+        <div class="who-head">
+          <p class="ui-section-label">Кто я</p>
+          <h2 class="who-title">Не агентство и не сайтодел. <em>Практик, который варится в этом каждый день.</em></h2>
+        </div>
+        <div class="who-body">
+          <p>Я управляющая: веду два велнес-центра в Перми и вижу запись изнутри, по своим цифрам, а не по чужим кейсам. Больше 12 лет в клиентском сервисе, последние 5 лет в глубокой операционке и аналитике, последние 3 года в бьюти и велнес.</p>
+          <p>В аналитику копаю так глубоко, что готовые интеграции её просто не тянут: часть инструментов из-за этого собрала сама. Когда чужой сервис уведомлений за ~10 000 ₽ в месяц лёг на блокировке и клиенты перестали получать напоминания, я за неделю собрала свой на своей инфраструктуре. Дешевле, устойчивее к блокировкам, и доступы с базой остались у центра.</p>
+          <p>Поэтому я не пересказываю чужие статьи, а показываю то, что проверила на своей записи и своих деньгах.</p>
+          <p class="who-sign">Мария Золотухина</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- КЕЙСЫ -->
   <section class="section cases" id="cases">
     <div class="container">
-      <h2 class="section-title">Примеры работ</h2>
-      <p class="section-lead">Показываю не картинки, а задачи: где клиент терялся, что изменилось на сайте и как теперь устроен путь до записи.</p>
+      <h2 class="section-title">Примеры работы с записью</h2>
+      <p class="section-lead">Показываю не картинки, а задачи: где клиент терялся, что изменилось и как теперь устроен путь до записи и обратно.</p>
       <div class="cases-grid">
 
         <div class="case">
@@ -263,183 +296,99 @@
           </div>
         </div>
 
+        <div class="case case--system">
+          <div class="case-stat" aria-label="Доходимость записей 96 процентов">
+            <span class="case-stat__value">96%</span>
+            <span class="case-stat__label">доходимость записей: записался → пришёл, данные YClients</span>
+            <div class="case-stat__flow" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="case-body">
+            <p class="case-location">4SPINE, Пермь · сервис напоминаний и возвратов</p>
+            <p>Чужой сервис уведомлений за ~10 000 ₽ в месяц лёг на блокировке: клиенты перестали получать напоминания о визитах. За неделю собрала свой, на своей инфраструктуре. Напоминания снова доходят, а база и доступы остались у центра.</p>
+            <ul class="case-results" aria-label="Что получилось">
+              <li><b>Telegram + MAX</b><span>каскад напоминаний, устойчивый к блокировкам</span></li>
+              <li><b>В один тап</b><span>клиент подтверждает визит, статус сразу встаёт в CRM</span></li>
+              <li><b>За неделю</b><span>от «сервис лёг» до рабочей замены на своей инфраструктуре</span></li>
+            </ul>
+            <button class="accordion-toggle" aria-expanded="false">Как это сделано <span class="accordion-arrow">↓</span></button>
+            <div class="accordion-body">
+              <blockquote>Напоминание, которое не дошло, стоит столько же, сколько пустое кресло. Поэтому канал доставки должен принадлежать бизнесу, а не подписке.</blockquote>
+              <p><b>Что сделала.</b> Собрала сервис напоминаний и возвратов на своей инфраструктуре: каскад Telegram + MAX, утренние и финальные напоминания с длительностью услуги, подтверждение «Приду» в один тап со статусом сразу в CRM. Дальше сервис вырос: личный кабинет клиента с онлайн-записью, переносом и бонусами, цепочки возвратов, поздравления с днём рождения, заявки из мессенджеров в одном окне у администраторов.</p>
+              <p><b>И главное для бизнеса.</b> Канал уведомлений больше не зависит от чужого сервиса и его тарифов: дешевле подписки, устойчивее к блокировкам, база клиентов и доступы у центра. Доходимость записей держится на 96% (данные YClients).</p>
+            </div>
+            <ul class="case-tags" aria-label="Что сделано">
+              <li>напоминания Telegram + MAX</li>
+              <li>статусы в CRM</li>
+              <li>личный кабинет</li>
+              <li>возвраты и дни рождения</li>
+              <li>своя инфраструктура</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ФОРМАТЫ РАБОТЫ -->
-  <section class="section packages" id="packages">
+  <!-- КАК СО МНОЙ РАБОТАТЬ -->
+  <section class="section ladder" id="ladder">
     <div class="container">
-      <h2 class="section-title">Форматы работы</h2>
-      <p class="section-lead">От «понять, где теряются заявки» до сайта с нуля. Не всегда нужно пересобирать всё заново – иногда достаточно разобрать путь клиента и поправить слабые места. До старта фиксируем объём, сроки, стоимость и количество правок.</p>
-      <div class="packages-grid">
+      <h2 class="section-title">Как со мной работать</h2>
+      <p class="section-lead">От бесплатного к глубокому: каждый шаг ведёт к следующему, и ни один не требует прыжка в омут.</p>
+      <ol class="ladder-steps">
+        <li class="ladder-step">
+          <div class="ladder-step__head">
+            <span class="ladder-step__num" aria-hidden="true">1</span>
+            <span class="ladder-step__price">бесплатно</span>
+          </div>
+          <h3>Диагностика записи</h3>
+          <p>Проверьте себя по 12 точкам и посчитайте свой балл: где всё в порядке, а где деньги уходят прямо сейчас.</p>
+          <a href="/audit/" class="ladder-step__link">Пройти диагностику →</a>
+        </li>
+        <li class="ladder-step">
+          <div class="ladder-step__head">
+            <span class="ladder-step__num" aria-hidden="true">2</span>
+            <span class="ladder-step__price">1 490 ₽</span>
+          </div>
+          <h3>Гайд с решениями</h3>
+          <p>Что делать с каждой из 12 точек: три уровня решений и с чего начать именно вам.</p>
+        </li>
+        <li class="ladder-step ladder-step--featured">
+          <div class="ladder-step__head">
+            <span class="ladder-step__num" aria-hidden="true">3</span>
+            <span class="ladder-step__price">5 000 ₽ · в счёт работы</span>
+          </div>
+          <h3>Разбор вашей системы</h3>
+          <p>Оплата → бриф → я разбираю заранее → созвон с вариантами решения под вас и ваш бюджет.</p>
+          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ladder-step__link">Прийти на разбор →</a>
+        </li>
+        <li class="ladder-step">
+          <div class="ladder-step__head">
+            <span class="ladder-step__num" aria-hidden="true">4</span>
+            <span class="ladder-step__price">цена по объёму</span>
+          </div>
+          <h3>Работа под запрос</h3>
+          <p>Собираю то, что нужно именно вам: от точки входа до напоминаний и аналитики. Объём и стоимость – после разбора.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-        <!-- Аудит -->
-        <div class="package">
-          <div class="package-head">
-            <span class="package-name">Аудит пути клиента</span>
-            <span class="package-price">7 000 ₽</span>
-          </div>
-          <p class="package-desc">Понять, где теряются заявки, – без сборки сайта. Смотрю сайт, соцсети, онлайн-запись, карточки на картах и акции и нахожу, где человек теряется до заявки.</p>
-          <p class="package-term">Формат: документ с правками</p>
-          <p class="package-for">Подходит, если: хотите не общий созвон, а конкретный список правок.</p>
-          <button class="accordion-toggle" aria-expanded="false">Что в разборе <span class="accordion-arrow">↓</span></button>
-          <div class="accordion-body">
-            <ul class="include-list">
-              <li>точка входа: сайт, соцсети, Taplink, VK, Telegram</li>
-              <li>онлайн-запись: Dikidi / YClients / Telegram</li>
-              <li>карточки на картах и отзывы</li>
-              <li>услуги, цены и блоки доверия</li>
-              <li>акции и спецпредложения</li>
-              <li>путь от первого интереса до заявки</li>
-            </ul>
-            <p class="package-limits">На выходе – 10–15 конкретных правок: что исправить первым, что мешает доверию и <a href="/blog/nuzhen-li-sajt-esli-est-socseti/">нужен ли вам сайт, если уже есть соцсети</a>.</p>
-          </div>
-          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="btn btn--outline">Заказать разбор</a>
-        </div>
-
-        <!-- Доработка текущего сайта -->
-        <div class="package">
-          <div class="package-head">
-            <span class="package-name">Доработка текущего сайта</span>
-            <span class="package-price">от 15 000 ₽</span>
-          </div>
-          <p class="package-desc">Если сайт уже есть, но он не ведёт к записи: непонятный первый экран, слабые тексты, спрятанная кнопка, нет доверия, услуги сложно выбрать.</p>
-          <p class="package-term">Срок и объём – по результатам разбора</p>
-          <p class="package-for">Подходит, если: чинить дешевле и быстрее, чем пересобирать всё заново.</p>
-          <button class="accordion-toggle" aria-expanded="false">Что может входить <span class="accordion-arrow">↓</span></button>
-          <div class="accordion-body">
-            <ul class="include-list">
-              <li>правка первого экрана</li>
-              <li>структура услуг</li>
-              <li>тексты и кнопки (CTA)</li>
-              <li>блоки доверия</li>
-              <li>акции</li>
-              <li>FAQ</li>
-              <li>путь к онлайн-записи</li>
-              <li>мобильная версия</li>
-              <li>форма и связка с Telegram</li>
-              <li>базовая аналитика</li>
-            </ul>
-            <p class="package-limits">Состав работ и стоимость фиксируем после разбора – платите только за то, что реально нужно поправить. Сначала смотрим, <a href="/blog/pochemu-klienty-ukhodyat-s-sajta/">почему клиенты уходят с сайта, так и не записавшись</a>.</p>
-          </div>
-          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="btn btn--outline">Обсудить доработку</a>
-        </div>
-
-        <!-- Мини-сайт -->
-        <div class="package">
-          <div class="package-head">
-            <span class="package-name">Мини-сайт</span>
-            <span class="package-price">40 000 ₽</span>
-          </div>
-          <p class="package-desc">Одна страница, выстроенная под запись. Форма → Telegram, мобильная версия и базовая подготовка для поисковиков.</p>
-          <p class="package-term">Срок: от 5 дней</p>
-          <p class="package-for">Подходит, если: один мастер или одно направление, нужна рабочая точка входа из соцсетей, мессенджеров или рекламы.</p>
-          <button class="accordion-toggle" aria-expanded="false">Что входит <span class="accordion-arrow">↓</span></button>
-          <div class="accordion-body">
-            <ul class="include-list">
-              <li>разбор услуг, аудитории, текущих соцсетей и точки записи</li>
-              <li>структура одной страницы под конкретный бизнес</li>
-              <li>тексты: заголовки, описания блоков, кнопки и услуги</li>
-              <li>индивидуальный дизайн</li>
-              <li>корректный вид сайта на телефоне, планшете и компьютере</li>
-              <li>первый экран: сразу понятно, чем вы помогаете, где работаете и как записаться</li>
-              <li>блок услуг: до 5–7 услуг</li>
-              <li>прайс</li>
-              <li>блок доверия: опыт, особенности, подход</li>
-              <li>фотографии: размещение материалов клиента</li>
-              <li>отзывы: до 5</li>
-              <li>контакты: адрес, телефон, мессенджеры, карта</li>
-              <li>кнопки онлайн-записи: Dikidi / YClients / Telegram</li>
-              <li>форма заявки → Telegram</li>
-              <li>базовая подготовка для поисковиков: название страницы, описание, структура и подписи к изображениям. Подробнее: <a href="/blog/chto-dolzhno-byt-na-sajte-studii/">что должно быть на сайте студии</a></li>
-              <li>Яндекс.Метрика, по необходимости</li>
-              <li>работа по договору: фиксируем объём, сроки, оплату и правки</li>
-              <li>политика конфиденциальности и согласие рядом с формой</li>
-              <li>проверка перед запуском</li>
-              <li>помощь с публикацией</li>
-            </ul>
-            <p class="package-limits">Ограничения: 1 страница, до 5–7 услуг, 1 специалист или простой блок «команда», 2 раунда правок, без квиза.</p>
-          </div>
-          <a href="#form" class="btn btn--outline">Обсудить на диагностике</a>
-        </div>
-
-        <!-- Сайт-воронка -->
-        <div class="package package--featured">
-          <div class="package-badge">Популярный</div>
-          <div class="package-head">
-            <span class="package-name">Сайт-воронка</span>
-            <span class="package-price">80 000 ₽</span>
-          </div>
-          <p class="package-desc">Полный запуск под ключ: разбираю студию, собираю структуру и тексты, оформляю сайт, подключаю формы и аналитику.</p>
-          <p class="package-term">Срок: от 7 дней</p>
-          <blockquote class="package-quote">Сайт помогает клиенту не просто посмотреть, а понять услугу, поверить вам и дойти до записи без лишних шагов. Если онлайн-запись уже есть, важно разобрать, <a href="/blog/pochemu-malo-onlajn-zapisej/">почему записей всё равно мало</a>.</blockquote>
-          <p class="package-for">Подходит, если: несколько услуг или мастеров, хочется понимать откуда приходят клиенты.</p>
-          <button class="accordion-toggle" aria-expanded="false">Что входит <span class="accordion-arrow">↓</span></button>
-          <div class="accordion-body">
-            <ul class="include-list">
-              <li>разбор студии, услуг и текущих точек входа</li>
-              <li>мини-аудит: что сейчас мешает клиенту понять и записаться</li>
-              <li>логика страницы под конкретный бизнес: от первого экрана до заявки</li>
-              <li>формулировка предложения: что вы делаете, для кого, почему к вам</li>
-              <li>тексты всех блоков страницы</li>
-              <li>индивидуальный дизайн</li>
-              <li>корректный вид сайта на телефоне, планшете и компьютере</li>
-              <li>понятные блоки: кто вы, чем помогаете, сколько стоит, кто принимает, почему можно доверять и как записаться</li>
-              <li>до 3 мастеров: карточки с фото и описанием</li>
-              <li>до 4 категорий услуг</li>
-              <li>форма заявки → Telegram</li>
-              <li>кнопки онлайн-записи: Dikidi / YClients / Telegram</li>
-              <li>простой квиз до 3 вопросов, если нужен</li>
-              <li>Яндекс.Метрика + цели на формы и запись</li>
-              <li>базовая подготовка для поисковиков: название страницы, описание, структура, подписи к изображениям и иконка сайта</li>
-              <li>работа по договору: фиксируем объём, сроки, оплату и правки</li>
-              <li>политика конфиденциальности и согласие рядом с формой</li>
-              <li>публикация сайта, подключение домена и проверка, что ссылка открывается безопасно</li>
-              <li>проверка перед запуском: мобильная версия, кнопки, формы, ссылки и заявки</li>
-              <li>краткая инструкция: куда приходят заявки, что смотреть в Метрике</li>
-            </ul>
-            <p class="package-limits">Ограничения: 1 страница, до 4 категорий услуг, до 3 мастеров, 2 раунда правок.<br>Не входит: логотип с нуля, фотосессия, онлайн-оплата, CRM, реклама, SEO-продвижение.</p>
-          </div>
-          <a href="#form" class="btn">Обсудить на диагностике</a>
-        </div>
-
-        <!-- Кастомный -->
-        <div class="package">
-          <div class="package-head">
-            <span class="package-name">Кастомный</span>
-            <span class="package-price">от 100 000 ₽</span>
-          </div>
-          <p class="package-desc">Для студий с несколькими филиалами, мастерами или направлениями. Обычно 120 000–180 000 ₽, если нужна многостраничная структура или сложная логика.</p>
-          <p class="package-term">Срок: от 10 дней, стоимость после брифа</p>
-          <p class="package-for">Подходит, если: сложная структура услуг, несколько специалистов или площадок, нужно выглядеть системнее.</p>
-          <button class="accordion-toggle" aria-expanded="false">Что входит <span class="accordion-arrow">↓</span></button>
-          <div class="accordion-body">
-            <p class="include-list-intro">Всё из воронки, плюс:</p>
-            <ul class="include-list">
-              <li>глубокий разбор бизнеса, конкурентов, пути клиента</li>
-              <li>структура сайта, где несколько страниц или сложный выбор услуг остаются понятными</li>
-              <li>логика предложения: сильные направления, услуги и возражения</li>
-              <li>несколько мастеров с карточками</li>
-              <li>несколько филиалов: отдельные блоки или страницы</li>
-              <li>расширенный квиз с ветками</li>
-              <li>формы под разные сценарии: консультация, подбор услуги, обратный звонок</li>
-              <li>подробная аналитика: что нажимают, куда переходят и где теряются</li>
-              <li>дополнительная техническая подготовка, чтобы поисковикам было проще понимать сайт</li>
-              <li>инструкция по работе с сайтом и понимание, <a href="/blog/skolko-stoit-sajt-dlya-studii/">из чего складывается стоимость сайта для студии</a></li>
-            </ul>
-            <p class="package-limits">Объём и стоимость фиксируются после брифа.<br>Не входит: онлайн-оплата, личный кабинет, сложные CRM, реклама, SEO-продвижение.</p>
-          </div>
-          <a href="#form" class="btn btn--outline">Обсудить на диагностике</a>
-        </div>
-
+  <!-- ЧЕСТНАЯ РАМКА -->
+  <section class="section honest">
+    <div class="container">
+      <div class="honest-panel">
+        <h2 class="honest-title">Чего я не обещаю</h2>
+        <p>Я операционщик и аналитик, а не маркетолог. Не обещаю иксы к выручке и конкретное число заявок: это зависит от ваших услуг, цен и спроса. Отвечаю за другое: чтобы запись, напоминания и возвраты работали без потерь, а вы видели по цифрам, что происходит. Где течёт – покажу честно. Решение подберу под вашу задачу и бюджет, а не впарю самое дорогое.</p>
       </div>
     </div>
   </section>
 
   <section class="section blog-links" aria-labelledby="blog-links-title">
     <div class="container">
-      <h2 class="section-title" id="blog-links-title">Разобраться до диагностики</h2>
+      <h2 class="section-title" id="blog-links-title">Разобраться самостоятельно</h2>
       <p class="section-lead">Короткие разборы про сайт студии, соцсети, онлайн-запись и места, где клиент чаще всего теряется до заявки.</p>
       <div class="blog-links-grid">
         <a class="blog-link-card" href="/blog/chto-dolzhno-byt-na-sajte-studii/">
@@ -475,23 +424,23 @@
       <div class="faq-list">
 
         <div class="faq-item">
-          <button class="faq-toggle" aria-expanded="false">Чем бесплатная диагностика отличается от аудита за 7 000 ₽?</button>
+          <button class="faq-toggle" aria-expanded="false">Чем бесплатная диагностика отличается от разбора за 5 000 ₽?</button>
           <div class="faq-body">
-            <p>Диагностика – это бесплатный созвон на 15–20 минут: я быстро смотрю вашу точку входа и называю 2–3 главных наблюдения и какой следующий шаг имеет смысл. Аудит за 7 000 ₽ – это уже не разговор, а документ: я подробно разбираю сайт, соцсети, онлайн-запись, карточки и акции и отдаю 10–15 конкретных правок, что чинить и в каком порядке. Диагностика отвечает «есть ли проблема», аудит – «что именно делать».</p>
+            <p>Диагностика – это бесплатная самопроверка по 12 точкам: вы сами оцениваете, где у вас течёт, и сразу видите свой балл. Гайд за 1 490 ₽ разбирает каждую точку: три уровня решений и с чего начать. Разбор за 5 000 ₽ – уже про вашу систему: оплата, бриф, я разбираю заранее, а на созвоне показываю, где течёт, и варианты решения под вас. Если идём дальше, эти 5 000 ₽ идут в счёт работы.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">А если сайт уже есть – можно просто его поправить?</button>
           <div class="faq-body">
-            <p>Да, и часто это разумнее, чем собирать заново. Если структура в целом рабочая, а проблема в первом экране, текстах, доверии или спрятанной записи – берусь за доработку текущего сайта от 15 000 ₽. Сайт с нуля имеет смысл, только когда чинить старое дороже и дольше, чем собрать новое. На диагностике как раз и решаем, что выгоднее именно вам.</p>
+            <p>Да, и часто это разумнее, чем собирать заново. Если структура в целом рабочая, а проблема в первом экране, текстах, доверии или спрятанной записи – чиню точечно. Что именно и в каком объёме, видно после диагностики и разбора: платите только за то, что реально нужно поправить.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">Можно ли гарантировать заявки?</button>
           <div class="faq-body">
-            <p>Конкретное количество заявок не обещаю: это зависит от трафика, цен, репутации, рекламы и самой услуги. Что я делаю: собираю сайт так, чтобы входящий человек не терялся и быстрее доходил до записи. Плюс подключаю аналитику, чтобы видеть клики, формы и поведение.</p>
+            <p>Конкретное количество заявок не обещаю: это зависит от трафика, цен, репутации, рекламы и самой услуги. Что я делаю: собираю систему так, чтобы входящий человек не терялся, быстрее доходил до записи и возвращался снова. Плюс подключаю аналитику, чтобы видеть клики, формы и поведение.</p>
           </div>
         </div>
 
@@ -505,14 +454,14 @@
         <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">SEO и реклама входят?</button>
           <div class="faq-body">
-            <p>Базовая подготовка для поисковиков входит: нормальное название страницы, описание, понятная структура и подписи к изображениям. Реклама не входит, но сайт можно подготовить под неё: кнопки, форма, учёт заявок в Метрике и страница благодарности.</p>
+            <p>Базовая подготовка для поисковиков входит: нормальное название страницы, описание, понятная структура и подписи к изображениям. Реклама не входит, но систему можно подготовить под неё: кнопки, форма, учёт заявок в Метрике и страница благодарности.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">Нет фото, текстов, логотипа</button>
           <div class="faq-body">
-            <p>Частая ситуация. Что нужно от вас, что беру на себя, разбираем на консультации.</p>
+            <p>Частая ситуация. Что нужно от вас, а что беру на себя, разбираем на разборе.</p>
           </div>
         </div>
 
@@ -526,7 +475,7 @@
         <div class="faq-item">
           <button class="faq-toggle" aria-expanded="false">Что будет после запуска?</button>
           <div class="faq-body">
-            <p>Рабочий сайт, подключённая аналитика, форма заявки, кнопки записи. Дальше ведёте трафик из соцсетей, рекламы или мессенджеров, смотрите данные и дорабатываете сайт по ним. Поддержку можно взять отдельно.</p>
+            <p>Рабочая система: сайт-вход, подключённая аналитика, форма заявки, кнопки записи, а дальше по вашей задаче – напоминания и возвраты. Вы ведёте трафик из соцсетей, рекламы или мессенджеров, смотрите данные и дорабатываете по ним. Поддержку можно взять отдельно.</p>
           </div>
         </div>
 
@@ -534,11 +483,11 @@
     </div>
   </section>
 
-  <!-- ФОРМА -->
+  <!-- ФОРМА РАЗБОРА -->
   <section class="section form-section" id="form">
     <div class="container container--narrow">
-      <h2 class="section-title">Понять, что исправить первым</h2>
-      <p class="form-desc">Бесплатная диагностика – 15–20 минут. Быстро посмотрю ваш сайт, соцсеть или страницу записи и назову 2–3 главных места, где клиент может теряться, и какой шаг сделать дальше.</p>
+      <h2 class="section-title">Прийти на разбор</h2>
+      <p class="form-desc">Разбор вашей системы записи – 5 000 ₽, в счёт работы. Оплата → бриф → я разбираю заранее → созвон, где показываю, где течёт, и варианты решения под вас и бюджет. Быстрее всего – <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener">написать напрямую в Telegram</a>. Или оставьте заявку, я отвечу сама.</p>
 
       <form class="form" id="contactForm" novalidate>
         <div class="form-field">
@@ -558,24 +507,24 @@
           <select id="goal" name="goal">
             <option value="">Пока не знаю</option>
             <option value="Где клиент теряется до записи">Где клиент теряется до записи</option>
+            <option value="Почему клиенты не возвращаются">Почему клиенты не возвращаются</option>
             <option value="Что исправить на текущем сайте">Что исправить на текущем сайте</option>
-            <option value="Какой формат сайта подойдёт">Какой формат сайта подойдёт</option>
-            <option value="Как связать сайт с Dikidi / YClients / Telegram">Как связать сайт с Dikidi / YClients / Telegram</option>
+            <option value="Как настроить напоминания и возвраты">Как настроить напоминания и возвраты</option>
           </select>
         </div>
         <div class="form-field">
-          <label for="timeline">Когда планируете обновлять сайт или точку записи?</label>
+          <label for="timeline">Когда хотите начать?</label>
           <select id="timeline" name="timeline" required>
             <option value="">Выберите вариант</option>
-            <option value="В ближайшие 1–2 месяца">В ближайшие 1–2 месяца</option>
             <option value="В этом месяце">В этом месяце</option>
+            <option value="В ближайшие 1–2 месяца">В ближайшие 1–2 месяца</option>
             <option value="Позже, хочу понять объём">Позже, хочу понять объём</option>
             <option value="Пока присматриваюсь">Пока присматриваюсь</option>
           </select>
         </div>
         <div class="form-field">
           <label for="problem">Что сейчас не работает?</label>
-          <textarea id="problem" name="problem" rows="4" placeholder="Например: есть соцсети, но нет понятной записи; сайт устарел; услуги сложно объяснить..."></textarea>
+          <textarea id="problem" name="problem" rows="4" placeholder="Например: записываются и не доходят; база спит; заявки из мессенджеров теряются..."></textarea>
         </div>
         <div class="form-field">
           <label for="contact">Как удобно связаться</label>
@@ -585,20 +534,20 @@
           <input type="checkbox" id="consent" name="consent" required />
           <label for="consent">Я согласен(на) на <a href="privacy.html" target="_blank">обработку персональных данных</a></label>
         </div>
-        <button type="submit" class="btn" id="submitBtn">Понять, что исправить первым</button>
+        <button type="submit" class="btn" id="submitBtn">Оставить заявку на разбор</button>
         <p class="form-note" id="formNote"></p>
       </form>
 
-      <p class="form-after">После отправки отвечу в Telegram в течение 24 часов. Если удобнее без формы, можно <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener">написать напрямую</a>.</p>
+      <p class="form-after">После отправки отвечу в Telegram в течение 24 часов. Ещё не готовы к разбору? Начните с <a href="/audit/">бесплатной диагностики записи</a>.</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p><a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="privacy.html">Политика конфиденциальности</a></p>
+      <p><a href="/audit/">Диагностика записи</a> · <a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="privacy.html">Политика конфиденциальности</a></p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260711-1"></script>
 </body>
 </html>
