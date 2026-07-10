@@ -519,3 +519,17 @@ Avoid:
 - quiz-like styling;
 - empty calculator placeholders;
 - harsh warning colors.
+
+## 10. Motion
+
+Motion is a quiet orientation layer, not decoration. Use it only to clarify
+hierarchy, response, or a change of state.
+
+- Keep interface feedback at `160ms`; a section entrance must stay within `280ms`.
+- Use one calm decelerating easing curve: `cubic-bezier(.22, 1, .36, 1)`.
+- Reveal a section once as it enters the viewport; do not loop or animate every
+  element independently.
+- Buttons and interactive cards may lift by 1–3px on hover. Do not use bounce,
+  elastic motion, autoplaying decorative effects, or animations for frequent actions.
+- Motion must be progressive enhancement: content remains visible without
+  JavaScript and fully respects `prefers-reduced-motion: reduce`.

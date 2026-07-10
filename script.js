@@ -3,6 +3,38 @@ function ymGoal(goal) {
   if (typeof ym !== 'undefined') ym(109430856, 'reachGoal', goal);
 }
 
+// Calm, short entrance motion for the consulting system. It is progressive
+// enhancement: content is visible without JavaScript and for reduced motion.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!reducedMotion) {
+  const revealTargets = [
+    ...document.querySelectorAll('.home-header, .home-hero__copy > *, .home-insight, .home-proof-row'),
+    ...document.querySelectorAll('.section:not(.legacy-hero) .container > *'),
+  ];
+
+  revealTargets.forEach((element, index) => {
+    element.dataset.reveal = '';
+    element.dataset.revealDelay = String(index % 4);
+  });
+
+  document.documentElement.classList.add('motion-ready');
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14 });
+
+    revealTargets.forEach(element => revealObserver.observe(element));
+  } else {
+    revealTargets.forEach(element => element.classList.add('is-revealed'));
+  }
+}
+
 // ── Метрика: клик на hero CTA ──
 document.querySelectorAll('.hero a[href="#form"].btn').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('hero_click'));
