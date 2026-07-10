@@ -3,3 +3,12 @@ node_modules/
 .DS_Store
 wrangler.toml
 *.zip
+
+# Локальные инструменты агентов (не для репозитория и не для деплоя)
+.claude/
+.agents/
+.codex/
+.impeccable/
+.github/skills/
+.github/hooks/
+skills-lock.json

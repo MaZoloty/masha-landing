@@ -1,0 +1,8 @@
+# Служебные файлы и папки не должны быть доступны публично
+RedirectMatch 404 ^/docs(/|$)
+RedirectMatch 404 ^/specs(/|$)
+RedirectMatch 404 ^/automation(/|$)
+RedirectMatch 404 ^/functions(/|$)
+RedirectMatch 404 ^/\.(?!well-known/)
+RedirectMatch 404 \.(md|toml)$
+RedirectMatch 404 ^/skills-lock\.json$

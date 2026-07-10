@@ -6,6 +6,8 @@ This project is Maria Zolotukhina's personal site and funnel system. Treat every
 
 Before changing or creating any UI, read:
 
+- `PRODUCT.md` — strategic summary (register, users, positioning, belief ladder)
+- `DESIGN.md` — visual system summary (tokens, typography, layout, motion)
 - `docs/product-brief.md`
 - `docs/brandbook-framework.md`
 - `docs/visual-direction.md`
@@ -18,6 +20,16 @@ Before changing or creating any UI, read:
 For `/diagnostika/`, also read `docs/design-system-diagnostika.md`.
 
 If the change touches only backend logic, still preserve the visual contracts in these files.
+
+## Design Skills
+
+Installed in `.claude/skills/` and `.agents/skills/` (shared by Claude Code and Codex). Use them in this order for UI work:
+
+1. `impeccable` — design language, audits, polish, anti-slop detection. Commands: `/impeccable polish <section>`, `/impeccable audit`, `/impeccable critique <page>`, `/impeccable live`. Reads `PRODUCT.md` and `DESIGN.md` first.
+2. `design-taste-frontend` (+ `redesign-existing-projects`, `high-end-visual-design`) — non-default, studio-level design decisions. In Codex prefer `gpt-taste`.
+3. `emil-design-eng` — motion and micro-interactions; verify with `review-animations`.
+
+Skill output must still obey `DESIGN.md` tokens and `docs/design-system.md`; skills raise the bar, they do not replace the visual system.
 
 ## Product Standard
 

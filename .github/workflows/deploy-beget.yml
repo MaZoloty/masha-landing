@@ -67,4 +67,13 @@ jobs:
             --exclude "wrangler.toml" \
             --exclude "automation/" \
             --exclude "*.zip" \
+            --exclude ".claude/" \
+            --exclude ".agents/" \
+            --exclude ".codex/" \
+            --exclude ".impeccable/" \
+            --exclude "docs/" \
+            --exclude "specs/" \
+            --exclude "*.md" \
+            --exclude "skills-lock.json" \
+            --exclude "launch.json" \
             ./ "$BEGET_USER@$BEGET_HOST:$BEGET_PATH/"
