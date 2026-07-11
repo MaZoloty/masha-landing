@@ -30,8 +30,8 @@
   --ui-color-risk: #8b4b3d;
   --ui-color-white: #ffffff;
 
-  --ui-font-display: "Cormorant Garamond", "Lora", Georgia, "Times New Roman", serif;
-  --ui-font-sans: "Manrope", "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --ui-font-display: "Prata", Georgia, "Times New Roman", serif;
+  --ui-font-sans: "Golos Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
   --ui-container-wide: 1380px;
   --ui-container: 1220px;
@@ -59,8 +59,8 @@
   --ui-radius-shell: 28px;
   --ui-radius-pill: 999px;
 
-  --ui-shadow-card: 0 18px 50px rgba(47, 41, 31, .06);
-  --ui-shadow-lift: 0 28px 70px rgba(47, 41, 31, .09);
+  --ui-shadow-card: 0 18px 52px rgba(47, 41, 31, .08), inset 0 1px 0 rgba(255, 255, 255, .7);
+  --ui-shadow-lift: 0 28px 76px rgba(47, 41, 31, .12), inset 0 1px 0 rgba(255, 255, 255, .66);
   --ui-focus: 0 0 0 4px rgba(143, 119, 205, .22);
 
   /* Motion stays brief and informative: it orients, never decorates. */
@@ -129,16 +129,18 @@ html {
 
 .ui-type-display {
   font-family: var(--ui-font-display);
-  font-weight: 500;
-  line-height: .98;
-  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -.018em;
+  text-wrap: balance;
 }
 
 .ui-type-title {
   font-family: var(--ui-font-display);
-  font-weight: 500;
-  line-height: 1.04;
-  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.014em;
+  text-wrap: balance;
 }
 
 .ui-type-body {
@@ -314,9 +316,12 @@ html {
   position: relative;
   border: 1px solid var(--ui-color-line);
   border-radius: var(--ui-radius-lg);
-  background: var(--ui-color-surface);
+  background: rgba(255, 253, 248, .76);
   padding: var(--ui-space-8);
   overflow: hidden;
+  box-shadow: var(--ui-shadow-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .ui-card--lilac {

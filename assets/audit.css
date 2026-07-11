@@ -217,6 +217,170 @@
   line-height: 1.6;
 }
 
+/* ── Денежная прикидка ── */
+
+.audit-money {
+  padding-block: clamp(40px, 5vw, 72px);
+  border-top: 1px solid var(--ui-color-grid);
+  scroll-margin-top: 20px;
+}
+
+.audit-money__head {
+  max-width: 760px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.audit-money__head h2 {
+  max-width: 700px;
+  margin: 14px 0 16px;
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.06;
+  color: var(--ui-color-ink);
+}
+
+.audit-money__head > p:last-child {
+  max-width: 660px;
+  margin: 0;
+  color: var(--ui-color-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.audit-money__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  overflow: hidden;
+  border: 1px solid var(--ui-color-line-lavender);
+  border-radius: var(--ui-radius-xl);
+  background: var(--ui-color-surface);
+}
+
+.audit-money__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px clamp(18px, 3vw, 28px);
+  padding: clamp(24px, 3.4vw, 44px);
+}
+
+.audit-money__input-wrap {
+  position: relative;
+}
+
+.audit-money__unit-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.audit-money__unit-input select {
+  min-height: 56px;
+  min-width: 132px;
+  padding: 0 34px 0 14px;
+  border: 1px solid var(--ui-color-line);
+  border-radius: var(--ui-radius-md);
+  background: rgba(255, 253, 248, .78);
+  color: var(--ui-color-ink);
+  font-family: var(--ui-font-sans);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.audit-money__unit-input select:focus-visible {
+  outline: none;
+  border-color: var(--ui-color-line-lavender);
+  box-shadow: var(--ui-focus);
+}
+
+.audit-money__input-wrap .ui-input {
+  padding-right: 54px;
+}
+
+.audit-money__suffix {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--ui-color-muted);
+  font-size: 16px;
+  font-weight: 700;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.audit-money__result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(26px, 3.4vw, 44px);
+  border-left: 1px solid var(--ui-color-line-lavender);
+  background: var(--ui-color-lilac);
+}
+
+.audit-money__eyebrow {
+  color: var(--ui-color-lilac-ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.audit-money__total {
+  margin-top: 18px;
+  color: var(--ui-color-ink);
+  font-family: var(--ui-font-display);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: .92;
+}
+
+.audit-money__period {
+  margin-top: 8px;
+  color: var(--ui-color-lilac-ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.audit-money__status {
+  max-width: 360px;
+  margin: 24px 0 0;
+  color: var(--ui-color-lilac-ink);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.audit-money__breakdown {
+  display: grid;
+  width: 100%;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(77, 64, 93, .2);
+  list-style: none;
+}
+
+.audit-money__breakdown li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--ui-color-lilac-ink);
+  font-size: 14px;
+}
+
+.audit-money__breakdown b {
+  flex-shrink: 0;
+  color: var(--ui-color-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.audit-money__disclaimer {
+  max-width: 390px;
+  margin: auto 0 0;
+  padding-top: 28px;
+  color: var(--ui-color-lilac-ink);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
 /* ── Самопроверка ── */
 
 .audit-checklist {
@@ -530,6 +694,42 @@
   line-height: 1.72;
 }
 
+.audit-result__money {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 8px 18px;
+  align-items: baseline;
+  margin-top: clamp(22px, 3vw, 36px);
+  padding: clamp(20px, 2.6vw, 30px);
+  border: 1px solid var(--ui-color-line-lavender);
+  border-radius: var(--ui-radius-lg);
+  background: var(--ui-color-lilac);
+}
+
+.audit-result__money > span {
+  color: var(--ui-color-lilac-ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.audit-result__money strong {
+  color: var(--ui-color-ink);
+  font-family: var(--ui-font-display);
+  font-size: clamp(32px, 3.4vw, 46px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.audit-result__money p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--ui-color-lilac-ink);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 /* ── Форма гайда ── */
 
 .audit-form-section {
@@ -765,6 +965,7 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
 
 @media (max-width: 980px) {
   .audit-hero,
+  .audit-money__layout,
   .audit-form-wrap,
   .audit-next__panel {
     grid-template-columns: 1fr;
@@ -785,6 +986,11 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
 
   .audit-result__tiers {
     grid-template-columns: 1fr;
+  }
+
+  .audit-money__result {
+    border-top: 1px solid var(--ui-color-line-lavender);
+    border-left: 0;
   }
 
   .audit-scorebar {
@@ -810,6 +1016,23 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
 
   .audit-hero {
     padding-block: 30px 40px;
+  }
+
+  .audit-money__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-money__unit-input {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-money__unit-input select {
+    width: 100%;
+  }
+
+  .audit-result__money {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .audit-scorebar {

@@ -14,8 +14,76 @@ const resultBtn = document.getElementById('resultBtn');
 const resultSection = document.getElementById('result');
 const resultScore = document.getElementById('resultScore');
 const scoreInput = document.getElementById('gscore');
+const moneyInputs = {
+  weeklyBookings: document.getElementById('weeklyBookings'),
+  averageCheck: document.getElementById('averageCheck'),
+  weeklyNoShows: document.getElementById('weeklyNoShows'),
+  dormantClients: document.getElementById('dormantClients'),
+};
+const noShowUnit = document.getElementById('noShowUnit');
+const lossTotal = document.getElementById('lossTotal');
+const lossStatus = document.getElementById('lossStatus');
+const lossBreakdown = document.getElementById('lossBreakdown');
+const noShowLoss = document.getElementById('noShowLoss');
+const dormantLoss = document.getElementById('dormantLoss');
+const resultMoney = document.getElementById('resultMoney');
+const resultLoss = document.getElementById('resultLoss');
 
 let auditStarted = false;
+let moneyStarted = false;
+
+function numberValue(input) {
+  return input ? Math.max(0, Number(input.value) || 0) : 0;
+}
+
+function rubles(value) {
+  return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(Math.round(value)) + ' ₽';
+}
+
+function calculateLoss() {
+  const weeklyBookings = numberValue(moneyInputs.weeklyBookings);
+  const averageCheck = numberValue(moneyInputs.averageCheck);
+  const rawNoShows = numberValue(moneyInputs.weeklyNoShows);
+  const dormantClients = numberValue(moneyInputs.dormantClients);
+  const noShowsArePercent = noShowUnit && noShowUnit.value === 'percent';
+  const weeklyNoShows = noShowsArePercent
+    ? weeklyBookings * rawNoShows / 100
+    : rawNoShows;
+  const noShowNeedsBookings = noShowsArePercent && rawNoShows > 0 && !weeklyBookings;
+
+  if (!averageCheck || (!weeklyNoShows && !dormantClients)) {
+    if (lossTotal) lossTotal.textContent = '—';
+    if (lossBreakdown) lossBreakdown.hidden = true;
+    if (resultMoney) resultMoney.hidden = true;
+    if (lossStatus) {
+      lossStatus.textContent = noShowNeedsBookings
+        ? 'Чтобы посчитать неявки в процентах, добавьте количество записей в неделю.'
+        : averageCheck
+          ? 'Добавьте неявки или спящую базу — покажу ориентир по деньгам.'
+          : 'Введите средний чек и хотя бы одну из двух цифр: неявки или спящую базу.';
+    }
+    return;
+  }
+
+  const noShowMonthly = weeklyNoShows * averageCheck * 4;
+  const dormantMonthly = dormantClients * averageCheck * .05;
+  const total = noShowMonthly + dormantMonthly;
+  const noShowRate = weeklyBookings > 0 && weeklyNoShows > 0
+    ? Math.min(100, Math.round((weeklyNoShows / weeklyBookings) * 100))
+    : null;
+
+  if (lossTotal) lossTotal.textContent = '≈ ' + rubles(total);
+  if (noShowLoss) noShowLoss.textContent = rubles(noShowMonthly);
+  if (dormantLoss) dormantLoss.textContent = rubles(dormantMonthly);
+  if (lossBreakdown) lossBreakdown.hidden = false;
+  if (lossStatus) {
+    lossStatus.textContent = noShowRate === null
+      ? 'Сумма складывается из пустых окон и консервативной доли возврата из спящей базы.'
+      : 'Неявки — примерно ' + noShowRate + '% от ваших записей за неделю. Это стоит проверить первой.';
+  }
+  if (resultLoss) resultLoss.textContent = '≈ ' + rubles(total) + ' / месяц';
+  if (resultMoney) resultMoney.hidden = false;
+}
 
 function currentScore() {
   return items.reduce((sum, item) => {
@@ -45,6 +113,7 @@ function tierFor(total) {
 
 function renderResult(total, scroll) {
   if (!resultSection) return;
+  calculateLoss();
   resultSection.hidden = false;
   if (resultScore) resultScore.textContent = String(total);
   const active = tierFor(total);
@@ -71,6 +140,21 @@ items.forEach(item => {
   });
 });
 
+Object.values(moneyInputs).forEach(input => {
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!moneyStarted) {
+      moneyStarted = true;
+      ymGoal('audit_money_start');
+    }
+    calculateLoss();
+  });
+});
+
+if (noShowUnit) noShowUnit.addEventListener('change', calculateLoss);
+
+calculateLoss();
+
 if (resultBtn) {
   resultBtn.addEventListener('click', () => {
     renderResult(currentScore(), true);
@@ -84,14 +168,14 @@ if (scoreInput) {
   });
 }
 
-// Плавный скролл к самопроверке с кнопки hero
+// Плавный скролл к денежной прикидке с кнопки hero
 const startBtn = document.getElementById('startBtn');
 if (startBtn) {
   startBtn.addEventListener('click', event => {
-    const checklist = document.getElementById('checklist');
-    if (!checklist) return;
+    const calculator = document.getElementById('loss-calculator');
+    if (!calculator) return;
     event.preventDefault();
-    checklist.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    calculator.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
 
@@ -172,7 +256,7 @@ if (guideForm) {
       }
     } catch (err) {
       guideSubmit.disabled = false;
-      guideSubmit.textContent = 'Забрать гайд';
+      guideSubmit.textContent = 'Получить гайд';
       setNote('Что-то пошло не так. Напишите мне напрямую: t.me/masha_zoloty', 'error');
     }
   });
@@ -184,7 +268,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 if (!reducedMotion) {
   const revealTargets = [
     ...document.querySelectorAll('.audit-hero__copy > *, .audit-hero__gauge, .audit-steps__list > li'),
-    ...document.querySelectorAll('.audit-checklist__head, .audit-item, .audit-form-wrap, .audit-next__panel, .audit-footer__who'),
+    ...document.querySelectorAll('.audit-money__head, .audit-money__layout, .audit-checklist__head, .audit-item, .audit-form-wrap, .audit-next__panel, .audit-footer__who'),
   ];
 
   revealTargets.forEach((element, index) => {

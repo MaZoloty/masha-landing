@@ -471,12 +471,16 @@ body > .section {
   list-style: none;
 }
 
-.case-tags li,
-.blog-link-card span {
+.case-tags li {
   border: 1px solid var(--ui-color-line-lavender);
   border-radius: var(--ui-radius-pill);
   background: var(--ui-color-lilac);
   color: var(--ui-color-lilac-ink);
+}
+
+.blog-link-card span {
+  display: block;
+  color: var(--ui-color-ink);
 }
 
 .package--featured {

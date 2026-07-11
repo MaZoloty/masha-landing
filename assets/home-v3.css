@@ -498,6 +498,72 @@
   border-color: rgba(255, 253, 248, .9);
 }
 
+/* ── Единый материал для лестницы решений ── */
+
+.ladder-steps {
+  align-items: stretch;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.ladder-step,
+.ladder-step:nth-child(1),
+.ladder-step:nth-child(2),
+.ladder-step:nth-child(4) {
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 348px;
+  padding: clamp(28px, 2.8vw, 38px);
+  border-color: rgba(222, 215, 202, .92);
+  background: rgba(255, 253, 248, .74);
+  box-shadow: var(--ui-shadow-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.ladder-step--featured {
+  min-height: 348px;
+  border-color: rgba(255, 255, 255, .14);
+  background: var(--ui-color-cta);
+  box-shadow: var(--ui-shadow-lift);
+}
+
+.ladder-step {
+  transition: transform var(--ui-motion-enter) var(--ui-ease-out), box-shadow var(--ui-motion-enter) var(--ui-ease-out), border-color var(--ui-motion-fast) ease;
+}
+
+.ladder-step:hover {
+  border-color: var(--ui-color-line-strong);
+  box-shadow: var(--ui-shadow-lift);
+  transform: translateY(-5px);
+}
+
+.ladder-step__head {
+  margin-bottom: 18px;
+}
+
+.ladder-step__num {
+  width: 48px;
+  height: 48px;
+  border-color: var(--ui-color-line-lavender);
+  background: rgba(255, 253, 248, .9);
+}
+
+.ladder-step h3 {
+  max-width: 13ch;
+  margin-bottom: 14px;
+  font-size: clamp(27px, 2.15vw, 33px);
+  line-height: 1.14;
+}
+
+.ladder-step p {
+  max-width: 28ch;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.ladder-step__link {
+  margin-top: 26px;
+}
+
 /* ── Честная рамка ── */
 
 .honest .container {

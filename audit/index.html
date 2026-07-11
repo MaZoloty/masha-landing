@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Диагностика записи: проверьте, где салон теряет клиентов</title>
-  <meta name="description" content="Бесплатная самопроверка по 12 точкам, где салоны и велнес-центры теряют клиентов. Посчитайте свой балл и заберите гайд с решениями." />
+  <title>Диагностика записи: где теряются клиенты и деньги</title>
+  <meta name="description" content="Бесплатная диагностика записи для салонов: прикиньте упущенную выручку на своих цифрах, оцените 12 точек и получите следующий разумный шаг." />
   <link rel="canonical" href="https://mazoloty.ru/audit/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,15 +14,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mazoloty.ru/audit/" />
-  <meta property="og:title" content="Диагностика записи: проверьте, где салон теряет клиентов" />
-  <meta property="og:description" content="Бесплатная самопроверка по 12 точкам, где салоны и велнес-центры теряют клиентов. Посчитайте свой балл и заберите гайд с решениями." />
+  <meta property="og:title" content="Диагностика записи: где теряются клиенты и деньги" />
+  <meta property="og:description" content="Прикиньте упущенную выручку на своих цифрах, оцените 12 точек записи и получите следующий разумный шаг." />
   <meta property="og:locale" content="ru_RU" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-1" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260711-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260711-2" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -48,10 +48,10 @@
       <div class="audit-hero__copy">
         <p class="ui-section-label">Бесплатная диагностика записи</p>
         <h1 class="audit-hero__title ui-type-display">Проверьте, где ваш салон теряет клиентов – <em>по 12 точкам, за пару минут</em></h1>
-        <p class="audit-hero__lead">Онлайн-запись есть, а записей мало? Обычно дело не в одном месте, а в нескольких мелких утечках между «клиент вас нашёл» и «записался снова». Пройдите диагностику и посчитайте, где у вас течёт сильнее всего.</p>
+        <p class="audit-hero__lead">Онлайн-запись есть, а записей мало? Сначала прикиньте, сколько денег сейчас остаётся в пустых окнах и спящей базе. Затем оцените 12 точек, которые объясняют, где именно клиент теряется.</p>
         <div class="audit-hero__actions">
-          <a href="#checklist" class="ui-button" id="startBtn">Начать диагностику</a>
-          <span class="audit-hero__note">без регистрации · 12 вопросов · ваш балл сразу</span>
+          <a href="#loss-calculator" class="ui-button" id="startBtn">Начать с цифр</a>
+          <span class="audit-hero__note">без регистрации · 4 цифры · 12 точек</span>
         </div>
       </div>
       <div class="audit-hero__visual" aria-hidden="true">
@@ -70,20 +70,74 @@
       <ol class="audit-steps__list">
         <li>
           <span class="audit-steps__num">1</span>
-          <h2>Оцените 12 точек</h2>
-          <p>По шкале от 0 до 10: 0 – у нас с этим порядок, 10 – болит сильно.</p>
+          <h2>Введите свои цифры</h2>
+          <p>Записи, средний чек, неявки и спящая база — достаточно примерной оценки.</p>
         </li>
         <li>
           <span class="audit-steps__num">2</span>
-          <h2>Балл посчитается сам</h2>
-          <p>Страница сложит оценки и покажет, в какой вы зоне.</p>
+          <h2>Оцените 12 точек</h2>
+          <p>По шкале от 0 до 10: 0 — порядок, 10 — болит сильно.</p>
         </li>
         <li>
           <span class="audit-steps__num">3</span>
-          <h2>Заберите гайд</h2>
-          <p>Разбор каждой точки и решения: что чинить первым.</p>
+          <h2>Получите ориентир</h2>
+          <p>Увидите балл, денежную прикидку и поймёте, что проверить первым.</p>
         </li>
       </ol>
+    </section>
+
+    <!-- ДЕНЕЖНАЯ ПРИКИДКА -->
+    <section class="audit-money" id="loss-calculator">
+      <div class="audit-money__head">
+        <p class="ui-section-label">Сначала — цифры бизнеса</p>
+        <h2 class="ui-type-title">Сколько денег сейчас может оставаться в пустых окнах и спящей базе</h2>
+        <p>Достаточно приблизительных данных. Расчёт не обещает выручку — он показывает порядок суммы, которую имеет смысл проверить первой.</p>
+      </div>
+
+      <div class="audit-money__layout">
+        <div class="audit-money__fields">
+          <div class="ui-field">
+            <label class="ui-field__label" for="weeklyBookings">Записей в неделю</label>
+            <input class="ui-input" type="number" id="weeklyBookings" min="0" step="1" inputmode="numeric" placeholder="Например, 60" />
+            <p class="ui-field__hint">Нужно, чтобы соотнести неявки с обычным объёмом записи.</p>
+          </div>
+          <div class="ui-field">
+            <label class="ui-field__label" for="averageCheck">Средний чек</label>
+            <div class="audit-money__input-wrap">
+              <input class="ui-input" type="number" id="averageCheck" min="0" step="100" inputmode="decimal" placeholder="Например, 2 500" />
+              <span class="audit-money__suffix" aria-hidden="true">₽</span>
+            </div>
+          </div>
+          <div class="ui-field">
+            <label class="ui-field__label" for="weeklyNoShows">Не дошло или отменило</label>
+            <div class="audit-money__unit-input">
+              <input class="ui-input" type="number" id="weeklyNoShows" min="0" step="1" inputmode="decimal" placeholder="Например, 5" />
+              <select id="noShowUnit" aria-label="Единица измерения неявок">
+                <option value="count">чел. / нед.</option>
+                <option value="percent">% от записи</option>
+              </select>
+            </div>
+            <p class="ui-field__hint">Можно указать количество в неделю или процент от записей.</p>
+          </div>
+          <div class="ui-field">
+            <label class="ui-field__label" for="dormantClients">Клиентов, которые давно не возвращались</label>
+            <input class="ui-input" type="number" id="dormantClients" min="0" step="1" inputmode="numeric" placeholder="Например, 400" />
+            <p class="ui-field__hint">Возьмите примерную спящую часть базы — не нужно выгружать отчёт.</p>
+          </div>
+        </div>
+
+        <div class="audit-money__result" aria-live="polite">
+          <span class="audit-money__eyebrow">Консервативная прикидка</span>
+          <strong class="audit-money__total" id="lossTotal">—</strong>
+          <span class="audit-money__period" id="lossPeriod">в месяц</span>
+          <p class="audit-money__status" id="lossStatus">Введите средний чек и хотя бы одну из двух цифр: неявки или спящую базу.</p>
+          <ul class="audit-money__breakdown" id="lossBreakdown" hidden>
+            <li><span>Пустые окна</span><b id="noShowLoss">—</b></li>
+            <li><span>Потенциал возврата из базы</span><b id="dormantLoss">—</b></li>
+          </ul>
+          <p class="audit-money__disclaimer">Модель: неявки × средний чек × 4 недели и консервативные 5% возврата из спящей базы. Это ориентир на ваших цифрах, не прогноз и не гарантия.</p>
+        </div>
+      </div>
     </section>
 
     <!-- САМОПРОВЕРКА -->
@@ -222,7 +276,7 @@
           <span class="audit-scorebar__value"><b id="scoreValue">0</b> из 120</span>
         </div>
         <div class="audit-scorebar__track" aria-hidden="true"><i id="scoreTrack"></i></div>
-        <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button">Показать результат</button>
+        <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button">Сформировать отчёт</button>
       </div>
     </section>
 
@@ -248,14 +302,19 @@
           <p>Точек много, поэтому даже первые две-три, что вы закроете, дадут результат уже в первый месяц. Начните с самых больных, не хватайтесь за всё сразу.</p>
         </article>
       </div>
-      <p class="audit-result__lead">Хотите разобрать каждую из 12 точек и понять, что делать с вашими? Заберите гайд: там по каждой точке решения на трёх уровнях. Что включается штатно за вечер, что через простые связки, а где нужна своя система.</p>
+      <div class="audit-result__money" id="resultMoney" hidden>
+        <span>Денежная прикидка</span>
+        <strong id="resultLoss">—</strong>
+        <p>Ориентир по пустым окнам и спящей базе. Проверьте его по фактическим данным, прежде чем принимать решение.</p>
+      </div>
+      <p class="audit-result__lead">Хотите разобрать каждую из 12 точек и понять, что делать с вашими? Получите гайд: там по каждой точке решения на трёх уровнях. Что включается штатно за вечер, что через простые связки, а где нужна своя система.</p>
     </section>
 
     <!-- ФОРМА ГАЙДА -->
     <section class="audit-form-section" id="guide">
       <div class="audit-form-wrap">
         <div class="audit-form-copy">
-          <h2 class="ui-type-title">Заберите гайд «12 точек, где салон теряет клиентов»</h2>
+          <h2 class="ui-type-title">Получите гайд «12 точек, где салон теряет клиентов»</h2>
           <p>Разбор каждой точки и решения на трёх уровнях: с чего начать, что настроить связками и где нужна своя система.</p>
         </div>
         <form class="audit-form" id="guideForm" novalidate>
@@ -283,7 +342,7 @@
             <input type="checkbox" id="gconsent" name="consent" required />
             <label for="gconsent">Я согласен(на) на <a href="/privacy.html" target="_blank">обработку персональных данных</a></label>
           </div>
-          <button type="submit" class="ui-button audit-form__submit" id="guideSubmit">Забрать гайд</button>
+          <button type="submit" class="ui-button audit-form__submit" id="guideSubmit">Получить гайд</button>
           <p class="audit-form__note" id="guideNote">Гайд придёт сразу после отправки. Никакого спама: только польза по делу.</p>
         </form>
       </div>
@@ -311,6 +370,6 @@
 
   </div>
 
-  <script src="/assets/audit.js?v=20260711-1"></script>
+  <script src="/assets/audit.js?v=20260711-2"></script>
 </body>
 </html>
