@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="styles.css?v=20260711-3" />
   <link rel="stylesheet" href="assets/ui-system.css?v=20260711-2" />
   <link rel="stylesheet" href="assets/page-rebuild.css?v=20260711-3" />
-  <link rel="stylesheet" href="assets/home-v3.css?v=20260711-4" />
+  <link rel="stylesheet" href="assets/home-v3.css?v=20260711-5" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -80,44 +80,72 @@
       </div>
 
       <div class="home-hero__visual" aria-label="Система записи: карта утечек, путь клиента, приоритеты">
-        <svg class="home-hero__wave" viewBox="0 0 560 620" aria-hidden="true">
-          <path class="home-hero__orbit-line" d="M92 328C76 172 184 56 326 70c146 14 206 155 150 274-34 72-100 109-156 166-31 31-49 68-54 110" />
+        <svg class="home-hero__wave" viewBox="0 0 520 590" aria-hidden="true">
+          <g class="home-hero__grid-lines">
+            <path d="M260 0V590" />
+            <path d="M500 0V590" />
+            <path d="M0 232H520" />
+          </g>
+          <path class="home-hero__orbit-line" d="M77 360C31 220 76 70 205 18c129-52 274 12 310 146 28 106-15 184-91 252-57 51-116 104-132 174" />
+          <path class="home-hero__orbit-line home-hero__orbit-line--inner" d="M150 440C154 336 214 257 307 226c94-31 185 17 205 107 18 82-24 136-94 184" />
           <g class="home-hero__wave-lines">
-            <path d="M20 430C100 372 150 376 204 446S310 542 372 464s101-105 168-70" />
-            <path d="M16 438C96 379 148 384 202 452s108 92 170 17 102-104 172-67" />
-            <path d="M13 446C93 387 145 392 200 459s110 89 173 16 103-102 174-64" />
-            <path d="M11 454C90 395 142 400 198 465s112 86 176 15 104-100 176-61" />
-            <path d="M10 462C87 403 140 408 196 471s114 83 179 14 105-98 178-58" />
-            <path d="M11 470C84 411 137 416 194 477s116 80 182 13 106-96 180-55" />
-            <path d="M13 478C82 419 135 424 192 483s118 77 185 12 107-94 182-52" />
-            <path d="M16 486C80 427 132 432 190 489s120 74 188 11 108-92 184-49" />
-            <path d="M20 494C78 435 130 440 188 495s122 71 191 10 109-90 186-46" />
-            <path d="M25 502C77 443 128 448 186 501s124 68 194 9 110-88 188-43" />
-            <path d="M31 510C76 451 126 456 184 507s126 65 197 8 111-86 190-40" />
-            <path d="M38 518C75 459 124 464 182 513s128 62 200 7 112-84 192-37" />
-            <path d="M46 526C75 467 122 472 180 519s130 59 203 6 113-82 194-34" />
+            <path d="M93 429C121 390 183 397 209 438c24 38 17 92 52 103 34-11 25-71 50-108 27-40 88-45 120-6" />
+            <path d="M88 437C119 395 181 402 208 442c25 37 19 89 53 99 33-10 27-68 52-104 28-39 88-43 122-2" />
+            <path d="M84 445C116 401 179 407 207 446c26 36 21 86 54 95 32-9 29-65 54-100 29-38 88-41 124 2" />
+            <path d="M81 453C114 407 177 412 206 450c27 35 23 83 55 91 31-8 31-62 56-96 30-37 88-39 126 6" />
+            <path d="M79 461C112 413 175 417 205 454c28 34 25 80 56 87 30-7 33-59 58-92 31-36 88-37 128 10" />
+            <path d="M78 469C110 419 173 422 204 458c29 33 27 77 57 83 29-6 35-56 60-88 32-35 88-35 130 14" />
+            <path d="M78 477C109 425 171 427 203 462c30 32 29 74 58 79 28-5 37-53 62-84 33-34 88-33 132 18" />
+            <path d="M79 485C108 431 169 432 202 466c31 31 31 71 59 75 27-4 39-50 64-80 34-33 88-31 134 22" />
+            <path d="M81 493C108 437 167 437 201 470c32 30 33 68 60 71 26-3 41-47 66-76 35-32 88-29 136 26" />
+            <path d="M84 501C109 443 165 442 200 474c33 29 35 65 61 67 25-2 43-44 68-72 36-31 88-27 138 30" />
+            <path d="M88 509C110 449 163 447 199 478c34 28 37 62 62 63 24-1 45-41 70-68 37-30 88-25 140 34" />
+            <path d="M93 517C112 455 161 452 198 482c35 27 39 59 63 59 23 0 47-38 72-64 38-29 88-23 142 38" />
+            <path d="M99 525C115 461 159 457 197 486c36 26 41 56 64 55 22 1 49-35 74-60 39-28 88-21 144 42" />
+            <path d="M106 533C118 467 157 462 196 490c37 25 43 53 65 51 21 2 51-32 76-56 40-27 88-19 146 46" />
+            <path d="M114 541C122 473 155 467 195 494c38 24 45 50 66 47 20 3 53-29 78-52 41-26 88-17 148 50" />
           </g>
         </svg>
         <article class="home-insight home-insight--map ui-hero-insight-card">
           <span>Карта утечек записи</span>
           <p>Где клиенты уходят, не записавшись</p>
-          <div class="signal-chart" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i>
-          </div>
+          <svg class="signal-chart" viewBox="0 0 190 96" aria-hidden="true">
+            <path class="signal-chart__area" d="M0 93C17 88 28 58 49 57c21-1 28 19 49 17 27-3 28-36 55-36 18 0 23 17 37 23v32H0Z" />
+            <path d="M47 56V94M76 30V94M104 55V94M133 43V94M179 11V94" />
+            <circle cx="47" cy="56" r="6" />
+            <circle class="signal-chart__dark" cx="47" cy="76" r="6" />
+            <circle class="signal-chart__light" cx="76" cy="30" r="6" />
+            <circle class="signal-chart__yellow" cx="104" cy="55" r="6" />
+            <circle class="signal-chart__dark" cx="133" cy="43" r="6" />
+            <circle class="signal-chart__light" cx="179" cy="11" r="6" />
+          </svg>
         </article>
         <article class="home-insight home-insight--path ui-hero-insight-card">
           <span>Путь клиента</span>
-          <p>Вход, напоминание, визит, возврат</p>
-          <div class="route-line" aria-hidden="true">
-            <i></i><i></i><i></i>
-          </div>
+          <p>Как проходит путь<br />от интереса до визита</p>
+          <svg class="route-line" viewBox="0 0 176 94" aria-hidden="true">
+            <g class="route-line__echo">
+              <path d="M18 74C52 80 69 64 77 40s24-30 46-16" />
+              <path d="M17 79C55 87 74 68 80 43s26-32 49-14" />
+              <path d="M16 84C58 94 79 72 83 46s28-34 52-12" />
+            </g>
+            <path class="route-line__route" d="M20 76H76V28h73" />
+            <path class="route-line__arrow" d="M142 20l9 8-9 8" />
+            <circle cx="20" cy="76" r="12" />
+            <circle cx="76" cy="76" r="12" />
+            <circle cx="104" cy="28" r="13" />
+            <circle class="route-line__dot" cx="76" cy="76" r="5" />
+            <circle class="route-line__dot" cx="104" cy="28" r="6" />
+          </svg>
         </article>
         <article class="home-insight home-insight--priority ui-hero-insight-card">
-          <span>Приоритеты</span>
-          <p>Что чинить первым, по цифрам</p>
-          <div class="priority-bars" aria-hidden="true">
-            <b></b><b></b><b></b>
-          </div>
+          <span>Приоритеты роста</span>
+          <p>На чём сфокусироваться<br />в первую очередь</p>
+          <svg class="priority-bars" viewBox="0 0 176 96" aria-hidden="true">
+            <circle cx="13" cy="16" r="11" /><text x="13" y="20">1</text><path d="M35 16H157" />
+            <circle cx="13" cy="48" r="11" /><text x="13" y="52">2</text><path d="M35 48H119" />
+            <circle cx="13" cy="80" r="11" /><text x="13" y="84">3</text><path class="priority-bars__light" d="M35 80H143" />
+          </svg>
         </article>
       </div>
     </div>
