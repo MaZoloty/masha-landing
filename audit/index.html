@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260711-2" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260711-3" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -47,8 +47,8 @@
     <section class="audit-hero">
       <div class="audit-hero__copy">
         <p class="ui-section-label">Бесплатная диагностика записи</p>
-        <h1 class="audit-hero__title ui-type-display">Проверьте, где ваш салон теряет клиентов – <em>по 12 точкам, за пару минут</em></h1>
-        <p class="audit-hero__lead">Онлайн-запись есть, а записей мало? Сначала прикиньте, сколько денег сейчас остаётся в пустых окнах и спящей базе. Затем оцените 12 точек, которые объясняют, где именно клиент теряется.</p>
+        <h1 class="audit-hero__title ui-type-display">Проверьте запись салона – <em>по цифрам и 12 контрольным точкам</em></h1>
+        <p class="audit-hero__lead">Сначала посчитайте примерный порядок потерь на пустых окнах и спящей базе. Затем оцените путь клиента – от первого обращения до повторного визита.</p>
         <div class="audit-hero__actions">
           <a href="#loss-calculator" class="ui-button" id="startBtn">Начать с цифр</a>
           <span class="audit-hero__note">без регистрации · 4 цифры · 12 точек</span>
@@ -57,7 +57,7 @@
       <div class="audit-hero__visual" aria-hidden="true">
         <div class="audit-hero__gauge">
           <span class="audit-hero__gauge-value">12</span>
-          <span class="audit-hero__gauge-label">точек, где утекают клиенты и деньги</span>
+          <span class="audit-hero__gauge-label">точек, где запись может давать сбой</span>
           <div class="audit-hero__gauge-dots">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
@@ -70,18 +70,18 @@
       <ol class="audit-steps__list">
         <li>
           <span class="audit-steps__num">1</span>
-          <h2>Введите свои цифры</h2>
-          <p>Записи, средний чек, неявки и спящая база — достаточно примерной оценки.</p>
+          <h2>Введите четыре цифры</h2>
+          <p>Записи, средний чек, неявки и размер спящей базы. Точная выгрузка не нужна.</p>
         </li>
         <li>
           <span class="audit-steps__num">2</span>
           <h2>Оцените 12 точек</h2>
-          <p>По шкале от 0 до 10: 0 — порядок, 10 — болит сильно.</p>
+          <p>Выберите оценку от 0 до 3: 0 – порядок, 3 – требует внимания.</p>
         </li>
         <li>
           <span class="audit-steps__num">3</span>
-          <h2>Получите ориентир</h2>
-          <p>Увидите балл, денежную прикидку и поймёте, что проверить первым.</p>
+          <h2>Получите итог</h2>
+          <p>Увидите примерную сумму потерь, общий балл и приоритетные пункты.</p>
         </li>
       </ol>
     </section>
@@ -89,9 +89,9 @@
     <!-- ДЕНЕЖНАЯ ПРИКИДКА -->
     <section class="audit-money" id="loss-calculator">
       <div class="audit-money__head">
-        <p class="ui-section-label">Сначала — цифры бизнеса</p>
-        <h2 class="ui-type-title">Сколько денег сейчас может оставаться в пустых окнах и спящей базе</h2>
-        <p>Достаточно приблизительных данных. Расчёт не обещает выручку — он показывает порядок суммы, которую имеет смысл проверить первой.</p>
+        <p class="ui-section-label">Сначала – цифры бизнеса</p>
+        <h2 class="ui-type-title">Прикиньте потери на своих цифрах</h2>
+        <p>Введите то, что знаете. Расчёт покажет порядок суммы, а не обещание выручки.</p>
       </div>
 
       <div class="audit-money__layout">
@@ -99,7 +99,7 @@
           <div class="ui-field">
             <label class="ui-field__label" for="weeklyBookings">Записей в неделю</label>
             <input class="ui-input" type="number" id="weeklyBookings" min="0" step="1" inputmode="numeric" placeholder="Например, 60" />
-            <p class="ui-field__hint">Нужно, чтобы соотнести неявки с обычным объёмом записи.</p>
+            <p class="ui-field__hint">Нужно только для расчёта неявок в процентах.</p>
           </div>
           <div class="ui-field">
             <label class="ui-field__label" for="averageCheck">Средний чек</label>
@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="ui-field">
-            <label class="ui-field__label" for="weeklyNoShows">Не дошло или отменило</label>
+            <label class="ui-field__label" for="weeklyNoShows">Неявок и отмен</label>
             <div class="audit-money__unit-input">
               <input class="ui-input" type="number" id="weeklyNoShows" min="0" step="1" inputmode="decimal" placeholder="Например, 5" />
               <select id="noShowUnit" aria-label="Единица измерения неявок">
@@ -120,22 +120,22 @@
             <p class="ui-field__hint">Можно указать количество в неделю или процент от записей.</p>
           </div>
           <div class="ui-field">
-            <label class="ui-field__label" for="dormantClients">Клиентов, которые давно не возвращались</label>
+            <label class="ui-field__label" for="dormantClients">Клиентов в спящей базе</label>
             <input class="ui-input" type="number" id="dormantClients" min="0" step="1" inputmode="numeric" placeholder="Например, 400" />
             <p class="ui-field__hint">Возьмите примерную спящую часть базы — не нужно выгружать отчёт.</p>
           </div>
         </div>
 
         <div class="audit-money__result" aria-live="polite">
-          <span class="audit-money__eyebrow">Консервативная прикидка</span>
+          <span class="audit-money__eyebrow">Ориентир потерь</span>
           <strong class="audit-money__total" id="lossTotal">—</strong>
           <span class="audit-money__period" id="lossPeriod">в месяц</span>
           <p class="audit-money__status" id="lossStatus">Введите средний чек и хотя бы одну из двух цифр: неявки или спящую базу.</p>
           <ul class="audit-money__breakdown" id="lossBreakdown" hidden>
             <li><span>Пустые окна</span><b id="noShowLoss">—</b></li>
-            <li><span>Потенциал возврата из базы</span><b id="dormantLoss">—</b></li>
+            <li><span>Деньги в спящей базе</span><b id="dormantLoss">—</b></li>
           </ul>
-          <p class="audit-money__disclaimer">Модель: неявки × средний чек × 4 недели и консервативные 5% возврата из спящей базы. Это ориентир на ваших цифрах, не прогноз и не гарантия.</p>
+          <p class="audit-money__disclaimer">Модель: неявки × средний чек × 4 недели плюс 5% спящей базы × средний чек. Реальная сумма зависит от услуг и спроса.</p>
         </div>
       </div>
     </section>
@@ -143,8 +143,9 @@
     <!-- САМОПРОВЕРКА -->
     <section class="audit-checklist" id="checklist">
       <div class="audit-checklist__head">
-        <h2 class="ui-type-title">Самопроверка</h2>
-        <p>Оцените каждый пункт от 0 (всё хорошо) до 10 (болит сильно).</p>
+        <h2 class="ui-type-title">Где запись даёт сбой</h2>
+        <p>Для каждого пункта выберите оценку от 0 до 3. Достаточно вашей текущей картины.</p>
+        <div class="audit-scale-legend" aria-hidden="true"><span><b>0</b> порядок</span><span><b>1</b> иногда</span><span><b>2</b> часто</span><span><b>3</b> проблема</span></div>
       </div>
 
       <ol class="audit-list" id="auditList">
@@ -153,153 +154,118 @@
             <h3><span class="audit-item__num">1</span> Точка входа</h3>
             <p>В сайте, картах или соцсетях клиенту непонятно, что вы делаете и сколько это стоит.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Точка входа: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Точка входа: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">2</span> Отмены и неявки</h3>
-            <p>Клиенты отменяют или не доходят, напоминания не настроены или не доходят.</p>
+            <p>Клиенты отменяют визиты или не доходят, а напоминания не снижают число пустых окон.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отмены и неявки: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Отмены и неявки: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">3</span> Спящие клиенты</h3>
-            <p>Тех, кто давно не был, никто не возвращает: база лежит мёртвым грузом.</p>
+            <p>Клиенты давно не были, но по базе нет регулярной работы на возврат.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Спящие клиенты: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Спящие клиенты: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">4</span> Сегментация</h3>
             <p>Рассылки идут всем одинаково, без деления по услуге, частоте и давности визита.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Сегментация: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Сегментация: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">5</span> Отзывы</h3>
             <p>Сбор не налажен, негатив висит и обрабатывается медленно.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отзывы: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Отзывы: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">6</span> Заявки из мессенджеров</h3>
             <p>Сообщения из Telegram, VK, WhatsApp, Direct теряются, или отвечаете с задержкой.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Заявки из мессенджеров: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Заявки из мессенджеров: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">7</span> После визита</h3>
-            <p>Нет цепочки касаний после услуги: клиент ушёл и забыл про вас.</p>
+            <p>После услуги клиент не получает понятного следующего шага или напоминания о повторе.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="После визита: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="После визита: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">8</span> Дни рождения и даты</h3>
-            <p>Дата рождения не собирается, или собирается, но не используется.</p>
+            <p>Даты есть в базе, но их не используют для своевременного предложения.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Дни рождения и даты: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Дни рождения и даты: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">9</span> Отмена = потеря</h3>
-            <p>Отменившему никто не предлагает другое время, и он выпадает навсегда.</p>
+            <p>После отмены клиенту не предлагают другое время.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отмена равно потеря: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Отмена равно потеря: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">10</span> Допродажи</h3>
-            <p>Смежные услуги, уходы, абонементы персонально не предлагаете.</p>
+            <p>Подходящие услуги и абонементы предлагают случайно, а не по ситуации клиента.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Допродажи: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Допродажи: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">11</span> Дорогие рассылки</h3>
             <p>Платите за уведомления много, а работают они нестабильно.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Дорогие рассылки: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Дорогие рассылки: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
         <li class="audit-item">
           <div class="audit-item__text">
             <h3><span class="audit-item__num">12</span> Аналитика</h3>
             <p>Не видно, сколько клиентов возвращается и какие каналы реально приводят людей.</p>
           </div>
-          <div class="audit-item__control">
-            <input type="range" min="0" max="10" value="0" step="1" aria-label="Аналитика: оценка от 0 до 10" />
-            <output>0</output>
-          </div>
+          <div class="audit-item__control" role="group" aria-label="Аналитика: оценка от 0 до 3"><button type="button" data-score="0">0</button><button type="button" data-score="1">1</button><button type="button" data-score="2">2</button><button type="button" data-score="3">3</button></div>
         </li>
       </ol>
 
       <div class="audit-scorebar" id="scorebar">
         <div class="audit-scorebar__score">
           <span class="audit-scorebar__label">Ваш балл</span>
-          <span class="audit-scorebar__value"><b id="scoreValue">0</b> из 120</span>
+          <span class="audit-scorebar__value"><b id="scoreValue">0</b> из 36</span>
+          <span class="audit-scorebar__answered">Оценено <b id="answeredCount">0</b> из 12</span>
         </div>
         <div class="audit-scorebar__track" aria-hidden="true"><i id="scoreTrack"></i></div>
-        <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button">Сформировать отчёт</button>
+        <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button" disabled>Показать итог</button>
       </div>
     </section>
 
     <!-- РЕЗУЛЬТАТ -->
     <section class="audit-result" id="result" hidden>
       <div class="audit-result__head">
-        <h2 class="ui-type-title">Ваш результат: <b id="resultScore">0</b> из 120</h2>
+        <h2 class="ui-type-title">Ваш результат: <b id="resultScore">0</b> из 36</h2>
       </div>
       <div class="audit-result__tiers">
         <article class="audit-tier" data-tier="low">
-          <span class="audit-tier__range">0–40</span>
-          <h3>В целом неплохо</h3>
-          <p>База в хорошем состоянии, основное работает. Есть что подтянуть точечно, но фундамент крепкий.</p>
+          <span class="audit-tier__range">0–12</span>
+          <h3>Основное работает</h3>
+          <p>Сильных сбоев немного. Посмотрите пункты с оценкой 2–3 и начните с одного.</p>
         </article>
         <article class="audit-tier" data-tier="mid">
-          <span class="audit-tier__range">41–70</span>
-          <h3>Всё поправимо, и это нестрашно</h3>
-          <p>Несколько точек подтекают, на дистанции это заметные деньги. Но чинится по частям, без большой перестройки. Самая частая и рабочая ситуация.</p>
+          <span class="audit-tier__range">13–24</span>
+          <h3>Есть заметные потери</h3>
+          <p>Несколько участков требуют внимания. Сначала проверьте неявки, возвраты и скорость ответа.</p>
         </article>
         <article class="audit-tier" data-tier="high">
-          <span class="audit-tier__range">71 и выше</span>
-          <h3>Есть куда расти, и рост будет быстрым</h3>
-          <p>Точек много, поэтому даже первые две-три, что вы закроете, дадут результат уже в первый месяц. Начните с самых больных, не хватайтесь за всё сразу.</p>
+          <span class="audit-tier__range">25–36</span>
+          <h3>Нужен порядок действий</h3>
+          <p>Не пытайтесь менять всё сразу. Выберите 2–3 пункта с оценкой 3 и проверьте их по цифрам.</p>
         </article>
       </div>
       <div class="audit-result__money" id="resultMoney" hidden>
@@ -307,44 +273,22 @@
         <strong id="resultLoss">—</strong>
         <p>Ориентир по пустым окнам и спящей базе. Проверьте его по фактическим данным, прежде чем принимать решение.</p>
       </div>
-      <p class="audit-result__lead">Хотите разобрать каждую из 12 точек и понять, что делать с вашими? Получите гайд: там по каждой точке решения на трёх уровнях. Что включается штатно за вечер, что через простые связки, а где нужна своя система.</p>
+      <p class="audit-result__lead">Баллы показывают, где проблема. Платный гайд помогает выбрать решение для каждого из 12 пунктов.</p>
     </section>
 
-    <!-- ФОРМА ГАЙДА -->
+    <!-- ПЛАТНЫЙ ГАЙД -->
     <section class="audit-form-section" id="guide">
       <div class="audit-form-wrap">
         <div class="audit-form-copy">
-          <h2 class="ui-type-title">Получите гайд «12 точек, где салон теряет клиентов»</h2>
-          <p>Разбор каждой точки и решения на трёх уровнях: с чего начать, что настроить связками и где нужна своя система.</p>
+          <p class="ui-section-label">Следующий шаг</p>
+          <h2 class="ui-type-title">Гайд с решениями по 12 точкам</h2>
+          <p>По каждому пункту – три уровня: что можно сделать своими силами, где хватит простой связки, а где нужна отдельная система.</p>
         </div>
-        <form class="audit-form" id="guideForm" novalidate>
-          <div class="ui-field">
-            <label class="ui-field__label" for="gname">Имя</label>
-            <input class="ui-input" type="text" id="gname" name="name" placeholder="Как вас зовут" required />
-          </div>
-          <div class="ui-field">
-            <span class="ui-field__label">Куда прислать гайд</span>
-            <div class="audit-form__channel" role="radiogroup" aria-label="Куда прислать гайд">
-              <label class="audit-chip"><input type="radio" name="channel" value="Telegram" checked /><span>Telegram</span></label>
-              <label class="audit-chip"><input type="radio" name="channel" value="Email" /><span>Email</span></label>
-            </div>
-          </div>
-          <div class="ui-field">
-            <label class="ui-field__label" for="gcontact"><span id="contactLabel">Telegram</span></label>
-            <input class="ui-input" type="text" id="gcontact" name="contact" placeholder="@username" required />
-          </div>
-          <div class="ui-field">
-            <label class="ui-field__label" for="gscore">Ваш балл по диагностике <span class="audit-form__optional">по желанию</span></label>
-            <input class="ui-input" type="number" id="gscore" name="score" min="0" max="120" placeholder="Посчитается сам, если пройти диагностику выше" />
-            <p class="ui-field__hint">Чтобы я понимала, с чем вы пришли.</p>
-          </div>
-          <div class="audit-form__consent">
-            <input type="checkbox" id="gconsent" name="consent" required />
-            <label for="gconsent">Я согласен(на) на <a href="/privacy.html" target="_blank">обработку персональных данных</a></label>
-          </div>
-          <button type="submit" class="ui-button audit-form__submit" id="guideSubmit">Получить гайд</button>
-          <p class="audit-form__note" id="guideNote">Гайд придёт сразу после отправки. Никакого спама: только польза по делу.</p>
-        </form>
+        <div class="audit-guide-offer">
+          <strong>1 490 ₽</strong>
+          <p>Напишите мне в Telegram – отвечу по оплате и отправлю гайд.</p>
+          <a class="ui-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener">Получить гайд</a>
+        </div>
       </div>
     </section>
 
@@ -353,7 +297,7 @@
       <div class="audit-next__panel">
         <div>
           <h2>Что дальше</h2>
-          <p>Гайд показал, что чинить. Если захотите разобрать именно вашу ситуацию, есть разбор вашей системы записи: оплата, бриф, и на созвоне я показываю, где течёт, и варианты решения под вас и бюджет. 5 000 ₽, входит в стоимость работы, если двигаемся дальше.</p>
+          <p>Если нужен разбор именно вашей ситуации, до созвона я изучу точку входа, запись и цифры. На встрече покажу приоритеты и варианты под ваш бюджет. Стоимость – 5 000 ₽, она засчитывается в проект, если продолжаем работу.</p>
         </div>
         <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ui-button audit-next__btn">Прийти на разбор</a>
       </div>
@@ -370,6 +314,6 @@
 
   </div>
 
-  <script src="/assets/audit.js?v=20260711-2"></script>
+  <script src="/assets/audit.js?v=20260711-3"></script>
 </body>
 </html>

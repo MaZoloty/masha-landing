@@ -55,25 +55,6 @@ document.querySelectorAll('.accordion-toggle').forEach(btn => {
   });
 });
 
-// ── FAQ ──
-document.querySelectorAll('.faq-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const body = btn.nextElementSibling;
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-    // закрыть все остальные
-    document.querySelectorAll('.faq-toggle').forEach(other => {
-      if (other !== btn) {
-        other.setAttribute('aria-expanded', 'false');
-        other.nextElementSibling.classList.remove('is-open');
-      }
-    });
-
-    btn.setAttribute('aria-expanded', !isOpen);
-    body.classList.toggle('is-open', !isOpen);
-  });
-});
-
 // ── Форма ──
 const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -86,11 +67,10 @@ if (form) {
     const name = form.name.value.trim();
     const business = form.business.value.trim();
     const link = form.link.value.trim();
-    const timeline = form.timeline.value.trim();
     const contact = form.contact.value.trim();
     const consent = form.querySelector('#consent');
 
-    if (!name || !business || !link || !timeline || !contact) {
+    if (!name || !business || !link || !contact) {
       formNote.textContent = 'Пожалуйста, заполните все обязательные поля.';
       formNote.className = 'form-note form-note--error';
       return;
@@ -106,8 +86,6 @@ if (form) {
       name: form.name.value.trim(),
       business: form.business.value.trim(),
       link: form.link.value.trim(),
-      goal: form.goal.value.trim(),
-      timeline: form.timeline.value.trim(),
       problem: form.problem.value.trim(),
       contact: form.contact.value.trim(),
     };

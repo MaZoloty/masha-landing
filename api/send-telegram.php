@@ -63,12 +63,10 @@ if (get_body_value($body, 'form') === 'guide') {
 $name = trim((string)get_body_value($body, 'name'));
 $business = trim((string)get_body_value($body, 'business'));
 $link = trim((string)get_body_value($body, 'link'));
-$goal = trim((string)get_body_value($body, 'goal'));
-$timeline = trim((string)get_body_value($body, 'timeline'));
 $problem = trim((string)get_body_value($body, 'problem'));
 $contact = trim((string)get_body_value($body, 'contact'));
 
-if ($name === '' || $business === '' || $link === '' || $timeline === '' || $contact === '') {
+if ($name === '' || $business === '' || $link === '' || $contact === '') {
     respond(400, false, 'Required fields are missing');
 }
 
@@ -77,9 +75,7 @@ $text =
     "<b>Имя:</b> " . escape_html(limit_text($name, 80)) . "\n" .
     "<b>Бизнес:</b> " . escape_html(value_or_dash($business)) . "\n" .
     "<b>Ссылка:</b> " . escape_html(value_or_dash($link)) . "\n" .
-    "<b>Что хочет понять:</b> " . escape_html($goal !== '' ? limit_text($goal, 160) : 'пока не знаю') . "\n" .
-    "<b>Срок:</b> " . escape_html(limit_text($timeline, 120)) . "\n" .
-    "<b>Что не работает:</b> " . escape_html(value_or_dash($problem)) . "\n" .
+    "<b>Что важно разобрать:</b> " . escape_html(value_or_dash($problem)) . "\n" .
     "<b>Связь:</b> " . escape_html(limit_text($contact, 160));
 
 $payload = json_encode(array(

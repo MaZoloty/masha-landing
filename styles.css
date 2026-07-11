@@ -612,6 +612,8 @@ p, h1, h2, h3, blockquote, li {
 /* ── Form ── */
 .form-section { background: var(--gray-50); }
 
+.form-container { max-width: 900px; }
+
 .form-desc {
   font-size: 17px;
   color: var(--gray-600);
@@ -620,9 +622,19 @@ p, h1, h2, h3, blockquote, li {
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.form-field--wide,
+.form-consent,
+.form > .btn,
+.form-note { grid-column: 1 / -1; }
+
+.form-optional {
+  color: var(--gray-400);
+  font-weight: 400;
 }
 
 .form-field {
@@ -650,7 +662,7 @@ p, h1, h2, h3, blockquote, li {
 }
 .form-field textarea {
   resize: vertical;
-  min-height: 104px;
+  min-height: 88px;
 }
 .form-field input:focus,
 .form-field select:focus,
@@ -693,6 +705,10 @@ p, h1, h2, h3, blockquote, li {
   font-size: 14px;
   color: var(--gray-400);
   margin-top: 12px;
+}
+
+@media (max-width: 680px) {
+  .form { grid-template-columns: 1fr; }
 }
 .form-after a {
   color: var(--black);
