@@ -310,6 +310,10 @@
   will-change: transform;
 }
 
+.home-insight::before {
+  content: none;
+}
+
 .home-insight--map {
   top: 28px;
   left: 180px;
