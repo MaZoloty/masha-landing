@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Диагностика записи: проверьте, где салон теряет клиентов</title>
+  <meta name="description" content="Бесплатная самопроверка по 12 точкам, где салоны и велнес-центры теряют клиентов. Посчитайте свой балл и заберите гайд с решениями." />
+  <link rel="canonical" href="https://mazoloty.ru/audit/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mazoloty.ru/audit/" />
+  <meta property="og:title" content="Диагностика записи: проверьте, где салон теряет клиентов" />
+  <meta property="og:description" content="Бесплатная самопроверка по 12 точкам, где салоны и велнес-центры теряют клиентов. Посчитайте свой балл и заберите гайд с решениями." />
+  <meta property="og:locale" content="ru_RU" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-1" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260711-1" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
+    ym(109430856,'init',{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109430856" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body class="audit-page">
+
+  <div class="ui-shell audit-shell">
+
+    <header class="audit-header">
+      <a class="audit-header__brand" href="/">
+        <span class="audit-header__logo">Мария Золотухина</span>
+        <span class="audit-header__tagline">системы записи для услуг</span>
+      </a>
+      <a class="audit-header__back" href="/">← На главную</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="audit-hero">
+      <div class="audit-hero__copy">
+        <p class="ui-section-label">Бесплатная диагностика записи</p>
+        <h1 class="audit-hero__title ui-type-display">Проверьте, где ваш салон теряет клиентов – <em>по 12 точкам, за пару минут</em></h1>
+        <p class="audit-hero__lead">Онлайн-запись есть, а записей мало? Обычно дело не в одном месте, а в нескольких мелких утечках между «клиент вас нашёл» и «записался снова». Пройдите диагностику и посчитайте, где у вас течёт сильнее всего.</p>
+        <div class="audit-hero__actions">
+          <a href="#checklist" class="ui-button" id="startBtn">Начать диагностику</a>
+          <span class="audit-hero__note">без регистрации · 12 вопросов · ваш балл сразу</span>
+        </div>
+      </div>
+      <div class="audit-hero__visual" aria-hidden="true">
+        <div class="audit-hero__gauge">
+          <span class="audit-hero__gauge-value">12</span>
+          <span class="audit-hero__gauge-label">точек, где утекают клиенты и деньги</span>
+          <div class="audit-hero__gauge-dots">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК ЭТО РАБОТАЕТ -->
+    <section class="audit-steps" aria-label="Как это работает">
+      <ol class="audit-steps__list">
+        <li>
+          <span class="audit-steps__num">1</span>
+          <h2>Оцените 12 точек</h2>
+          <p>По шкале от 0 до 10: 0 – у нас с этим порядок, 10 – болит сильно.</p>
+        </li>
+        <li>
+          <span class="audit-steps__num">2</span>
+          <h2>Балл посчитается сам</h2>
+          <p>Страница сложит оценки и покажет, в какой вы зоне.</p>
+        </li>
+        <li>
+          <span class="audit-steps__num">3</span>
+          <h2>Заберите гайд</h2>
+          <p>Разбор каждой точки и решения: что чинить первым.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- САМОПРОВЕРКА -->
+    <section class="audit-checklist" id="checklist">
+      <div class="audit-checklist__head">
+        <h2 class="ui-type-title">Самопроверка</h2>
+        <p>Оцените каждый пункт от 0 (всё хорошо) до 10 (болит сильно).</p>
+      </div>
+
+      <ol class="audit-list" id="auditList">
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">1</span> Точка входа</h3>
+            <p>В сайте, картах или соцсетях клиенту непонятно, что вы делаете и сколько это стоит.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Точка входа: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">2</span> Отмены и неявки</h3>
+            <p>Клиенты отменяют или не доходят, напоминания не настроены или не доходят.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отмены и неявки: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">3</span> Спящие клиенты</h3>
+            <p>Тех, кто давно не был, никто не возвращает: база лежит мёртвым грузом.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Спящие клиенты: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">4</span> Сегментация</h3>
+            <p>Рассылки идут всем одинаково, без деления по услуге, частоте и давности визита.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Сегментация: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">5</span> Отзывы</h3>
+            <p>Сбор не налажен, негатив висит и обрабатывается медленно.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отзывы: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">6</span> Заявки из мессенджеров</h3>
+            <p>Сообщения из Telegram, VK, WhatsApp, Direct теряются, или отвечаете с задержкой.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Заявки из мессенджеров: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">7</span> После визита</h3>
+            <p>Нет цепочки касаний после услуги: клиент ушёл и забыл про вас.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="После визита: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">8</span> Дни рождения и даты</h3>
+            <p>Дата рождения не собирается, или собирается, но не используется.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Дни рождения и даты: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">9</span> Отмена = потеря</h3>
+            <p>Отменившему никто не предлагает другое время, и он выпадает навсегда.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Отмена равно потеря: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">10</span> Допродажи</h3>
+            <p>Смежные услуги, уходы, абонементы персонально не предлагаете.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Допродажи: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">11</span> Дорогие рассылки</h3>
+            <p>Платите за уведомления много, а работают они нестабильно.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Дорогие рассылки: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+        <li class="audit-item">
+          <div class="audit-item__text">
+            <h3><span class="audit-item__num">12</span> Аналитика</h3>
+            <p>Не видно, сколько клиентов возвращается и какие каналы реально приводят людей.</p>
+          </div>
+          <div class="audit-item__control">
+            <input type="range" min="0" max="10" value="0" step="1" aria-label="Аналитика: оценка от 0 до 10" />
+            <output>0</output>
+          </div>
+        </li>
+      </ol>
+
+      <div class="audit-scorebar" id="scorebar">
+        <div class="audit-scorebar__score">
+          <span class="audit-scorebar__label">Ваш балл</span>
+          <span class="audit-scorebar__value"><b id="scoreValue">0</b> из 120</span>
+        </div>
+        <div class="audit-scorebar__track" aria-hidden="true"><i id="scoreTrack"></i></div>
+        <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button">Показать результат</button>
+      </div>
+    </section>
+
+    <!-- РЕЗУЛЬТАТ -->
+    <section class="audit-result" id="result" hidden>
+      <div class="audit-result__head">
+        <h2 class="ui-type-title">Ваш результат: <b id="resultScore">0</b> из 120</h2>
+      </div>
+      <div class="audit-result__tiers">
+        <article class="audit-tier" data-tier="low">
+          <span class="audit-tier__range">0–40</span>
+          <h3>В целом неплохо</h3>
+          <p>База в хорошем состоянии, основное работает. Есть что подтянуть точечно, но фундамент крепкий.</p>
+        </article>
+        <article class="audit-tier" data-tier="mid">
+          <span class="audit-tier__range">41–70</span>
+          <h3>Всё поправимо, и это нестрашно</h3>
+          <p>Несколько точек подтекают, на дистанции это заметные деньги. Но чинится по частям, без большой перестройки. Самая частая и рабочая ситуация.</p>
+        </article>
+        <article class="audit-tier" data-tier="high">
+          <span class="audit-tier__range">71 и выше</span>
+          <h3>Есть куда расти, и рост будет быстрым</h3>
+          <p>Точек много, поэтому даже первые две-три, что вы закроете, дадут результат уже в первый месяц. Начните с самых больных, не хватайтесь за всё сразу.</p>
+        </article>
+      </div>
+      <p class="audit-result__lead">Хотите разобрать каждую из 12 точек и понять, что делать с вашими? Заберите гайд: там по каждой точке решения на трёх уровнях. Что включается штатно за вечер, что через простые связки, а где нужна своя система.</p>
+    </section>
+
+    <!-- ФОРМА ГАЙДА -->
+    <section class="audit-form-section" id="guide">
+      <div class="audit-form-wrap">
+        <div class="audit-form-copy">
+          <h2 class="ui-type-title">Заберите гайд «12 точек, где салон теряет клиентов»</h2>
+          <p>Разбор каждой точки и решения на трёх уровнях: с чего начать, что настроить связками и где нужна своя система.</p>
+        </div>
+        <form class="audit-form" id="guideForm" novalidate>
+          <div class="ui-field">
+            <label class="ui-field__label" for="gname">Имя</label>
+            <input class="ui-input" type="text" id="gname" name="name" placeholder="Как вас зовут" required />
+          </div>
+          <div class="ui-field">
+            <span class="ui-field__label">Куда прислать гайд</span>
+            <div class="audit-form__channel" role="radiogroup" aria-label="Куда прислать гайд">
+              <label class="audit-chip"><input type="radio" name="channel" value="Telegram" checked /><span>Telegram</span></label>
+              <label class="audit-chip"><input type="radio" name="channel" value="Email" /><span>Email</span></label>
+            </div>
+          </div>
+          <div class="ui-field">
+            <label class="ui-field__label" for="gcontact"><span id="contactLabel">Telegram</span></label>
+            <input class="ui-input" type="text" id="gcontact" name="contact" placeholder="@username" required />
+          </div>
+          <div class="ui-field">
+            <label class="ui-field__label" for="gscore">Ваш балл по диагностике <span class="audit-form__optional">по желанию</span></label>
+            <input class="ui-input" type="number" id="gscore" name="score" min="0" max="120" placeholder="Посчитается сам, если пройти диагностику выше" />
+            <p class="ui-field__hint">Чтобы я понимала, с чем вы пришли.</p>
+          </div>
+          <div class="audit-form__consent">
+            <input type="checkbox" id="gconsent" name="consent" required />
+            <label for="gconsent">Я согласен(на) на <a href="/privacy.html" target="_blank">обработку персональных данных</a></label>
+          </div>
+          <button type="submit" class="ui-button audit-form__submit" id="guideSubmit">Забрать гайд</button>
+          <p class="audit-form__note" id="guideNote">Гайд придёт сразу после отправки. Никакого спама: только польза по делу.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ЧТО ДАЛЬШЕ -->
+    <section class="audit-next">
+      <div class="audit-next__panel">
+        <div>
+          <h2>Что дальше</h2>
+          <p>Гайд показал, что чинить. Если захотите разобрать именно вашу ситуацию, есть разбор вашей системы записи: оплата, бриф, и на созвоне я показываю, где течёт, и варианты решения под вас и бюджет. 5 000 ₽, входит в стоимость работы, если двигаемся дальше.</p>
+        </div>
+        <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ui-button audit-next__btn">Прийти на разбор</a>
+      </div>
+    </section>
+
+    <!-- КТО СОСТАВИЛ -->
+    <footer class="audit-footer">
+      <div class="audit-footer__who">
+        <p class="audit-footer__sign">Мария Золотухина</p>
+        <p>Меня зовут Мария. Управляю двумя велнес-центрами в Перми и вижу запись изнутри, по своим цифрам. Больше 12 лет в клиентском сервисе, последние 3 года в бьюти и велнес. Эти 12 точек не теория: то, на чём спотыкалась я сама.</p>
+      </div>
+      <p class="audit-footer__links"><a href="/">mazoloty.ru</a> · <a href="/blog/">Блог</a> · <a href="/privacy.html">Политика конфиденциальности</a></p>
+    </footer>
+
+  </div>
+
+  <script src="/assets/audit.js?v=20260711-1"></script>
+</body>
+</html>

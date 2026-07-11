@@ -27,6 +27,39 @@ if (!is_array($body)) {
     respond(400, false, 'Invalid request');
 }
 
+// Заявка на гайд со страницы /audit/
+if (get_body_value($body, 'form') === 'guide') {
+    $name = trim((string)get_body_value($body, 'name'));
+    $channel = trim((string)get_body_value($body, 'channel'));
+    $contact = trim((string)get_body_value($body, 'contact'));
+    $score = trim((string)get_body_value($body, 'score'));
+
+    if ($name === '' || $contact === '') {
+        respond(400, false, 'Required fields are missing');
+    }
+
+    $text =
+        "<b>Заявка на гайд с /audit</b>\n\n" .
+        "<b>Имя:</b> " . escape_html(limit_text($name, 80)) . "\n" .
+        "<b>Канал:</b> " . escape_html(value_or_dash($channel)) . "\n" .
+        "<b>Контакт:</b> " . escape_html(limit_text($contact, 160)) . "\n" .
+        "<b>Балл диагностики:</b> " . escape_html($score !== '' ? limit_text($score, 10) : 'не указан');
+
+    $payload = json_encode(array(
+        'chat_id' => $chatId,
+        'text' => $text,
+        'parse_mode' => 'HTML',
+        'disable_web_page_preview' => true,
+    ), JSON_UNESCAPED_UNICODE);
+
+    $telegram = send_to_telegram($token, $payload);
+    if (!$telegram['ok']) {
+        respond(502, false, 'Telegram request failed');
+    }
+
+    respond(200, true, null);
+}
+
 $name = trim((string)get_body_value($body, 'name'));
 $business = trim((string)get_body_value($body, 'business'));
 $link = trim((string)get_body_value($body, 'link'));

@@ -35,13 +35,13 @@ if (!reducedMotion) {
   }
 }
 
-// ── Метрика: клик на hero CTA ──
-document.querySelectorAll('.hero a[href="#form"].btn').forEach(btn => {
+// ── Метрика: клик на hero CTA (диагностика) ──
+document.querySelectorAll('.hero a[href="/audit/"].btn').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('hero_click'));
 });
 
-// ── Метрика: клик на CTA в пакетах ──
-document.querySelectorAll('.package a[href="#form"]').forEach(btn => {
+// ── Метрика: клики по ступеням лестницы (бывшая цель package_click) ──
+document.querySelectorAll('.ladder-step__link').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('package_click'));
 });
 
@@ -128,7 +128,7 @@ if (form) {
       if (res.ok && responseData?.ok) {
         ymGoal('form_submit');
         form.reset();
-        formNote.textContent = 'Заявка на диагностику отправлена. Отвечу в Telegram в течение 24 часов.';
+        formNote.textContent = 'Заявка на разбор отправлена. Отвечу в Telegram в течение 24 часов.';
         formNote.className = 'form-note form-note--success';
         submitBtn.textContent = 'Отправлено';
       } else {
@@ -138,7 +138,7 @@ if (form) {
       formNote.textContent = 'Что-то пошло не так. Напишите мне напрямую в Telegram.';
       formNote.className = 'form-note form-note--error';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Понять, что исправить первым';
+      submitBtn.textContent = 'Оставить заявку на разбор';
     }
   });
 }
