@@ -49,6 +49,206 @@
   max-width: 168px;
 }
 
+/* ── Hero report: одна орбита и живая линейная волна ── */
+
+.home-hero__visual {
+  --orbit-x: 175px;
+  --orbit-y: 210px;
+  position: relative;
+  min-height: 640px;
+  isolation: isolate;
+}
+
+.home-hero__wave {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.home-hero__wave path {
+  fill: none;
+  stroke: rgba(162, 143, 207, .34);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.home-hero__orbit-line {
+  stroke: rgba(162, 143, 207, .46) !important;
+}
+
+.home-hero__wave-lines {
+  transform-origin: 52% 76%;
+  animation: home-wave-drift 9s cubic-bezier(.77, 0, .175, 1) infinite alternate;
+}
+
+.home-insight,
+.home-insight--map,
+.home-insight--path,
+.home-insight--priority {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 2;
+  width: 200px;
+  min-height: 210px;
+  padding: 22px;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 7px 8px rgba(39, 33, 27, .06);
+  will-change: transform;
+  animation: home-card-orbit 24s linear infinite;
+}
+
+.home-insight--map {
+  width: 200px;
+  min-height: 210px;
+  animation-delay: 0s;
+}
+
+.home-insight--path {
+  width: 200px;
+  min-height: 210px;
+  animation-delay: -8s;
+}
+
+.home-insight--priority {
+  width: 200px;
+  min-height: 210px;
+  animation-delay: -16s;
+}
+
+.home-insight span {
+  margin-bottom: 14px;
+  color: var(--ui-color-ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.home-insight span::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  margin-top: 13px;
+  background: #a98bdf;
+}
+
+.home-insight p,
+.home-insight--path p {
+  max-width: 175px;
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+.signal-chart {
+  height: 60px;
+}
+
+.route-line,
+.priority-bars {
+  margin-top: auto;
+}
+
+@keyframes home-card-orbit {
+  0%, 100% {
+    transform: translate(-50%, -50%) translate3d(0, calc(var(--orbit-y) * -1), 0);
+  }
+  12.5% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * .72), calc(var(--orbit-y) * -.72), 0);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate3d(var(--orbit-x), 0, 0);
+  }
+  37.5% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * .72), calc(var(--orbit-y) * .72), 0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate3d(0, var(--orbit-y), 0);
+  }
+  62.5% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * -.72), calc(var(--orbit-y) * .72), 0);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * -1), 0, 0);
+  }
+  87.5% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * -.72), calc(var(--orbit-y) * -.72), 0);
+  }
+}
+
+@keyframes home-wave-drift {
+  from { transform: translate3d(-5px, 3px, 0) scale(.985); opacity: .68; }
+  to { transform: translate3d(6px, -4px, 0) scale(1.015); opacity: 1; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-hero__visual:hover .home-insight {
+    animation-play-state: paused;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-hero__visual {
+    min-height: auto;
+  }
+
+  .home-hero__wave {
+    inset: auto -18px -24px;
+    width: calc(100% + 36px);
+    height: 420px;
+    opacity: .48;
+  }
+
+  .home-insight,
+  .home-insight--map,
+  .home-insight--path,
+  .home-insight--priority {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 178px;
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__wave-lines,
+  .home-insight,
+  .home-insight--map,
+  .home-insight--path,
+  .home-insight--priority {
+    animation: none;
+  }
+
+  .home-insight--map {
+    transform: translate(-50%, -50%) translate3d(0, calc(var(--orbit-y) * -1), 0);
+  }
+
+  .home-insight--path {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * .86), calc(var(--orbit-y) * .5), 0);
+  }
+
+  .home-insight--priority {
+    transform: translate(-50%, -50%) translate3d(calc(var(--orbit-x) * -.86), calc(var(--orbit-y) * .5), 0);
+  }
+}
+
+@media (max-width: 680px) and (prefers-reduced-motion: reduce) {
+  .home-insight,
+  .home-insight--map,
+  .home-insight--path,
+  .home-insight--priority {
+    transform: none;
+  }
+}
+
 /* ── Мостик на диагностику ── */
 
 .bridge .container {
