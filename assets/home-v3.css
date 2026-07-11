@@ -290,7 +290,7 @@
 
 .home-hero__wave-lines {
   transform-origin: 52% 82%;
-  animation: home-mesh-breathe 18s cubic-bezier(.77, 0, .175, 1) infinite alternate;
+  animation: home-mesh-breathe 26s cubic-bezier(.77, 0, .175, 1) infinite alternate;
 }
 
 .home-insight,
@@ -306,7 +306,7 @@
   border: 1px solid rgba(255, 255, 255, .72);
   border-radius: 18px;
   box-shadow: none;
-  animation: home-card-drift 72s linear infinite;
+  animation: home-card-drift 84s linear infinite;
   will-change: transform;
 }
 
@@ -335,7 +335,7 @@
   min-height: 210px;
   padding: 25px 26px 14px;
   background: #eee8f7;
-  animation-delay: -24s;
+  animation-delay: -28s;
 }
 
 .home-insight--priority {
@@ -349,7 +349,7 @@
   background:
     radial-gradient(circle at 64% 50%, rgba(255, 255, 255, .48), transparent 58%),
     var(--ui-color-butter);
-  animation-delay: -48s;
+  animation-delay: -56s;
 }
 
 .home-insight span {
@@ -488,15 +488,19 @@
 }
 
 @keyframes home-card-drift {
-  0%, 100% { transform: translate3d(0, -7px, 0); }
-  25% { transform: translate3d(7px, 0, 0); }
-  50% { transform: translate3d(0, 7px, 0); }
-  75% { transform: translate3d(-7px, 0, 0); }
+  0%, 100% { transform: translate3d(0, -8px, 0); }
+  12.5% { transform: translate3d(5.7px, -5.7px, 0); }
+  25% { transform: translate3d(8px, 0, 0); }
+  37.5% { transform: translate3d(5.7px, 5.7px, 0); }
+  50% { transform: translate3d(0, 8px, 0); }
+  62.5% { transform: translate3d(-5.7px, 5.7px, 0); }
+  75% { transform: translate3d(-8px, 0, 0); }
+  87.5% { transform: translate3d(-5.7px, -5.7px, 0); }
 }
 
 @keyframes home-mesh-breathe {
-  from { transform: translate3d(-3px, 2px, 0) scale(.992); opacity: .72; }
-  to { transform: translate3d(4px, -3px, 0) scale(1.008); opacity: 1; }
+  from { transform: translate3d(-2px, 1px, 0) scale(.996); opacity: .78; }
+  to { transform: translate3d(3px, -2px, 0) scale(1.004); opacity: 1; }
 }
 
 @media (hover: hover) and (pointer: fine) {
