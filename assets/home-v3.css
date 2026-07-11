@@ -315,6 +315,7 @@
   left: 180px;
   z-index: 2;
   width: 238px;
+  height: 230px;
   min-height: 230px;
   padding: 25px 30px 0;
   background: #eee8f7;
@@ -326,6 +327,7 @@
   left: 52px;
   z-index: 3;
   width: 204px;
+  height: 210px;
   min-height: 210px;
   padding: 25px 26px 14px;
   background: #eee8f7;
@@ -337,6 +339,7 @@
   left: 262px;
   z-index: 4;
   width: 204px;
+  height: 214px;
   min-height: 214px;
   padding: 25px 25px 16px;
   background:
