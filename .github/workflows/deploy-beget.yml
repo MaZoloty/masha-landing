@@ -60,7 +60,7 @@ jobs:
             -p "${{ steps.config.outputs.port }}" \
             -o StrictHostKeyChecking=no \
             "$BEGET_USER@$BEGET_HOST" \
-            "rm -rf -- \"$BEGET_PATH/diagnostika\""
+            "cd $BEGET_PATH && rm -rf -- diagnostika"
 
       - name: Upload files to Beget
         if: steps.config.outputs.ready == 'true'
