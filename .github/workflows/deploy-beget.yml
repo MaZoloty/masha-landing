@@ -52,6 +52,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rsync sshpass
 
+      - name: Remove retired diagnostic
+        if: steps.config.outputs.ready == 'true'
+        shell: bash
+        run: |
+          sshpass -p "$BEGET_PASSWORD" ssh \
+            -p "${{ steps.config.outputs.port }}" \
+            -o StrictHostKeyChecking=no \
+            "$BEGET_USER@$BEGET_HOST" \
+            "rm -rf -- \"$BEGET_PATH/diagnostika\""
+
       - name: Upload files to Beget
         if: steps.config.outputs.ready == 'true'
         shell: bash
