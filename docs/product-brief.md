@@ -45,7 +45,7 @@ It should not feel like:
 
 ## Current Important Funnel
 
-`/diagnostika/` is a standalone diagnostic page:
+`/audit/` is a standalone diagnostic page:
 
 1. Hero with preliminary report framing.
 2. Step 1: base business numbers.

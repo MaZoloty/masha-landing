@@ -533,3 +533,6 @@ hierarchy, response, or a change of state.
   elastic motion, autoplaying decorative effects, or animations for frequent actions.
 - Motion must be progressive enhancement: content remains visible without
   JavaScript and fully respects `prefers-reduced-motion: reduce`.
+- A single hero illustration may use a slower, continuous 5–8 second loop when
+  it explains the product metaphor. Trigger more expressive movement only on
+  intentional desktop hover; text and controls must remain readable throughout.

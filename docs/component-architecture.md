@@ -115,7 +115,7 @@ Visual role:
 
 Used on:
 
-- `/diagnostika/`;
+- `/audit/`;
 - paid audit/solution map pages;
 - future tool pages.
 

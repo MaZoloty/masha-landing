@@ -17,7 +17,6 @@ Before changing or creating any UI, read:
 - `docs/ui-principles.md`
 - `docs/visual-qa-checklist.md`
 
-For `/diagnostika/`, also read `docs/design-system-diagnostika.md`.
 
 If the change touches only backend logic, still preserve the visual contracts in these files.
 
@@ -129,7 +128,6 @@ For new UI work:
 
 If a component is missing, extend the UI system first, then use it on the page.
 
-For `/diagnostika/`, do not redesign or restyle the page until `docs/design-system-diagnostika.md` and its wireframe have been accepted as the source of truth.
 
 ## Visual QA Before Finish
 
