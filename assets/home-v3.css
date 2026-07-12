@@ -66,6 +66,43 @@
   }
 }
 
+/* ── Problem: портрет + текст в одной панели ── */
+
+.problem-inner {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  column-gap: clamp(32px, 4.5vw, 56px);
+  align-items: center;
+}
+
+.problem-photo {
+  margin: 0;
+  align-self: stretch;
+}
+
+.problem-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  border: 1px solid var(--ui-color-line);
+  border-radius: var(--ui-radius-lg);
+}
+
+@media (max-width: 680px) {
+  .problem-inner {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .problem-photo img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-position: 50% 22%;
+  }
+}
+
 /* Подпись «Путь клиента» не должна уходить под сливочную карточку. */
 .home-insight--path p {
   max-width: 168px;
