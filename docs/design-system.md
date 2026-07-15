@@ -109,6 +109,7 @@ Suggested direction:
 - Body text must not be too small or too pale.
 - Metric values may use display serif or strong numeric styling.
 - Metrics must always have labels and interpretation.
+- Never zero-pad user-facing numbers or sequence labels: use `1`, `2`, `3`, not `01`, `02`, `03`. Zero padding is reserved for time, dates, and technical codes where it carries meaning.
 - Do not use negative letter spacing for normal text.
 - Keep reading sections around `680-760px` wide.
 
