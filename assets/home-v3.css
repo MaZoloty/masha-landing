@@ -74,7 +74,8 @@
   grid-template-areas:
     "lead leaks"
     "accent accent";
-  gap: clamp(38px, 6vw, 78px);
+  column-gap: clamp(38px, 6vw, 78px);
+  row-gap: 34px;
   align-items: start;
 }
 
@@ -91,7 +92,7 @@
   margin: 0 0 22px;
   color: var(--ui-color-ink);
   font-family: var(--ui-font-display);
-  font-size: clamp(38px, 4.2vw, 56px);
+  font-size: clamp(38px, 3.8vw, 50px);
   font-weight: 500;
   line-height: 1.02;
   text-wrap: balance;
@@ -150,7 +151,7 @@
   background: transparent !important;
   color: var(--ui-color-ink) !important;
   font-family: var(--ui-font-display);
-  font-size: clamp(24px, 2.4vw, 32px) !important;
+  font-size: clamp(24px, 2.2vw, 30px) !important;
   font-weight: 500;
   line-height: 1.22 !important;
 }
