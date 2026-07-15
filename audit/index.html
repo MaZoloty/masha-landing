@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260715-5" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260715-6" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -55,40 +55,47 @@
         </div>
       </div>
       <div class="audit-hero__visual">
-        <div class="audit-journey" role="img" aria-label="Путь клиента от интереса до повторной записи: четыре этапа и двенадцать точек проверки">
-          <svg viewBox="0 0 460 420" aria-hidden="true">
-            <g class="audit-journey__route-lines">
-              <path class="audit-journey__route-wash" d="M48 318C98 313 112 263 154 244s79-29 124-68 91-54 142-92" />
-              <path class="audit-journey__route" d="M48 318C98 313 112 263 154 244s79-29 124-68 91-54 142-92" />
-            </g>
-            <g class="audit-journey__nodes">
-              <g class="audit-journey__node">
-                <circle class="audit-journey__node-ring" cx="48" cy="318" r="10" />
-                <circle class="audit-journey__node-core" cx="48" cy="318" r="3" />
-              </g>
-              <g class="audit-journey__node">
-                <circle class="audit-journey__node-ring" cx="154" cy="244" r="10" />
-                <circle class="audit-journey__node-core" cx="154" cy="244" r="3" />
-              </g>
-              <g class="audit-journey__node">
-                <circle class="audit-journey__node-ring" cx="278" cy="176" r="10" />
-                <circle class="audit-journey__node-core" cx="278" cy="176" r="3" />
-              </g>
-              <g class="audit-journey__node audit-journey__node--finish">
-                <circle class="audit-journey__node-ring" cx="420" cy="84" r="11" />
-                <circle class="audit-journey__node-core" cx="420" cy="84" r="3" />
-              </g>
-            </g>
-            <g class="audit-journey__traveler">
-              <circle class="audit-journey__traveler-halo" cx="48" cy="318" r="10" />
-              <circle class="audit-journey__traveler-core" cx="48" cy="318" r="4" />
+        <div class="audit-map" aria-labelledby="audit-map-title">
+          <div class="audit-map__head">
+            <span id="audit-map-title">Карта диагностики</span>
+            <strong>путь + система</strong>
+          </div>
+          <svg class="audit-map__track" viewBox="0 0 420 38" aria-hidden="true">
+            <path class="audit-map__track-line" d="M70 18H350" />
+            <path class="audit-map__track-legs" d="M70 18V38M210 18V38M350 18V38" />
+            <circle class="audit-map__track-node" cx="70" cy="18" r="7" />
+            <circle class="audit-map__track-node" cx="210" cy="18" r="7" />
+            <circle class="audit-map__track-node" cx="350" cy="18" r="7" />
+            <g class="audit-map__signal">
+              <circle class="audit-map__signal-halo" cx="70" cy="18" r="10" />
+              <circle class="audit-map__signal-core" cx="70" cy="18" r="4" />
             </g>
           </svg>
-          <span class="audit-journey__stage audit-journey__stage--start">Интерес</span>
-          <span class="audit-journey__stage audit-journey__stage--booking">Запись</span>
-          <span class="audit-journey__stage audit-journey__stage--visit">Визит</span>
-          <span class="audit-journey__stage audit-journey__stage--return">Возврат</span>
-          <p class="audit-journey__caption"><strong>12 контрольных точек</strong><span>Один путь клиента. Четыре этапа, на которых теряются записи.</span></p>
+          <ol class="audit-map__stages">
+            <li>
+              <span class="audit-map__count">03</span>
+              <strong>До записи</strong>
+              <span>вход · отзывы · сообщения</span>
+            </li>
+            <li>
+              <span class="audit-map__count">02</span>
+              <strong>До визита</strong>
+              <span>неявки · перенос</span>
+            </li>
+            <li>
+              <span class="audit-map__count">03</span>
+              <strong>После визита</strong>
+              <span>повтор · даты · допродажи</span>
+            </li>
+          </ol>
+          <div class="audit-map__system">
+            <span class="audit-map__system-count">04</span>
+            <div>
+              <strong>Системный слой</strong>
+              <span>база · сегментация · рассылки · аналитика</span>
+            </div>
+          </div>
+          <p class="audit-map__formula"><span>03 + 02 + 03 + 04</span><strong>= 12 точек</strong></p>
         </div>
       </div>
     </section>
