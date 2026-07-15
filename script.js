@@ -15,6 +15,25 @@ document.querySelectorAll('.ladder-step__link').forEach(btn => {
   btn.addEventListener('click', () => ymGoal('package_click'));
 });
 
+// One explanatory pass through the client route when the diagnostic appears.
+const bridgeVisual = document.querySelector('.bridge-visual');
+
+if (bridgeVisual) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    bridgeVisual.classList.add('is-animated');
+  } else {
+    const bridgeObserver = new IntersectionObserver((entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      bridgeVisual.classList.add('is-animated');
+      observer.disconnect();
+    }, { threshold: 0.45 });
+
+    bridgeObserver.observe(bridgeVisual);
+  }
+}
+
 // ── Аккордеоны пакетов ──
 document.querySelectorAll('.accordion-toggle').forEach(btn => {
   btn.addEventListener('click', () => {

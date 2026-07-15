@@ -949,59 +949,35 @@
   vector-effect: non-scaling-stroke;
 }
 
-.bridge-path__halo {
-  fill: none;
-  stroke: var(--ui-color-lilac);
-  stroke-linecap: round;
-  stroke-width: 12;
-  opacity: .58;
-}
-
 .bridge-path__line {
   fill: none;
-  stroke: var(--ui-color-ink);
+  stroke: var(--ui-color-line-lavender);
   stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.bridge-path__node {
+  fill: var(--ui-color-surface);
+  stroke: var(--ui-color-lilac-ink);
   stroke-width: 1.5;
 }
 
-.bridge-path__node circle:first-child {
-  fill: var(--ui-color-surface);
-  stroke: var(--ui-color-ink);
-  stroke-width: 1.25;
-}
-
-.bridge-path__node circle:last-child {
-  fill: var(--ui-color-lilac-ink);
-}
-
-.bridge-path__node--start circle:last-child {
-  fill: var(--ui-color-butter-ink);
-}
-
-.bridge-path__node--finish circle:first-child {
+.bridge-path__node--finish {
   fill: var(--ui-color-cta);
   stroke: var(--ui-color-cta);
 }
 
-.bridge-path__node--finish circle:last-child {
-  fill: var(--ui-color-surface);
-}
-
 .bridge-path__signal {
+  fill: var(--ui-color-lilac-ink);
+  stroke: var(--ui-color-surface);
+  stroke-width: 2.5;
+  opacity: 0;
   transform-box: view-box;
   transform-origin: 0 0;
-  animation: bridge-signal-travel 6.4s cubic-bezier(.77, 0, .175, 1) infinite;
 }
 
-.bridge-path__signal circle:first-child {
-  fill: var(--ui-color-butter);
-  stroke: var(--ui-color-butter-ink);
-  stroke-width: 1;
-  opacity: .88;
-}
-
-.bridge-path__signal circle:last-child {
-  fill: var(--ui-color-butter-ink);
+.bridge-visual.is-animated .bridge-path__signal {
+  animation: bridge-signal-travel 3.8s var(--ui-ease-out) 1 forwards;
 }
 
 .bridge-path__steps {
@@ -1045,29 +1021,25 @@
 }
 
 @keyframes bridge-signal-travel {
-  0%, 10% {
+  0% {
     opacity: 0;
-    transform: translate3d(0, 0, 0) scale(.96);
+    transform: translate3d(0, 0, 0) scale(.8);
   }
-  16% {
+  7%, 22% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
-  36% {
+  36%, 43% {
     opacity: 1;
     transform: translate3d(100px, -48px, 0) scale(1);
   }
-  58% {
+  59%, 66% {
     opacity: 1;
     transform: translate3d(200px, -22px, 0) scale(1);
   }
-  82% {
+  84%, 100% {
     opacity: 1;
     transform: translate3d(300px, -94px, 0) scale(1);
-  }
-  94%, 100% {
-    opacity: 0;
-    transform: translate3d(300px, -94px, 0) scale(.96);
   }
 }
 
