@@ -691,7 +691,7 @@
 .audit-scorebar__label {
   display: block;
   color: var(--ui-color-muted);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -707,7 +707,7 @@
 .audit-scorebar__value b {
   color: var(--ui-color-ink);
   font-family: var(--ui-font-sans);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   line-height: 1;
@@ -715,7 +715,7 @@
 
 .audit-scorebar__value span {
   color: var(--ui-color-muted);
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -740,7 +740,7 @@
 .audit-scorebar__btn {
   min-height: 48px;
   padding: 0 24px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .audit-scorebar__btn:disabled {
