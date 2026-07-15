@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260715-2" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260715-3" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -54,13 +54,47 @@
           <span class="audit-hero__note">без регистрации · 4 цифры · 12 точек</span>
         </div>
       </div>
-      <div class="audit-hero__visual" aria-hidden="true">
-        <div class="audit-hero__gauge">
-          <span class="audit-hero__gauge-value">12</span>
-          <span class="audit-hero__gauge-label">точек, где запись может давать сбой</span>
-          <div class="audit-hero__gauge-dots">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          </div>
+      <div class="audit-hero__visual">
+        <div class="audit-journey" role="img" aria-label="Путь клиента от интереса до повторной записи с двенадцатью контрольными точками и тремя сигналами потерь">
+          <svg viewBox="0 0 460 420" aria-hidden="true">
+            <g class="audit-journey__mesh">
+              <path d="M18 350C42 195 152 64 312 34c66-12 114 10 136 37" />
+              <path d="M66 401C91 255 184 144 327 119c54-10 92 4 119 33" />
+              <path d="M22 279C143 304 257 254 321 153c31-48 72-81 126-91" />
+            </g>
+            <g class="audit-journey__route-lines">
+              <path class="audit-journey__echo" d="M48 318C99 312 103 254 154 244s79 31 96-33 69-51 102-41 46-42 68-86" />
+              <path class="audit-journey__route" d="M48 318C99 312 103 254 154 244s79 31 96-33 69-51 102-41 46-42 68-86" />
+            </g>
+            <g class="audit-journey__nodes">
+              <circle cx="48" cy="318" r="8" />
+              <circle cx="86" cy="294" r="7" />
+              <circle class="is-signal is-lilac" cx="112" cy="260" r="9" />
+              <circle cx="154" cy="244" r="7" />
+              <circle cx="192" cy="255" r="7" />
+              <circle cx="225" cy="253" r="7" />
+              <circle class="is-signal is-butter" cx="250" cy="211" r="9" />
+              <circle cx="278" cy="176" r="7" />
+              <circle cx="315" cy="163" r="7" />
+              <circle class="is-signal is-lilac" cx="352" cy="170" r="9" />
+              <circle cx="389" cy="137" r="7" />
+              <circle class="is-finish" cx="420" cy="84" r="10" />
+            </g>
+            <g class="audit-journey__signals">
+              <circle cx="112" cy="260" r="18" />
+              <circle cx="250" cy="211" r="18" />
+              <circle cx="352" cy="170" r="18" />
+            </g>
+            <g class="audit-journey__traveler">
+              <circle class="audit-journey__traveler-halo" cx="48" cy="318" r="13" />
+              <circle class="audit-journey__traveler-core" cx="48" cy="318" r="5" />
+            </g>
+          </svg>
+          <span class="audit-journey__stage audit-journey__stage--start">Интерес</span>
+          <span class="audit-journey__stage audit-journey__stage--booking">Запись</span>
+          <span class="audit-journey__stage audit-journey__stage--visit">Визит</span>
+          <span class="audit-journey__stage audit-journey__stage--return">Возврат</span>
+          <p class="audit-journey__caption"><strong>12 контрольных точек</strong><span>Один путь клиента — три места, где чаще всего теряются записи.</span></p>
         </div>
       </div>
     </section>
