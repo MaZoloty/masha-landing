@@ -15,7 +15,6 @@
   padding: 0;
   background:
     radial-gradient(circle at 76% 48%, rgba(232, 223, 242, .62) 0 18%, transparent 40%),
-    linear-gradient(90deg, transparent 0, transparent calc(75% - .5px), var(--ui-color-grid) calc(75% - .5px), var(--ui-color-grid) calc(75% + .5px), transparent calc(75% + .5px)),
     linear-gradient(180deg, transparent 0, transparent 120px, var(--ui-color-grid) 120px, var(--ui-color-grid) 121px, transparent 121px),
     var(--ui-color-bg-soft);
 }
@@ -1803,7 +1802,6 @@ main .footer {
 .home-hero-shell.hero {
   border-color: var(--ui-color-line);
   background:
-    linear-gradient(90deg, transparent 0, transparent calc(74% - .5px), var(--ui-color-grid) calc(74% - .5px), var(--ui-color-grid) calc(74% + .5px), transparent calc(74% + .5px)),
     linear-gradient(180deg, transparent 0, transparent 116px, var(--ui-color-grid) 116px, var(--ui-color-grid) 117px, transparent 117px),
     var(--ui-color-bg-soft);
 }
