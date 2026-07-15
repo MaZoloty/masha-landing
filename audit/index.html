@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260715-4" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260715-5" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -58,16 +58,30 @@
         <div class="audit-journey" role="img" aria-label="Путь клиента от интереса до повторной записи: четыре этапа и двенадцать точек проверки">
           <svg viewBox="0 0 460 420" aria-hidden="true">
             <g class="audit-journey__route-lines">
+              <path class="audit-journey__route-wash" d="M48 318C98 313 112 263 154 244s79-29 124-68 91-54 142-92" />
               <path class="audit-journey__route" d="M48 318C98 313 112 263 154 244s79-29 124-68 91-54 142-92" />
             </g>
             <g class="audit-journey__nodes">
-              <circle cx="48" cy="318" r="8" />
-              <circle cx="154" cy="244" r="8" />
-              <circle cx="278" cy="176" r="8" />
-              <circle class="is-finish" cx="420" cy="84" r="10" />
+              <g class="audit-journey__node">
+                <circle class="audit-journey__node-ring" cx="48" cy="318" r="10" />
+                <circle class="audit-journey__node-core" cx="48" cy="318" r="3" />
+              </g>
+              <g class="audit-journey__node">
+                <circle class="audit-journey__node-ring" cx="154" cy="244" r="10" />
+                <circle class="audit-journey__node-core" cx="154" cy="244" r="3" />
+              </g>
+              <g class="audit-journey__node">
+                <circle class="audit-journey__node-ring" cx="278" cy="176" r="10" />
+                <circle class="audit-journey__node-core" cx="278" cy="176" r="3" />
+              </g>
+              <g class="audit-journey__node audit-journey__node--finish">
+                <circle class="audit-journey__node-ring" cx="420" cy="84" r="11" />
+                <circle class="audit-journey__node-core" cx="420" cy="84" r="3" />
+              </g>
             </g>
             <g class="audit-journey__traveler">
-              <circle class="audit-journey__traveler-core" cx="48" cy="318" r="5" />
+              <circle class="audit-journey__traveler-halo" cx="48" cy="318" r="10" />
+              <circle class="audit-journey__traveler-core" cx="48" cy="318" r="4" />
             </g>
           </svg>
           <span class="audit-journey__stage audit-journey__stage--start">Интерес</span>

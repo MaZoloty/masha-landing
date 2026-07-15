@@ -117,6 +117,20 @@
   isolation: isolate;
 }
 
+.audit-journey::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 8%;
+  z-index: -1;
+  width: 48%;
+  aspect-ratio: 1.28;
+  border-radius: 50%;
+  background: var(--ui-color-lilac);
+  opacity: .42;
+  transform: rotate(-14deg);
+}
+
 .audit-journey svg {
   position: relative;
   z-index: 1;
@@ -131,22 +145,40 @@
   vector-effect: non-scaling-stroke;
 }
 
+.audit-journey__route-wash,
 .audit-journey__route {
   fill: none;
   stroke-linecap: round;
-  stroke: var(--ui-color-line-lavender);
-  stroke-width: 2;
 }
 
-.audit-journey__nodes circle {
+.audit-journey__route-wash {
+  stroke: var(--ui-color-lilac);
+  stroke-width: 10;
+  opacity: .56;
+}
+
+.audit-journey__route {
+  stroke: var(--ui-color-ink-soft);
+  stroke-width: 1.4;
+}
+
+.audit-journey__node-ring {
   fill: var(--ui-color-surface);
-  stroke: var(--ui-color-lilac-ink);
-  stroke-width: 1.5;
+  stroke: var(--ui-color-line-lavender);
+  stroke-width: 1.4;
 }
 
-.audit-journey__nodes .is-finish {
+.audit-journey__node-core {
+  fill: var(--ui-color-lilac-ink);
+}
+
+.audit-journey__node--finish .audit-journey__node-ring {
   fill: var(--ui-color-cta);
   stroke: var(--ui-color-cta);
+}
+
+.audit-journey__node--finish .audit-journey__node-core {
+  fill: var(--ui-color-surface);
 }
 
 .audit-journey__traveler {
@@ -160,6 +192,11 @@
   fill: var(--ui-color-lilac-ink);
   stroke: var(--ui-color-surface);
   stroke-width: 2.5;
+}
+
+.audit-journey__traveler-halo {
+  fill: var(--ui-color-lilac);
+  opacity: .82;
 }
 
 .audit-journey__stage {
