@@ -1242,6 +1242,19 @@
   color: var(--ui-color-ink) !important;
 }
 
+/* Синхронный старт метрик в двух сравнительных кейсах. */
+@media (min-width: 901px) {
+  .cases-grid > .case:nth-child(-n + 2) .case-body > .case-location + p {
+    min-block-size: 8em;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1040px) {
+  .cases-grid > .case:nth-child(-n + 2) .case-body > .case-location + p {
+    min-block-size: 9.6em;
+  }
+}
+
 /* ── Кейс без скриншота: сервис напоминаний ── */
 
 .case--system .case-stat {
