@@ -117,21 +117,6 @@
   isolation: isolate;
 }
 
-.audit-journey::before {
-  content: "";
-  position: absolute;
-  top: 4%;
-  right: 2%;
-  z-index: -1;
-  width: 68%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--ui-color-lilac);
-  opacity: .58;
-  will-change: transform, opacity;
-  animation: audit-journey-breathe 7.2s cubic-bezier(.77, 0, .175, 1) infinite alternate;
-}
-
 .audit-journey svg {
   position: relative;
   z-index: 1;
@@ -146,50 +131,17 @@
   vector-effect: non-scaling-stroke;
 }
 
-.audit-journey__mesh {
-  transform-origin: 52% 52%;
-  will-change: transform, opacity;
-  animation: audit-journey-drift 8.4s cubic-bezier(.77, 0, .175, 1) infinite alternate;
-}
-
-.audit-journey__mesh path {
-  fill: none;
-  stroke: var(--ui-color-line-lavender);
-  stroke-width: 1;
-  opacity: .72;
-}
-
-.audit-journey__echo,
 .audit-journey__route {
   fill: none;
   stroke-linecap: round;
-}
-
-.audit-journey__echo {
-  stroke: var(--ui-color-lilac);
-  stroke-width: 14;
-  opacity: .78;
-}
-
-.audit-journey__route {
-  stroke: var(--ui-color-ink);
-  stroke-width: 1.6;
+  stroke: var(--ui-color-line-lavender);
+  stroke-width: 2;
 }
 
 .audit-journey__nodes circle {
   fill: var(--ui-color-surface);
-  stroke: var(--ui-color-line-lavender);
-  stroke-width: 1.2;
-}
-
-.audit-journey__nodes .is-lilac {
-  fill: var(--ui-color-lilac);
   stroke: var(--ui-color-lilac-ink);
-}
-
-.audit-journey__nodes .is-butter {
-  fill: var(--ui-color-butter);
-  stroke: var(--ui-color-butter-ink);
+  stroke-width: 1.5;
 }
 
 .audit-journey__nodes .is-finish {
@@ -197,39 +149,17 @@
   stroke: var(--ui-color-cta);
 }
 
-.audit-journey__signals circle {
-  fill: none;
-  stroke: var(--ui-color-lilac-ink);
-  stroke-width: 1.2;
-  opacity: .16;
-  transform-box: fill-box;
-  transform-origin: center;
-  will-change: transform, opacity;
-  animation: audit-signal-pulse 3.6s cubic-bezier(.22, 1, .36, 1) infinite;
-}
-
-.audit-journey__signals circle:nth-child(2) {
-  stroke: var(--ui-color-butter-ink);
-  animation-delay: .8s;
-}
-
-.audit-journey__signals circle:nth-child(3) {
-  animation-delay: 1.6s;
-}
-
 .audit-journey__traveler {
   opacity: 0;
-  will-change: transform, opacity;
-  animation: audit-route-travel 7.2s linear infinite;
-}
-
-.audit-journey__traveler-halo {
-  fill: var(--ui-color-butter);
-  opacity: .58;
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: audit-route-travel 4s var(--ui-ease-out) .35s 1 forwards;
 }
 
 .audit-journey__traveler-core {
-  fill: var(--ui-color-ink);
+  fill: var(--ui-color-lilac-ink);
+  stroke: var(--ui-color-surface);
+  stroke-width: 2.5;
 }
 
 .audit-journey__stage {
@@ -242,8 +172,8 @@
 }
 
 .audit-journey__stage--start { left: 5%; bottom: 17%; }
-.audit-journey__stage--booking { left: 47%; top: 55%; }
-.audit-journey__stage--visit { left: 67%; top: 34%; }
+.audit-journey__stage--booking { left: 29%; top: 60%; }
+.audit-journey__stage--visit { left: 58%; top: 34%; }
 .audit-journey__stage--return { right: 0; top: 11%; color: var(--ui-color-ink); }
 
 .audit-journey__caption {
@@ -269,36 +199,12 @@
   line-height: 1.5;
 }
 
-@keyframes audit-journey-breathe {
-  from { transform: translate3d(-5px, 4px, 0) scale(.97); opacity: .46; }
-  to { transform: translate3d(7px, -5px, 0) scale(1.035); opacity: .7; }
-}
-
-@keyframes audit-journey-drift {
-  from { transform: translate3d(-4px, 3px, 0) scale(.99); opacity: .62; }
-  to { transform: translate3d(5px, -4px, 0) scale(1.01); opacity: 1; }
-}
-
-@keyframes audit-signal-pulse {
-  0%, 58%, 100% { transform: scale(.92); opacity: .12; }
-  22% { transform: scale(1.72); opacity: .52; }
-}
-
 @keyframes audit-route-travel {
-  0% { transform: translate3d(0, 0, 0); opacity: 0; }
-  5% { transform: translate3d(0, 0, 0); opacity: 1; }
-  12% { transform: translate3d(38px, -24px, 0); opacity: 1; }
-  21% { transform: translate3d(64px, -58px, 0); opacity: 1; }
-  30% { transform: translate3d(106px, -74px, 0); opacity: 1; }
-  39% { transform: translate3d(144px, -63px, 0); opacity: 1; }
-  47% { transform: translate3d(177px, -65px, 0); opacity: 1; }
-  56% { transform: translate3d(202px, -107px, 0); opacity: 1; }
-  64% { transform: translate3d(230px, -142px, 0); opacity: 1; }
-  72% { transform: translate3d(267px, -155px, 0); opacity: 1; }
-  80% { transform: translate3d(304px, -148px, 0); opacity: 1; }
-  88% { transform: translate3d(341px, -181px, 0); opacity: 1; }
-  96% { transform: translate3d(372px, -234px, 0); opacity: 1; }
-  100% { transform: translate3d(372px, -234px, 0); opacity: 0; }
+  0% { transform: translate3d(0, 0, 0) scale(.8); opacity: 0; }
+  7%, 20% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  36%, 43% { transform: translate3d(106px, -74px, 0) scale(1); opacity: 1; }
+  61%, 68% { transform: translate3d(230px, -142px, 0) scale(1); opacity: 1; }
+  86%, 100% { transform: translate3d(372px, -234px, 0) scale(1); opacity: 1; }
 }
 
 /* ── Как это работает ── */
@@ -1440,30 +1346,9 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
     transform: none;
   }
 
-  .audit-journey::before,
-  .audit-journey__mesh,
-  .audit-journey__signals circle,
   .audit-journey__traveler {
     animation: none;
-  }
-
-  .audit-journey::before {
-    transform: none;
-    opacity: .54;
-  }
-
-  .audit-journey__mesh {
-    transform: none;
-    opacity: .82;
-  }
-
-  .audit-journey__signals circle {
-    transform: scale(1.12);
-    opacity: .28;
-  }
-
-  .audit-journey__traveler {
-    transform: translate3d(202px, -107px, 0);
+    transform: translate3d(372px, -234px, 0);
     opacity: 1;
   }
 }
