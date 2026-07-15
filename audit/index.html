@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260711-3" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260715-1" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -237,9 +237,9 @@
 
       <div class="audit-scorebar" id="scorebar">
         <div class="audit-scorebar__score">
-          <span class="audit-scorebar__label">Ваш балл</span>
-          <span class="audit-scorebar__value"><b id="scoreValue">0</b> из 36</span>
-          <span class="audit-scorebar__answered">Оценено <b id="answeredCount">0</b> из 12</span>
+          <span class="audit-scorebar__label">Текущий балл</span>
+          <span class="audit-scorebar__value"><b id="scoreValue">0</b><span>из 36</span></span>
+          <span class="audit-scorebar__answered"><b id="answeredCount">0</b> из 12 пунктов оценено</span>
         </div>
         <div class="audit-scorebar__track" aria-hidden="true"><i id="scoreTrack"></i></div>
         <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button" disabled>Показать итог</button>
@@ -273,21 +273,29 @@
         <strong id="resultLoss">—</strong>
         <p>Ориентир по пустым окнам и спящей базе. Проверьте его по фактическим данным, прежде чем принимать решение.</p>
       </div>
-      <p class="audit-result__lead">Баллы показывают, где проблема. Платный гайд помогает выбрать решение для каждого из 12 пунктов.</p>
+      <p class="audit-result__lead">Баллы показывают, где проблема. Теперь важно понять, что исправлять первым, чтобы не потратить бюджет на изменения, которые не повлияют на запись.</p>
     </section>
 
-    <!-- ПЛАТНЫЙ ГАЙД -->
+    <!-- КАРТА РЕШЕНИЙ -->
     <section class="audit-form-section" id="guide">
       <div class="audit-form-wrap">
         <div class="audit-form-copy">
-          <p class="ui-section-label">Следующий шаг</p>
-          <h2 class="ui-type-title">Гайд с решениями по 12 точкам</h2>
-          <p>По каждому пункту – три уровня: что можно сделать своими силами, где хватит простой связки, а где нужна отдельная система.</p>
+          <p class="ui-section-label">После диагностики</p>
+          <h2 class="ui-type-title">Понять проблему — ещё не значит знать, что чинить первым</h2>
+          <p>Самая дорогая ошибка после такой проверки — менять всё сразу. Одни слабые места закрываются правилом или простой связкой, другие будут снова съедать записи, пока не появится отдельная система.</p>
+          <ul class="audit-guide-path" aria-label="Что поможет определить карта решений">
+            <li>с чего начать без лишних вложений;</li>
+            <li>где автоматизация действительно окупится;</li>
+            <li>какие изменения пока не дадут результата.</li>
+          </ul>
         </div>
         <div class="audit-guide-offer">
+          <p class="audit-guide-offer__eyebrow">Карта решений по 12 точкам</p>
+          <h3>Что делать с каждой слабой точкой</h3>
+          <p>Для каждой точки — уровень решения и ориентир, с чего начать.</p>
           <strong>1 490 ₽</strong>
-          <p>Напишите мне в Telegram – отвечу по оплате и отправлю гайд.</p>
-          <a class="ui-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener">Получить гайд</a>
+          <a class="ui-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener">Выбрать решения для своих точек</a>
+          <span>Напишите в Telegram — отвечу по оплате и отправлю карту.</span>
         </div>
       </div>
     </section>
