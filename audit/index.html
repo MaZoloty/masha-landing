@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260715-1" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260715-2" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -237,9 +237,8 @@
 
       <div class="audit-scorebar" id="scorebar">
         <div class="audit-scorebar__score">
-          <span class="audit-scorebar__label">Текущий балл</span>
-          <span class="audit-scorebar__value"><b id="scoreValue">0</b><span>из 36</span></span>
-          <span class="audit-scorebar__answered"><b id="answeredCount">0</b> из 12 пунктов оценено</span>
+          <span class="audit-scorebar__label">Прогресс диагностики</span>
+          <span class="audit-scorebar__value" aria-live="polite"><b id="answeredCount">0</b><span>из 12 пунктов</span></span>
         </div>
         <div class="audit-scorebar__track" aria-hidden="true"><i id="scoreTrack"></i></div>
         <button class="ui-button audit-scorebar__btn" id="resultBtn" type="button" disabled>Показать итог</button>
@@ -322,6 +321,6 @@
 
   </div>
 
-  <script src="/assets/audit.js?v=20260711-3"></script>
+  <script src="/assets/audit.js?v=20260715-2"></script>
 </body>
 </html>

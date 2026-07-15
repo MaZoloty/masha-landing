@@ -8,7 +8,6 @@ function ymGoal(goal) {
 const MAX_SCORE = 36;
 
 const items = Array.from(document.querySelectorAll('.audit-item'));
-const scoreValue = document.getElementById('scoreValue');
 const scoreTrack = document.getElementById('scoreTrack');
 const resultBtn = document.getElementById('resultBtn');
 const resultSection = document.getElementById('result');
@@ -94,8 +93,7 @@ function currentScore() {
 function updateScore() {
   const total = currentScore();
   const answered = items.filter(item => item.dataset.score !== undefined).length;
-  if (scoreValue) scoreValue.textContent = String(total);
-  if (scoreTrack) scoreTrack.style.transform = 'scaleX(' + (total / MAX_SCORE) + ')';
+  if (scoreTrack) scoreTrack.style.transform = 'scaleX(' + (answered / items.length) + ')';
   if (answeredCount) answeredCount.textContent = String(answered);
   if (resultBtn) resultBtn.disabled = answered < items.length;
   if (resultSection && !resultSection.hidden) renderResult(total, false);
