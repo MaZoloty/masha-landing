@@ -1678,3 +1678,331 @@
     transform: translate3d(300px, -94px, 0);
   }
 }
+
+/* ── Homepage unification: editorial rhythm and materials ── */
+
+.ladder .section-title,
+.blog-links .section-title,
+.form-section .section-title,
+.honest-title {
+  text-wrap: balance;
+}
+
+.ladder .section-lead,
+.blog-links .section-lead,
+.honest-panel p,
+.form-desc {
+  text-wrap: pretty;
+}
+
+/* The third proof closes the cases row instead of leaving an empty cell. */
+@media (min-width: 901px) {
+  .cases-grid > .case--system {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(340px, .72fr) minmax(0, 1.28fr);
+  }
+
+  .case--system .case-stat {
+    min-height: 100%;
+    border-radius: var(--ui-radius-lg) 0 0 var(--ui-radius-lg);
+  }
+}
+
+/* Four offers read as one path, not four unrelated promo cards. */
+.ladder-steps {
+  gap: 0;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--ui-color-line);
+  border-radius: var(--ui-radius-xl);
+  background: var(--ui-color-surface);
+}
+
+.ladder-step,
+.ladder-step:nth-child(1),
+.ladder-step:nth-child(2),
+.ladder-step:nth-child(4) {
+  min-height: 0;
+  padding: clamp(26px, 2.4vw, 34px);
+  border: 0;
+  border-right: 1px solid var(--ui-color-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background-color var(--ui-motion-fast) ease;
+}
+
+.ladder-step:nth-child(4) {
+  border-right: 0;
+}
+
+.ladder-step--featured {
+  border-right: 1px solid rgba(255, 253, 248, .18);
+  background: var(--ui-color-cta);
+  box-shadow: none;
+}
+
+.ladder-step:not(.ladder-step--featured):hover {
+  border-color: var(--ui-color-line);
+  background: var(--ui-color-lilac);
+  box-shadow: none;
+  transform: none;
+}
+
+.ladder-step--featured:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.ladder-step__head {
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.ladder-step__num {
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ui-color-lilac-ink);
+  font-size: 18px;
+}
+
+.ladder-step--featured .ladder-step__num {
+  border: 0;
+  background: transparent;
+}
+
+.ladder-step__price {
+  max-width: 132px;
+  color: var(--ui-color-muted);
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.ladder-step h3 {
+  margin-bottom: 12px;
+  font-size: clamp(24px, 1.85vw, 29px);
+  line-height: 1.14;
+}
+
+.ladder-step p {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.ladder-step__link {
+  margin-top: 22px;
+}
+
+/* The promise boundary is an editorial note inside the page rhythm. */
+.honest {
+  padding-block: 0;
+}
+
+.honest .container {
+  max-width: var(--ui-container);
+}
+
+.honest-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(42px, 7vw, 104px);
+  max-width: none;
+  margin: 0;
+  padding: clamp(52px, 6vw, 82px) 0;
+  border: 0;
+  border-top: 1px solid var(--ui-color-line);
+  border-bottom: 1px solid var(--ui-color-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.honest-title {
+  margin: 0;
+  font-size: clamp(42px, 4.5vw, 64px);
+}
+
+.honest-panel p {
+  align-self: center;
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+/* Articles become a useful editorial index instead of another card grid. */
+.blog-links {
+  padding-block: clamp(76px, 9vw, 116px);
+}
+
+.blog-links .container {
+  display: grid;
+  grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+.blog-links .section-title {
+  grid-column: 1;
+  margin: 0 0 24px;
+  font-size: clamp(40px, 4vw, 56px);
+}
+
+.blog-links .section-lead {
+  grid-column: 1;
+  margin: 0;
+}
+
+.blog-links-grid {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--ui-color-line);
+}
+
+.blog-link-card {
+  position: relative;
+  min-height: 0;
+  display: grid;
+  gap: 6px;
+  padding: 22px 58px 22px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ui-color-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: color var(--ui-motion-fast) ease;
+}
+
+.blog-link-card::after {
+  content: "↗";
+  position: absolute;
+  top: 24px;
+  right: 2px;
+  color: var(--ui-color-lilac-ink);
+  font-size: 19px;
+  line-height: 1;
+  transition: transform var(--ui-motion-fast) var(--ui-ease-out);
+}
+
+.blog-link-card:hover {
+  border-color: var(--ui-color-line);
+  transform: none;
+}
+
+.blog-link-card:hover::after {
+  transform: translate(3px, -3px);
+}
+
+.blog-link-card span {
+  font-family: var(--ui-font-display);
+  font-size: clamp(21px, 1.8vw, 27px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.blog-link-card small {
+  max-width: 620px;
+  color: var(--ui-color-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.blog-links-all {
+  grid-column: 1;
+  align-self: end;
+  justify-self: start;
+  margin-top: 34px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--ui-color-line-strong);
+  color: var(--ui-color-ink);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.blog-links-all:hover {
+  text-decoration: none;
+  border-color: var(--ui-color-ink);
+}
+
+@media (max-width: 1080px) {
+  .ladder-step,
+  .ladder-step:nth-child(1),
+  .ladder-step:nth-child(2),
+  .ladder-step:nth-child(4) {
+    border-right: 1px solid var(--ui-color-line);
+    border-bottom: 1px solid var(--ui-color-line);
+  }
+
+  .ladder-step:nth-child(2),
+  .ladder-step:nth-child(4) {
+    border-right: 0;
+  }
+
+  .ladder-step:nth-child(3),
+  .ladder-step:nth-child(4) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .honest-panel,
+  .blog-links .container {
+    grid-template-columns: 1fr;
+  }
+
+  .honest-panel {
+    gap: 24px;
+  }
+
+  .blog-links .section-title,
+  .blog-links .section-lead,
+  .blog-links-grid,
+  .blog-links-all {
+    grid-column: 1;
+  }
+
+  .blog-links-grid {
+    grid-row: auto;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .blog-links .section-title {
+    font-size: 36px;
+  }
+
+  .ladder-step,
+  .ladder-step:nth-child(1),
+  .ladder-step:nth-child(2),
+  .ladder-step:nth-child(3),
+  .ladder-step:nth-child(4) {
+    border-right: 0;
+    border-bottom: 1px solid var(--ui-color-line);
+  }
+
+  .ladder-step:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .honest-panel {
+    padding: 42px 0;
+  }
+
+  .blog-link-card {
+    padding: 20px 42px 20px 0;
+  }
+
+}
