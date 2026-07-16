@@ -119,6 +119,28 @@ Used on:
 - paid audit/solution map pages;
 - future tool pages.
 
+### 3. Mobile Side Menu
+
+Purpose:
+
+- removes the desktop navigation band from the small-screen first view;
+- keeps orientation available without competing with the hero;
+- provides one thumb-friendly entry to the main page sections.
+
+Visual role:
+
+- quiet fixed circular trigger outside the document flow;
+- right-side surface drawer with editorial link typography;
+- one dark primary action after the navigation links;
+- no duplicated top bar on screens up to the tablet breakpoint.
+
+Interaction rules:
+
+- all controls are at least 44px;
+- the drawer closes with its close button, Escape, backdrop press, or an in-page navigation choice;
+- focus moves into the drawer when it opens and returns to the trigger when it closes;
+- enter and exit animate only transform and opacity and respect reduced motion.
+
 ## Hero Components
 
 ### 1. Editorial Hero

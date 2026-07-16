@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Мария Золотухина: системы записи для бьюти и велнес</title>
   <meta name="description" content="Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты, аналитика. Чтобы клиент записывался и возвращался сам, а не терялся по дороге." />
   <link rel="canonical" href="https://mazoloty.ru/" />
@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="assets/ui-system.css?v=20260716-2" />
   <link rel="stylesheet" href="assets/page-rebuild.css?v=20260715-4" />
   <link rel="stylesheet" href="assets/home-v3.css?v=20260716-21" />
+  <link rel="stylesheet" href="assets/home-mobile.css?v=20260716-1" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -64,6 +65,37 @@
         <a href="/blog/">Блог</a>
       </nav>
     </header>
+
+    <button class="mobile-menu-trigger" type="button" aria-controls="mobileMenu" aria-haspopup="dialog" aria-expanded="false">
+      <span class="mobile-menu-trigger__icon" aria-hidden="true"><i></i><i></i></span>
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+
+    <dialog class="mobile-menu" id="mobileMenu" aria-labelledby="mobileMenuTitle">
+      <div class="mobile-menu__inner">
+        <div class="mobile-menu__head">
+          <a class="mobile-menu__brand" href="/" id="mobileMenuTitle">
+            <strong>Мария Золотухина</strong>
+            <span>системы записи для услуг</span>
+          </a>
+          <button class="mobile-menu__close" type="button">
+            <span aria-hidden="true"></span>
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+          <a href="/audit/">Диагностика</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#system">Что я собираю</a>
+          <a href="#ladder">Как со мной работать</a>
+          <a href="/blog/">Блог</a>
+        </nav>
+        <div class="mobile-menu__footer">
+          <a class="ui-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener">Прийти на разбор</a>
+          <p>Сначала смотрю путь клиента и цифры. Затем показываю, что исправить первым.</p>
+        </div>
+      </div>
+    </dialog>
 
     <div class="home-hero">
       <div class="home-hero__copy">
@@ -526,6 +558,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260715-3"></script>
+  <script src="script.js?v=20260716-4"></script>
 </body>
 </html>

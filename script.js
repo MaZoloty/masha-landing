@@ -3,6 +3,67 @@ function ymGoal(goal) {
   if (typeof ym !== 'undefined') ym(109430856, 'reachGoal', goal);
 }
 
+// ── Мобильное боковое меню ──
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuTrigger = document.querySelector('.mobile-menu-trigger');
+const mobileMenuClose = document.querySelector('.mobile-menu__close');
+
+if (mobileMenu && mobileMenuTrigger && mobileMenuClose) {
+  let closeTimer;
+
+  const openMobileMenu = () => {
+    if (mobileMenu.open) return;
+    window.clearTimeout(closeTimer);
+    mobileMenu.classList.remove('is-closing');
+    mobileMenu.showModal();
+    document.documentElement.classList.add('mobile-menu-open');
+    mobileMenuTrigger.setAttribute('aria-expanded', 'true');
+    mobileMenuClose.focus({ preventScroll: true });
+  };
+
+  const closeMobileMenu = () => {
+    if (!mobileMenu.open || mobileMenu.classList.contains('is-closing')) return;
+    mobileMenu.classList.add('is-closing');
+    document.documentElement.classList.remove('mobile-menu-open');
+    mobileMenuTrigger.setAttribute('aria-expanded', 'false');
+
+    const finishClose = () => {
+      mobileMenu.close();
+      mobileMenu.classList.remove('is-closing');
+      mobileMenuTrigger.focus({ preventScroll: true });
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      finishClose();
+      return;
+    }
+
+    closeTimer = window.setTimeout(finishClose, 180);
+  };
+
+  mobileMenuTrigger.addEventListener('click', openMobileMenu);
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+  mobileMenu.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeMobileMenu();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !mobileMenu.open) return;
+    event.preventDefault();
+    closeMobileMenu();
+  });
+
+  mobileMenu.addEventListener('click', event => {
+    if (event.target === mobileMenu) closeMobileMenu();
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+}
+
 // Calm, short entrance motion for the consulting system. It is progressive
 // enhancement: content is visible without JavaScript and for reduced motion.
 // ── Метрика: клик на hero CTA (диагностика) ──
