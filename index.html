@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="styles.css?v=20260716-1" />
   <link rel="stylesheet" href="assets/ui-system.css?v=20260716-1" />
   <link rel="stylesheet" href="assets/page-rebuild.css?v=20260715-4" />
-  <link rel="stylesheet" href="assets/home-v3.css?v=20260716-16" />
+  <link rel="stylesheet" href="assets/home-v3.css?v=20260716-17" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -165,10 +165,10 @@
         </div>
         <div class="problem-copy">
           <ul class="problem-leaks" aria-label="Где чаще всего теряются записи">
-            <li><span>Неявка</span><b>Записался, но не дошёл</b></li>
-            <li><span>Возврат</span><b>Пришёл один раз, а про него забыли</b></li>
-            <li><span>Ответ</span><b>Написал и не дождался ответа</b></li>
-            <li><span>Контакт</span><b>Ушёл к тем, кто вовремя напомнил</b></li>
+            <li aria-label="Записался, но не дошёл"><span>Записался</span><i aria-hidden="true">→</i><b>не дошёл</b></li>
+            <li aria-label="Пришёл один раз, а о нём забыли"><span>Пришёл один раз</span><i aria-hidden="true">→</i><b>о нём забыли</b></li>
+            <li aria-label="Написал и не дождался ответа"><span>Написал</span><i aria-hidden="true">→</i><b>не дождался ответа</b></li>
+            <li aria-label="Не напомнили вовремя, и клиент ушёл к другим"><span>Не напомнили вовремя</span><i aria-hidden="true">→</i><b>ушёл к другим</b></li>
           </ul>
         </div>
         <p class="problem-accent">Между первым интересом и возвращением есть <span>десяток слабых мест</span>. Я собираю их в одну систему.</p>
@@ -221,38 +221,33 @@
         </div>
         <ul class="system-list">
           <li class="system-row">
-            <span class="system-row__label">Вход</span>
             <div class="system-row__body">
               <h3>Точка входа</h3>
-              <p>Сайт, страница или связка под соцсети и карты, где клиент за секунды понимает услугу, цену и как записаться. Не «каталог всего», а маршрут под запрос.</p>
+              <p>Сайт или связка, где клиент быстро понимает услугу, цену и следующий шаг.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__label">Контакт</span>
             <div class="system-row__body">
               <h3>Напоминания, которые доходят</h3>
-              <p>Каскад по каналам (Telegram, MAX), устойчивый к блокировкам, с подтверждением визита в один тап: статус сразу встаёт в CRM.</p>
+              <p>Каскад Telegram и MAX с подтверждением визита и статусом в CRM.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__label">Возврат</span>
             <div class="system-row__body">
               <h3>Возвраты на автопилоте</h3>
-              <p>Цепочки после визита, реактивация спящих, дни рождения. Не когда администратор вспомнит, а системно.</p>
+              <p>Цепочки после визита, реактивация спящих и поздравления без ручного контроля.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__label">Диалоги</span>
             <div class="system-row__body">
               <h3>Заявки в одном окне</h3>
-              <p>Telegram, VK, WhatsApp, Direct не теряются между приложениями и в нерабочее время.</p>
+              <p>Сообщения из Telegram, VK, WhatsApp и Direct не теряются между приложениями.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__label">Данные</span>
             <div class="system-row__body">
               <h3>Аналитика возвратов</h3>
-              <p>Видно, какие каналы реально приводят клиентов, и решения принимаются по цифрам, а не на ощущениях.</p>
+              <p>Видно, откуда приходят и почему возвращаются клиенты.</p>
             </div>
           </li>
         </ul>
