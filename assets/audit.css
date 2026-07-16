@@ -1385,49 +1385,8 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
     padding-block: 30px 40px;
   }
 
-  .audit-map {
-    margin-top: var(--ui-space-4);
-    padding: 16px;
-  }
-
-  .audit-map__head {
-    padding-bottom: 11px;
-  }
-
-  .audit-map__track {
-    margin-top: 10px;
-  }
-
-  .audit-map__stages li {
-    min-height: 84px;
-    padding: 13px 8px;
-  }
-
-  .audit-map__stages strong,
-  .audit-map__system strong {
-    font-size: 11px;
-  }
-
-  .audit-map__stages li > span:last-child,
-  .audit-map__system div span {
-    font-size: 10.5px;
-  }
-
-  .audit-map__system {
-    padding: 14px;
-  }
-
-  .audit-map__summary {
-    display: grid;
-    gap: 3px;
-  }
-
-  .audit-map__summary span {
-    font-size: 12px;
-  }
-
-  .audit-map__summary strong {
-    font-size: 10.5px;
+  .audit-hero__visual {
+    display: none;
   }
 
   .audit-money__fields {
@@ -1440,6 +1399,10 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
 
   .audit-item {
     padding: 22px 18px;
+  }
+
+  .audit-list {
+    padding-bottom: 20px;
   }
 
   .audit-item__control {
@@ -1462,18 +1425,51 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   .audit-scorebar {
     bottom: 10px;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 18px;
     justify-items: stretch;
-    text-align: center;
-    padding: 14px 18px;
+    margin-bottom: 48px;
+    padding: 24px 22px;
+    border-radius: var(--ui-radius-md);
+    text-align: left;
   }
 
   .audit-scorebar__score {
-    justify-items: center;
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+  }
+
+  .audit-scorebar__label {
+    color: var(--ui-color-ink-soft);
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .audit-scorebar__value {
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .audit-scorebar__value b {
+    font-size: 40px;
+    line-height: .95;
+  }
+
+  .audit-scorebar__value span {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .audit-scorebar__track {
+    display: block;
+    width: 100%;
+    height: 8px;
   }
 
   .audit-scorebar__btn {
     width: 100%;
+    min-height: 56px;
+    font-size: 18px;
   }
 
   .audit-form__submit {
@@ -1484,12 +1480,26 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
     justify-self: start;
   }
 
+  .audit-form-wrap {
+    gap: 24px;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .audit-guide-offer,
+  .audit-form-copy {
+    border: 1px solid var(--ui-color-line-lavender);
+    border-radius: var(--ui-radius-md);
+  }
+
   .audit-guide-offer {
-    padding: var(--ui-space-7) var(--ui-space-6);
+    gap: 24px;
+    padding: 32px 22px 28px;
   }
 
   .audit-form-copy {
-    padding: var(--ui-space-8) var(--ui-space-6);
+    padding: 30px 22px;
   }
 
   .audit-form-copy h2 {
