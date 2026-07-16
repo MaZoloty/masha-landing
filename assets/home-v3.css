@@ -1676,7 +1676,7 @@
 .problem-leaks li,
 .problem-leaks li:nth-child(2),
 .problem-leaks li:nth-child(4) {
-  grid-template-columns: minmax(0, .9fr) 28px minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
   gap: 12px;
   min-height: 54px;
   padding: 11px 0;
@@ -1699,6 +1699,7 @@
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.45;
+  text-align: right;
   text-transform: none;
 }
 
@@ -1753,6 +1754,7 @@
   justify-self: end;
   font-size: 16px;
   line-height: 1.62;
+  text-align: right;
 }
 
 .system-list {
@@ -1949,7 +1951,7 @@
   .problem-leaks li,
   .problem-leaks li:nth-child(2),
   .problem-leaks li:nth-child(4) {
-    grid-template-columns: minmax(0, .9fr) 22px minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr);
     gap: 8px;
     padding: 11px 0;
   }
