@@ -447,6 +447,12 @@
     line-height: 1.45;
   }
 
+  .problem-leaks span,
+  .problem-leaks li:nth-child(2) span,
+  .problem-leaks li:nth-child(4) span {
+    text-align: left;
+  }
+
   .problem-accent {
     padding-top: 24px !important;
     font-size: clamp(21px, 4.4vw, 25px) !important;

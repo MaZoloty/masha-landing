@@ -1827,6 +1827,17 @@
   line-height: 1.55;
 }
 
+@media (min-width: 821px) {
+  .system-row__body h3 {
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .system-row__body p {
+    margin-inline: auto;
+  }
+}
+
 .who-panel {
   grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
   column-gap: clamp(38px, 5vw, 68px);
