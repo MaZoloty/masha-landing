@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260711-2" />
-  <link rel="stylesheet" href="/assets/audit.css?v=20260716-2" />
+  <link rel="stylesheet" href="/assets/audit.css?v=20260716-3" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -47,11 +47,11 @@
     <section class="audit-hero">
       <div class="audit-hero__copy">
         <p class="ui-section-label">Бесплатная диагностика записи</p>
-        <h1 class="audit-hero__title ui-type-display">Проверьте запись салона – <em>по цифрам и 12 контрольным точкам</em></h1>
-        <p class="audit-hero__lead">Сначала посчитайте примерный порядок потерь на пустых окнах и спящей базе. Затем оцените путь клиента – от первого обращения до повторного визита.</p>
+        <h1 class="audit-hero__title ui-type-display">Проверьте путь клиента <em>от первого сообщения до повторного визита</em></h1>
+        <p class="audit-hero__lead">Увидите, где теряются записи, какие места требуют внимания и что стоит исправить первым.</p>
         <div class="audit-hero__actions">
-          <a href="#loss-calculator" class="ui-button" id="startBtn">Начать с цифр</a>
-          <span class="audit-hero__note">без регистрации · 4 цифры · 12 точек</span>
+          <a href="#loss-calculator" class="ui-button" id="startBtn">Начать диагностику</a>
+          <span class="audit-hero__note">без регистрации · результат сразу</span>
         </div>
       </div>
       <div class="audit-hero__visual">
@@ -73,52 +73,48 @@
           </svg>
           <ol class="audit-map__stages">
             <li>
-              <span class="audit-map__count">3</span>
               <strong>До записи</strong>
               <span>вход · отзывы · сообщения</span>
             </li>
             <li>
-              <span class="audit-map__count">2</span>
               <strong>До визита</strong>
               <span>неявки · перенос</span>
             </li>
             <li>
-              <span class="audit-map__count">3</span>
               <strong>После визита</strong>
               <span>повтор · даты · допродажи</span>
             </li>
           </ol>
           <div class="audit-map__system">
-            <span class="audit-map__system-count">4</span>
             <div>
               <strong>Системный слой</strong>
               <span>база · сегментация · рассылки · аналитика</span>
             </div>
           </div>
-          <p class="audit-map__formula"><span>3 + 2 + 3 + 4</span><strong>= 12 точек</strong></p>
+          <p class="audit-map__summary"><span>Вся запись на одной карте</span><strong>видно, где теряются клиенты</strong></p>
         </div>
       </div>
     </section>
 
     <!-- КАК ЭТО РАБОТАЕТ -->
     <section class="audit-steps" aria-label="Как это работает">
-      <ol class="audit-steps__list">
+      <ul class="audit-steps__list">
         <li>
-          <span class="audit-steps__num">1</span>
-          <h2>Введите четыре цифры</h2>
-          <p>Записи, средний чек, неявки и размер спящей базы. Точная выгрузка не нужна.</p>
+          <span class="audit-steps__label">Данные</span>
+          <h2>Добавьте исходные показатели</h2>
+          <p>Записи, средний чек, неявки и спящая база. Точная выгрузка не нужна.</p>
         </li>
         <li>
-          <span class="audit-steps__num">2</span>
-          <h2>Оцените 12 точек</h2>
-          <p>Выберите оценку от 0 до 3: 0 – порядок, 3 – требует внимания.</p>
+          <span class="audit-steps__label">Путь клиента</span>
+          <h2>Проверьте каждый этап записи</h2>
+          <p>Отметьте, где всё работает, а где клиенты могут потеряться.</p>
         </li>
         <li>
-          <span class="audit-steps__num">3</span>
-          <h2>Получите итог</h2>
-          <p>Увидите примерную сумму потерь, общий балл и приоритетные пункты.</p>
+          <span class="audit-steps__label">Приоритеты</span>
+          <h2>Получите понятный итог</h2>
+          <p>Увидите примерные потери и что стоит исправить в первую очередь.</p>
         </li>
-      </ol>
+      </ul>
     </section>
 
     <!-- ДЕНЕЖНАЯ ПРИКИДКА -->

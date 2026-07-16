@@ -194,28 +194,15 @@
 .audit-map__stages li {
   display: grid;
   align-content: start;
-  gap: 4px;
+  gap: 6px;
   min-width: 0;
-  min-height: 116px;
-  padding: 14px;
+  min-height: 88px;
+  padding: 16px 14px;
   border-left: 1px solid var(--ui-color-line-lavender);
 }
 
 .audit-map__stages li:first-child {
   border-left: 0;
-}
-
-.audit-map__count,
-.audit-map__system-count {
-  color: var(--ui-color-lilac-ink);
-  font-family: var(--ui-font-display);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.audit-map__count {
-  margin-bottom: 5px;
-  font-size: 30px;
 }
 
 .audit-map__stages strong,
@@ -233,17 +220,9 @@
 }
 
 .audit-map__system {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
   padding: 17px 18px;
   border-radius: var(--ui-radius-md);
   background: var(--ui-color-lilac);
-}
-
-.audit-map__system-count {
-  font-size: 38px;
 }
 
 .audit-map__system div {
@@ -251,7 +230,7 @@
   gap: 3px;
 }
 
-.audit-map__formula {
+.audit-map__summary {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -261,15 +240,16 @@
   border-top: 1px solid var(--ui-color-line-lavender);
 }
 
-.audit-map__formula span {
-  color: var(--ui-color-muted);
-  font-family: var(--ui-font-display);
-  font-size: 16px;
+.audit-map__summary span {
+  color: var(--ui-color-ink);
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.audit-map__formula strong {
-  color: var(--ui-color-ink);
-  font-size: 13px;
+.audit-map__summary strong {
+  color: var(--ui-color-muted);
+  font-size: 11px;
+  font-weight: 500;
 }
 
 @keyframes audit-map-scan {
@@ -297,24 +277,18 @@
 
 .audit-steps__list li {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px 16px;
+  align-content: start;
+  gap: 6px;
+  padding-top: var(--ui-space-4);
+  border-top: 1px solid var(--ui-color-line-lavender);
 }
 
-.audit-steps__num {
-  grid-row: span 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--ui-color-line-lavender);
-  border-radius: 50%;
-  background: var(--ui-color-surface);
+.audit-steps__label {
   color: var(--ui-color-lilac-ink);
-  font-family: var(--ui-font-display);
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1.4;
 }
 
 .audit-steps__list h2 {
@@ -327,7 +301,6 @@
 }
 
 .audit-steps__list p {
-  grid-column: 2;
   margin: 0;
   color: var(--ui-color-muted);
   font-size: 14px;
@@ -1442,12 +1415,8 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   }
 
   .audit-map__stages li {
-    min-height: 120px;
-    padding: 11px 8px;
-  }
-
-  .audit-map__count {
-    font-size: 26px;
+    min-height: 84px;
+    padding: 13px 8px;
   }
 
   .audit-map__stages strong,
@@ -1461,24 +1430,20 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   }
 
   .audit-map__system {
-    gap: 12px;
     padding: 14px;
   }
 
-  .audit-map__system-count {
-    font-size: 32px;
+  .audit-map__summary {
+    display: grid;
+    gap: 3px;
   }
 
-  .audit-map__formula {
-    gap: 10px;
+  .audit-map__summary span {
+    font-size: 12px;
   }
 
-  .audit-map__formula span {
-    font-size: 13px;
-  }
-
-  .audit-map__formula strong {
-    font-size: 11px;
+  .audit-map__summary strong {
+    font-size: 10.5px;
   }
 
   .audit-money__fields {
