@@ -1259,18 +1259,20 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .12em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .audit-guide-offer h3 {
   max-width: 12ch;
-  margin: 0;
+  margin: 0 auto;
   color: var(--ui-color-ink);
   font-family: var(--ui-font-display);
   font-size: clamp(28px, 2.6vw, 36px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -.018em;
+  text-align: center;
   text-wrap: balance;
 }
 
@@ -1284,9 +1286,10 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
 
 .audit-guide-levels li {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
+  grid-template-columns: 76px minmax(0, 240px);
   gap: var(--ui-space-4);
   align-items: center;
+  justify-content: center;
   min-height: 64px;
   padding-block: var(--ui-space-3);
   border-bottom: 1px solid var(--ui-color-line-lavender);
@@ -1347,6 +1350,7 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   gap: var(--ui-space-3);
   margin-top: auto;
   padding-top: var(--ui-space-2);
+  text-align: center;
 }
 
 .audit-guide-offer__price {
@@ -1545,7 +1549,8 @@ html.motion-ready .audit-shell [data-reveal].is-revealed {
   }
 
   .audit-guide-levels li {
-    grid-template-columns: 68px minmax(0, 1fr);
+    grid-template-columns: 64px minmax(0, 220px);
+    gap: var(--ui-space-3);
   }
 
   .audit-guide-levels__scale {
