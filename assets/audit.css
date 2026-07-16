@@ -223,11 +223,13 @@
   padding: 17px 18px;
   border-radius: var(--ui-radius-md);
   background: var(--ui-color-lilac);
+  text-align: center;
 }
 
 .audit-map__system div {
   display: grid;
   gap: 3px;
+  justify-items: center;
 }
 
 .audit-map__summary {
@@ -263,7 +265,6 @@
 
 .audit-steps {
   padding-block: clamp(28px, 3vw, 44px);
-  border-top: 1px solid var(--ui-color-grid);
 }
 
 .audit-steps__list {
@@ -285,9 +286,9 @@
 
 .audit-steps__label {
   color: var(--ui-color-lilac-ink);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .04em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.4;
 }
 
@@ -1047,34 +1048,17 @@
 /* ── Подвал ── */
 
 .audit-footer {
-  display: grid;
-  gap: 22px;
-  padding-block: clamp(30px, 4vw, 48px);
+  display: flex;
+  justify-content: center;
+  padding-block: var(--ui-space-6);
   border-top: 1px solid var(--ui-color-grid);
   color: var(--ui-color-muted);
 }
 
-.audit-footer__who {
-  max-width: 680px;
-}
-
-.audit-footer__sign {
-  margin: 0 0 10px;
-  font-family: var(--ui-font-display);
-  font-style: italic;
-  font-size: 24px;
-  color: var(--ui-color-ink);
-}
-
-.audit-footer__who p:not(.audit-footer__sign) {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.68;
-}
-
 .audit-footer__links {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
+  text-align: center;
 }
 
 .audit-footer__links a {
