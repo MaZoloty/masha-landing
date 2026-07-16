@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="styles.css?v=20260716-1" />
   <link rel="stylesheet" href="assets/ui-system.css?v=20260716-1" />
   <link rel="stylesheet" href="assets/page-rebuild.css?v=20260715-4" />
-  <link rel="stylesheet" href="assets/home-v3.css?v=20260715-15" />
+  <link rel="stylesheet" href="assets/home-v3.css?v=20260716-16" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
@@ -165,10 +165,10 @@
         </div>
         <div class="problem-copy">
           <ul class="problem-leaks" aria-label="Где чаще всего теряются записи">
-            <li><span>1</span><b>Записался, но не дошёл</b></li>
-            <li><span>2</span><b>Пришёл один раз, а про него забыли</b></li>
-            <li><span>3</span><b>Написал и не дождался ответа</b></li>
-            <li><span>4</span><b>Ушёл к тем, кто вовремя напомнил</b></li>
+            <li><span>Неявка</span><b>Записался, но не дошёл</b></li>
+            <li><span>Возврат</span><b>Пришёл один раз, а про него забыли</b></li>
+            <li><span>Ответ</span><b>Написал и не дождался ответа</b></li>
+            <li><span>Контакт</span><b>Ушёл к тем, кто вовремя напомнил</b></li>
           </ul>
         </div>
         <p class="problem-accent">Между первым интересом и возвращением есть <span>десяток слабых мест</span>. Я собираю их в одну систему.</p>
@@ -219,43 +219,43 @@
           <h2 class="section-title">Что я собираю</h2>
           <p class="section-lead">Систему записи как единый процесс, а не набор разрозненных сервисов. Что из этого нужно именно вам, зависит от бизнеса. Разбираемся на разборе.</p>
         </div>
-        <ol class="system-list">
+        <ul class="system-list">
           <li class="system-row">
-            <span class="system-row__num" aria-hidden="true">1</span>
+            <span class="system-row__label">Вход</span>
             <div class="system-row__body">
               <h3>Точка входа</h3>
               <p>Сайт, страница или связка под соцсети и карты, где клиент за секунды понимает услугу, цену и как записаться. Не «каталог всего», а маршрут под запрос.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__num" aria-hidden="true">2</span>
+            <span class="system-row__label">Контакт</span>
             <div class="system-row__body">
               <h3>Напоминания, которые доходят</h3>
               <p>Каскад по каналам (Telegram, MAX), устойчивый к блокировкам, с подтверждением визита в один тап: статус сразу встаёт в CRM.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__num" aria-hidden="true">3</span>
+            <span class="system-row__label">Возврат</span>
             <div class="system-row__body">
               <h3>Возвраты на автопилоте</h3>
               <p>Цепочки после визита, реактивация спящих, дни рождения. Не когда администратор вспомнит, а системно.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__num" aria-hidden="true">4</span>
+            <span class="system-row__label">Диалоги</span>
             <div class="system-row__body">
               <h3>Заявки в одном окне</h3>
               <p>Telegram, VK, WhatsApp, Direct не теряются между приложениями и в нерабочее время.</p>
             </div>
           </li>
           <li class="system-row">
-            <span class="system-row__num" aria-hidden="true">5</span>
+            <span class="system-row__label">Данные</span>
             <div class="system-row__body">
               <h3>Аналитика возвратов</h3>
               <p>Видно, какие каналы реально приводят клиентов, и решения принимаются по цифрам, а не на ощущениях.</p>
             </div>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
   </section>
@@ -275,7 +275,6 @@
           <p>Я управляющая: веду два велнес-центра в Перми и вижу запись изнутри, по своим цифрам, а не по чужим кейсам. Больше 12 лет в клиентском сервисе, последние 5 лет в глубокой операционке и аналитике, последние 3 года в бьюти и велнес.</p>
           <p>В аналитику копаю так глубоко, что готовые интеграции её просто не тянут: часть инструментов из-за этого собрала сама. Когда чужой сервис уведомлений за ~10 000 ₽ в месяц лёг на блокировке и клиенты перестали получать напоминания, я за неделю собрала свой на своей инфраструктуре. Дешевле, устойчивее к блокировкам, и доступы с базой остались у центра.</p>
           <p>Поэтому я не пересказываю чужие статьи, а показываю то, что проверила на своей записи и своих деньгах.</p>
-          <p class="who-sign">Мария Золотухина</p>
         </div>
       </div>
     </div>
@@ -411,10 +410,9 @@
     <div class="container">
       <h2 class="section-title">Как со мной работать</h2>
       <p class="section-lead">Можно начать с самостоятельной проверки, а дальше выбрать нужную глубину.</p>
-      <ol class="ladder-steps">
+      <ul class="ladder-steps">
         <li class="ladder-step">
           <div class="ladder-step__head">
-            <span class="ladder-step__num" aria-hidden="true">1</span>
             <span class="ladder-step__price">бесплатно</span>
           </div>
           <h3>Диагностика записи</h3>
@@ -423,7 +421,6 @@
         </li>
         <li class="ladder-step">
           <div class="ladder-step__head">
-            <span class="ladder-step__num" aria-hidden="true">2</span>
             <span class="ladder-step__price">1 490 ₽</span>
           </div>
           <h3>Гайд с решениями</h3>
@@ -432,7 +429,6 @@
         </li>
         <li class="ladder-step ladder-step--featured">
           <div class="ladder-step__head">
-            <span class="ladder-step__num" aria-hidden="true">3</span>
             <span class="ladder-step__price">5 000 ₽ · в счёт работы</span>
           </div>
           <h3>Разбор вашей системы</h3>
@@ -441,13 +437,12 @@
         </li>
         <li class="ladder-step">
           <div class="ladder-step__head">
-            <span class="ladder-step__num" aria-hidden="true">4</span>
             <span class="ladder-step__price">цена по объёму</span>
           </div>
           <h3>Работа под запрос</h3>
           <p>После разбора собираю только то, что нужно: сайт, напоминания, возвраты или аналитику.</p>
         </li>
-      </ol>
+      </ul>
     </div>
   </section>
 
