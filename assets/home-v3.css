@@ -1646,6 +1646,7 @@
 /* ── Homepage cleanup: quieter colour, semantic labels, compact biography ── */
 
 .problem .container {
+  max-width: calc(var(--ui-container) - 48px);
   border: 1px solid var(--ui-color-line);
   background: var(--ui-color-surface);
   box-shadow: var(--ui-shadow-card);
@@ -1719,51 +1720,112 @@
   box-shadow: none;
 }
 
+.problem-accent span {
+  padding: .04em .22em .1em;
+  border-radius: 4px;
+  background: var(--ui-color-lilac-ink);
+  color: var(--ui-color-bg-soft);
+  font-weight: 600;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.system-layout {
+  grid-template-columns: 1fr;
+  gap: clamp(38px, 5vw, 58px);
+}
+
+.system-head {
+  position: static;
+  display: grid;
+  grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr);
+  gap: clamp(40px, 7vw, 104px);
+  align-items: end;
+}
+
 .system-head .section-title {
-  max-width: 8ch;
+  max-width: 10ch;
+  margin: 0;
   font-size: clamp(40px, 4vw, 54px);
   line-height: 1.06;
 }
 
 .system-head .section-lead {
-  max-width: 390px;
+  max-width: 620px;
+  justify-self: end;
   font-size: 16px;
   line-height: 1.62;
 }
 
 .system-list {
+  --system-gap: clamp(20px, 2.6vw, 36px);
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(24px, 3vw, 38px);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--system-gap);
+  padding-top: 44px;
+}
+
+.system-list::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--ui-color-line-lavender);
 }
 
 .system-row,
 .system-row + .system-row {
+  position: relative;
   display: block;
-  padding: 22px 0 24px;
-  border-top: 1px solid var(--ui-color-line);
+  padding: 16px 0 0;
+  border: 0;
 }
 
-.system-row:nth-child(5) {
-  grid-column: 1 / -1;
+.system-row::before {
+  content: "";
+  position: absolute;
+  top: -44px;
+  left: 50%;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--ui-color-lilac-ink);
+  border-radius: 50%;
+  background: var(--ui-color-surface);
+  transform: translateX(-50%);
 }
 
-.system-row:nth-child(5) .system-row__body {
-  display: grid;
-  grid-template-columns: minmax(190px, .65fr) minmax(0, 1fr);
-  gap: 28px;
-  align-items: baseline;
+.system-row:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: -50px;
+  right: calc(var(--system-gap) / -2 - 7px);
+  z-index: 2;
+  padding-inline: 4px;
+  background: var(--ui-color-bg);
+  color: var(--ui-color-lilac-ink);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.system-row:last-child::before {
+  border-color: var(--ui-color-lilac-ink);
+  background: var(--ui-color-lilac-ink);
+  box-shadow: 0 0 0 5px var(--ui-color-lilac);
 }
 
 .system-row__body h3 {
   margin: 0 0 8px;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.28;
 }
 
 .system-row__body p {
-  font-size: 15px;
-  line-height: 1.58;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .who-panel {
@@ -1835,6 +1897,51 @@
     aspect-ratio: 16 / 10;
     justify-self: start;
   }
+
+  .system-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .system-head .section-lead {
+    justify-self: start;
+  }
+
+  .system-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 0 0 38px;
+  }
+
+  .system-list::before {
+    top: 8px;
+    right: auto;
+    bottom: 10px;
+    left: 8px;
+    width: 1px;
+    height: auto;
+  }
+
+  .system-row,
+  .system-row + .system-row {
+    padding: 0 0 28px;
+  }
+
+  .system-row::before {
+    top: 4px;
+    left: -38px;
+    transform: none;
+  }
+
+  .system-row:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: auto;
+    bottom: 7px;
+    left: -38px;
+    padding: 2px 3px;
+    background: var(--ui-color-bg);
+  }
 }
 
 @media (max-width: 620px) {
@@ -1854,18 +1961,6 @@
   .problem-accent {
     padding-top: 22px !important;
     font-size: 22px !important;
-  }
-
-  .system-list {
-    grid-template-columns: 1fr;
-  }
-
-  .system-row:nth-child(5) {
-    grid-column: auto;
-  }
-
-  .system-row:nth-child(5) .system-row__body {
-    display: block;
   }
 
   .who-title {
