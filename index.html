@@ -33,21 +33,14 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260716-1" />
-  <link rel="stylesheet" href="assets/ui-system.css?v=20260716-2" />
+  <link rel="stylesheet" href="/assets/fonts.css?v=20260725-1" />
+  <link rel="stylesheet" href="styles.css?v=20260725-1" />
+  <link rel="stylesheet" href="assets/ui-system.css?v=20260725-1" />
   <link rel="stylesheet" href="assets/page-rebuild.css?v=20260715-4" />
   <link rel="stylesheet" href="assets/home-v3.css?v=20260716-22" />
   <link rel="stylesheet" href="assets/home-mobile.css?v=20260716-3" />
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109430856','ym');
-    ym(109430856,'init',{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/109430856" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
+  <link rel="stylesheet" href="/assets/privacy-controls.css?v=20260725-1" />
+  <script src="/assets/privacy-controls.js?v=20260725-2" defer></script>
 </head>
 <body>
 
@@ -513,42 +506,15 @@
     </div>
   </section>
 
-  <!-- ФОРМА РАЗБОРА -->
-  <section class="section form-section" id="form">
-    <div class="container form-container">
-      <h2 class="section-title">Разобрать вашу запись</h2>
-      <p class="form-desc">Разбор стоит 5 000 ₽. До созвона я изучаю вашу точку входа, запись и цифры. На встрече показываю, что мешает клиентам дойти до визита и с чего начать. Если продолжаем работу, 5 000 ₽ засчитываются в проект. Можно <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener">написать в Telegram</a> или оставить короткую заявку.</p>
-
-      <form class="form" id="contactForm" novalidate>
-        <div class="form-field">
-          <label for="name">Имя</label>
-          <input type="text" id="name" name="name" placeholder="Как вас зовут" required />
-        </div>
-        <div class="form-field">
-          <label for="business">Тип бизнеса</label>
-          <input type="text" id="business" name="business" placeholder="Студия эпиляции, частный мастер, салон красоты..." required />
-        </div>
-        <div class="form-field">
-          <label for="link">Ссылка на соцсеть, Telegram, VK или сайт</label>
-          <input type="text" id="link" name="link" placeholder="vk.com/yourpage, t.me/yourpage или yoursite.ru" required />
-        </div>
-        <div class="form-field form-field--wide">
-          <label for="problem">Что важно разобрать? <span class="form-optional">необязательно</span></label>
-          <textarea id="problem" name="problem" rows="3" placeholder="Например: много отмен или мало повторных визитов"></textarea>
-        </div>
-        <div class="form-field">
-          <label for="contact">Как удобно связаться</label>
-          <input type="text" id="contact" name="contact" placeholder="Telegram @username или телефон" required />
-        </div>
-        <div class="form-consent">
-          <input type="checkbox" id="consent" name="consent" required />
-          <label for="consent">Я согласен(на) на <a href="privacy.html" target="_blank">обработку персональных данных</a></label>
-        </div>
-        <button type="submit" class="btn" id="submitBtn">Отправить заявку</button>
-        <p class="form-note" id="formNote"></p>
-      </form>
-
-      <p class="form-after">Отвечу сама в течение 24 часов. Если пока рано идти на разбор, начните с <a href="/audit/">бесплатной диагностики записи</a>.</p>
+  <!-- СВЯЗЬ В TELEGRAM -->
+  <section class="section form-section contact-section" id="contact">
+    <div class="container form-container contact-container">
+      <div class="contact-copy">
+        <h2 class="section-title">Разобрать вашу запись</h2>
+        <p class="form-desc">Разбор стоит 5 000 ₽. До созвона я изучаю вашу точку входа, запись и цифры. На встрече показываю, что мешает клиентам дойти до визита и с чего начать. Если продолжаем работу, 5 000 ₽ засчитываются в проект.</p>
+        <p class="form-after">Отвечу сама в течение 24 часов. Если пока рано идти на разбор, начните с <a href="/audit/">бесплатной диагностики записи</a>.</p>
+      </div>
+      <a class="btn contact-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener" data-telegram-contact>Написать в Telegram</a>
     </div>
   </section>
 
@@ -558,6 +524,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260716-4"></script>
+  <script src="script.js?v=20260725-2"></script>
 </body>
 </html>

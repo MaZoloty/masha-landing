@@ -1,8 +1,23 @@
-# Служебные файлы и папки не должны быть доступны публично
+Options -Indexes
+
+# Служебные файлы и папки не должны быть доступны публично.
 RedirectMatch 404 ^/docs(/|$)
 RedirectMatch 404 ^/specs(/|$)
 RedirectMatch 404 ^/automation(/|$)
 RedirectMatch 404 ^/functions(/|$)
+RedirectMatch 404 ^/components\.html$
 RedirectMatch 404 ^/\.(?!well-known/)
-RedirectMatch 404 \.(md|toml)$
-RedirectMatch 404 ^/skills-lock\.json$
+RedirectMatch 404 \.(bak|conf|ini|log|md|sql|toml|ya?ml|zip)$
+RedirectMatch 404 ^/(composer|package)(-lock)?\.json$
+RedirectMatch 404 ^/(skills-lock\.json|telegram-config\.php)$
+
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'sha256-+b1Q19kqC9wi3pjqGeBqh3iLwWf5kfVsxhzGlR56iCI=' 'sha256-+NLj2kypDs6TG0q5cvHBrtvkrcDHqyHgCpfzHs6HSfk=' 'sha256-CB62a75z31YtN0aWz6/QRrMYtls2663nCptTIap5BGI=' 'sha256-fr+oBSt6z4jERVI4O6ZSlo8NPsPX7GSbrnuw+tyRZpw=' 'sha256-HcPsU0zn7c3En1mBkp0H0g5AVpKJHCvT9IHkpE4Yg/c=' 'sha256-HyCljDMySDESOfctgHx/GJe40ygK/mT3mb/lz+5Pyw8=' 'sha256-JFIjmmPRm9DPwzx00xhhdRqQEBIje63KnK3CsLVYqJw=' 'sha256-ooEvF4ISFb1OwCuqqudoqq+CFHokddlkzl7L2AJARHk=' 'sha256-oUhv5qGCWN/nQwDZG7dRsrwVMb3LEsuTMyDEhJOf1PU=' 'sha256-sBqodw8hr8GuV/1pTrQSIk70UX1wGnDzDmb0MkCaHPs=' 'sha256-tzz6vJE16CXrqW6gsi81q0dehlwnZXiPOU2Jry+vq2g=' 'sha256-xIOb0EK5ghKU+9lmT1sJQA4nM32H0V5thsWV+OKRrN0=' 'sha256-Z3VOp5iFGyy2248b3EAvr777QNS/2JDoTdqDPHaC5cc=' 'sha256-Z4QMaYv5nZuQ8pax7RpSu4Z+FR12/aBISWHtACRtT30=' 'sha256-ZHV8dxMgERPZ0ioOOtQRQpFynMJMh8bdJ1Ib8gtBML0=' https://mc.yandex.ru; script-src-attr 'none'; style-src 'self'; font-src 'self'; img-src 'self' data: https://mc.yandex.ru; connect-src 'self' https://mc.yandex.ru; frame-src 'none'; media-src 'self'; manifest-src 'self'; upgrade-insecure-requests"
+</IfModule>

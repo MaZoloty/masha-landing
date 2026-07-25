@@ -16,9 +16,14 @@ Before changing or creating any UI, read:
 - `docs/component-architecture.md`
 - `docs/ui-principles.md`
 - `docs/visual-qa-checklist.md`
+- `docs/security-standard.md`
 
 
 If the change touches only backend logic, still preserve the visual contracts in these files.
+
+## Security Standard
+
+Every public form, integration, analytics script, payment flow, and downloadable-product route must follow `docs/security-standard.md`. Security checks are a release gate, not a post-launch cleanup task.
 
 ## Design Skills
 

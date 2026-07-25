@@ -483,6 +483,10 @@ Rules:
 - readable text;
 - quiet placement;
 - no tiny hidden consent.
+- separate required checkbox with a link to the current consent text;
+- the checkbox must not be preselected;
+- consent version must be submitted and checked by the server;
+- analytics consent must never be combined with form or marketing consent.
 
 ### 3. Success State
 
@@ -496,6 +500,34 @@ Required content:
 - what happens next;
 - expected timing;
 - fallback contact if needed.
+
+### 4. Privacy Preference Panel
+
+Purpose:
+
+- let the visitor choose whether optional analytics may run.
+
+Rules:
+
+- load no analytics request before an explicit positive choice;
+- give refusal and acceptance equal visual weight;
+- keep a permanent "Настройки аналитики" control in the footer;
+- store only the choice itself and allow it to be changed;
+- use the existing ivory, lavender-gray, dark text, radius, and button tokens;
+- remain readable and operable at 390px and with reduced motion.
+
+### 5. Form Security Contract
+
+Every public form must:
+
+- use `POST` and a same-origin endpoint;
+- work without JavaScript without placing personal data in a URL;
+- validate required fields, consent, field lengths, content type, and request size on the server;
+- include a quiet honeypot and server-side rate limiting;
+- reject untrusted origins where the browser sends `Origin`;
+- keep API credentials outside the repository and public web root;
+- return generic public errors and never expose provider responses or secrets;
+- define explicit success, validation, rate-limit, timeout, and server-error states.
 
 ## Page Architecture
 

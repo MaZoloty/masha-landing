@@ -169,6 +169,18 @@ html {
   margin-top: var(--ui-space-4);
 }
 
+.ui-prose-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-4);
+  margin-top: var(--ui-space-4);
+}
+
+.ui-prose-actions .ui-button {
+  margin-top: 0;
+}
+
 .ui-header {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);

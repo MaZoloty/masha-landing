@@ -1,0 +1,129 @@
+.privacy-banner {
+  position: fixed;
+  inset-inline: 16px;
+  bottom: 16px;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  width: min(calc(100% - 32px), 920px);
+  margin-inline: auto;
+  padding: 20px 22px;
+  border: 1px solid var(--ui-color-line-lavender, #ddd4e8);
+  border-radius: var(--ui-radius-md, 20px);
+  background: var(--ui-color-surface, #fffdf8);
+  color: var(--ui-color-ink, #151511);
+  font-family: var(--ui-font-sans, "Manrope", "Segoe UI", sans-serif);
+}
+
+.privacy-banner[hidden] {
+  display: none;
+}
+
+.privacy-banner__copy {
+  min-width: 0;
+}
+
+.privacy-banner__title {
+  margin: 0 0 6px;
+  font-family: var(--ui-font-display, "Prata", Georgia, serif);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.privacy-banner__text {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--ui-color-muted, #67635b);
+  font-size: 14px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.privacy-banner__text a {
+  color: var(--ui-color-ink, #151511);
+  text-underline-offset: 3px;
+}
+
+.privacy-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.privacy-banner__button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--ui-color-cta, #151b17);
+  color: var(--ui-color-bg-soft, #fbf7ef);
+  font: 600 14px/1 var(--ui-font-sans, "Manrope", "Segoe UI", sans-serif);
+  cursor: pointer;
+  transition:
+    transform var(--ui-motion-fast, 160ms) var(--ui-ease-out, cubic-bezier(.22, 1, .36, 1)),
+    background-color var(--ui-motion-fast, 160ms) ease;
+}
+
+.privacy-banner__button:hover {
+  background: var(--ui-color-cta-hover, #22241e);
+  transform: translateY(-1px);
+}
+
+.privacy-banner__button--secondary {
+  border-color: var(--ui-color-line, #ded7ca);
+  background: transparent;
+  color: var(--ui-color-ink, #151511);
+}
+
+.privacy-banner__button--secondary:hover {
+  background: var(--ui-color-bg-soft, #fbf7ef);
+}
+
+.privacy-banner__button:focus-visible,
+.privacy-settings-link:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus, 0 0 0 4px rgba(143, 119, 205, .22));
+}
+
+.privacy-settings-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ui-color-line-strong, #cfc4b4);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.privacy-settings-link:hover {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 720px) {
+  .privacy-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .privacy-banner__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-banner__button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-banner__button {
+    transition: none;
+  }
+}

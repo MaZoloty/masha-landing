@@ -2,6 +2,7 @@
 node_modules/
 .DS_Store
 wrangler.toml
+telegram-config.php
 *.zip
 
 # Локальные инструменты агентов (не для репозитория и не для деплоя)
