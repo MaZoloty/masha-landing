@@ -61,6 +61,29 @@ if (!/href=["']https:\/\/t\.me\/masha_zoloty["'][^>]+data-telegram-contact/i.tes
   fail(join(root, 'index.html'), 'direct Telegram contact action is missing');
 }
 
+const legalPath = join(root, 'legal.html');
+const legal = readFileSync(legalPath, 'utf8');
+for (const requiredText of [
+  'Золотухина Мария Олеговна',
+  '590318941096',
+  'Налогоплательщик налога на профессиональный доход',
+  'm1shaka951@gmail.com',
+  'Отказ от услуги и возврат оплаты',
+]) {
+  if (!legal.includes(requiredText)) fail(legalPath, `missing required legal information: ${requiredText}`);
+}
+
+const privacyPath = join(root, 'privacy.html');
+const privacy = readFileSync(privacyPath, 'utf8');
+for (const requiredText of [
+  'Золотухина Мария Олеговна',
+  '590318941096',
+  'На сайте нет формы обратной связи',
+  'data-privacy-settings',
+]) {
+  if (!privacy.includes(requiredText)) fail(privacyPath, `missing required privacy information: ${requiredText}`);
+}
+
 const htaccessPath = join(root, '.htaccess');
 const htaccess = readFileSync(htaccessPath, 'utf8');
 for (const header of [

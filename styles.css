@@ -648,8 +648,27 @@ p, h1, h2, h3, blockquote, li {
 }
 
 .contact-button {
-  align-self: center;
   white-space: nowrap;
+}
+
+.contact-actions {
+  display: grid;
+  align-self: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.contact-legal {
+  color: var(--gray-600);
+  font-size: 13px;
+  text-decoration: underline;
+  text-decoration-color: var(--gray-100);
+  text-underline-offset: 3px;
+}
+
+.contact-legal:hover {
+  color: var(--black);
+  text-decoration-color: currentColor;
 }
 
 @media (max-width: 720px) {
@@ -659,8 +678,12 @@ p, h1, h2, h3, blockquote, li {
     gap: 28px;
   }
 
+  .contact-actions,
   .contact-button {
     width: 100%;
+  }
+
+  .contact-button {
     text-align: center;
   }
 }
