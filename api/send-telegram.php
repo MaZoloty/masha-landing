@@ -116,7 +116,7 @@ foreach ($configCandidates as $privateConfig) {
     // Also accept a returned array to keep the private file easy to maintain.
     if (is_array($config)) {
         $token = (string)($config['TELEGRAM_BOT_TOKEN'] ?? $config['bot_token'] ?? $token);
-        $chatId = (string)($config['TELEGRAM_CHAT_ID'] ?? $config['chat_id'] ?? $chatId);
+        $chatId = (string)($config['TELEGRAM_CHAT_ID'] ?? $config['TG_CHAT_ID'] ?? $config['chat_id'] ?? $chatId);
     }
 }
 
