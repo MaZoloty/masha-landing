@@ -60,7 +60,7 @@
 .b2b-hero__note { max-width:680px; margin:0; color:var(--ui-color-muted); font-size:16px; line-height:1.65; }
 .b2b-hero__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
 .b2b-flow { position:relative; padding:34px; border:1px solid var(--ui-color-line-lavender); border-radius:var(--ui-radius-lg); background:rgba(255,253,248,.78); box-shadow:var(--ui-shadow-card); }
-.b2b-flow::before { content:""; position:absolute; inset:-70px -60px auto auto; width:220px; height:220px; border:1px solid var(--ui-color-line-lavender); border-radius:50%; opacity:.65; pointer-events:none; }
+.b2b-flow::before { display:none; }
 .b2b-flow__label,.b2b-card-number,.b2b-case__head p,.b2b-offers p { color:var(--ui-color-muted); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
 .b2b-flow ol { display:grid; gap:0; margin:28px 0; padding:0; list-style:none; }
 .b2b-flow li { display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:center; position:relative; min-height:82px; }
