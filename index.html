@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Мария Золотухина — автоматизация бизнес-процессов</title>
-  <meta name="description" content="Проектирование и внедрение автоматизаций для заявок, документов, клиентских обращений и внутренних процессов. CRM, API, AI, мессенджеры и аналитика." />
+  <meta name="description" content="Автоматизация заявок, документов и внутренних процессов: меньше ручного переноса данных, ошибок и повторяющейся работы сотрудников. CRM, API, AI и мессенджеры." />
   <link rel="canonical" href="https://mazoloty.ru/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mazoloty.ru/" />
   <meta property="og:title" content="Мария Золотухина — автоматизация бизнес-процессов" />
-  <meta property="og:description" content="Убираю ручную работу между сервисами, данными и сотрудниками." />
+  <meta property="og:description" content="Меньше ручной рутины и ошибок в заявках, документах и данных. Автоматизация CRM, API, AI и мессенджеров." />
   <meta property="og:locale" content="ru_RU" />
   <script type="application/ld+json">
   {
@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="/assets/page-rebuild.css?v=20260715-4" />
   <link rel="stylesheet" href="/assets/home-mobile.css?v=20260716-3" />
   <link rel="stylesheet" href="/assets/b2b-home.css?v=20260727-5" />
-  <link rel="stylesheet" href="/assets/privacy-controls.css?v=20260725-1" />
-  <script src="/assets/privacy-controls.js?v=20260725-2" defer></script>
+  <link rel="stylesheet" href="/assets/privacy-controls.css?v=20260727-2" />
+  <script src="/assets/privacy-controls.js?v=20260727-3" defer></script>
 </head>
 <body class="b2b-home">
   <section class="b2b-hero ui-shell hero">
@@ -49,7 +49,6 @@
         <a href="#cases">Кейсы</a>
         <a href="#work">Как работаем</a>
         <a href="#about">Обо мне</a>
-        <a href="/beauty/">Beauty и wellness</a>
       </nav>
     </header>
 
@@ -71,11 +70,11 @@
           <a href="#cases">Кейсы</a>
           <a href="#work">Как работаем</a>
           <a href="#about">Обо мне</a>
-          <a href="/beauty/">Beauty и wellness</a>
         </nav>
         <div class="mobile-menu__footer">
           <a class="ui-button" href="#contact">Рассказать о задаче</a>
           <p>Сначала изучаю процесс и сервисы, затем предлагаю предметный созвон.</p>
+          <a class="mobile-menu__secondary" href="/beauty/">Отдельное направление: beauty и wellness</a>
         </div>
       </div>
     </dialog>
@@ -85,19 +84,20 @@
         <p class="ui-section-label">Автоматизация бизнес-процессов</p>
         <h1 class="ui-type-display">Меньше рутины и ошибок. Больше времени у команды.</h1>
         <p class="b2b-hero__lead">Заявки, документы и данные проходят между вашими сервисами без ручного копирования и постоянного контроля.</p>
+        <p class="b2b-hero__note">Для компаний, где сотрудники регулярно переносят данные между CRM, почтой, таблицами и мессенджерами.</p>
         <div class="b2b-hero__actions">
           <a class="ui-button" href="#contact">Рассказать о задаче</a>
           <a class="ui-button ui-button--secondary" href="#cases">Посмотреть кейсы</a>
         </div>
       </div>
-      <div class="b2b-flow" aria-label="Пример автоматизированного процесса">
-        <p class="b2b-flow__label">Один процесс вместо ручной цепочки</p>
-        <ol>
-          <li><span>1</span><div><b>Входящие данные</b><small>заявка, письмо, документ</small></div></li>
-          <li><span>2</span><div><b>Обработка</b><small>правила, проверка или AI</small></div></li>
-          <li><span>3</span><div><b>Рабочая система</b><small>CRM, таблица, задача сотруднику</small></div></li>
-        </ol>
-        <p class="b2b-flow__result">Рутинные действия выполняются без постоянного ручного контроля.</p>
+      <div class="b2b-flow b2b-flow--proof" aria-label="Работающая система 4SPINE">
+        <p class="b2b-flow__label">Работает в 4SPINE</p>
+        <h2>Клиентские коммуникации для двух филиалов</h2>
+        <div class="b2b-flow__facts">
+          <span><b>≈ 7 000</b><small>клиентов в CRM</small></span>
+          <span><b>CRM ↔ Telegram / MAX</b><small>события и действия клиента</small></span>
+        </div>
+        <p class="b2b-flow__result">Система отправляет сообщения по событиям записи, принимает действие клиента и возвращает статус в CRM.</p>
       </div>
     </div>
     <div class="home-proof-row" aria-label="Основные направления">
@@ -118,17 +118,17 @@
         <div class="b2b-process-grid">
           <article class="b2b-process-card">
             <h3>Входящие заявки и CRM</h3>
-            <p>Заявки приходят из сайта, почты или мессенджеров, а сотрудник вручную разбирает их, переносит данные и создаёт сделки.</p>
+            <p>Обращения автоматически собираются из сайта, почты и мессенджеров, данные фиксируются в CRM, а сотрудник получает следующий шаг.</p>
             <div class="b2b-route">Обращение <i>→</i> обработка <i>→</i> CRM <i>→</i> сотрудник</div>
           </article>
           <article class="b2b-process-card b2b-process-card--lilac">
             <h3>Документы и данные</h3>
-            <p>Сотрудники читают письма, документы, таблицы или анкеты и вручную переносят информацию между системами.</p>
+            <p>Система извлекает нужные данные из писем, документов и анкет, отправляет их на проверку и переносит в рабочую систему.</p>
             <div class="b2b-route">Документ <i>→</i> извлечение <i>→</i> проверка <i>→</i> система</div>
           </article>
           <article class="b2b-process-card b2b-process-card--butter">
             <h3>Клиентский сервис и AI</h3>
-            <p>Сотрудники отвечают на одинаковые вопросы или ищут информацию в документах и базе знаний.</p>
+            <p>Типовые вопросы получают ответ по базе знаний, а сложные диалоги передаются сотруднику вместе с контекстом.</p>
             <div class="b2b-route">Вопрос <i>→</i> база знаний <i>→</i> ответ <i>→</i> человек</div>
           </article>
         </div>
@@ -171,25 +171,29 @@
               <p>4SPINE · 2 филиала · около 7 000 клиентов</p>
               <h3>Собственная система клиентских коммуникаций</h3>
             </div>
-            <p class="b2b-case__intro">Система связывает события записи с каналами коммуникации и возвращает действия клиента обратно в CRM.</p>
+            <div class="b2b-case__evidence">
+              <div><b>Задача</b><p>Снизить зависимость от стандартных SMS и внешнего сервиса уведомлений.</p></div>
+              <div><b>Решение</b><p>Собственная логика коммуникаций, связанная с событиями записи в CRM.</p></div>
+              <div><b>В работе</b><p>Действие клиента возвращается в CRM; доступны личный кабинет и дополнительные сценарии.</p></div>
+            </div>
             <div class="b2b-case__flow">CRM <i>→</i> события записи <i>→</i> Telegram / MAX <i>→</i> действие клиента <i>→</i> CRM</div>
-            <ul>
-              <li>подтверждение визита и обновление статуса;</li>
-              <li>личный кабинет клиента;</li>
-              <li>дополнительные сценарии записи, переноса и коммуникаций.</li>
-            </ul>
           </article>
           <article class="b2b-case">
             <div class="b2b-case__head">
               <p>Студия Марии Грач · статус: MVP</p>
               <h3>MVP AI-администратора для бизнеса без штатного администратора</h3>
             </div>
-            <p class="b2b-case__intro">Рабочий прототип на n8n для проверки качества консультаций, ограничений базы знаний и сценариев передачи диалога человеку.</p>
+            <div class="b2b-case__evidence">
+              <div><b>Задача</b><p>Снять с владельца часть повторяющегося общения с клиентами.</p></div>
+              <div><b>Реализовано</b><p>Telegram, n8n, AI и база знаний объединены в один сценарий ответа.</p></div>
+              <div><b>Проверяется</b><p>Качество консультаций, границы базы знаний и передача диалога человеку.</p></div>
+            </div>
             <div class="b2b-case__flow">Telegram <i>→</i> n8n <i>→</i> AI <i>→</i> база знаний <i>→</i> ответ / эскалация</div>
             <p class="b2b-case__note">MVP создан для проверки бизнес-сценария до разработки полной системы.</p>
           </article>
           <div class="b2b-case-pair">
             <article class="b2b-case b2b-case--compact">
+              <img class="b2b-case__image" src="/assets/case-grach.png" alt="Фрагмент сайта студии Марии Грач" loading="lazy" />
               <div class="b2b-case__head">
                 <p>Мария Грач</p>
                 <h3>Цифровой путь клиента от выбора услуги до записи</h3>
@@ -198,6 +202,7 @@
               <a href="https://grach-studio.ru" target="_blank" rel="noopener">Посмотреть проект →</a>
             </article>
             <article class="b2b-case b2b-case--compact">
+              <img class="b2b-case__image" src="/assets/case-4spine.png" alt="Фрагмент сайта 4SPINE" loading="lazy" />
               <div class="b2b-case__head">
                 <p>4SPINE</p>
                 <h3>Система привлечения и измерения клиентского пути</h3>
@@ -223,9 +228,9 @@
           <li><span>3</span><div><h3>Проводим предметный созвон</h3><p>Уточняем сценарии, риски, ожидаемый результат и разумный объём первого этапа.</p></div></li>
         </ol>
         <div class="b2b-offers">
-          <article><p>для сложных и пока неясных задач</p><h3>Проектирование решения</h3><b>от 20 000 ₽</b><span>Процесс, архитектура, интеграции, ограничения, этапы и оценка реализации.</span></article>
-          <article class="b2b-offers__main"><p>один конкретный участок</p><h3>Первый этап автоматизации</h3><b>от 50–70 000 ₽</b><span>Запускаем один процесс на реальных сценариях и проверяем его в работе.</span></article>
-          <article><p>несколько систем и сценариев</p><h3>Комплексное внедрение</h3><b>от 100 000 ₽</b><span>Интеграции, исключения, бизнес-логика, тестирование, документация и запуск.</span></article>
+          <article><p>для сложных и пока неясных задач</p><h3>Проектирование решения</h3><b>от 20 000 ₽</b><span><strong>Результат:</strong> схема процесса, архитектура, ограничения, этапы и оценка реализации.</span></article>
+          <article class="b2b-offers__main"><p>один конкретный участок</p><h3>Первый этап автоматизации</h3><b>50–70 000 ₽</b><span><strong>Результат:</strong> один работающий процесс на реальных сценариях с понятными границами.</span></article>
+          <article><p>несколько систем и сценариев</p><h3>Комплексное внедрение</h3><b>от 100 000 ₽</b><span><strong>Результат:</strong> интеграции, исключения, бизнес-логика, тестирование, документация и запуск.</span></article>
         </div>
       </div>
     </section>
@@ -252,6 +257,10 @@
           <h2 class="section-title">Начинаю с бизнес-процесса, а не с инструмента</h2>
           <p>Я пришла в автоматизацию из операционного управления. Управляю двумя wellness-студиями и вижу изнутри, где сотрудники тратят время, где возникают ошибки и что действительно мешает процессу работать.</p>
           <p>Если автоматизация имеет смысл, проектирую и собираю решение сама: API, CRM, автоматизации, AI, интерфейсы и аналитику.</p>
+          <div class="b2b-about__facts">
+            <span><b>2 wellness-студии</b> в операционном управлении</span>
+            <span><b>≈ 7 000 клиентов</b> в действующей CRM 4SPINE</span>
+          </div>
           <div class="b2b-about__skills"><span>Операционное управление</span><span>Бизнес-логика</span><span>API и CRM</span><span>AI и автоматизации</span><span>Интерфейсы</span><span>Аналитика</span></div>
         </div>
       </div>
@@ -269,6 +278,7 @@
         <form class="ui-lead-form b2b-form" action="/api/send-telegram.php" method="post" data-b2b-form>
           <input type="hidden" name="consent_version" value="2026-07-27" />
           <div class="b2b-honeypot" aria-hidden="true"><label>Не заполняйте это поле<input name="website_check" tabindex="-1" autocomplete="off" /></label></div>
+          <p class="b2b-form__hint"><b>Техническое ТЗ не нужно.</b> Опишите процесс своими словами. Поля без звёздочки можно пропустить.</p>
           <div class="ui-lead-form__grid">
             <label class="ui-field"><span class="ui-field__label">Имя *</span><input class="ui-input" name="name" required maxlength="80" autocomplete="name" /></label>
             <label class="ui-field"><span class="ui-field__label">Компания</span><input class="ui-input" name="company" maxlength="120" autocomplete="organization" /></label>
@@ -289,9 +299,9 @@
             </fieldset>
             <label class="ui-field"><span class="ui-field__label">Объём операций</span><input class="ui-input" name="volume" maxlength="200" placeholder="Например, 300 заявок в месяц" /></label>
             <label class="ui-field"><span class="ui-field__label">Сколько сотрудников участвует?</span><input class="ui-input" name="employees" maxlength="100" /></label>
-            <label class="ui-field"><span class="ui-field__label">Главная проблема *</span><select class="ui-input" name="problem" required><option value="">Выберите</option><option>Много ручной работы</option><option>Ошибки</option><option>Медленная обработка</option><option>Теряются обращения</option><option>Нужно нанимать людей при росте</option><option>Другое</option></select></label>
-            <label class="ui-field"><span class="ui-field__label">Ориентир бюджета *</span><select class="ui-input" name="budget" required><option value="">Выберите</option><option>До 50 000 ₽</option><option>50–100 000 ₽</option><option>100–200 000 ₽</option><option>200 000 ₽+</option><option>Пока не знаю</option></select></label>
-            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что должно измениться в результате? *</span><textarea class="ui-textarea" name="desired_result" required maxlength="2000"></textarea></label>
+            <label class="ui-field"><span class="ui-field__label">Главная проблема</span><select class="ui-input" name="problem"><option value="">Можно не выбирать</option><option>Много ручной работы</option><option>Ошибки</option><option>Медленная обработка</option><option>Теряются обращения</option><option>Нужно нанимать людей при росте</option><option>Другое</option></select></label>
+            <label class="ui-field"><span class="ui-field__label">Ориентир бюджета</span><select class="ui-input" name="budget"><option value="">Можно не выбирать</option><option>До 50 000 ₽</option><option>50–100 000 ₽</option><option>100–200 000 ₽</option><option>200 000 ₽+</option><option>Пока не знаю</option></select></label>
+            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что должно измениться в результате?</span><textarea class="ui-textarea" name="desired_result" maxlength="2000"></textarea></label>
           </div>
           <label class="b2b-consent"><input type="checkbox" name="consent" value="yes" required /> <span>Соглашаюсь на обработку данных для ответа на заявку и принимаю <a href="/privacy.html" target="_blank">политику обработки данных</a>.</span></label>
           <button class="ui-button" type="submit">Отправить задачу</button>
@@ -303,7 +313,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p><a href="/beauty/">Beauty и wellness</a> · <a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="/legal.html">Правовая информация</a> · <a href="/privacy.html">Политика данных</a></p>
+      <p><a href="/beauty/">Для beauty и wellness</a> · <a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="/legal.html">Правовая информация</a> · <a href="/privacy.html">Политика данных</a></p>
     </div>
   </footer>
   <script src="/script.js?v=20260727-1"></script>
