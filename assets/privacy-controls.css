@@ -6,10 +6,10 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 20px;
-  width: min(calc(100% - 32px), 920px);
+  gap: 14px;
+  width: min(calc(100% - 32px), 760px);
   margin-inline: auto;
-  padding: 20px 22px;
+  padding: 13px 15px;
   border: 1px solid var(--ui-color-line-lavender, #ddd4e8);
   border-radius: var(--ui-radius-md, 20px);
   background: var(--ui-color-surface, #fffdf8);
@@ -26,19 +26,19 @@
 }
 
 .privacy-banner__title {
-  margin: 0 0 6px;
-  font-family: var(--ui-font-display, "Prata", Georgia, serif);
-  font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 400;
+  margin: 0 0 3px;
+  font-family: var(--ui-font-sans, "Lato", "Segoe UI", sans-serif);
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .privacy-banner__text {
-  max-width: 62ch;
+  max-width: 58ch;
   margin: 0;
   color: var(--ui-color-muted, #67635b);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 12px;
+  line-height: 1.4;
   text-wrap: pretty;
 }
 
@@ -55,13 +55,13 @@
 }
 
 .privacy-banner__button {
-  min-height: 44px;
-  padding: 0 18px;
+  min-height: 38px;
+  padding: 0 14px;
   border: 1px solid transparent;
   border-radius: 999px;
   background: var(--ui-color-cta, #151b17);
   color: var(--ui-color-bg-soft, #fbf7ef);
-  font: 600 14px/1 var(--ui-font-sans, "Manrope", "Segoe UI", sans-serif);
+  font: 600 12px/1 var(--ui-font-sans, "Lato", "Segoe UI", sans-serif);
   cursor: pointer;
   transition:
     transform var(--ui-motion-fast, 160ms) var(--ui-ease-out, cubic-bezier(.22, 1, .36, 1)),
@@ -108,17 +108,23 @@
 @media (max-width: 720px) {
   .privacy-banner {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 18px;
+    gap: 10px;
+    padding: 13px;
   }
 
   .privacy-banner__actions {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .privacy-banner__button {
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .privacy-banner__actions {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -127,3 +133,4 @@
     transition: none;
   }
 }
+
