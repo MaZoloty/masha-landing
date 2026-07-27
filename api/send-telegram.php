@@ -101,9 +101,17 @@ foreach ($configCandidates as $privateConfig) {
         continue;
     }
 
+    $botToken = '';
+    $telegramBotToken = '';
+    $telegramChatId = '';
     $config = require $privateConfig;
     $token = defined('TELEGRAM_BOT_TOKEN') ? (string)TELEGRAM_BOT_TOKEN : $token;
     $chatId = defined('TELEGRAM_CHAT_ID') ? (string)TELEGRAM_CHAT_ID : $chatId;
+    $token = defined('BOT_TOKEN') ? (string)BOT_TOKEN : $token;
+    $chatId = defined('CHAT_ID') ? (string)CHAT_ID : $chatId;
+    $token = $telegramBotToken !== '' ? (string)$telegramBotToken : $token;
+    $token = $botToken !== '' ? (string)$botToken : $token;
+    $chatId = $telegramChatId !== '' ? (string)$telegramChatId : $chatId;
 
     // Also accept a returned array to keep the private file easy to maintain.
     if (is_array($config)) {
