@@ -88,13 +88,28 @@ $message .= 'Согласие: версия 2026-07-27';
 $token = getenv('TELEGRAM_BOT_TOKEN') ?: '';
 $chatId = getenv('TELEGRAM_CHAT_ID') ?: '';
 
-// Beget can keep this file one level above the public directory. It must
-// define TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID constants.
-$privateConfig = dirname((string)($_SERVER['DOCUMENT_ROOT'] ?? __DIR__)) . '/telegram-config.php';
-if (($token === '' || $chatId === '') && is_file($privateConfig)) {
-    require $privateConfig;
+// Beget can report DOCUMENT_ROOT differently depending on the PHP handler.
+// Check the private directory derived both from DOCUMENT_ROOT and this script.
+$configCandidates = array_unique(array(
+    dirname((string)($_SERVER['DOCUMENT_ROOT'] ?? __DIR__)) . '/telegram-config.php',
+    dirname(__DIR__, 2) . '/telegram-config.php',
+    dirname(__DIR__) . '/telegram-config.php',
+));
+
+foreach ($configCandidates as $privateConfig) {
+    if (($token !== '' && $chatId !== '') || !is_file($privateConfig)) {
+        continue;
+    }
+
+    $config = require $privateConfig;
     $token = defined('TELEGRAM_BOT_TOKEN') ? (string)TELEGRAM_BOT_TOKEN : $token;
     $chatId = defined('TELEGRAM_CHAT_ID') ? (string)TELEGRAM_CHAT_ID : $chatId;
+
+    // Also accept a returned array to keep the private file easy to maintain.
+    if (is_array($config)) {
+        $token = (string)($config['TELEGRAM_BOT_TOKEN'] ?? $config['bot_token'] ?? $token);
+        $chatId = (string)($config['TELEGRAM_CHAT_ID'] ?? $config['chat_id'] ?? $chatId);
+    }
 }
 
 if ($token === '' || $chatId === '') {
