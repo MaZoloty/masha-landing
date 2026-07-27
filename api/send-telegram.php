@@ -72,9 +72,9 @@ $fields = array(
     'Системы' => implode(', ', $systems),
     'Объём' => field('volume', 200),
     'Сотрудники' => field('employees', 100),
-    'Главная проблема' => field('problem', 120, true),
-    'Желаемый результат' => field('desired_result', 2000, true),
-    'Бюджет' => field('budget', 100, true),
+    'Главная проблема' => field('problem', 120),
+    'Желаемый результат' => field('desired_result', 2000),
+    'Бюджет' => field('budget', 100),
 );
 
 $message = "Новая B2B-заявка с mazoloty.ru\n\n";
