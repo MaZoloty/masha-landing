@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Мария Золотухина: системы записи для бьюти и велнес</title>
-  <meta name="description" content="Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты, аналитика. Чтобы клиент записывался и возвращался сам, а не терялся по дороге." />
+  <title>Мария Золотухина — автоматизация бизнес-процессов</title>
+  <meta name="description" content="Проектирование и внедрение автоматизаций для заявок, документов, клиентских обращений и внутренних процессов. CRM, API, AI, мессенджеры и аналитика." />
   <link rel="canonical" href="https://mazoloty.ru/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -12,50 +12,44 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="yandex-verification" content="3fd93fc097796c41" />
   <meta name="google-site-verification" content="uh1__aGz3v025KNrvV7Q5mQNymJcs-Z-WaCZdpIz8W8" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mazoloty.ru/" />
-  <meta property="og:title" content="Мария Золотухина: системы записи для бьюти и велнес" />
-  <meta property="og:description" content="Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты, аналитика. Чтобы клиент записывался и возвращался сам, а не терялся по дороге." />
+  <meta property="og:title" content="Мария Золотухина — автоматизация бизнес-процессов" />
+  <meta property="og:description" content="Убираю ручную работу между сервисами, данными и сотрудниками." />
   <meta property="og:locale" content="ru_RU" />
-
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Мария Золотухина",
     "url": "https://mazoloty.ru",
-    "jobTitle": "Специалист по системам записи",
-    "description": "Собираю системы записи для салонов и велнес-центров: сайт-вход, напоминания, возвраты клиентов, аналитика.",
-    "knowsAbout": ["системы записи", "сайты для beauty", "напоминания о записи", "возвраты клиентов", "аналитика", "Telegram-боты"]
+    "jobTitle": "Специалист по автоматизации бизнес-процессов",
+    "description": "Проектирую и внедряю автоматизации для заявок, документов, клиентских обращений и внутренних процессов.",
+    "knowsAbout": ["автоматизация бизнес-процессов", "CRM", "API", "искусственный интеллект", "аналитика", "клиентский сервис"]
   }
   </script>
-
   <link rel="stylesheet" href="/assets/fonts.css?v=20260725-1" />
-  <link rel="stylesheet" href="styles.css?v=20260725-1" />
-  <link rel="stylesheet" href="assets/ui-system.css?v=20260725-1" />
-  <link rel="stylesheet" href="assets/page-rebuild.css?v=20260715-4" />
-  <link rel="stylesheet" href="assets/home-v3.css?v=20260716-22" />
-  <link rel="stylesheet" href="assets/home-mobile.css?v=20260716-3" />
+  <link rel="stylesheet" href="/styles.css?v=20260725-1" />
+  <link rel="stylesheet" href="/assets/ui-system.css?v=20260725-1" />
+  <link rel="stylesheet" href="/assets/page-rebuild.css?v=20260715-4" />
+  <link rel="stylesheet" href="/assets/home-mobile.css?v=20260716-3" />
+  <link rel="stylesheet" href="/assets/b2b-home.css?v=20260727-1" />
   <link rel="stylesheet" href="/assets/privacy-controls.css?v=20260725-1" />
   <script src="/assets/privacy-controls.js?v=20260725-2" defer></script>
 </head>
-<body>
-
-  <!-- HERO -->
-  <section class="home-hero-shell ui-shell hero">
+<body class="b2b-home">
+  <section class="b2b-hero ui-shell hero">
     <header class="ui-header home-header" aria-label="Основная навигация">
       <a class="ui-header__brand" href="/">
         <span class="ui-header__logo">Мария Золотухина</span>
-        <span class="ui-header__tagline">системы записи для услуг</span>
+        <span class="ui-header__tagline">автоматизация бизнес-процессов</span>
       </a>
       <nav class="ui-header__nav" aria-label="Разделы страницы">
-        <a href="/audit/">Диагностика</a>
+        <a href="#processes">Процессы</a>
         <a href="#cases">Кейсы</a>
-        <a href="#ladder">Как работать</a>
-        <a href="/blog/">Блог</a>
+        <a href="#work">Как работаем</a>
+        <a href="#about">Обо мне</a>
+        <a href="/beauty/">Beauty и wellness</a>
       </nav>
     </header>
 
@@ -63,470 +57,260 @@
       <span class="mobile-menu-trigger__icon" aria-hidden="true"><i></i><i></i></span>
       <span class="visually-hidden">Открыть меню</span>
     </button>
-
     <dialog class="mobile-menu" id="mobileMenu" aria-labelledby="mobileMenuTitle">
       <div class="mobile-menu__inner">
         <div class="mobile-menu__head">
           <a class="mobile-menu__brand" href="/" id="mobileMenuTitle">
             <strong>Мария Золотухина</strong>
-            <span>системы записи для услуг</span>
+            <span>автоматизация бизнес-процессов</span>
           </a>
-          <button class="mobile-menu__close" type="button">
-            <span aria-hidden="true"></span>
-            <span class="visually-hidden">Закрыть меню</span>
-          </button>
+          <button class="mobile-menu__close" type="button"><span aria-hidden="true"></span><span class="visually-hidden">Закрыть меню</span></button>
         </div>
         <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-          <a href="/audit/">Диагностика</a>
+          <a href="#processes">Процессы</a>
           <a href="#cases">Кейсы</a>
-          <a href="#system">Что я собираю</a>
-          <a href="#ladder">Как со мной работать</a>
-          <a href="/blog/">Блог</a>
+          <a href="#work">Как работаем</a>
+          <a href="#about">Обо мне</a>
+          <a href="/beauty/">Beauty и wellness</a>
         </nav>
         <div class="mobile-menu__footer">
-          <a class="ui-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener">Прийти на разбор</a>
-          <p>Сначала смотрю путь клиента и цифры. Затем показываю, что исправить первым.</p>
+          <a class="ui-button" href="#contact">Рассказать о задаче</a>
+          <p>Сначала изучаю процесс и сервисы, затем предлагаю предметный созвон.</p>
         </div>
       </div>
     </dialog>
 
-    <div class="home-hero">
-      <div class="home-hero__copy">
-        <p class="ui-section-label">Системы записи для бьюти и велнес</p>
-        <h1 class="home-hero__title ui-type-display">Онлайн-запись есть, а&nbsp;записей всё равно мало?</h1>
-        <p class="home-hero__sub">Дело не в кнопке, а&nbsp;в&nbsp;системе вокруг неё.</p>
-        <p class="home-hero__lead">Нахожу, где вы теряете клиентов: на входе, в напоминаниях или после первого визита. Собираю систему, в которой клиент записывается, доходит и возвращается. Проверяю её на велнес-центрах, которыми управляю: доходимость записей 96%.</p>
-        <div class="home-hero__actions">
-          <a href="/audit/" class="ui-button btn">Пройти диагностику записи</a>
-          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ui-button ui-button--secondary">Прийти на разбор</a>
+    <div class="b2b-hero__grid">
+      <div class="b2b-hero__copy">
+        <p class="ui-section-label">Автоматизация бизнес-процессов</p>
+        <h1 class="ui-type-display">Убираю ручную работу между сервисами, данными и сотрудниками</h1>
+        <p class="b2b-hero__lead">Проектирую и внедряю автоматизации для обработки заявок, документов, клиентских обращений и внутренних процессов.</p>
+        <p class="b2b-hero__note">Связываю CRM, сайты, мессенджеры, AI и другие сервисы в одну рабочую систему.</p>
+        <div class="b2b-hero__actions">
+          <a class="ui-button" href="#contact">Рассказать о задаче</a>
+          <a class="ui-button ui-button--secondary" href="#cases">Посмотреть кейсы</a>
         </div>
       </div>
-
-      <div class="home-hero__visual" aria-label="Система записи: карта потерь, путь клиента, приоритеты">
-        <svg class="home-hero__wave" viewBox="0 0 520 590" aria-hidden="true">
-          <g class="home-hero__grid-lines">
-            <path d="M260 0V590" />
-            <path d="M500 0V590" />
-            <path d="M0 232H520" />
-          </g>
-          <path class="home-hero__orbit-line" d="M77 360C31 220 76 70 205 18c129-52 274 12 310 146 28 106-15 184-91 252-57 51-116 104-132 174" />
-          <path class="home-hero__orbit-line home-hero__orbit-line--inner" d="M150 440C154 336 214 257 307 226c94-31 185 17 205 107 18 82-24 136-94 184" />
-          <g class="home-hero__wave-lines">
-            <path d="M93 429C121 390 183 397 209 438c24 38 17 92 52 103 34-11 25-71 50-108 27-40 88-45 120-6" />
-            <path d="M88 437C119 395 181 402 208 442c25 37 19 89 53 99 33-10 27-68 52-104 28-39 88-43 122-2" />
-            <path d="M84 445C116 401 179 407 207 446c26 36 21 86 54 95 32-9 29-65 54-100 29-38 88-41 124 2" />
-            <path d="M81 453C114 407 177 412 206 450c27 35 23 83 55 91 31-8 31-62 56-96 30-37 88-39 126 6" />
-            <path d="M79 461C112 413 175 417 205 454c28 34 25 80 56 87 30-7 33-59 58-92 31-36 88-37 128 10" />
-            <path d="M78 469C110 419 173 422 204 458c29 33 27 77 57 83 29-6 35-56 60-88 32-35 88-35 130 14" />
-            <path d="M78 477C109 425 171 427 203 462c30 32 29 74 58 79 28-5 37-53 62-84 33-34 88-33 132 18" />
-            <path d="M79 485C108 431 169 432 202 466c31 31 31 71 59 75 27-4 39-50 64-80 34-33 88-31 134 22" />
-            <path d="M81 493C108 437 167 437 201 470c32 30 33 68 60 71 26-3 41-47 66-76 35-32 88-29 136 26" />
-            <path d="M84 501C109 443 165 442 200 474c33 29 35 65 61 67 25-2 43-44 68-72 36-31 88-27 138 30" />
-            <path d="M88 509C110 449 163 447 199 478c34 28 37 62 62 63 24-1 45-41 70-68 37-30 88-25 140 34" />
-            <path d="M93 517C112 455 161 452 198 482c35 27 39 59 63 59 23 0 47-38 72-64 38-29 88-23 142 38" />
-            <path d="M99 525C115 461 159 457 197 486c36 26 41 56 64 55 22 1 49-35 74-60 39-28 88-21 144 42" />
-            <path d="M106 533C118 467 157 462 196 490c37 25 43 53 65 51 21 2 51-32 76-56 40-27 88-19 146 46" />
-            <path d="M114 541C122 473 155 467 195 494c38 24 45 50 66 47 20 3 53-29 78-52 41-26 88-17 148 50" />
-          </g>
-        </svg>
-        <article class="home-insight home-insight--map ui-hero-insight-card">
-          <span>Карта потерь записи</span>
-          <p>Где клиенты уходят, не записавшись</p>
-          <svg class="signal-chart" viewBox="0 0 190 96" aria-hidden="true">
-            <path class="signal-chart__area" d="M0 93C17 88 28 58 49 57c21-1 28 19 49 17 27-3 28-36 55-36 18 0 23 17 37 23v32H0Z" />
-            <path d="M47 56V94M76 30V94M104 55V94M133 43V94M179 11V94" />
-            <circle cx="47" cy="56" r="6" />
-            <circle class="signal-chart__dark" cx="47" cy="76" r="6" />
-            <circle class="signal-chart__light" cx="76" cy="30" r="6" />
-            <circle class="signal-chart__yellow" cx="104" cy="55" r="6" />
-            <circle class="signal-chart__dark" cx="133" cy="43" r="6" />
-            <circle class="signal-chart__light" cx="179" cy="11" r="6" />
-          </svg>
-        </article>
-        <article class="home-insight home-insight--path ui-hero-insight-card">
-          <span>Путь клиента</span>
-          <p>Как проходит путь<br />от интереса до визита</p>
-          <svg class="route-line" viewBox="0 0 176 94" aria-hidden="true">
-            <g class="route-line__echo">
-              <path d="M18 74C52 80 69 64 77 40s24-30 46-16" />
-              <path d="M17 79C55 87 74 68 80 43s26-32 49-14" />
-              <path d="M16 84C58 94 79 72 83 46s28-34 52-12" />
-            </g>
-            <path class="route-line__route" d="M20 76H76V28h73" />
-            <path class="route-line__arrow" d="M142 20l9 8-9 8" />
-            <circle cx="20" cy="76" r="12" />
-            <circle cx="76" cy="76" r="12" />
-            <circle cx="104" cy="28" r="13" />
-            <circle class="route-line__dot" cx="76" cy="76" r="5" />
-            <circle class="route-line__dot" cx="104" cy="28" r="6" />
-          </svg>
-        </article>
-        <article class="home-insight home-insight--priority ui-hero-insight-card">
-          <span>Приоритеты роста</span>
-          <p>На чём сфокусироваться<br />в первую очередь</p>
-          <svg class="priority-bars" viewBox="0 0 176 96" aria-hidden="true">
-            <circle cx="13" cy="16" r="11" /><text x="13" y="20">1</text><path d="M35 16H157" />
-            <circle cx="13" cy="48" r="11" /><text x="13" y="52">2</text><path d="M35 48H119" />
-            <circle cx="13" cy="80" r="11" /><text x="13" y="84">3</text><path class="priority-bars__light" d="M35 80H143" />
-          </svg>
-        </article>
+      <div class="b2b-flow" aria-label="Пример автоматизированного процесса">
+        <p class="b2b-flow__label">Один процесс вместо ручной цепочки</p>
+        <ol>
+          <li><span>1</span><div><b>Входящие данные</b><small>заявка, письмо, документ</small></div></li>
+          <li><span>2</span><div><b>Обработка</b><small>правила, проверка или AI</small></div></li>
+          <li><span>3</span><div><b>Рабочая система</b><small>CRM, таблица, задача сотруднику</small></div></li>
+        </ol>
+        <p class="b2b-flow__result">Рутинные действия выполняются без постоянного ручного контроля.</p>
       </div>
     </div>
-
-    <div class="home-proof-row" aria-label="Коротко о подходе">
-      <div><b>12 точек потерь</b><span>проверьте себя за пару минут</span></div>
-      <div><b>Сайт, напоминания, возвраты</b><span>единый процесс, а не набор сервисов</span></div>
-      <div><b>Бьюти и велнес</b><span>салоны, студии, клиники</span></div>
+    <div class="home-proof-row" aria-label="Основные направления">
+      <div><b>Заявки и CRM</b><span>приём, обработка, передача</span></div>
+      <div><b>Документы и данные</b><span>извлечение, проверка, перенос</span></div>
+      <div><b>AI и клиентский сервис</b><span>ответ или эскалация человеку</span></div>
     </div>
   </section>
 
-  <!-- ПОЧЕМУ ЗАПИСЕЙ МАЛО -->
-  <section class="section problem">
-    <div class="container">
-      <div class="problem-inner">
-        <div class="problem-lead">
-          <h2 class="problem-title">Мало записей. <span class="problem-title__mark">Реклама</span> не всегда виновата</h2>
-          <p>Можно менять шрифты и заказывать редизайн, но записей от этого не прибавится.</p>
+  <main>
+    <section class="section b2b-processes" id="processes">
+      <div class="container">
+        <div class="b2b-section-head">
+          <p class="ui-section-label">Типовые задачи</p>
+          <h2 class="section-title">Какие процессы можно автоматизировать</h2>
+          <p class="section-lead">Не обязательно перестраивать всё сразу. Часто достаточно убрать один дорогой ручной участок.</p>
         </div>
-        <div class="problem-copy">
-          <ul class="problem-leaks" aria-label="Где чаще всего теряются записи">
-            <li aria-label="Записался, но не дошёл"><span>Записался</span><i aria-hidden="true">→</i><b>не дошёл</b></li>
-            <li aria-label="Пришёл один раз, а о нём забыли"><span>Пришёл один раз</span><i aria-hidden="true">→</i><b>о нём забыли</b></li>
-            <li aria-label="Написал и не дождался ответа"><span>Написал</span><i aria-hidden="true">→</i><b>не дождался ответа</b></li>
-            <li aria-label="Не напомнили вовремя, и клиент ушёл к другим"><span>Не напомнили вовремя</span><i aria-hidden="true">→</i><b>ушёл к другим</b></li>
+        <div class="b2b-process-grid">
+          <article class="b2b-process-card">
+            <span class="b2b-card-number">1</span>
+            <h3>Входящие заявки и CRM</h3>
+            <p>Заявки приходят из сайта, почты или мессенджеров, а сотрудник вручную разбирает их, переносит данные и создаёт сделки.</p>
+            <div class="b2b-route">Обращение <i>→</i> обработка <i>→</i> CRM <i>→</i> сотрудник</div>
+          </article>
+          <article class="b2b-process-card b2b-process-card--lilac">
+            <span class="b2b-card-number">2</span>
+            <h3>Документы и данные</h3>
+            <p>Сотрудники читают письма, документы, таблицы или анкеты и вручную переносят информацию между системами.</p>
+            <div class="b2b-route">Документ <i>→</i> извлечение <i>→</i> проверка <i>→</i> система</div>
+          </article>
+          <article class="b2b-process-card b2b-process-card--butter">
+            <span class="b2b-card-number">3</span>
+            <h3>Клиентский сервис и AI</h3>
+            <p>Сотрудники отвечают на одинаковые вопросы или ищут информацию в документах и базе знаний.</p>
+            <div class="b2b-route">Вопрос <i>→</i> база знаний <i>→</i> ответ <i>→</i> человек</div>
+          </article>
+        </div>
+        <p class="b2b-principle"><b>AI используется только там, где он действительно нужен.</b> Всё, что надёжнее решить обычными правилами, автоматизируется без него.</p>
+      </div>
+    </section>
+
+    <section class="section b2b-fit">
+      <div class="container">
+        <div class="b2b-fit__grid">
+          <div>
+            <p class="ui-section-label">Экономика процесса</p>
+            <h2 class="section-title">Когда автоматизация действительно окупается</h2>
+          </div>
+          <ul class="b2b-check-list">
+            <li>Процесс регулярно повторяется и занимает заметное время сотрудников.</li>
+            <li>Данные вручную переносятся между несколькими сервисами.</li>
+            <li>Из-за человеческого фактора возникают задержки или ошибки.</li>
+            <li>Рост объёма однотипных операций требует новых сотрудников.</li>
+            <li>Сервисы работают отдельно друг от друга, хотя процесс у них общий.</li>
           </ul>
         </div>
-        <p class="problem-accent">Между первым интересом и возвращением есть <span>десяток слабых мест</span>. Я собираю их в одну систему.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- МОСТИК НА ДИАГНОСТИКУ -->
-  <section class="section bridge" id="diagnostic">
-    <div class="container">
-      <div class="bridge-panel">
-        <div class="bridge-copy">
-          <h2 class="bridge-title ui-type-title">Проверьте, где теряются записи у&nbsp;вас</h2>
-          <p>Прежде чем что-то исправлять, надо понять, где именно. Я собрала диагностику из 12 точек, где салоны и велнес-центры чаще всего теряют клиентов: от первой записи до повторного визита.</p>
-          <p>Пройдите по ним и посчитайте свой балл: где у вас всё в порядке, а где деньги уходят прямо сейчас. Это бесплатно и займёт пару минут.</p>
-          <a href="/audit/" class="btn bridge-cta">Пройти диагностику записи</a>
-        </div>
-        <div class="bridge-visual" role="img" aria-label="Маршрут клиента: интерес, запись, визит и возвращение. Диагностика проверяет 12 точек этого пути.">
-          <div class="bridge-path__heading" aria-hidden="true">
-            <span>Маршрут записи</span>
-            <strong>12 точек контроля</strong>
-          </div>
-          <svg class="bridge-path" viewBox="0 0 400 180" aria-hidden="true">
-            <path class="bridge-path__line" d="M50 134C88 134 108 90 150 86s58 28 100 26 62-64 100-72" />
-            <circle class="bridge-path__node bridge-path__node--start" cx="50" cy="134" r="8" />
-            <circle class="bridge-path__node" cx="150" cy="86" r="8" />
-            <circle class="bridge-path__node" cx="250" cy="112" r="8" />
-            <circle class="bridge-path__node bridge-path__node--finish" cx="350" cy="40" r="10" />
-            <circle class="bridge-path__signal" cx="50" cy="134" r="5" />
-          </svg>
-          <ol class="bridge-path__steps" aria-hidden="true">
-            <li><b>Интерес</b><span>нашёл вас</span></li>
-            <li><b>Запись</b><span>выбрал время</span></li>
-            <li><b>Визит</b><span>дошёл</span></li>
-            <li><b>Возврат</b><span>пришёл снова</span></li>
-          </ol>
-          <p class="bridge-visual__caption" aria-hidden="true">Покажем участок, где клиент чаще всего сходит с маршрута.</p>
+        <div class="b2b-not-needed">
+          <b>Когда автоматизация не нужна</b>
+          <p>Если операция выполняется несколько раз в месяц и занимает десять минут, зачастую дешевле оставить её человеку.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ЧТО Я СОБИРАЮ -->
-  <section class="section system" id="system">
-    <div class="container">
-      <div class="system-layout">
-        <div class="system-head">
-          <h2 class="section-title">Что я собираю</h2>
-          <p class="section-lead">Систему записи как единый процесс, а не набор разрозненных сервисов. Что из этого нужно именно вам, зависит от бизнеса. Разбираемся на разборе.</p>
+    <section class="section b2b-cases" id="cases">
+      <div class="container">
+        <div class="b2b-section-head">
+          <p class="ui-section-label">Практика</p>
+          <h2 class="section-title">Кейсы и рабочие прототипы</h2>
+          <p class="section-lead">Показываю не набор технологий, а бизнес-процесс, который они обслуживают.</p>
         </div>
-        <ul class="system-list" aria-label="Состав единой системы записи">
-          <li class="system-row">
-            <div class="system-row__body">
-              <h3>Точка входа</h3>
-              <p>Сайт или связка, где клиент быстро понимает услугу, цену и следующий шаг.</p>
+        <div class="b2b-case-list">
+          <article class="b2b-case b2b-case--featured">
+            <div class="b2b-case__head">
+              <p>4SPINE · 2 филиала · около 7 000 клиентов</p>
+              <h3>Собственная система клиентских коммуникаций</h3>
             </div>
-          </li>
-          <li class="system-row">
-            <div class="system-row__body">
-              <h3>Напоминания, которые доходят</h3>
-              <p>Каскад Telegram и MAX с подтверждением визита и статусом в CRM.</p>
-            </div>
-          </li>
-          <li class="system-row">
-            <div class="system-row__body">
-              <h3>Возвраты на автопилоте</h3>
-              <p>Цепочки после визита, реактивация спящих и поздравления без ручного контроля.</p>
-            </div>
-          </li>
-          <li class="system-row">
-            <div class="system-row__body">
-              <h3>Заявки в одном окне</h3>
-              <p>Сообщения из Telegram, VK, WhatsApp и Direct не теряются между приложениями.</p>
-            </div>
-          </li>
-          <li class="system-row">
-            <div class="system-row__body">
-              <h3>Аналитика возвратов</h3>
-              <p>Видно, откуда приходят и почему возвращаются клиенты.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- КТО Я -->
-  <section class="section who" id="who">
-    <div class="container">
-      <div class="who-panel">
-        <div class="who-head">
-          <p class="ui-section-label">Кто я</p>
-          <h2 class="who-title">Управляю записью изнутри. <em>Сначала проверяю решения на своём бизнесе.</em></h2>
-        </div>
-        <figure class="who-photo">
-          <img src="assets/masha-portrait.jpg" alt="Мария Золотухина за работой в велнес-центре" loading="lazy" width="720" height="960" />
-        </figure>
-        <div class="who-body">
-          <p>Я управляющая: веду два велнес-центра в Перми и вижу запись изнутри, по своим цифрам, а не по чужим кейсам. Больше 12 лет в клиентском сервисе, последние 5 лет в глубокой операционке и аналитике, последние 3 года в бьюти и велнес.</p>
-          <p>В аналитику копаю так глубоко, что готовые интеграции её просто не тянут: часть инструментов из-за этого собрала сама. Когда чужой сервис уведомлений за ~10 000 ₽ в месяц лёг на блокировке и клиенты перестали получать напоминания, я за неделю собрала свой на своей инфраструктуре. Дешевле, устойчивее к блокировкам, и доступы с базой остались у центра.</p>
-          <p>Поэтому я не пересказываю чужие статьи, а показываю то, что проверила на своей записи и своих деньгах.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- КЕЙСЫ -->
-  <section class="section cases" id="cases">
-    <div class="container">
-      <h2 class="section-title">Примеры работы с записью</h2>
-      <p class="section-lead">Показываю не картинки, а задачи: где клиент терялся, что изменилось и как теперь устроен путь до записи и обратно.</p>
-      <div class="cases-grid">
-
-        <div class="case">
-          <a href="https://grach-studio.ru" target="_blank" rel="noopener" class="case-image">
-            <img src="assets/case-grach.png" alt="Скриншот сайта студии Марии Грач" loading="lazy" />
-          </a>
-          <div class="case-body">
-            <p class="case-location">Студия Марии Грач, Пермь · сайт с нуля</p>
-            <p>Студии нужен был сайт, который не просто красиво показывает мастеров, а ведёт человека к записи. Собрала его с нуля: первый экран с доверием, понятные методы, квиз-подбор, прайс, блог. Сайт молодой, но уже заработал, и аналитика это показывает.</p>
-            <ul class="case-results" aria-label="Что получилось">
-              <li><b>17,65%</b><span>посетителей кликают «Записаться»: почти каждый 6-й</span></li>
-              <li><b>34% трафика из поиска</b><span>и это самая вовлечённая аудитория: 6+ минут на сайте</span></li>
-              <li><b>63% с телефона</b><span>сайт сделан под мобайл, где сидит аудитория</span></li>
+            <p class="b2b-case__intro">Система связывает события записи с каналами коммуникации и возвращает действия клиента обратно в CRM.</p>
+            <div class="b2b-case__flow">CRM <i>→</i> события записи <i>→</i> Telegram / MAX <i>→</i> действие клиента <i>→</i> CRM</div>
+            <ul>
+              <li>подтверждение визита и обновление статуса;</li>
+              <li>личный кабинет клиента;</li>
+              <li>дополнительные сценарии записи, переноса и коммуникаций.</li>
             </ul>
-            <button class="accordion-toggle" aria-expanded="false">Как это сделано <span class="accordion-arrow">↓</span></button>
-            <div class="accordion-body">
-              <blockquote>Хороший сайт для студии не продаёт «красоту». Он снижает тревогу перед процедурой и помогает выбрать первый шаг.</blockquote>
-              <p><b>Что сделала.</b> Собрала сайт-воронку с нуля: первый экран с доверием, понятные методы (лазер, электроэпиляция, воск), квиз-подбор метода на 3 вопроса, прайс, блог со статьями, карточки мастеров, запись через Dikidi. Настроила Яндекс.Метрику с целями на ключевые действия: клик «Записаться», старт и финиш квиза, форма консультации.</p>
-              <figure class="case-proof">
-                <img src="assets/case-grach-metrika.png" alt="Отчёт «Конверсии» в Яндекс.Метрике: цель «Запись онлайн», конверсия 17,65%, 21 целевой визит" loading="lazy" />
-                <figcaption>Конверсия 17,65% по цели «Запись онлайн» в Яндекс.Метрике. Не на словах, а цифры из отчёта.</figcaption>
-              </figure>
-              <ul class="case-results" aria-label="Цифры первого месяца">
-                <li><b>2 м 39 с на сайте</b><span>люди читают, а не отскакивают с первого экрана</span></li>
-                <li><b>8 из 10</b><span>начавших квиз доходят до рекомендации метода</span></li>
-                <li><b>Трафик растёт</b><span>визиты +48%, посетители +53% месяц к месяцу</span></li>
-              </ul>
-              <p>Поиск приносит треть трафика и самых вовлечённых посетителей: на сайте 6+ минут, отказы вдвое ниже, чем у прямых заходов. Это работа структуры и блога. Вторая точка входа после главной: статья «Депиляция перед отпуском».</p>
-              <p><b>И главное для бизнеса.</b> Рейтинг студии 5.0 на Dikidi, больше 500 оценок. Сильный сервис теперь подкреплён сайтом, который находят и который ведёт к записи.</p>
+          </article>
+          <article class="b2b-case">
+            <div class="b2b-case__head">
+              <p>Студия Марии Грач · статус: MVP</p>
+              <h3>MVP AI-администратора для бизнеса без штатного администратора</h3>
             </div>
-            <ul class="case-tags" aria-label="Что сделано">
-              <li>сайт с нуля</li>
-              <li>квиз-подбор</li>
-              <li>блог и SEO</li>
-              <li>запись Dikidi</li>
-              <li>Метрика и цели</li>
-              <li>мобильная версия</li>
-            </ul>
-            <div class="case-links">
-              <a href="https://grach-studio.ru" target="_blank" rel="noopener" class="case-link">grach-studio.ru →</a>
-            </div>
+            <p class="b2b-case__intro">Рабочий прототип на n8n для проверки качества консультаций, ограничений базы знаний и сценариев передачи диалога человеку.</p>
+            <div class="b2b-case__flow">Telegram <i>→</i> n8n <i>→</i> AI <i>→</i> база знаний <i>→</i> ответ / эскалация</div>
+            <p class="b2b-case__note">MVP создан для проверки бизнес-сценария до разработки полной системы.</p>
+          </article>
+          <div class="b2b-case-pair">
+            <article class="b2b-case b2b-case--compact">
+              <div class="b2b-case__head">
+                <p>Мария Грач</p>
+                <h3>Цифровой путь клиента от выбора услуги до записи</h3>
+              </div>
+              <p>Структура услуг, квиз-подбор, путь до онлайн-записи, аналитика целевых действий, блог и SEO.</p>
+              <a href="https://grach-studio.ru" target="_blank" rel="noopener">Посмотреть проект →</a>
+            </article>
+            <article class="b2b-case b2b-case--compact">
+              <div class="b2b-case__head">
+                <p>4SPINE</p>
+                <h3>Система привлечения и измерения клиентского пути</h3>
+              </div>
+              <p>Посадочные страницы, структура услуг и филиалов, онлайн-запись, цели, UTM-разметка и аналитика переходов.</p>
+              <a href="https://4spine.ru" target="_blank" rel="noopener">Посмотреть проект →</a>
+            </article>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="case">
-          <a href="https://4spine.ru" target="_blank" rel="noopener" class="case-image">
-            <img src="assets/case-4spine.png" alt="Скриншот сайта 4spine" loading="lazy" />
-          </a>
-          <div class="case-body">
-            <p class="case-location">4SPINE, Пермь · сайт + сквозная аналитика</p>
-            <p>Центр с двумя филиалами работал «вслепую»: сайт есть, аналитика подключена, а решения принимались на ощущениях. Пересобрала сайт как систему навигации и выстроила сквозную аналитику с нуля. Теперь виден каждый шаг клиента до записи, и цифры оказались сильнее, чем все думали.</p>
-            <ul class="case-results" aria-label="Что получилось">
-              <li><b>39%</b><span>посетителей доходят до «Записаться»: почти 4 из 10</span></li>
-              <li><b>+68% времени на сайте</b><span>2 мин 18 сек в среднем, вовлечённость выросла</span></li>
-              <li><b>~49% из поиска</b><span>сайт находят сами, SEO-структура работает</span></li>
-            </ul>
-            <button class="accordion-toggle" aria-expanded="false">Как это сделано <span class="accordion-arrow">↓</span></button>
-            <div class="accordion-body">
-              <blockquote>Метрика была, но показывала пустоту: целей по делу нет, каналы не размечены, отчёты не открывают. Сначала нужно было сделать так, чтобы полезные данные вообще появились. А потом они сразу показали, что сайт работает лучше, чем все думали.</blockquote>
-              <p><b>Было.</b> Аналитика подключена, но бестолково: работали только автоцели, осмысленных целей нет, источники трафика не размечены, в отчёты никто не заходил. А сам сайт вырос из старой структуры: 2 филиала, 13 специалистов, 20+ страниц, и человек терялся.</p>
-              <p><b>Что сделала.</b> Пересобрала сайт как систему навигации: филиалы и направления, услуги с ценами, специалисты, FAQ, путь к записи через YClients. И выстроила сквозную аналитику с нуля: цели на ключевые действия («Записаться», прайс, студии, контакты) и UTM-разметку всех каналов. Разобралась с интеграцией YClients и нашла, где реально живёт аналитика онлайн-записи.</p>
-              <figure class="case-proof">
-                <img src="assets/case-4spine-metrika.png" alt="Отчёт «Конверсии» в Яндекс.Метрике: цель «Клик на онлайн-запись», конверсия 39%, 335 целевых визитов" loading="lazy" />
-                <figcaption>Конверсия 39% по цели «Клик на онлайн-запись» в Яндекс.Метрике. Не на словах, а цифры из отчёта.</figcaption>
-              </figure>
-              <ul class="case-results" aria-label="Цифры первого месяца замера">
-                <li><b>858 визитов / 508 посетителей</b><span>точка отсчёта за первый месяц замера</span></li>
-                <li><b>×3,5</b><span>«Записаться» жмут в 3,5 раза чаще, чем открывают прайс. Сайт ведёт к действию</span></li>
-                <li><b>~23% возвращаются</b><span>почти каждый четвёртый, сайт не разовый</span></li>
-              </ul>
-              <p><b>И главное для бизнеса.</b> Доходимость записей по обеим студиям: 96% (записался → пришёл, данные YClients). Сильный сервис теперь подкреплён измеримостью: видно, какие каналы усиливать, а решения принимаются по цифрам, а не на ощущениях.</p>
-            </div>
-            <ul class="case-tags" aria-label="Что сделано">
-              <li>пересборка структуры</li>
-              <li>20+ страниц</li>
-              <li>YClients</li>
-              <li>цели и UTM</li>
-              <li>сквозная аналитика</li>
-              <li>Метрика</li>
-            </ul>
-            <a href="https://4spine.ru" target="_blank" rel="noopener" class="case-link">4spine.ru →</a>
-          </div>
+    <section class="section b2b-work" id="work">
+      <div class="container">
+        <div class="b2b-section-head">
+          <p class="ui-section-label">Процесс работы</p>
+          <h2 class="section-title">Сначала контекст. Потом предметный разговор</h2>
+          <p class="section-lead">Я не провожу созвоны вслепую. Сначала изучаю процесс и используемые системы, чтобы встреча была полезной.</p>
         </div>
-
-        <div class="case case--system">
-          <div class="case-stat" aria-label="Доходимость записей 96 процентов">
-            <span class="case-stat__value">96%</span>
-            <span class="case-stat__label">доходимость записей: записался → пришёл, данные YClients</span>
-            <div class="case-stat__flow" aria-hidden="true">
-              <i></i><i></i><i></i><i></i>
-            </div>
-          </div>
-          <div class="case-body">
-            <p class="case-location">4SPINE, Пермь · сервис напоминаний и возвратов</p>
-            <p>Чужой сервис уведомлений за ~10 000 ₽ в месяц лёг на блокировке: клиенты перестали получать напоминания о визитах. За неделю собрала свой, на своей инфраструктуре. Напоминания снова доходят, а база и доступы остались у центра.</p>
-            <ul class="case-results" aria-label="Что получилось">
-              <li><b>Telegram + MAX</b><span>каскад напоминаний, устойчивый к блокировкам</span></li>
-              <li><b>В один тап</b><span>клиент подтверждает визит, статус сразу встаёт в CRM</span></li>
-              <li><b>За неделю</b><span>от «сервис лёг» до рабочей замены на своей инфраструктуре</span></li>
-            </ul>
-            <button class="accordion-toggle" aria-expanded="false">Как это сделано <span class="accordion-arrow">↓</span></button>
-            <div class="accordion-body">
-              <blockquote>Напоминание, которое не дошло, стоит столько же, сколько пустое кресло. Поэтому канал доставки должен принадлежать бизнесу, а не подписке.</blockquote>
-              <p><b>Что сделала.</b> Собрала сервис напоминаний и возвратов на своей инфраструктуре: каскад Telegram + MAX, утренние и финальные напоминания с длительностью услуги, подтверждение «Приду» в один тап со статусом сразу в CRM. Дальше сервис вырос: личный кабинет клиента с онлайн-записью, переносом и бонусами, цепочки возвратов, поздравления с днём рождения, заявки из мессенджеров в одном окне у администраторов.</p>
-              <p><b>И главное для бизнеса.</b> Канал уведомлений больше не зависит от чужого сервиса и его тарифов: дешевле подписки, устойчивее к блокировкам, база клиентов и доступы у центра. Доходимость записей держится на 96% (данные YClients).</p>
-            </div>
-            <ul class="case-tags" aria-label="Что сделано">
-              <li>напоминания Telegram + MAX</li>
-              <li>статусы в CRM</li>
-              <li>личный кабинет</li>
-              <li>возвраты и дни рождения</li>
-              <li>своя инфраструктура</li>
-            </ul>
-          </div>
+        <ol class="b2b-steps">
+          <li><span>1</span><div><h3>Вы описываете процесс</h3><p>Что происходит сейчас, кто участвует, какие системы используются и где возникает проблема.</p></div></li>
+          <li><span>2</span><div><h3>Я предварительно изучаю задачу</h3><p>Проверяю сервисы, документацию, ограничения и понимаю, подходит ли задача моей компетенции.</p></div></li>
+          <li><span>3</span><div><h3>Проводим предметный созвон</h3><p>Уточняем сценарии, риски, ожидаемый результат и разумный объём первого этапа.</p></div></li>
+        </ol>
+        <div class="b2b-offers">
+          <article><p>для сложных и пока неясных задач</p><h3>Проектирование решения</h3><b>от 20 000 ₽</b><span>Процесс, архитектура, интеграции, ограничения, этапы и оценка реализации.</span></article>
+          <article class="b2b-offers__main"><p>один конкретный участок</p><h3>Первый этап автоматизации</h3><b>от 50–70 000 ₽</b><span>Запускаем один процесс на реальных сценариях и проверяем его в работе.</span></article>
+          <article><p>несколько систем и сценариев</p><h3>Комплексное внедрение</h3><b>от 100 000 ₽</b><span>Интеграции, исключения, бизнес-логика, тестирование, документация и запуск.</span></article>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- КАК СО МНОЙ РАБОТАТЬ -->
-  <section class="section ladder" id="ladder">
-    <div class="container">
-      <h2 class="section-title">Как со мной работать</h2>
-      <p class="section-lead">Можно начать с самостоятельной проверки, а дальше выбрать нужную глубину.</p>
-      <ul class="ladder-steps">
-        <li class="ladder-step">
-          <div class="ladder-step__head">
-            <span class="ladder-step__price">бесплатно</span>
+    <section class="section b2b-boundaries">
+      <div class="container">
+        <div class="b2b-section-head">
+          <p class="ui-section-label">Границы</p>
+          <h2 class="section-title">Что я не делаю</h2>
+        </div>
+        <div class="b2b-boundary-grid">
+          <article><h3>AI ради AI</h3><p>Если задачу надёжнее решить обычным правилом, нейросеть в системе не появится.</p></article>
+          <article><h3>Серые сценарии</h3><p>Не настраиваю массовые рассылки без необходимых согласий и другие юридически сомнительные механики.</p></article>
+          <article><h3>Обещания заменить отдел</h3><p>Сначала ищем конкретную повторяющуюся операцию и считаем, имеет ли смысл её автоматизировать.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section b2b-about" id="about">
+      <div class="container b2b-about__grid">
+        <div class="b2b-about__photo"><img src="/assets/masha-portrait-cut.webp" alt="Мария Золотухина" loading="lazy" /></div>
+        <div class="b2b-about__copy">
+          <p class="ui-section-label">Обо мне</p>
+          <h2 class="section-title">Начинаю с бизнес-процесса, а не с инструмента</h2>
+          <p>Я пришла в автоматизацию из операционного управления. Управляю двумя wellness-студиями и вижу изнутри, где сотрудники тратят время, где возникают ошибки и что действительно мешает процессу работать.</p>
+          <p>Если автоматизация имеет смысл, проектирую и собираю решение сама: API, CRM, автоматизации, AI, интерфейсы и аналитику.</p>
+          <div class="b2b-about__skills"><span>Операционное управление</span><span>Бизнес-логика</span><span>API и CRM</span><span>AI и автоматизации</span><span>Интерфейсы</span><span>Аналитика</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section b2b-contact" id="contact">
+      <div class="container b2b-contact__grid">
+        <div class="b2b-contact__copy">
+          <p class="ui-section-label">Первый шаг</p>
+          <h2 class="section-title">Расскажите о задаче</h2>
+          <p>Сначала я изучу процесс и используемые сервисы. Если вижу, что могу помочь, предложу короткий созвон для уточнения деталей.</p>
+          <p>Если автоматизация нецелесообразна или для задачи нужна другая компетенция, скажу об этом сразу.</p>
+          <p>Если удобнее, можно <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" data-telegram-contact>написать напрямую в Telegram</a>.</p>
+        </div>
+        <form class="ui-lead-form b2b-form" action="/api/send-telegram.php" method="post" data-b2b-form>
+          <input type="hidden" name="consent_version" value="2026-07-27" />
+          <div class="b2b-honeypot" aria-hidden="true"><label>Не заполняйте это поле<input name="website_check" tabindex="-1" autocomplete="off" /></label></div>
+          <div class="ui-lead-form__grid">
+            <label class="ui-field"><span class="ui-field__label">Имя *</span><input class="ui-input" name="name" required maxlength="80" autocomplete="name" /></label>
+            <label class="ui-field"><span class="ui-field__label">Компания</span><input class="ui-input" name="company" maxlength="120" autocomplete="organization" /></label>
+            <label class="ui-field"><span class="ui-field__label">Контакт для ответа *</span><input class="ui-input" name="contact" required maxlength="160" placeholder="Telegram, телефон или email" /></label>
+            <label class="ui-field"><span class="ui-field__label">Сайт компании</span><input class="ui-input" name="company_site" maxlength="200" inputmode="url" placeholder="https://…" /></label>
+            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что хотите автоматизировать? *</span><textarea class="ui-textarea" name="task" required maxlength="2000" placeholder="Например: менеджеры получают заявки по email, читают вложения и вручную переносят данные в CRM"></textarea></label>
+            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Как процесс работает сейчас? *</span><textarea class="ui-textarea" name="current_process" required maxlength="3000" placeholder="Опишите путь от начала до конца: что происходит, кто участвует и что делается вручную"></textarea></label>
+            <fieldset class="b2b-systems ui-lead-form__wide"><legend>Какие системы используются?</legend>
+              <label><input type="checkbox" name="systems[]" value="CRM" /> CRM</label>
+              <label><input type="checkbox" name="systems[]" value="1С" /> 1С</label>
+              <label><input type="checkbox" name="systems[]" value="Telegram" /> Telegram</label>
+              <label><input type="checkbox" name="systems[]" value="MAX" /> MAX</label>
+              <label><input type="checkbox" name="systems[]" value="WhatsApp" /> WhatsApp</label>
+              <label><input type="checkbox" name="systems[]" value="Email" /> Email</label>
+              <label><input type="checkbox" name="systems[]" value="Google Sheets / Excel" /> Google Sheets / Excel</label>
+              <label><input type="checkbox" name="systems[]" value="Сайт" /> Сайт</label>
+              <label><input type="checkbox" name="systems[]" value="Другое" /> Другое</label>
+            </fieldset>
+            <label class="ui-field"><span class="ui-field__label">Объём операций</span><input class="ui-input" name="volume" maxlength="200" placeholder="Например, 300 заявок в месяц" /></label>
+            <label class="ui-field"><span class="ui-field__label">Сколько сотрудников участвует?</span><input class="ui-input" name="employees" maxlength="100" /></label>
+            <label class="ui-field"><span class="ui-field__label">Главная проблема *</span><select class="ui-input" name="problem" required><option value="">Выберите</option><option>Много ручной работы</option><option>Ошибки</option><option>Медленная обработка</option><option>Теряются обращения</option><option>Нужно нанимать людей при росте</option><option>Другое</option></select></label>
+            <label class="ui-field"><span class="ui-field__label">Ориентир бюджета *</span><select class="ui-input" name="budget" required><option value="">Выберите</option><option>До 50 000 ₽</option><option>50–100 000 ₽</option><option>100–200 000 ₽</option><option>200 000 ₽+</option><option>Пока не знаю</option></select></label>
+            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что должно измениться в результате? *</span><textarea class="ui-textarea" name="desired_result" required maxlength="2000"></textarea></label>
           </div>
-          <h3>Диагностика записи</h3>
-          <p>Оцените 12 точек, посчитайте балл и примерный порядок потерь.</p>
-          <a href="/audit/" class="ladder-step__link">Пройти диагностику →</a>
-        </li>
-        <li class="ladder-step">
-          <div class="ladder-step__head">
-            <span class="ladder-step__price">1 490 ₽</span>
-          </div>
-          <h3>Гайд с решениями</h3>
-          <p>Три уровня решений: своими силами, простой связкой или отдельной системой.</p>
-          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ladder-step__link">Получить гайд →</a>
-        </li>
-        <li class="ladder-step ladder-step--featured">
-          <div class="ladder-step__head">
-            <span class="ladder-step__price">5 000 ₽ · в счёт работы</span>
-          </div>
-          <h3>Разбор вашей системы</h3>
-          <p>До созвона изучаю цифры. На встрече показываю приоритеты и варианты под бюджет.</p>
-          <a href="https://t.me/masha_zoloty" target="_blank" rel="noopener" class="ladder-step__link">Прийти на разбор →</a>
-        </li>
-        <li class="ladder-step">
-          <div class="ladder-step__head">
-            <span class="ladder-step__price">цена по объёму</span>
-          </div>
-          <h3>Работа под запрос</h3>
-          <p>После разбора собираю только то, что нужно: сайт, напоминания, возвраты или аналитику.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ЧЕСТНАЯ РАМКА -->
-  <section class="section honest">
-    <div class="container">
-      <div class="honest-panel">
-        <h2 class="honest-title">Чего я не обещаю</h2>
-        <p>Я операционщик и аналитик, а не маркетолог. Не обещаю иксы к выручке и конкретное число заявок: это зависит от ваших услуг, цен и спроса. Отвечаю за другое: чтобы запись, напоминания и возвраты работали без потерь, а вы видели по цифрам, что происходит. Слабые места покажу честно. Решение подберу под вашу задачу и бюджет, а не впарю самое дорогое.</p>
+          <label class="b2b-consent"><input type="checkbox" name="consent" value="yes" required /> <span>Соглашаюсь на обработку данных для ответа на заявку и принимаю <a href="/privacy.html" target="_blank">политику обработки данных</a>.</span></label>
+          <button class="ui-button" type="submit">Отправить задачу</button>
+          <p class="b2b-form__status" role="status" aria-live="polite" data-form-status></p>
+        </form>
       </div>
-    </div>
-  </section>
-
-  <section class="section blog-links" aria-labelledby="blog-links-title">
-    <div class="container">
-      <h2 class="section-title" id="blog-links-title">Разобраться самостоятельно</h2>
-      <p class="section-lead">Короткие разборы про сайт студии, соцсети, онлайн-запись и места, где клиент чаще всего теряется до заявки.</p>
-      <div class="blog-links-grid">
-        <a class="blog-link-card" href="/blog/chto-dolzhno-byt-na-sajte-studii/">
-          <span>Что должно быть на сайте студии</span>
-          <small>8 блоков, без которых сайт не доводит до записи</small>
-        </a>
-        <a class="blog-link-card" href="/blog/nuzhen-li-sajt-esli-est-socseti/">
-          <span>Нужен ли сайт, если есть соцсети</span>
-          <small>Когда соцсетей хватает, а когда нужен свой домен</small>
-        </a>
-        <a class="blog-link-card" href="/blog/pochemu-klienty-ukhodyat-s-sajta/">
-          <span>Почему клиенты уходят с сайта</span>
-          <small>7 мест, где посетитель решает закрыть вкладку</small>
-        </a>
-        <a class="blog-link-card" href="/blog/pochemu-malo-onlajn-zapisej/">
-          <span>Почему мало онлайн-записей</span>
-          <small>Где ломается путь от интереса до записи</small>
-        </a>
-        <a class="blog-link-card" href="/blog/skolko-stoit-sajt-dlya-studii/">
-          <span>Сколько стоит сайт для студии</span>
-          <small>Из чего складывается цена и где не стоит экономить</small>
-        </a>
-      </div>
-      <a href="/blog/" class="blog-links-all">Все статьи →</a>
-    </div>
-  </section>
-
-  <!-- СВЯЗЬ В TELEGRAM -->
-  <section class="section form-section contact-section" id="contact">
-    <div class="container form-container contact-container">
-      <div class="contact-copy">
-        <h2 class="section-title">Разобрать вашу запись</h2>
-        <p class="form-desc">Разбор стоит 5 000 ₽. До созвона я изучаю вашу точку входа, запись и цифры. На встрече показываю, что мешает клиентам дойти до визита и с чего начать. Если продолжаем работу, 5 000 ₽ засчитываются в проект.</p>
-        <p class="form-after">Отвечу сама в течение 24 часов. Если пока рано идти на разбор, начните с <a href="/audit/">бесплатной диагностики записи</a>.</p>
-      </div>
-      <div class="contact-actions">
-        <a class="btn contact-button" href="https://t.me/masha_zoloty" target="_blank" rel="noopener" data-telegram-contact>Написать в Telegram</a>
-        <a class="contact-legal" href="/legal.html">Реквизиты и условия возврата</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
-      <p><a href="/audit/">Диагностика записи</a> · <a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="/legal.html">Правовая информация</a> · <a href="/privacy.html">Политика данных</a></p>
+      <p><a href="/beauty/">Beauty и wellness</a> · <a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="/legal.html">Правовая информация</a> · <a href="/privacy.html">Политика данных</a></p>
     </div>
   </footer>
-
-  <script src="script.js?v=20260725-2"></script>
+  <script src="/script.js?v=20260727-1"></script>
 </body>
 </html>
+
