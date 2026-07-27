@@ -89,10 +89,10 @@
     const title = document.createElement('h2');
     title.className = 'privacy-banner__title';
     title.id = 'privacy-banner-title';
-    title.textContent = 'Аналитика под вашим контролем';
+    title.textContent = 'Можно включить аналитику?';
     const text = document.createElement('p');
     text.className = 'privacy-banner__text';
-    text.append('Сайт использует Яндекс Метрику только после вашего разрешения. Она помогает понять, какие страницы полезны. Можно продолжить без аналитики. ');
+    text.append('Яндекс Метрика помогает понять, какие страницы полезны, и включается только с вашего согласия. ');
     const details = document.createElement('a');
     details.href = '/privacy.html';
     details.textContent = 'Подробнее';
@@ -105,12 +105,12 @@
     rejectButton.className = 'privacy-banner__button privacy-banner__button--secondary';
     rejectButton.type = 'button';
     rejectButton.dataset.privacyReject = '';
-    rejectButton.textContent = 'Только необходимое';
+    rejectButton.textContent = 'Без аналитики';
     const acceptButton = document.createElement('button');
     acceptButton.className = 'privacy-banner__button';
     acceptButton.type = 'button';
     acceptButton.dataset.privacyAccept = '';
-    acceptButton.textContent = 'Разрешить аналитику';
+    acceptButton.textContent = 'Разрешить';
     actions.append(rejectButton, acceptButton);
     banner.append(copy, actions);
 
@@ -179,3 +179,4 @@
     initialize();
   }
 })();
+
