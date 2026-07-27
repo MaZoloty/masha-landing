@@ -54,8 +54,18 @@ for (const file of htmlFiles) {
 }
 
 const home = readFileSync(join(root, 'index.html'), 'utf8');
-if (/<form\b/i.test(home) || /send-telegram/i.test(home)) {
-  fail(join(root, 'index.html'), 'public lead form must stay removed');
+if (/<form\b/i.test(home)) {
+  for (const requiredFormControl of [
+    'method="post"',
+    'action="/api/send-telegram.php"',
+    'name="website_check"',
+    'name="consent_version"',
+    'name="consent"',
+  ]) {
+    if (!home.includes(requiredFormControl)) {
+      fail(join(root, 'index.html'), `public lead form is missing ${requiredFormControl}`);
+    }
+  }
 }
 if (!/href=["']https:\/\/t\.me\/masha_zoloty["'][^>]+data-telegram-contact/i.test(home)) {
   fail(join(root, 'index.html'), 'direct Telegram contact action is missing');
@@ -78,7 +88,7 @@ const privacy = readFileSync(privacyPath, 'utf8');
 for (const requiredText of [
   'Золотухина Мария Олеговна',
   '590318941096',
-  'На сайте нет формы обратной связи',
+  'На главной странице есть форма предварительной заявки',
   'data-privacy-settings',
 ]) {
   if (!privacy.includes(requiredText)) fail(privacyPath, `missing required privacy information: ${requiredText}`);
@@ -115,3 +125,4 @@ if (errors.length) {
 }
 
 console.log(`Security check passed: ${htmlFiles.length} public HTML files and ${files.length} files inspected.`);
+
