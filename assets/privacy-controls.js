@@ -155,7 +155,8 @@
     button.textContent = 'Настройки аналитики';
     button.addEventListener('click', openSettings);
     wrapper.appendChild(button);
-    footer.appendChild(wrapper);
+    const target = footer.querySelector('.container') || footer;
+    target.appendChild(wrapper);
   }
 
   function initialize() {
