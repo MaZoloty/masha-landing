@@ -105,6 +105,11 @@
   text-decoration-color: currentColor;
 }
 
+.privacy-settings-entry {
+  margin: 14px 0 0;
+  text-align: center;
+}
+
 @media (max-width: 720px) {
   .privacy-banner {
     grid-template-columns: 1fr;
@@ -119,6 +124,11 @@
 
   .privacy-banner__button {
     width: 100%;
+  }
+
+  .privacy-settings-entry {
+    width: 100%;
+    text-align: center;
   }
 }
 
