@@ -108,3 +108,43 @@ document.querySelectorAll('.accordion-toggle').forEach(btn => {
 document.querySelectorAll('[data-telegram-contact]').forEach(link => {
   link.addEventListener('click', () => ymGoal('telegram_click'));
 });
+
+// B2B brief: the form remains a normal POST without JavaScript. When scripts
+// are available, submit in place and explain the next step without a reload.
+const b2bForm = document.querySelector('[data-b2b-form]');
+
+if (b2bForm) {
+  const status = b2bForm.querySelector('[data-form-status]');
+  const submit = b2bForm.querySelector('button[type="submit"]');
+
+  b2bForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    status.className = 'b2b-form__status';
+    status.textContent = 'Отправляю задачу…';
+    submit.disabled = true;
+
+    try {
+      const response = await fetch(b2bForm.action, {
+        method: 'POST',
+        body: new FormData(b2bForm),
+        headers: { Accept: 'application/json' },
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Не удалось отправить форму.');
+      }
+
+      b2bForm.reset();
+      status.classList.add('is-success');
+      status.textContent = 'Задача отправлена. Я изучу процесс и сервисы, затем напишу вам, если смогу помочь.';
+      ymGoal('b2b_brief_sent');
+    } catch (error) {
+      status.classList.add('is-error');
+      status.textContent = `${error.message} Можно написать мне напрямую в Telegram: @masha_zoloty.`;
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
