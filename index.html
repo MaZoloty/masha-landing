@@ -83,7 +83,7 @@
   <link rel="stylesheet" href="/assets/ui-system.css?v=20260725-1" />
   <link rel="stylesheet" href="/assets/page-rebuild.css?v=20260715-4" />
   <link rel="stylesheet" href="/assets/home-mobile.css?v=20260716-3" />
-  <link rel="stylesheet" href="/assets/b2b-home.css?v=20260727-9" />
+  <link rel="stylesheet" href="/assets/b2b-home.css?v=20260730-1" />
   <link rel="stylesheet" href="/assets/privacy-controls.css?v=20260727-4" />
   <script src="/assets/privacy-controls.js?v=20260727-5" defer></script>
 </head>
@@ -289,13 +289,13 @@
     <section class="section b2b-boundaries">
       <div class="container">
         <div class="b2b-section-head">
-          <p class="ui-section-label">Границы</p>
-          <h2 class="section-title">Что я не делаю</h2>
+          <p class="ui-section-label">Подход</p>
+          <h2 class="section-title">Что важно в хорошей автоматизации</h2>
         </div>
         <div class="b2b-boundary-grid">
-          <article><h3>AI ради AI</h3><p>Если задачу надёжнее решить обычным правилом, нейросеть в системе не появится.</p></article>
-          <article><h3>Серые сценарии</h3><p>Не настраиваю массовые рассылки без необходимых согласий и другие юридически сомнительные механики.</p></article>
-          <article><h3>Обещания заменить отдел</h3><p>Сначала ищем конкретную повторяющуюся операцию и считаем, имеет ли смысл её автоматизировать.</p></article>
+          <article><h3>AI только по делу</h3><p>Если задачу надёжнее решить обычным правилом, нейросеть в системе не появится.</p></article>
+          <article><h3>Законные сценарии</h3><p>Работаю только с корректными согласиями и не использую юридически сомнительные механики.</p></article>
+          <article><h3>Рутину — системе, важное — людям</h3><p>Автоматизирую повторяющиеся процессы, чтобы сотрудники занимались задачами, где нужен человек.</p></article>
         </div>
       </div>
     </section>
@@ -329,31 +329,37 @@
         <form class="ui-lead-form b2b-form" action="/api/send-telegram.php" method="post" data-b2b-form>
           <input type="hidden" name="consent_version" value="2026-07-27" />
           <div class="b2b-honeypot" aria-hidden="true"><label>Не заполняйте это поле<input name="website_check" tabindex="-1" autocomplete="off" /></label></div>
-          <p class="b2b-form__hint"><b>Техническое ТЗ не нужно.</b> Опишите процесс своими словами. Поля без звёздочки можно пропустить.</p>
+          <p class="b2b-form__hint"><b>Для начала достаточно трёх полей.</b> Техническое ТЗ не нужно — опишите задачу своими словами.</p>
           <div class="ui-lead-form__grid">
             <label class="ui-field"><span class="ui-field__label">Имя *</span><input class="ui-input" name="name" required maxlength="80" autocomplete="name" /></label>
-            <label class="ui-field"><span class="ui-field__label">Компания</span><input class="ui-input" name="company" maxlength="120" autocomplete="organization" /></label>
             <label class="ui-field"><span class="ui-field__label">Контакт для ответа *</span><input class="ui-input" name="contact" required maxlength="160" placeholder="Telegram, телефон или email" /></label>
-            <label class="ui-field"><span class="ui-field__label">Сайт компании</span><input class="ui-input" name="company_site" maxlength="200" inputmode="url" placeholder="https://…" /></label>
             <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что хотите автоматизировать? *</span><textarea class="ui-textarea" name="task" required maxlength="2000" placeholder="Например: менеджеры получают заявки по email, читают вложения и вручную переносят данные в CRM"></textarea></label>
-            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Как процесс работает сейчас? *</span><textarea class="ui-textarea" name="current_process" required maxlength="3000" placeholder="Опишите путь от начала до конца: что происходит, кто участвует и что делается вручную"></textarea></label>
-            <fieldset class="b2b-systems ui-lead-form__wide"><legend>Какие системы используются?</legend>
-              <label><input type="checkbox" name="systems[]" value="CRM" /> CRM</label>
-              <label><input type="checkbox" name="systems[]" value="1С" /> 1С</label>
-              <label><input type="checkbox" name="systems[]" value="Telegram" /> Telegram</label>
-              <label><input type="checkbox" name="systems[]" value="MAX" /> MAX</label>
-              <label><input type="checkbox" name="systems[]" value="WhatsApp" /> WhatsApp</label>
-              <label><input type="checkbox" name="systems[]" value="Email" /> Email</label>
-              <label><input type="checkbox" name="systems[]" value="Google Sheets / Excel" /> Google Sheets / Excel</label>
-              <label><input type="checkbox" name="systems[]" value="Сайт" /> Сайт</label>
-              <label><input type="checkbox" name="systems[]" value="Другое" /> Другое</label>
-            </fieldset>
-            <label class="ui-field"><span class="ui-field__label">Объём операций</span><input class="ui-input" name="volume" maxlength="200" placeholder="Например, 300 заявок в месяц" /></label>
-            <label class="ui-field"><span class="ui-field__label">Сколько сотрудников участвует?</span><input class="ui-input" name="employees" maxlength="100" /></label>
-            <label class="ui-field"><span class="ui-field__label">Главная проблема</span><select class="ui-input" name="problem"><option value="">Можно не выбирать</option><option>Много ручной работы</option><option>Ошибки</option><option>Медленная обработка</option><option>Теряются обращения</option><option>Нужно нанимать людей при росте</option><option>Другое</option></select></label>
-            <label class="ui-field"><span class="ui-field__label">Ориентир бюджета</span><select class="ui-input" name="budget"><option value="">Можно не выбирать</option><option>До 50 000 ₽</option><option>50–100 000 ₽</option><option>100–200 000 ₽</option><option>200 000 ₽+</option><option>Пока не знаю</option></select></label>
-            <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что должно измениться в результате?</span><textarea class="ui-textarea" name="desired_result" maxlength="2000"></textarea></label>
           </div>
+          <details class="b2b-form__optional">
+            <summary>Добавить контекст для предварительного изучения</summary>
+            <p>Необязательно. Эти сведения помогут мне лучше подготовиться до первого разговора.</p>
+            <div class="ui-lead-form__grid">
+              <label class="ui-field"><span class="ui-field__label">Компания</span><input class="ui-input" name="company" maxlength="120" autocomplete="organization" /></label>
+              <label class="ui-field"><span class="ui-field__label">Сайт компании</span><input class="ui-input" name="company_site" maxlength="200" inputmode="url" placeholder="https://…" /></label>
+              <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Как процесс работает сейчас?</span><textarea class="ui-textarea" name="current_process" maxlength="3000" placeholder="Опишите путь от начала до конца: что происходит, кто участвует и что делается вручную"></textarea></label>
+              <fieldset class="b2b-systems ui-lead-form__wide"><legend>Какие системы используются?</legend>
+                <label><input type="checkbox" name="systems[]" value="CRM" /> CRM</label>
+                <label><input type="checkbox" name="systems[]" value="1С" /> 1С</label>
+                <label><input type="checkbox" name="systems[]" value="Telegram" /> Telegram</label>
+                <label><input type="checkbox" name="systems[]" value="MAX" /> MAX</label>
+                <label><input type="checkbox" name="systems[]" value="WhatsApp" /> WhatsApp</label>
+                <label><input type="checkbox" name="systems[]" value="Email" /> Email</label>
+                <label><input type="checkbox" name="systems[]" value="Google Sheets / Excel" /> Google Sheets / Excel</label>
+                <label><input type="checkbox" name="systems[]" value="Сайт" /> Сайт</label>
+                <label><input type="checkbox" name="systems[]" value="Другое" /> Другое</label>
+              </fieldset>
+              <label class="ui-field"><span class="ui-field__label">Объём операций</span><input class="ui-input" name="volume" maxlength="200" placeholder="Например, 300 заявок в месяц" /></label>
+              <label class="ui-field"><span class="ui-field__label">Сколько сотрудников участвует?</span><input class="ui-input" name="employees" maxlength="100" /></label>
+              <label class="ui-field"><span class="ui-field__label">Главная проблема</span><select class="ui-input" name="problem"><option value="">Можно не выбирать</option><option>Много ручной работы</option><option>Ошибки</option><option>Медленная обработка</option><option>Теряются обращения</option><option>Нужно нанимать людей при росте</option><option>Другое</option></select></label>
+              <label class="ui-field"><span class="ui-field__label">Ориентир бюджета</span><select class="ui-input" name="budget"><option value="">Можно не выбирать</option><option>До 50 000 ₽</option><option>50–100 000 ₽</option><option>100–200 000 ₽</option><option>200 000 ₽+</option><option>Пока не знаю</option></select></label>
+              <label class="ui-field ui-lead-form__wide"><span class="ui-field__label">Что должно измениться в результате?</span><textarea class="ui-textarea" name="desired_result" maxlength="2000"></textarea></label>
+            </div>
+          </details>
           <label class="b2b-consent"><input type="checkbox" name="consent" value="yes" required /> <span>Соглашаюсь на обработку данных для ответа на заявку и принимаю <a href="/privacy.html" target="_blank">политику обработки данных</a>.</span></label>
           <button class="ui-button" type="submit">Отправить задачу</button>
           <p class="b2b-form__status" role="status" aria-live="polite" data-form-status></p>
