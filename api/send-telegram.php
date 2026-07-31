@@ -16,6 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, array('error' => 'Используйте форму на сайте.'));
 }
 
+$contentType = strtolower((string)($_SERVER['CONTENT_TYPE'] ?? ''));
+if (
+    !str_starts_with($contentType, 'multipart/form-data')
+    && !str_starts_with($contentType, 'application/x-www-form-urlencoded')
+) {
+    respond(415, array('error' => 'Не удалось обработать формат заявки.'));
+}
+
 $contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
 if ($contentLength < 1 || $contentLength > 30000) {
     respond(413, array('error' => 'Заявка слишком большая.'));
@@ -40,8 +48,18 @@ if ($lastRequest > 0 && ($now - $lastRequest) < 60) {
 }
 @file_put_contents($rateFile, (string)$now, LOCK_EX);
 
+function scalar(string $name): string {
+    if (!isset($_POST[$name])) {
+        return '';
+    }
+    if (!is_string($_POST[$name])) {
+        respond(422, array('error' => 'Проверьте заполнение полей формы.'));
+    }
+    return $_POST[$name];
+}
+
 function field(string $name, int $max, bool $required = false): string {
-    $value = trim((string)($_POST[$name] ?? ''));
+    $value = trim(scalar($name));
     if ($required && $value === '') {
         respond(422, array('error' => 'Заполните обязательные поля.'));
     }
@@ -51,7 +69,7 @@ function field(string $name, int $max, bool $required = false): string {
     return preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value) ?? '';
 }
 
-if (($_POST['consent'] ?? '') !== 'yes' || ($_POST['consent_version'] ?? '') !== '2026-07-27') {
+if (scalar('consent') !== 'yes' || scalar('consent_version') !== '2026-07-27') {
     respond(422, array('error' => 'Нужно подтвердить согласие на обработку данных.'));
 }
 
@@ -76,6 +94,85 @@ $fields = array(
     'Желаемый результат' => field('desired_result', 2000),
     'Бюджет' => field('budget', 100),
 );
+
+function normalized(string $value): string {
+    $value = mb_strtolower($value, 'UTF-8');
+    $value = preg_replace('/\s+/u', ' ', $value) ?? $value;
+    return trim($value);
+}
+
+function urlCount(string $value): int {
+    preg_match_all('~(?:https?://|www\.)[^\s<>()]+~iu', $value, $matches);
+    return count($matches[0] ?? array());
+}
+
+function spamScore(array $fields, array $systems): int {
+    $score = 0;
+    $narrative = implode("\n", array(
+        $fields['Задача'] ?? '',
+        $fields['Текущий процесс'] ?? '',
+        $fields['Желаемый результат'] ?? '',
+    ));
+
+    $links = urlCount($narrative);
+    if ($links >= 3) {
+        $score += 4;
+    } elseif ($links >= 1) {
+        $score += 1;
+    }
+
+    $promotionPattern = '/\b(?:proxies|proxy|sale|sales|discounts?|coupons?|promotion|promo|casino|viagra|backlinks?|seo services?)\b|(?:скидк|распродаж|промокод)/iu';
+    preg_match_all($promotionPattern, $narrative, $promotionMatches);
+    $promotionCount = count($promotionMatches[0] ?? array());
+    if ($promotionCount >= 3) {
+        $score += 5;
+    } elseif ($promotionCount >= 1) {
+        $score += 2;
+    }
+
+    if (preg_match('/\b\d{1,2}\s*%\s*(?:off|sale|discount|saving)/iu', $narrative)) {
+        $score += 2;
+    }
+
+    if (count($systems) >= 7) {
+        $score += 2;
+    }
+
+    $name = normalized($fields['Имя'] ?? '');
+    $company = normalized($fields['Компания'] ?? '');
+    if ($name !== '' && $company !== '' && $name === $company) {
+        $score += 1;
+    }
+
+    $startedAt = scalar('form_started_at');
+    if ($startedAt === '' || !ctype_digit($startedAt)) {
+        $score += 1;
+    } else {
+        $elapsedMs = (int)round(microtime(true) * 1000) - (int)$startedAt;
+        if ($elapsedMs < 2500 || $elapsedMs > 86400000) {
+            $score += 3;
+        }
+    }
+
+    return $score;
+}
+
+$fingerprintText = normalized(($fields['Контакт'] ?? '') . '|' . ($fields['Задача'] ?? ''));
+$fingerprintFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR)
+    . DIRECTORY_SEPARATOR
+    . 'mazoloty-lead-'
+    . hash('sha256', $fingerprintText);
+$fingerprintTime = is_file($fingerprintFile) ? (int)file_get_contents($fingerprintFile) : 0;
+
+// Repeated submissions and high-confidence spam get a neutral response. This
+// keeps junk out of Telegram without confirming the filter rules to bots.
+if (
+    ($fingerprintTime > 0 && ($now - $fingerprintTime) < 86400)
+    || spamScore($fields, $systems) >= 7
+) {
+    respond(200, array('ok' => true));
+}
+@file_put_contents($fingerprintFile, (string)$now, LOCK_EX);
 
 $message = "Новая B2B-заявка с mazoloty.ru\n\n";
 foreach ($fields as $label => $value) {

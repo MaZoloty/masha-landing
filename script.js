@@ -116,6 +116,9 @@ const b2bForm = document.querySelector('[data-b2b-form]');
 if (b2bForm) {
   const status = b2bForm.querySelector('[data-form-status]');
   const submit = b2bForm.querySelector('button[type="submit"]');
+  const startedAt = b2bForm.querySelector('input[name="form_started_at"]');
+
+  if (startedAt) startedAt.value = String(Date.now());
 
   b2bForm.addEventListener('submit', async event => {
     event.preventDefault();
@@ -136,6 +139,7 @@ if (b2bForm) {
       }
 
       b2bForm.reset();
+      if (startedAt) startedAt.value = String(Date.now());
       status.classList.add('is-success');
       status.textContent = 'Задача отправлена. Я изучу процесс и сервисы, затем напишу вам, если смогу помочь.';
       ymGoal('b2b_brief_sent');

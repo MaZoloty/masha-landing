@@ -59,6 +59,7 @@ if (/<form\b/i.test(home)) {
     'method="post"',
     'action="/api/send-telegram.php"',
     'name="website_check"',
+    'name="form_started_at"',
     'name="consent_version"',
     'name="consent"',
   ]) {
