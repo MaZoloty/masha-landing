@@ -95,6 +95,12 @@ for (const requiredText of [
   if (!privacy.includes(requiredText)) fail(privacyPath, `missing required privacy information: ${requiredText}`);
 }
 
+const formEndpointPath = join(root, 'api', 'send-telegram.php');
+const formEndpoint = readFileSync(formEndpointPath, 'utf8');
+if (!formEndpoint.includes("header_remove('X-Powered-By')")) {
+  fail(formEndpointPath, 'runtime version header is not removed');
+}
+
 const htaccessPath = join(root, '.htaccess');
 const htaccess = readFileSync(htaccessPath, 'utf8');
 for (const header of [
