@@ -103,6 +103,7 @@ for (const header of [
   'X-Content-Type-Options',
   'Referrer-Policy',
   'Permissions-Policy',
+  'Header always unset X-Powered-By',
 ]) {
   if (!htaccess.includes(header)) fail(htaccessPath, `missing ${header}`);
 }
