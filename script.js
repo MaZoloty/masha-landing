@@ -109,19 +109,35 @@ document.querySelectorAll('[data-telegram-contact]').forEach(link => {
   link.addEventListener('click', () => ymGoal('telegram_click'));
 });
 
-// B2B brief: the form remains a normal POST without JavaScript. When scripts
-// are available, submit in place and explain the next step without a reload.
+// B2B brief: JavaScript records a real interaction before sending the form,
+// then submits in place and explains the next step without a reload.
 const b2bForm = document.querySelector('[data-b2b-form]');
 
 if (b2bForm) {
   const status = b2bForm.querySelector('[data-form-status]');
   const submit = b2bForm.querySelector('button[type="submit"]');
-  const startedAt = b2bForm.querySelector('input[name="form_started_at"]');
+  const startedAt = b2bForm.querySelector('[data-form-started-at]');
+  const elapsed = b2bForm.querySelector('[data-form-elapsed]');
+  const interaction = b2bForm.querySelector('[data-form-interaction]');
+  const formOpenedAt = performance.now();
 
   if (startedAt) startedAt.value = String(Date.now());
 
+  const markRealInteraction = event => {
+    if (event.isTrusted && interaction) {
+      interaction.value = 'yes';
+    }
+  };
+
+  b2bForm.addEventListener('input', markRealInteraction, { passive: true });
+  b2bForm.addEventListener('pointerdown', markRealInteraction, { passive: true });
+  b2bForm.addEventListener('keydown', markRealInteraction, { passive: true });
+
   b2bForm.addEventListener('submit', async event => {
     event.preventDefault();
+    if (elapsed) {
+      elapsed.value = String(Math.round(performance.now() - formOpenedAt));
+    }
     status.className = 'b2b-form__status';
     status.textContent = 'Отправляю задачу…';
     submit.disabled = true;
@@ -140,6 +156,7 @@ if (b2bForm) {
 
       b2bForm.reset();
       if (startedAt) startedAt.value = String(Date.now());
+      if (interaction) interaction.value = '';
       status.classList.add('is-success');
       status.textContent = 'Задача отправлена. Я изучу процесс и сервисы, затем напишу вам, если смогу помочь.';
       ymGoal('b2b_brief_sent');
@@ -151,4 +168,3 @@ if (b2bForm) {
     }
   });
 }
-

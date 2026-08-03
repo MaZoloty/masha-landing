@@ -59,7 +59,10 @@ if (/<form\b/i.test(home)) {
     'method="post"',
     'action="/api/send-telegram.php"',
     'name="website_check"',
+    'name="company_fax"',
     'name="form_started_at"',
+    'name="form_elapsed_ms"',
+    'name="form_interaction"',
     'name="consent_version"',
     'name="consent"',
   ]) {

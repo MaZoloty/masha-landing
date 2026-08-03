@@ -328,8 +328,13 @@
         </div>
         <form class="ui-lead-form b2b-form" action="/api/send-telegram.php" method="post" data-b2b-form>
           <input type="hidden" name="consent_version" value="2026-07-27" />
-          <input type="hidden" name="form_started_at" value="" />
-          <div class="b2b-honeypot" aria-hidden="true"><label>Не заполняйте это поле<input name="website_check" tabindex="-1" autocomplete="off" /></label></div>
+          <input type="hidden" name="form_started_at" value="" data-form-started-at />
+          <input type="hidden" name="form_elapsed_ms" value="" data-form-elapsed />
+          <input type="hidden" name="form_interaction" value="" data-form-interaction />
+          <div class="b2b-honeypot" aria-hidden="true">
+            <label>Не заполняйте это поле<input name="website_check" tabindex="-1" autocomplete="off" /></label>
+            <label>Добавочный номер<input name="company_fax" tabindex="-1" autocomplete="off" /></label>
+          </div>
           <p class="b2b-form__hint"><b>Для начала достаточно трёх полей.</b> Техническое ТЗ не нужно — опишите задачу своими словами.</p>
           <div class="ui-lead-form__grid">
             <label class="ui-field"><span class="ui-field__label">Имя *</span><input class="ui-input" name="name" required maxlength="80" autocomplete="name" /></label>
@@ -374,7 +379,6 @@
       <p><a href="/blog/">Блог</a> · <a href="https://dzen.ru/masha_zoloty" target="_blank" rel="noopener">Дзен</a> · © 2026 · <a href="/legal.html">Правовая информация</a> · <a href="/privacy.html">Политика данных</a></p>
     </div>
   </footer>
-  <script src="/script.js?v=20260727-1"></script>
+  <script src="/script.js?v=20260803-1"></script>
 </body>
 </html>
-

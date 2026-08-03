@@ -31,23 +31,25 @@ if ($contentLength < 1 || $contentLength > 30000) {
 }
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if ($origin !== '' && !in_array($origin, array('https://mazoloty.ru', 'https://www.mazoloty.ru'), true)) {
+$allowedOrigins = array('https://mazoloty.ru', 'https://www.mazoloty.ru');
+$referer = $_SERVER['HTTP_REFERER'] ?? '';
+$refererOrigin = '';
+if ($referer !== '') {
+    $refererParts = parse_url($referer);
+    if (is_array($refererParts) && isset($refererParts['scheme'], $refererParts['host'])) {
+        $refererOrigin = strtolower((string)$refererParts['scheme']) . '://' . strtolower((string)$refererParts['host']);
+    }
+}
+if (($origin === '' || !in_array($origin, $allowedOrigins, true))
+    && ($refererOrigin === '' || !in_array($refererOrigin, $allowedOrigins, true))) {
     respond(403, array('error' => 'Не удалось проверить источник заявки.'));
 }
 
-if (!empty($_POST['website_check'])) {
+if (!empty($_POST['website_check']) || !empty($_POST['company_fax'])) {
     respond(200, array('ok' => true));
 }
 
-$ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-$rateKey = hash('sha256', $ip . '|mazoloty-b2b-form');
-$rateFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $rateKey;
 $now = time();
-$lastRequest = is_file($rateFile) ? (int)file_get_contents($rateFile) : 0;
-if ($lastRequest > 0 && ($now - $lastRequest) < 60) {
-    respond(429, array('error' => 'Подождите минуту перед повторной отправкой.'));
-}
-@file_put_contents($rateFile, (string)$now, LOCK_EX);
 
 function scalar(string $name): string {
     if (!isset($_POST[$name])) {
@@ -57,6 +59,69 @@ function scalar(string $name): string {
         respond(422, array('error' => 'Проверьте заполнение полей формы.'));
     }
     return $_POST[$name];
+}
+
+$startedAtRaw = scalar('form_started_at');
+$elapsedRaw = scalar('form_elapsed_ms');
+$elapsedMs = ctype_digit($elapsedRaw) ? (int)$elapsedRaw : -1;
+if (!preg_match('/^\d{13}$/', $startedAtRaw)
+    || $elapsedMs < 5000
+    || $elapsedMs > 7200000
+    || scalar('form_interaction') !== 'yes') {
+    respond(422, array('error' => 'Обновите страницу и заполните форму ещё раз.'));
+}
+
+function enforceRateLimit(string $ip, int $now): void {
+    $rateKey = hash('sha256', $ip . '|mazoloty-b2b-form-v2');
+    $rateFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $rateKey;
+    $handle = @fopen($rateFile, 'c+');
+    if ($handle === false || !flock($handle, LOCK_EX)) {
+        if (is_resource($handle)) {
+            fclose($handle);
+        }
+        respond(503, array('error' => 'Не удалось отправить заявку. Попробуйте позже.'));
+    }
+
+    $raw = stream_get_contents($handle);
+    $state = json_decode($raw !== false ? $raw : '', true);
+    if (!is_array($state)) {
+        $state = array();
+    }
+
+    $last = (int)($state['last'] ?? 0);
+    $hourStarted = (int)($state['hour_started'] ?? $now);
+    $hourCount = (int)($state['hour_count'] ?? 0);
+    $dayStarted = (int)($state['day_started'] ?? $now);
+    $dayCount = (int)($state['day_count'] ?? 0);
+
+    if (($now - $hourStarted) >= 3600) {
+        $hourStarted = $now;
+        $hourCount = 0;
+    }
+    if (($now - $dayStarted) >= 86400) {
+        $dayStarted = $now;
+        $dayCount = 0;
+    }
+
+    if (($last > 0 && ($now - $last) < 60) || $hourCount >= 4 || $dayCount >= 10) {
+        flock($handle, LOCK_UN);
+        fclose($handle);
+        respond(429, array('error' => 'Слишком много отправок. Попробуйте позже.'));
+    }
+
+    $state = array(
+        'last' => $now,
+        'hour_started' => $hourStarted,
+        'hour_count' => $hourCount + 1,
+        'day_started' => $dayStarted,
+        'day_count' => $dayCount + 1,
+    );
+    rewind($handle);
+    ftruncate($handle, 0);
+    fwrite($handle, json_encode($state));
+    fflush($handle);
+    flock($handle, LOCK_UN);
+    fclose($handle);
 }
 
 function field(string $name, int $max, bool $required = false): string {
@@ -79,7 +144,7 @@ if (!is_array($systems)) {
     $systems = array();
 }
 $allowedSystems = array('CRM', '1С', 'Telegram', 'MAX', 'WhatsApp', 'Email', 'Google Sheets / Excel', 'Сайт', 'Другое');
-$systems = array_values(array_intersect($allowedSystems, array_map('strval', $systems)));
+$systems = array_values(array_intersect($allowedSystems, array_filter($systems, 'is_string')));
 
 $fields = array(
     'Имя' => field('name', 80, true),
@@ -95,6 +160,21 @@ $fields = array(
     'Желаемый результат' => field('desired_result', 2000),
     'Бюджет' => field('budget', 100),
 );
+
+$contact = $fields['Контакт'];
+$contactDigits = preg_replace('/\D+/', '', $contact) ?? '';
+$validContact = filter_var($contact, FILTER_VALIDATE_EMAIL) !== false
+    || preg_match('/(?:^|\s)@[a-zA-Z0-9_]{5,32}(?:\s|$)/u', $contact) === 1
+    || preg_match('~(?:https?://)?t\.me/[a-zA-Z0-9_]{5,32}~iu', $contact) === 1
+    || (strlen($contactDigits) >= 7 && strlen($contactDigits) <= 15);
+if (!$validContact) {
+    respond(422, array('error' => 'Укажите Telegram, телефон или email для ответа.'));
+}
+
+$task = $fields['Задача'];
+if (mb_strlen($task) < 20 || preg_match('/[\p{L}]/u', $task) !== 1) {
+    respond(422, array('error' => 'Опишите задачу чуть подробнее.'));
+}
 
 function normalized(string $value): string {
     $value = mb_strtolower($value, 'UTF-8');
@@ -135,6 +215,25 @@ function spamScore(array $fields, array $systems): int {
         $score += 2;
     }
 
+    $solicitationPatterns = array(
+        '/(?:предлагаю|предлагаем|хотим предложить|готовы предложить).{0,120}(?:услуг|продвиж|реклам|сотруднич|разработ)/uis',
+        '/(?:seo|сео)[\s-]*(?:продвиж|оптимизац|аудит)/ui',
+        '/(?:продвин|вывед).{0,80}(?:ваш|сайт|топ|поиск)/uis',
+        '/(?:увеличим|нарастим).{0,80}(?:трафик|продаж|заявк|посещаем)/uis',
+        '/(?:заработок|доход).{0,80}(?:крипт|инвест|пассивн)/uis',
+    );
+    $solicitationText = implode("\n", array(
+        $fields['Имя'] ?? '',
+        $fields['Компания'] ?? '',
+        $narrative,
+    ));
+    foreach ($solicitationPatterns as $pattern) {
+        if (preg_match($pattern, $solicitationText) === 1) {
+            $score += 7;
+            break;
+        }
+    }
+
     if (count($systems) >= 7) {
         $score += 2;
     }
@@ -143,16 +242,6 @@ function spamScore(array $fields, array $systems): int {
     $company = normalized($fields['Компания'] ?? '');
     if ($name !== '' && $company !== '' && $name === $company) {
         $score += 1;
-    }
-
-    $startedAt = scalar('form_started_at');
-    if ($startedAt === '' || !ctype_digit($startedAt)) {
-        $score += 1;
-    } else {
-        $elapsedMs = (int)round(microtime(true) * 1000) - (int)$startedAt;
-        if ($elapsedMs < 2500 || $elapsedMs > 86400000) {
-            $score += 3;
-        }
     }
 
     return $score;
@@ -173,7 +262,9 @@ if (
 ) {
     respond(200, array('ok' => true));
 }
-@file_put_contents($fingerprintFile, (string)$now, LOCK_EX);
+
+$ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+enforceRateLimit($ip, $now);
 
 $message = "Новая B2B-заявка с mazoloty.ru\n\n";
 foreach ($fields as $label => $value) {
@@ -246,6 +337,8 @@ curl_close($curl);
 if ($providerError !== 0 || $providerStatus < 200 || $providerStatus >= 300 || $providerResponse === false) {
     respond(502, array('error' => 'Не удалось отправить заявку. Попробуйте позже.'));
 }
+
+@file_put_contents($fingerprintFile, (string)$now, LOCK_EX);
 
 respond(200, array('ok' => true));
 
